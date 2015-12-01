@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc} %encodage entrée
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} %images
+\usepackage[usenames,dvipsnames]{xcolor} %couleurs
+\usepackage[frenchb]{babel} %langue
+\usepackage{amsmath} %symboles maths
+\usepackage[a4paper]{geometry} %mise en page
+%\usepackage[hidelinks]{hyperref}%liens
+
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+%styles et formatage
+\geometry{scale=0.8,centering}
+\newcommand{\hsp}{\hspace{20pt}}
+\newcommand{\blankpage}{\newpage \thispagestyle{empty} \addtocounter{page}{-1} \null \newpage}
+\newcommand{\TODO}[1]{\colorbox{red}{#1}}
+
+\title{Simulation Multi-Agent -- Analyse et conception}
+\author{Pierre CHEVALIER, Pierre-Loup PISSAVY}
+\date{decembre 2015}
+
+\begin{document}
+  \maketitle
+  %\setlength{\parindent}{10pt}
+  \setlength{\parskip}{10pt}
+
+  \section{Présentation}
+
+    L'énoncé nous demande de créer une simulation multi-agent dont le carde d'évolution est une matrice 20*20.
+
+    Le sujet que nous avons choisi consiste à simuler la conquête de planètes par des factions et chaque case est un agent planète.
+
+    \subsection{Déroulement et objectifs}
+
+    L'unité de temps par itération pour la simulation est l'UTI (Unité de Temps Interstellaire). Le but des agents factions est de détruire la faction adverse, et l'objectif des planètes contrôlées est d'exécuter la volonté de leur faction.
+
+    \subsection{Règles}
+    Le monde est composé de planètes et de factions. Pour exister, chaque faction doit posséder une planète mère. La faction développe des colonies qui pourront à partir de ressources récoltées et générées par la planète mère, mener des actions d'extension de la faction. Les ressources de la faction ne sont pas infinies et elle choisit de les attribuer ou non.
+  
+    Pour conquérir une planète limitrophe, il faut dépenser une certaine quantité de ressources, et lorsque la planète est déjà occupée par une autre faction, il faut ajouter une valeur de défense. Une fois conquise, la planète apporte des ressources supplémentaires à la banque centrale de la faction.
+
+    La défense des colonies est croissante dans le temps, lorsqu'elles ne sont pas attaquées. Si une faction voit sa planète mère conquise par une faction adverse, elle disparaît et devient alors une colonie de l'adversaire, les planètes alors occupées par ses ex-colonies deviennent libres. 
+
+
+  \section{Analyse}
+    \TODO{Structures de donnees}
+    La grille de la simulation sera un tableau de tableaux, car on a besoin d'accès rapides pour répartir l'activation des agents.
+
+    Les factions sont composées d'un pointeur vers la liste des planètes possédées. Les planètes possèdent également un pointeur vers la faction à laquelle elles appartiennent.
+
+    \TODO{Schéma}
+
+  \section{Conception}
+    \TODO{Diagramme de Gantt}
+
+
+\end{document}

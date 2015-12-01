@@ -1,0 +1,33 @@
+\begin{titlepage}
+  \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+  \center
+  \null{}
+  \vspace{3cm}
+
+  \textsc{\LARGE ISIMA Deuxième Année}\\[1.5cm]
+  \textsc{\Large Compte-Rendu de TP}\\[0.5cm]
+  \textsc{\LARGE Simulation}\\[1.5cm]
+  \HRule \\[0.4cm]
+  { \huge \bfseries  Simulation de croissance de population de lapins}\\
+  \HRule \\[1.5cm]
+
+  \begin{minipage}{0.4\textwidth}
+    \begin{flushleft} \large
+      Pierre-Loup PISSAVY\\
+      {\normalsize\textit{F2}}
+    \end{flushleft}
+  \end{minipage}
+  ~
+  \begin{minipage}{0.4\textwidth}
+    \begin{flushright} \large
+      \emph{Enseignant :} \\
+      David HILL
+    \end{flushright}
+  \end{minipage}\\[4cm]
+
+  {\large novembre 2015}\\[3cm]
+
+  \vfill
+
+  \includegraphics[width=6cm]{settings/ISIMA_logo.pdf}\\[1cm]
+\end{titlepage}
