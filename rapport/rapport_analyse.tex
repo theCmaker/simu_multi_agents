@@ -18,7 +18,7 @@
 
 \title{Simulation Multi-Agent -- Analyse et conception}
 \author{Pierre CHEVALIER, Pierre-Loup PISSAVY}
-\date{decembre 2015}
+\date{décembre 2015}
 
 \begin{document}
   \maketitle
@@ -27,7 +27,7 @@
 
   \section{Présentation}
 
-    L'énoncé nous demande de créer une simulation multi-agent dont le carde d'évolution est une matrice 20*20.
+    L'énoncé nous demande de créer une simulation multi-agent dont le cadre d'évolution est une matrice $20 \times 20$.
 
     Le sujet que nous avons choisi consiste à simuler la conquête de planètes par des factions et chaque case est un agent planète.
 
@@ -44,15 +44,40 @@
 
 
   \section{Analyse}
-    \TODO{Structures de donnees}
+    \subsection{Classes d'agents}
+      \begin{itemize}
+        \item Factions (groupe d'agents planètes),
+        \item Planètes,
+        \begin{itemize}
+          \item Planètes mères,
+          \item Planètes colonies.
+        \end{itemize}
+      \end{itemize}
+
+    \subsection{Factions}
+      Nos agents appartiendront à la catégorie des agents cognitifs. 
+
+      La faction par exemple aura connaissance seulement des planètes limitrophes à sa frontière, et aura un désir d'expansion et de destruction des factions ennemies. On peut même penser à implémenter un système de rancune envers une faction adverse qui a été plus aggressive qu'une autre: cela aura pour effet de influencer les choix de la faction concernant les attaques.
+
+      Les planètes de la faction, quant à elles, recevront des ordres de ladite faction mais auront également une volonté propre, avec un système de rancune parallèle. Toutefois, aucune mutinerie n'est prévue à ce stade.
+
+    
+    \subsection{Structures de donnees}
     La grille de la simulation sera un tableau de tableaux, car on a besoin d'accès rapides pour répartir l'activation des agents.
 
-    Les factions sont composées d'un pointeur vers la liste des planètes possédées. Les planètes possèdent également un pointeur vers la faction à laquelle elles appartiennent.
+    Les factions sont composées d'un pointeur vers la liste des planètes possédées. Nous avons choisi une liste car il n'est pas possible de savoir à l'avance combien la faction possèdera de planètes. Les planètes possèdent également un pointeur vers la faction à laquelle elles appartiennent.
 
-    \TODO{Schéma}
+    \TODO{Schéma UML}
 
   \section{Conception}
-    \TODO{Diagramme de Gantt}
+    \subsection{Dimension aléatoire}
+      Si le besoin s'en fait ressentir, nous nous baserons sur des probabilités pré-existantes dans les jeux vidéos ou recensées dans des films de science-fiction, par exemple $\displaystyle \frac{\text{nombre de planètes détruites}}{\text{nombre de planètes attaquées}} $.
+    
 
+\TODO{Diagramme de Gantt}
+
+    Selon le temps qui nous restera, nous pensons implémenter d'autres règles comme des planètes spéciales, des technologies, de la spécialisation dans les factions etc.
+
+    Dans le cadre de l'aspect cognitif de nos agents, nous pouvons penser à développer un système de négociation (cessez-le-feu, aide d'une planète alliée, etc.) et également un système d'espionnage.
 
 \end{document}

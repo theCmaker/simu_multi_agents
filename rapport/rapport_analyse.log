@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2015.10.9)  27 NOV 2015 12:00
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2015.10.9)  1 DEC 2015 16:25
 entering extended mode
 \write18 enabled.
  %&-line parsing enabled.
@@ -461,22 +461,23 @@ driver: pdftex
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./rapport_analyse.aux
 ) ) 
 Here is how much of TeX's memory you used:
- 3053 strings out of 256214
- 35634 string characters out of 1917000
+ 3061 strings out of 256214
+ 35727 string characters out of 1917000
  105601 words of memory out of 1500000
- 6316 multiletter control sequences out of 10000+200000
- 12425 words of font info for 33 fonts, out of 1200000 for 2000
+ 6322 multiletter control sequences out of 10000+200000
+ 14427 words of font info for 37 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 27i,6n,35p,406b,191s stack positions out of 5000i,500n,6000p,200000b,15000s
+ 27i,6n,35p,423b,191s stack positions out of 5000i,500n,6000p,200000b,15000s
  </home/etud/pipissavy/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/ec
 sx1200.600pk> </home/etud/pipissavy/.texlive2007/texmf-var/fonts/pk/ljfour/jkna
 ppen/ec/ecss1000.600pk> </home/etud/pipissavy/.texlive2007/texmf-var/fonts/pk/l
 jfour/jknappen/ec/ecsx1440.600pk> </home/etud/pipissavy/.texlive2007/texmf-var/
 fonts/pk/ljfour/jknappen/ec/ecss1200.600pk> </home/etud/pipissavy/.texlive2007/
-texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1728.600pk>
-Output written on rapport_analyse.pdf (2 pages, 49971 bytes).
+texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1728.600pk></usr/share/texmf/fonts/ty
+pe1/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb>
+Output written on rapport_analyse.pdf (2 pages, 60825 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
+ 187 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
