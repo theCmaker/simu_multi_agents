@@ -31,7 +31,7 @@
 
     L'énoncé nous demande de créer une simulation multi-agent dont le cadre d'évolution est une matrice $20 \times 20$.
 
-    Le sujet que nous avons choisi consiste à simuler la conquête de planètes par des factions et chaque case est un agent planète.
+    Le sujet que nous avons choisi consiste à simuler la conquête de planètes par des factions. Chaque élément de la matrice est un agent planète.
 
     \subsection{Déroulement et objectifs}
 
@@ -64,7 +64,7 @@
       Les planètes de la faction, quant à elles, recevront des ordres de ladite faction mais auront également une volonté propre, avec un système de rancune parallèle. Toutefois, aucune mutinerie n'est prévue à ce stade.
 
     
-    \subsection{Structures de donnees}
+    \subsection{Structures de données}
     La grille de la simulation sera un tableau de tableaux, car on a besoin d'accès rapides pour répartir l'activation des agents.
 
     Les factions sont composées d'un pointeur vers la liste des planètes possédées. Nous avons choisi une liste car il n'est pas possible de savoir à l'avance combien la faction possèdera de planètes. Les planètes possèdent également un pointeur vers la faction à laquelle elles appartiennent.
