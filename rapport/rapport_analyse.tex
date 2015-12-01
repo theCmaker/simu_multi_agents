@@ -7,6 +7,7 @@
 \usepackage{amsmath} %symboles maths
 \usepackage[a4paper]{geometry} %mise en page
 %\usepackage[hidelinks]{hyperref}%liens
+\usepackage{tikz-uml}
 
 \renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
 
@@ -67,7 +68,27 @@
 
     Les factions sont composées d'un pointeur vers la liste des planètes possédées. Nous avons choisi une liste car il n'est pas possible de savoir à l'avance combien la faction possèdera de planètes. Les planètes possèdent également un pointeur vers la faction à laquelle elles appartiennent.
 
-    \TODO{Schéma UML}
+    \begin{figure}
+      \begin{center}
+        \begin{tikzpicture}
+          \umlemptyclass[x=0,y=5]{Monde}
+          \umlemptyclass[x=4,y=5]{Planète virtuelle}
+          \umlemptyclass[x=0,y=2.5]{Faction}
+          \umlemptyclass[x=4,y=2.5]{Colonie}
+          \umlemptyclass[x=7,y=2.5]{Planète libre}
+          \umlemptyclass[x=4,y=0]{Planète mère}
+
+          \umlunicompo[mult2=1..*,pos2=0.8]{Monde}{Planète virtuelle}
+          \umlunicompo[mult2=*,pos2=0.8]{Monde}{Faction}
+          \umlinherit{Planète libre}{Planète virtuelle}
+          \umlinherit{Colonie}{Planète virtuelle}
+          \umlinherit{Planète mère}{Colonie}
+          \umluniaggreg[mult2=1,pos2=0.8]{Faction}{Planète mère}
+          \umluniaggreg[mult2=1..*,pos2=0.8]{Faction}{Colonie}
+        \end{tikzpicture}
+      \end{center}
+      \caption{Diagramme UML}
+    \end{figure}
 
   \section{Conception}
     \subsection{Dimension aléatoire}
