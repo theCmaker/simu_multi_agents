@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.29)  1 DEC 2015 22:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.29)  1 DEC 2015 22:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -881,38 +881,74 @@ arkings.code.tex))
 \tikzuml@AC@xbrc=\skip72
 \tikzuml@AC@ybrc=\skip73
 \tikzuml@AC@middleArm=\skip74
-) (./rapport_analyse.aux)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgfgantt/pgfgantt.sty
+Package: pgfgantt 2013/06/01 v4.0 Draw Gantt diagrams with TikZ
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.
+code.tex
+File: tikzlibrarycalc.code.tex 2009/09/04 v2.10 (rcs-revision 1.6)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatte
+rns.code.tex
+File: tikzlibrarypatterns.code.tex 2008/01/15 v2.10 (rcs-revision 1.2)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2008/03/03 v2.10 (rcs-revision 1.13)
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryposit
+ioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
+) (/usr/share/texmf/tex/latex/pgf/utilities/pgfcalendar.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfcalendar.code.tex
+File: pgfcalendar.code.tex 2007/07/23 v2.10 (rcs-revision 1.11)
+\pgfcalendarcurrentjulian=\count172
+))
+\gtt@currentline=\count173
+\gtt@lasttitleline=\count174
+\gtt@currgrid=\count175
+\gtt@chartwidth=\count176
+\gtt@lasttitleslot=\count177
+\gtt@elementid=\count178
+\gtt@today@slot=\count179
+\gtt@startjulian=\count180
+\gtt@endjulian=\count181
+\gtt@calendar@slots=\count182
+\gtt@calendar@weeknumber=\count183
+\gtt@calendar@startofweek=\count184
+\gtt@left@slot=\count185
+\gtt@right@slot=\count186
+)
+(./rapport_analyse.aux)
 \openout1 = `rapport_analyse.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 24.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 25.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+) (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count172
+\scratchcounter=\count187
 \scratchdimen=\dimen178
 \scratchbox=\box100
-\nofMPsegments=\count173
-\nofMParguments=\count174
+\nofMPsegments=\count188
+\nofMParguments=\count189
 \everyMPshowfont=\toks34
-\MPscratchCnt=\count175
+\MPscratchCnt=\count190
 \MPscratchDim=\dimen179
-\MPnumerator=\count176
-\makeMPintoPDFobject=\count177
+\MPnumerator=\count191
+\makeMPintoPDFobject=\count192
 \everyMPtoPDFconversion=\toks35
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -958,9 +994,9 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 24.
-LaTeX Info: Redefining \dots on input line 24.
-LaTeX Info: Redefining \up on input line 24.
+LaTeX Info: Redefining \degres on input line 25.
+LaTeX Info: Redefining \dots on input line 25.
+LaTeX Info: Redefining \up on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1003,17 +1039,17 @@ ABD: EveryShipout initializing macros [1
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <10> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 90.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 91.
 
 [2] [3] (./rapport_analyse.aux) ) 
 Here is how much of TeX's memory you used:
- 16480 strings out of 493304
- 324444 string characters out of 6139871
- 500970 words of memory out of 5000000
- 19580 multiletter control sequences out of 15000+600000
- 17772 words of font info for 44 fonts, out of 8000000 for 9000
+ 17422 strings out of 493304
+ 347846 string characters out of 6139871
+ 529482 words of memory out of 5000000
+ 20499 multiletter control sequences out of 15000+600000
+ 18531 words of font info for 45 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,10n,75p,454b,900s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,10n,75p,475b,900s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-
 super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
 0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
@@ -1022,11 +1058,12 @@ nts/type1/public/cm-super/sfss0900.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1200.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfss1728.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfsx0900.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfsx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb>
-Output written on rapport_analyse.pdf (3 pages, 119748 bytes).
+uper/sfsx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1200.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb>
+Output written on rapport_analyse.pdf (3 pages, 140393 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
+ 78 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
