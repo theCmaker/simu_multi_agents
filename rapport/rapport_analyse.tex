@@ -39,21 +39,21 @@
 
     \subsection{Règles}
 	
-    Le monde est composé de planètes neutres, et de planètes controlées par des factions. Pour exister, chaque faction doit posséder une planète mère.
+    Le monde est composé de planètes neutres, et de planètes contrôlées par des factions. Pour exister, chaque faction doit posséder une planète mère.
 	
-	Les factions sont des groupes d'agents planètes. Elle possède une unique planète mère, et une liste de planètes colonnies. La faction à sa volonté propre et à conscience de toutes les planètes limitrophes à sa frontière, son but est de s'étendre sur le système entier.
+    Les factions sont des groupes d'agents planètes. Elles possèdent une unique planète mère, et une liste de planètes colonies. La faction a sa volonté propre et a connaissance de toutes les planètes limitrophes à sa frontière, son but est de s'étendre sur le système entier.
 
-	Chaque faction possède une banque de ressource, dans laquelle elle puise pour exécuter des actions. Les colonnies qui génèrent un certain nombre de ressource par tour, le taux de ressource généré étant aléatoire et propre à la planète génératrice. Les ressources générées par les planètes sont ainsi transféré à la banque de la faction qui s'enrichit.
+    Chaque faction possède une banque de ressources, dans laquelle elle puise pour exécuter des actions. Les colonies qui génèrent un certain nombre de ressources par tour, le taux de ressources générées étant aléatoire et propre à la planète génératrice. Les ressources générées par les planètes sont ainsi transférées à la banque de la faction qui s'enrichit.
 	
-	Les planètes (colonnies et planète mère) ont conscience uniquement de leur voisinage. Elles ont une banque interne leur permettant d'executer des actions à leur niveau. Leur but est de n'être entourée que de planètes alliées.
+    Les planètes (colonies et planète mère) ont conscience uniquement de leur voisinage. Elles ont une banque interne leur permettant d'exécuter des actions à leur niveau. Leur but est de n'être entourées que de planètes alliées.
 	
-	Pour conquérir une planète limitrophe, il faut dépenser une certaine quantité de ressources, et lorsque la planète est déjà occupée par une autre faction, il faut payer en plus une valeur de défense. Une fois conquise, la planète devient une colonnie de la faction et apporte des ressources supplémentaires à la banque de celle-ci.
+    Pour conquérir une planète limitrophe, il faut dépenser une certaine quantité de ressources, et lorsque la planète est déjà occupée par une autre faction, il faut payer en plus une valeur de défense. Une fois conquise, la planète devient une colonie de la faction et apporte des ressources supplémentaires à la banque de celle-ci.
 	
-	Pour agir les planètes peuvent demander des fonds à leur faction pour executer une action, une attaque de planète par exemple. Les ressources de la faction ne sont pas infinies et celle-ci choisit de les attribuer ou non à la planète demandeuse.   
+    Pour agir, les planètes peuvent demander des fonds à leur faction pour exécuter une action, une attaque de planète par exemple. Les ressources de la faction ne sont pas infinies et celle-ci choisit de les attribuer ou non à la planète demandeuse.
 
     Le taux de défense des colonies est croissant dans le temps avec un incrément aléatoire, lorsqu'elles ne sont pas attaquées. 
 	
-	Si une faction voit sa planète mère conquise par une faction adverse, elle disparaît et devient alors une colonie de l'adversaire, les planètes alors occupées par ses ex-colonies deviennent des planètes libres. 
+    Si une faction voit sa planète mère conquise par une faction adverse, elle disparaît et devient alors une colonie de l'adversaire, les planètes alors occupées par ses ex-colonies deviennent des planètes libres. 
 
   \section{Analyse}
     \subsection{Classes d'agents}
@@ -66,18 +66,18 @@
         \end{itemize}
       \end{itemize}
 
-    \subsection{Descritption des agents}
+    \subsection{Description des agents}
       Nos agents appartiendront à la catégorie des agents cognitifs. 
 
-      La faction par exemple aura connaissance seulement des planètes limitrophes à sa frontière, et aura un désir d'expansion et de destruction des factions ennemies. On peut même penser à implémenter un système de rancune envers une faction adverse qui a été plus aggressive qu'une autre: cela aura pour effet de influencer les choix de la faction concernant les attaques.
+      La faction par exemple aura connaissance seulement des planètes limitrophes à sa frontière, et aura un désir d'expansion et de destruction des factions ennemies. On peut même penser à implémenter un système de rancune envers une faction adverse qui a été plus agressive qu'une autre: cela aura pour effet de influencer les choix de la faction concernant les attaques.
 
-      Les planètes de la faction, quant à elles, recevront des ordres de ladite faction mais auront également une volonté propre, avec un système de rancune parallèle. Toutefois, aucun système de mutinerie n'est encore prévue à ce stade.
+      Les planètes de la faction, quant à elles, recevront des ordres de ladite faction mais auront également une volonté propre, avec un système de rancune parallèle. Toutefois, aucun système de mutinerie n'est encore prévu à ce stade.
 
     
     \subsection{Structures de données}
-    La grille de la simulation sera un tableau de tableaux, car on a besoin d'accès rapides pour répartir l'activation des agents.
+      La grille de la simulation sera un tableau de tableaux, car on a besoin d'accès rapides pour répartir l'activation des agents.
 
-    Les factions sont composées d'un pointeur vers la liste des planètes possédées. Nous avons choisi une liste car il n'est pas possible de savoir à l'avance combien la faction possèdera de planètes et les suppressions et ajout de planète dans la liste de la faction seront nombreuse durant la simulation, il nous faut donc les executer en O(1). Les planètes possèdent également un pointeur vers la faction à laquelle elles appartiennent.
+      Les factions sont composées d'un pointeur vers la liste des planètes possédées. Nous avons choisi une liste car il n'est pas possible de savoir à l'avance combien la faction possèdera de planètes et les suppressions et ajout de planète dans la liste de la faction seront nombreuse durant la simulation, il nous faut donc les executer en $O(1)$. Les planètes possèdent également un pointeur vers la faction à laquelle elles appartiennent.
 
     \begin{figure}[h]
       \begin{center}
@@ -107,24 +107,24 @@
     
       \begin{figure}[H]
         \begin{ganttchart}[vgrid,hgrid]{1}{12}
-          \gantttitle{Séances}{8} \\
-          \gantttitlelist{1,...,8}{1} \\
+          \gantttitle{Séances}{12} \\
+          \gantttitlelist{1,...,12}{1} \\
           \ganttgroup{Conception de base}{1}{3} \\
-          \ganttbar{Création de la grille "Monde"}{1}{1} \\
-          \ganttbar{Création des agents de base}{1}{1} \\
-          \ganttbar{Tirage des agents à exécuter}{2}{2} \\
-          \ganttbar{Planète mère et colonies}{3}{3} \\
-          \ganttbar{Faction}{3}{3} \ganttnewline
+            \ganttbar{Création de la grille "Monde"}{1}{1} \\
+            \ganttbar{Création des agents de base}{1}{1} \\
+            \ganttbar{Tirage des agents à exécuter}{2}{2} \\
+            \ganttbar{Planète mère et colonies}{3}{3} \\
+            \ganttbar{Faction}{3}{3} \ganttnewline
           \ganttgroup{Simulation}{4}{7} \\
-          \ganttbar{Création du système économique}{4}{5} \\
-          \ganttbar{Création des désirs des factions (ordres etc)}{6}{7} \\
-          \ganttbar{Respect des ordres}{6}{7} \\
-		  \ganttgroup{Bonus !}{8}{12} \\
-          \ganttbar{Specialisation de faction}{8}{8}
-		  \ganttbar{Technologie}{9}{9}
-		  \ganttbar{Systeme de negociation}{10}{10}
-		  \ganttbar{Systeme d'espionage}{11}{11}
-		  \ganttbar{création de faction dissidentes}{12}{12}
+            \ganttbar{Création du système économique}{4}{5} \\
+            \ganttbar{Création des désirs des factions (ordres etc)}{6}{7} \\
+            \ganttbar{Respect des ordres}{6}{7} \ganttnewline
+		      \ganttgroup{Bonus !}{8}{12} \\
+            \ganttbar{Spécialisation de faction}{8}{8} \\
+      		  \ganttbar{Technologie}{9}{9} \\
+      		  \ganttbar{Système de négociation}{10}{10} \\
+      		  \ganttbar{Système d'espionnage}{11}{11} \\
+      		  \ganttbar{Création de factions dissidentes}{12}{12}
         \end{ganttchart}
         \caption{Diagramme de Gantt}
       \end{figure}
