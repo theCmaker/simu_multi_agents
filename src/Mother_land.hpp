@@ -8,9 +8,9 @@ class Mother_land : public Colonized_planet
 public:
   Mother_land();
   Mother_land(Free_planet *);
-  ~Mother_land();
+	~Mother_land() {};
 
 private:
 };
 
-#endif /* end of include guard: __MOTHER_LAND_H__ */
+#endif

@@ -1,12 +1,14 @@
 #include "World.hpp"
 
-World::World(std::mt19937& gen_mt, unsigned len = 20, unsigned hei = 20):
+World::World(std::mt19937& gen_mt, unsigned len, unsigned hei):
 gen_mt_(gen_mt), len_(len), hei_(hei),
-grid_(len, std::vector<Virtual_planet*>(hei))
+grid_(),
+factions_(),waiting_agents_(),already_run_agents_()
 {
 	for (unsigned i = 0;i < len_;i++) {
+		grid_.push_back(std::vector< Virtual_planet* >());
 		for (unsigned j = 0; j < hei_;j++) {
-			grid_[i][j] = new Free_planet(*this,i,j);
+			grid_[i].push_back(new Free_planet(*this, i, j));
 		}
 	}
 
@@ -34,6 +36,7 @@ time_h World::start(){
         scheduler();
         ++steps_;
     }
+		return (time_h());
 }
 
 void World::scheduler() {
@@ -43,7 +46,7 @@ void World::scheduler() {
     waiting_agents_.swap(already_run_agents_); 
 }
 
-int World::mt() {
+int World::gen_mt() {
 	return gen_mt_();
 }
 

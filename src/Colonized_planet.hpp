@@ -8,7 +8,7 @@ class Colonized_planet : public Virtual_planet
 public:
   Colonized_planet();
   Colonized_planet(Free_planet *);
-  ~Colonized_planet();
+	~Colonized_planet() {};
 
   bool attack(Free_planet *); //Bool: success
   bool attack(Colonized_planet *);
@@ -20,4 +20,4 @@ private:
   double colony_production_;
 };
 
-#endif /* end of include guard: __COLONIZED_PLANET_H__ */
+#endif

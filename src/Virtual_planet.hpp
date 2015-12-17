@@ -1,13 +1,19 @@
 #ifndef __VIRTUAL_PLANET_H__
 #define __VIRTUAL_PLANET_H__
 
-#include "World.hpp"
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+
+
+class World;
 
 class Virtual_planet
 {
 public:
   Virtual_planet(World&, unsigned, unsigned);		//Creation of random stat
-  ~Virtual_planet();
+	~Virtual_planet() {};
 
   void run();
 
@@ -22,4 +28,4 @@ protected:
 
 };
 
-#endif /* end of include guard: __VIRTUAL_PLANET_H__ */
+#endif

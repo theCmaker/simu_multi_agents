@@ -2,14 +2,15 @@
 #define __FREE_PLANET_H__
 
 #include "Virtual_planet.hpp"
-#include "Colonized_planet.hpp"
-#include "Mother_land.hpp"
+
+class Mother_land;
+class Colonized_planet;
 
 class Free_planet : public Virtual_planet
 {
 public:
   Free_planet(World &, unsigned, unsigned);
-  ~Free_planet();
+	~Free_planet() {};
 
 	void set_neighbourhood();	//generate neightbourhood
 
@@ -17,7 +18,7 @@ public:
 	Colonized_planet* convert_to_colony();
 
 private:
-  std::list<Virtual_planet &> neighbourhood_;
+  std::list<Virtual_planet* > neighbourhood_;
 };
 
 #endif

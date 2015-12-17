@@ -1,13 +1,18 @@
 #ifndef __FACTION_H__
 #define __FACTION_H__
 
-#include "Mother_land.hpp"
+#include <string>
+#include <list>
+
+class Mother_land;
+class Colonized_planet;
+class World;
 
 class Faction
 {
 public:
-  Faction(World&, std::string name="defaut");	//Create a faction and convert a free planete into a mother land
-  ~Faction();
+  Faction(World& world, std::string name="defaut");	//Create a faction and convert a free planete into a mother land
+	~Faction() {};
 
   void run();
 
@@ -23,4 +28,4 @@ private:
   void loose();
 };
 
-#endif /* end of include guard: __FACTION_H__ */
+#endif
