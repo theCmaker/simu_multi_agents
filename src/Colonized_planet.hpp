@@ -13,6 +13,8 @@ public:
   bool attack(Free_planet *); //Bool: success
   bool attack(Colonized_planet *);
 
+	Free_planet* convert_to_free_planet();
+
 private:
   double colony_defense_;
   double colony_production_;
