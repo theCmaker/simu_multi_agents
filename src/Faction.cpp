@@ -1,17 +1,23 @@
 #include "Faction.hpp"
 #include "Virtual_planet.hpp"
+#include "Mother_land.hpp"
 #include "World.hpp"
 
 
 Faction::Faction(World& world, std::string name):
-world_(world), name_(name),money_(0),motherland_(nullptr),colonies_()
+world_(world), name_(name),money_(0),colonies_()
 {
 	//Find the mother_land
 	unsigned x = world_.gen_mt() % world_.len();
 	unsigned y = world_.gen_mt() % world_.hei();
 
+	/*WARNING : WHAT HAPPENS IF THE PLANET ISNT FREE? */
 
-	/*WARNING : WHAT HAPPENS IF THE PLANET ISNT FREE */
+	//Creation of motherland
+	motherland_=new Mother_land((Free_planet*)world_.grid(x, y),*this);
+	//world_.grid(x, y)=motherland_;
+}
 
-//	(Free_planet)(world_.grid(x,y))->
+std::string Faction::get_name() {
+	return name_;
 }

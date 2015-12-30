@@ -11,17 +11,23 @@ class World;
 class Faction
 {
 public:
-  Faction(World& world, std::string name="defaut");	//Create a faction and convert a free planete into a mother land
-	~Faction() {};
+	Faction(World& world, std::string name = "defaut");	//Create a faction and convert a free planete into a mother land
+	~Faction() {}
 
-  void run();
+	void run() {}
+
+	std::string get_name();
+
+	Faction& operator= (Faction& fac) {
+		return fac;
+	}
 
 private:
 	World& world_;
 
-	std::string		name_;
-  double				money_;
-	Mother_land		*motherland_;
+	std::string									name_;
+  double											money_;
+	Mother_land									*motherland_;
 	std::list<Colonized_planet> colonies_;
 
 	//private methods

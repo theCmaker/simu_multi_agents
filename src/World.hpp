@@ -10,7 +10,7 @@
 #include "Colonized_planet.hpp"
 #include "Faction.hpp"
 
-
+using namespace std;
 typedef unsigned time_h; /* Simulation time */
 
 class World
@@ -21,6 +21,8 @@ public:
 
   time_h start();			//return duration of simulation
   void scheduler();		//manage action of agents
+
+	void display();			//Display at a time X
 
 	int gen_mt();
 

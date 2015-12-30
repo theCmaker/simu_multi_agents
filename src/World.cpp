@@ -41,9 +41,26 @@ time_h World::start(){
 
 void World::scheduler() {
     for (std::list<Faction>::iterator i = factions_.begin(); i != factions_.end(); ++i) {
-      
+			i->run();
     }
     waiting_agents_.swap(already_run_agents_); 
+}
+
+void World::display() {
+	for (unsigned i = 0; i < hei()+2; i++) cout << "-";
+	for (unsigned i = 0;i < hei(); i++) {
+		for (unsigned j = 0;j < len();j++) {
+			cout << "|";
+
+			Faction& faction = grid(j, i)->get_faction();
+			if (faction.get_name() == "Red") cout << "R";
+			else if (faction.get_name() == "Blue") cout << "B";
+			else cout << "N";
+
+			cout << "|";
+		}
+	}
+	for (unsigned i = 0; i < hei()+2; i++) cout << "-";
 }
 
 int World::gen_mt() {
