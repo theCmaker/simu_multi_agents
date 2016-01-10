@@ -9,6 +9,12 @@ Colonized_planet::Colonized_planet(Free_planet * fp, Faction& faction) :
 	colony_production_(),
 	faction_(faction){}
 
+Colonized_planet::Colonized_planet(const Colonized_planet &other) : 
+	Virtual_planet(other),
+	colony_defense_(other.colony_defense_),
+	colony_production_(other.colony_production_),
+	faction_(other.faction_) {}
+
 bool Colonized_planet::attack(Free_planet *) {
 	/*A FAIRE !*/
 	return true;

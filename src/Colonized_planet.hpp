@@ -6,6 +6,8 @@
 class Colonized_planet : public Virtual_planet
 {
 public:
+  
+  Colonized_planet(const Colonized_planet &);
   Colonized_planet(World &, unsigned, unsigned, Faction&);
   Colonized_planet(Free_planet *, Faction&);							//Transfome une free en colonise
 	~Colonized_planet() {};

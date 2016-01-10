@@ -14,7 +14,7 @@ class Virtual_planet
 {
 public:
   Virtual_planet(World&, unsigned, unsigned);		//Creation of random stat
-	Virtual_planet(Virtual_planet&);							//Copy
+	//Virtual_planet(const Virtual_planet&);							//Copy
 	~Virtual_planet() {};
 
   void run();
