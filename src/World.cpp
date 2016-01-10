@@ -52,7 +52,7 @@ void World::display() {
 		for (unsigned j = 0;j < len();j++) {
 			cout << "|";
 
-			Faction& faction = grid(j, i)->get_faction();
+			Faction& faction = get_grid(j, i)->get_faction();
 			if (faction.get_name() == "Red") cout << "R";
 			else if (faction.get_name() == "Blue") cout << "B";
 			else cout << "N";
@@ -67,6 +67,10 @@ int World::gen_mt() {
 	return gen_mt_();
 }
 
-Virtual_planet* World::grid(unsigned x, unsigned y) {
+Virtual_planet* World::get_grid(unsigned x, unsigned y) {
 	return grid_[x][y];
+}
+
+void World::set_grid(Virtual_planet* planet, unsigned x, unsigned y) {
+	grid_[x][y] = planet;
 }

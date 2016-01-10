@@ -10,15 +10,15 @@ void Free_planet::set_neighbourhood() {
 	/*********************************/
 
 
-	if (pos_x_ - 1 >= 0 && pos_y_ - 1 >= 0)		neighbourhood_.push_back(world_.grid(pos_x_ - 1, pos_y_ - 1));
-	if (pos_x_ - 1 >= 0 && pos_y_ >= 0)				neighbourhood_.push_back(world_.grid(pos_x_ - 1, pos_y_));
-	if (pos_x_ - 1 >= 0 && pos_y_ + 1 >= 0)		neighbourhood_.push_back(world_.grid(pos_x_ - 1, pos_y_ + 1));
+	if (pos_x_ - 1 >= 0 && pos_y_ - 1 >= 0)		neighbourhood_.push_back(world_.get_grid(pos_x_ - 1, pos_y_ - 1));
+	if (pos_x_ - 1 >= 0 && pos_y_ >= 0)				neighbourhood_.push_back(world_.get_grid(pos_x_ - 1, pos_y_));
+	if (pos_x_ - 1 >= 0 && pos_y_ + 1 >= 0)		neighbourhood_.push_back(world_.get_grid(pos_x_ - 1, pos_y_ + 1));
 
-	if (pos_x_ >= 0 && pos_y_ - 1 >= 0)				neighbourhood_.push_back(world_.grid(pos_x_, pos_y_ - 1));
-	if (pos_x_ >= 0 && pos_y_ + 1 >= 0)				neighbourhood_.push_back(world_.grid(pos_x_, pos_y_ + 1));
+	if (pos_x_ >= 0 && pos_y_ - 1 >= 0)				neighbourhood_.push_back(world_.get_grid(pos_x_, pos_y_ - 1));
+	if (pos_x_ >= 0 && pos_y_ + 1 >= 0)				neighbourhood_.push_back(world_.get_grid(pos_x_, pos_y_ + 1));
 
-	if (pos_x_ + 1 >= 0 && pos_y_ - 1 >= 0)		neighbourhood_.push_back(world_.grid(pos_x_ + 1, pos_y_ - 1));
-	if (pos_x_ + 1 >= 0 && pos_y_ >= 0)				neighbourhood_.push_back(world_.grid(pos_x_ + 1, pos_y_));
-	if (pos_x_ + 1 >= 0 && pos_y_ + 1 >= 0)		neighbourhood_.push_back(world_.grid(pos_x_ + 1, pos_y_ + 1));
+	if (pos_x_ + 1 >= 0 && pos_y_ - 1 >= 0)		neighbourhood_.push_back(world_.get_grid(pos_x_ + 1, pos_y_ - 1));
+	if (pos_x_ + 1 >= 0 && pos_y_ >= 0)				neighbourhood_.push_back(world_.get_grid(pos_x_ + 1, pos_y_));
+	if (pos_x_ + 1 >= 0 && pos_y_ + 1 >= 0)		neighbourhood_.push_back(world_.get_grid(pos_x_ + 1, pos_y_ + 1));
 
 }

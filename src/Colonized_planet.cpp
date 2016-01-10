@@ -4,9 +4,10 @@ Colonized_planet::Colonized_planet(World& world, unsigned pos_x, unsigned pos_y,
 	Virtual_planet(world, pos_x, pos_y), faction_(fac) {}
 
 Colonized_planet::Colonized_planet(Free_planet * fp, Faction& faction) :
-	Colonized_planet(*((Colonized_planet*)fp)) {
-	faction_=faction;
-}
+	Virtual_planet(fp->world(), fp->pos_x(), fp->pos_y()),
+	faction_(faction),
+	colony_defense_(),
+	colony_production_(){}
 
 bool Colonized_planet::attack(Free_planet *) {
 	/*A FAIRE !*/

@@ -27,7 +27,8 @@ public:
 	int gen_mt();
 
 	//Getter/setter 
-	Virtual_planet* grid(unsigned x, unsigned y);
+	Virtual_planet* get_grid(unsigned x, unsigned y);
+	void set_grid(Virtual_planet*, unsigned x, unsigned y);
 	unsigned len() const { return len_; }
 	unsigned hei() const { return hei_; }
 

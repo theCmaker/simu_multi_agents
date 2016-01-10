@@ -20,6 +20,10 @@ public:
   void run();
 	Faction& get_faction() { return Faction(world_, "neutre"); }		//Créé une faction neutre ?
 
+	unsigned pos_x() { return pos_x_; }
+	unsigned pos_y() { return pos_y_; }
+	World& world() { return world_; }
+
 protected:
 
 	World & world_;
