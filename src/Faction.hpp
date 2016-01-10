@@ -18,10 +18,13 @@ public:
 
 	std::string get_name();
 
-	Faction& operator= (Faction& fac) {
-		return fac;
+	Faction& operator= (Faction&) {
+		return *this;
 	}
 
+	Faction& operator= (Faction) {
+		return *this;
+	}
 private:
 	World& world_;
 
