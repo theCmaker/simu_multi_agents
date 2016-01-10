@@ -22,6 +22,10 @@ public:
 		return *this;
 	}
 
+	Faction& operator= (Faction) {
+		return *this;
+	}
+
 	void add_to_banque(double adding_money) {
 		money_ += adding_money;
 	}
