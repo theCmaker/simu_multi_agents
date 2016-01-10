@@ -18,8 +18,8 @@ public:
 
 	std::string get_name();
 
-	Faction& operator= (Faction& fac) {
-		return fac;
+	Faction& operator= (Faction&) {
+		return *this;
 	}
 
 	void add_to_banque(double adding_money) {
