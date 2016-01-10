@@ -5,7 +5,7 @@
 
 
 
-int main(int argc, char *argv[]) 
+int main(int, char **) 
 {
 	std::mt19937 mt;
 	World w1(mt);

@@ -1,9 +1,10 @@
 #include "World.hpp"
 
 World::World(std::mt19937& gen_mt, unsigned len, unsigned hei):
-gen_mt_(gen_mt), len_(len), hei_(hei),
 grid_(),
-factions_(),waiting_agents_(),already_run_agents_()
+factions_(),waiting_agents_(),already_run_agents_(),
+len_(len), hei_(hei),
+gen_mt_(gen_mt)
 {
 	for (unsigned i = 0;i < len_;i++) {
 		grid_.push_back(std::vector< Virtual_planet* >());
@@ -52,7 +53,7 @@ void World::display() {
 		for (unsigned j = 0;j < len();j++) {
 			cout << "|";
 
-			Faction& faction = get_grid(j, i)->get_faction();
+			Faction faction = get_grid(j, i)->get_faction();
 			if (faction.get_name() == "Red") cout << "R";
 			else if (faction.get_name() == "Blue") cout << "B";
 			else cout << "N";

@@ -5,8 +5,9 @@
 
 
 Faction::Faction(World& world, std::string name):
-world_(world), name_(name),money_(0),colonies_()
+world_(world), name_(name),money_(0)
 {
+	//colonies_ = new std::list<Colonized_planet>[1];
 	//Find the mother_land
 	unsigned x = world_.gen_mt() % world_.len();
 	unsigned y = world_.gen_mt() % world_.hei();

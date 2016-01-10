@@ -28,7 +28,7 @@ private:
 	std::string									name_;
   double											money_;
 	Mother_land									*motherland_;
-	std::list<Colonized_planet> colonies_;
+	//std::list<Colonized_planet> colonies_;
 
 	//private methods
   void loose();
