@@ -22,3 +22,7 @@ void Free_planet::set_neighbourhood() {
 	if (((int)pos_x_ + 1) >= 0 && ((int)pos_y_ + 1) >= 0)		neighbourhood_.push_back(world_.get_grid(pos_x_ + 1, pos_y_ + 1));
 
 }
+
+void Free_planet::run() {
+
+}

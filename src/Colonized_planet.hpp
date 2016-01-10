@@ -19,6 +19,8 @@ public:
 
 	Faction& get_faction();
 
+	void run();
+
 private:
   double colony_defense_;
   double colony_production_;

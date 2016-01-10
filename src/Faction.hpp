@@ -22,6 +22,10 @@ public:
 		return fac;
 	}
 
+	void add_to_banque(double adding_money) {
+		money_ += adding_money;
+	}
+
 private:
 	World& world_;
 

@@ -27,3 +27,8 @@ bool Colonized_planet::attack(Colonized_planet *) {
 Faction& Colonized_planet::get_faction() {
 	return faction_;
 }
+
+void Colonized_planet::run() {
+	faction_.add_to_banque(production_rate_ + colony_production_);
+	colony_defense_ = (double)((int)(colony_defense_ + 1.0) % 20);
+}

@@ -8,5 +8,5 @@ Virtual_planet::Virtual_planet(World& world, unsigned pos_x, unsigned pos_y):
 }
 
 void Virtual_planet::run() {
-
+	//Non utilisé
 }

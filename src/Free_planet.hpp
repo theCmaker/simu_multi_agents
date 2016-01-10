@@ -17,6 +17,8 @@ public:
 	Mother_land* convert_to_mother_land();
 	Colonized_planet* convert_to_colony();
 
+	void run();
+
 private:
   std::list<Virtual_planet* > neighbourhood_;
 };

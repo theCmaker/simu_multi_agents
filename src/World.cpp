@@ -52,10 +52,8 @@ void World::scheduler() {
 	}
 
 	for (vector<Colonized_planet*>::iterator it = waiting_agents_.begin(); it != waiting_agents_.end(); it++) {
-		Colonized_planet* cur = (*it);
-		cur->run();
+		(*it)->run();
   }
-
 }
 
 void World::display() {
