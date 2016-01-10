@@ -6,3 +6,7 @@ Virtual_planet::Virtual_planet(World& world, unsigned pos_x, unsigned pos_y):
 	production_rate_ = (double)(world_.gen_mt() % 20);
 	natural_defense_ = (double)(world_.gen_mt() % 20);
 }
+
+void Virtual_planet::run() {
+
+}

@@ -5,6 +5,7 @@
 #include <vector>
 #include <list>
 #include <random>
+#include <algorithm>    // std::random_shuffl
 
 #include "Virtual_planet.hpp"
 #include "Colonized_planet.hpp"

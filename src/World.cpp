@@ -33,18 +33,29 @@ World::~World() {
 }
 
 time_h World::start(){
-    while(factions_.size()>1){ //While there is no peace in the galaxy
-        scheduler();
-        ++steps_;
-    }
-		return (time_h());
+		while (factions_.size() > 1) { //While there is no peace in the galaxy
+			scheduler();
+			++steps_;
+		}
+		return steps_;
 }
 
 void World::scheduler() {
-    for (std::list<Faction>::iterator i = factions_.begin(); i != factions_.end(); ++i) {
-			i->run();
-    }
-    waiting_agents_.swap(already_run_agents_); 
+	
+	vector<Faction> factions_copy(factions_.begin(), factions_.end());
+
+	random_shuffle(factions_copy.begin(), factions_copy.end());
+	random_shuffle(waiting_agents_.begin(), waiting_agents_.end());
+		
+	for (vector<Faction>::iterator it = factions_copy.begin(); it != factions_copy.end(); it++ ) {
+		it->run();
+	}
+
+	for (vector<Colonized_planet*>::iterator it = waiting_agents_.begin(); it != waiting_agents_.end(); it++) {
+		Colonized_planet* cur = (*it);
+		cur->run();
+  }
+
 }
 
 void World::display() {
