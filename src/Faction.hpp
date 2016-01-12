@@ -4,9 +4,9 @@
 #include <string>
 #include <list>
 
+class World;
 class Mother_land;
 class Colonized_planet;
-class World;
 
 class Faction
 {
@@ -28,6 +28,10 @@ public:
 
 	void add_to_banque(double adding_money) {
 		money_ += adding_money;
+	}
+
+	bool operator== (Faction &other) {
+		return this->name_ == other.name_;
 	}
 
 private:

@@ -18,9 +18,10 @@ public:
 	Colonized_planet* convert_to_colony();
 
 	void run();
+	bool is_attacked(Virtual_planet *);
 
 private:
-  std::list<Virtual_planet* > neighbourhood_;
+  
 };
 
 #endif

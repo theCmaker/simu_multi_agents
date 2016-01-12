@@ -20,11 +20,11 @@ void Free_planet::set_neighbourhood() {
 	for (int i=-1;i<1;i++){
 		for(int j=-1;j<1;j++){
 			dosmth=true;
-			if(pos_x_+i<0 || pos_y_+j<0){
+			if(((int)pos_x_)+i<0 || ((int)pos_y_)+j<0){
 				dosmth=false;
 			}
 			
-			if(pos_x_+i>=world.len() || pos_y_+j>=world.hei()){
+			if(pos_x_+i >= world_.len() || pos_y_+j >=world_.hei()){
 				dosmth=false;
 			}
 			
@@ -33,7 +33,7 @@ void Free_planet::set_neighbourhood() {
 			}
 			
 			if(dosmth){
-				neighbourhood_.push_back(world_.get_grid(pos_x_ + i, pos_y_ + j));
+				neighbourhood_.push_back(world_.get_grid(((int)pos_x_) + i, ((int)pos_y_) + j));
 			}
 		}
 	}
@@ -42,4 +42,8 @@ void Free_planet::set_neighbourhood() {
 
 void Free_planet::run() {
 
+}
+
+bool Free_planet::is_attacked(Virtual_planet *) {
+	return true;
 }

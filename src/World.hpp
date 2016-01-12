@@ -26,6 +26,7 @@ public:
 	void display();			//Display at a time X
 
 	int gen_mt();
+  int gen_mt(int a, int b);
 
 	//Getter/setter 
 	Virtual_planet* get_grid(unsigned x, unsigned y);

@@ -77,6 +77,10 @@ int World::gen_mt() {
 	return gen_mt_();
 }
 
+int World::gen_mt(int a, int b) {
+	return a + (gen_mt_() / (double)gen_mt_.max())*(b-a);
+}
+
 Virtual_planet* World::get_grid(unsigned x, unsigned y) {
 	return grid_[x][y];
 }
