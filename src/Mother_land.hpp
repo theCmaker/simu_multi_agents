@@ -6,12 +6,8 @@
 class Mother_land : public Colonized_planet
 {
 public:
- // Mother_land();
-	Mother_land(Mother_land&);
   Mother_land(Free_planet *,Faction&);
 	~Mother_land() {};
-
-private:
 };
 
 #endif

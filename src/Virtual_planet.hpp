@@ -24,7 +24,7 @@ public:
 	void update_neighbourhood(Virtual_planet *,Virtual_planet *); //update changes to neighbourhood when planet is attacked.
 
   void run();
-	Faction get_faction() { return Faction(world_, "neutre"); }		//Créé une faction neutre ?
+	virtual Faction& get_faction() { return faction_neutre_;  }
 
 	unsigned pos_x() { return pos_x_; }
 	unsigned pos_y() { return pos_y_; }
@@ -43,6 +43,9 @@ protected:
   double production_rate_;	// 0 to 20
   double natural_defense_;	// 0 to 20
 
+private:
+	//Faction neutre
+	Faction faction_neutre_;
 };
 
 #endif

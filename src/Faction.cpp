@@ -4,23 +4,20 @@
 #include "Faction.hpp"
 
 
-Faction::Faction(World& world, std::string name):
-	world_(world), 
-	name_(name), 
-	money_(0)
+
+Faction::Faction(World& world, std::string name, Mother_land* mother_land) :
+	world_(world),
+	name_(name),
+	money_(0),
+	motherland_(mother_land),
+	colonies_(std::list<Colonized_planet>())
 {
-	colonies_ = std::list<Colonized_planet>();
-	//Find the mother_land
-	unsigned x = world_.gen_mt() % world_.len();
-	unsigned y = world_.gen_mt() % world_.hei();
-
-	/*WARNING : WHAT HAPPENS IF THE PLANET ISNT FREE? */
-
-	//Creation of motherland
-	motherland_ = new Mother_land((Free_planet*)world_.get_grid(x, y),*this);
-	world_.set_grid(motherland_, x, y);
 }
 
-std::string Faction::get_name() {
-	return name_;
+void Faction::init() {
+	unsigned x = world_.gen_mt() % world_.len();
+	unsigned y = world_.gen_mt() % world_.hei();
+	motherland_ = new Mother_land((Free_planet*)world_.get_grid(x, y), *this);
+
+	world_.set_grid(motherland_, x, y);
 }

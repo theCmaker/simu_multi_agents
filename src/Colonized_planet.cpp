@@ -2,14 +2,20 @@
 #include "World.hpp"
 
 Colonized_planet::Colonized_planet(World& world, unsigned pos_x, unsigned pos_y, Faction& fac) :
-	Virtual_planet(world, pos_x, pos_y), faction_(fac) {}
+	Virtual_planet(world, pos_x, pos_y), faction_(fac) {
+	//On ajoute colonized planet au waiting agent
+	world_.add_waiting_agent(this);
+}
 
 Colonized_planet::Colonized_planet(Free_planet * fp, Faction& faction) :
 	Virtual_planet((Virtual_planet) *fp),
 	colony_defense_(0),
 	colony_production_(0),
 	faction_(faction)
-	{}
+	{
+		//On ajoute colonized planet au waiting agent
+		world_.add_waiting_agent(this);
+}
 
 bool Colonized_planet::attack(Free_planet *victim) {
 	bool res = victim->is_attacked(this);

@@ -7,6 +7,10 @@
 #include <random>
 #include <algorithm>    // std::random_shuffl
 
+#include <chrono>
+#include <thread>
+
+#include "Mother_land.hpp"
 #include "Virtual_planet.hpp"
 #include "Colonized_planet.hpp"
 #include "Faction.hpp"
@@ -34,7 +38,12 @@ public:
 	unsigned len() const { return len_; }
 	unsigned hei() const { return hei_; }
 
+	void add_waiting_agent(Colonized_planet*);
+	void remove_waiting_agent(Colonized_planet*);
+
 private:
+	bool DEBUG = true;
+
   //private methods
 	void generate_world();
 
