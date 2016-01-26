@@ -31,6 +31,7 @@ public:
 
 	int gen_mt();
   int gen_mt(int a, int b);
+	int gen_mt_shuffle(int i);
 
 	//Getter/setter 
 	Virtual_planet* get_grid(unsigned x, unsigned y);
@@ -41,6 +42,9 @@ public:
 	void add_waiting_agent(Colonized_planet*);
 	void remove_waiting_agent(Colonized_planet*);
 
+	Faction& get_neutral_faction();
+
+	void kill_faction(Faction&);
 private:
 	bool DEBUG = true;
 
@@ -66,6 +70,8 @@ private:
 	//mt
 	std::mt19937& gen_mt_;
 
+	//Faction neutre
+	Faction neutral_faction_;
 };
 
 #endif

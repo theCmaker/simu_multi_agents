@@ -6,7 +6,7 @@
 class Mother_land : public Colonized_planet
 {
 public:
-  Mother_land(Virtual_planet& ,Faction&);
+  Mother_land(Virtual_planet* ,Faction&);
 	~Mother_land() {};
 
   char display() { return faction_.get_motherland_symbol(); }

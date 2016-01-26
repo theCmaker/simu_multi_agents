@@ -11,7 +11,7 @@ class Colonized_planet;
 class Faction
 {
 private:
-	World& world_;
+	World&											world_;
 
 	std::string									name_;
 	double											money_;
@@ -28,13 +28,16 @@ public:
 	Faction(World& world, std::string name = "default", Mother_land* = nullptr );	//Create a faction and convert a free planete into a mother land
 	~Faction() {}
 
-	void run() {}
+	void run();
 	void init();
 
 
-	Faction& operator= (Faction&) {return *this;}
+//	Faction& operator= (Faction&) {return *this;}
   Faction& operator= (Faction) {return *this;}
-	bool operator== (Faction &other) {return this->name_ == other.name_;}
+
+	bool operator== (const Faction &other) const {return this->name_ == other.name_;}
+	bool operator== (Faction &other) { return this->name_ == other.name_; }
+
 
 	/*Faction& operator= (Faction) {
 		return *this;

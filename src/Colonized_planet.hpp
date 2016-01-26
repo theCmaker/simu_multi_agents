@@ -9,7 +9,7 @@ public:
   
   //Colonized_planet(const Colonized_planet &);
   Colonized_planet(World &, unsigned, unsigned, Faction&);
-  Colonized_planet(Virtual_planet &, Faction&);							//Transfome une free en colonise
+  Colonized_planet(Virtual_planet *, Faction&);							//Transfome une free en colonise
 	~Colonized_planet() {};
 
   /*bool attack(Free_planet *); //Bool: success
