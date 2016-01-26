@@ -12,7 +12,6 @@ public:
   Free_planet(World &, unsigned, unsigned);
 	~Free_planet() {};
 
-	void set_neighbourhood();	//generate neightbourhood
 
 	Mother_land* convert_to_mother_land();
 	Colonized_planet* convert_to_colony();

@@ -17,7 +17,7 @@ Faction::Faction(World& world, std::string name, Mother_land* mother_land) :
 void Faction::init() {
 	unsigned x = world_.gen_mt() % world_.len();
 	unsigned y = world_.gen_mt() % world_.hei();
-	motherland_ = new Mother_land((Free_planet*)world_.get_grid(x, y), *this);
+	motherland_ = new Mother_land(*world_.get_grid(x, y), *this);
 
 	world_.set_grid(motherland_, x, y);
 }

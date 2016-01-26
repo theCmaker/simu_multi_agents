@@ -16,20 +16,27 @@ class World;
 class Virtual_planet
 {
 public:
+	
+
   Virtual_planet(World&, unsigned, unsigned);		//Creation of random stat
+  Virtual_planet(const Virtual_planet&);
 	//Virtual_planet(const Virtual_planet&);				//Copy
 	virtual ~Virtual_planet() {};
 
 	void set_neighbourhood();	//generate neighbourhood
 	void update_neighbourhood(Virtual_planet *,Virtual_planet *); //update changes to neighbourhood when planet is attacked.
 
+  virtual char display() { return '.'; }
   void run();
 	virtual Faction& get_faction() { return faction_neutre_;  }
 
 	unsigned pos_x() { return pos_x_; }
 	unsigned pos_y() { return pos_y_; }
 	World& world() { return world_; }
-	virtual bool is_attacked(Virtual_planet *) { throw new std::exception(); return false;}
+	virtual bool is_attacked(Virtual_planet *) {return false; };
+	
+	/*virtual bool attack(Virtual_planet *) = 0; */
+	
 	std::vector<Virtual_planet* > neighbourhood() { return neighbourhood_ ; }
 
 protected:

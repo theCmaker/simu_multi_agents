@@ -2,8 +2,11 @@
 
 World::World(std::mt19937& gen_mt, unsigned len, unsigned hei):
 grid_(),
-factions_(),waiting_agents_(),already_run_agents_(),
-len_(len), hei_(hei),
+factions_(),
+waiting_agents_(),
+already_run_agents_(),
+len_(len),
+hei_(hei),
 gen_mt_(gen_mt)
 {
 	for (unsigned i = 0;i < len_;i++) {
@@ -15,25 +18,31 @@ gen_mt_(gen_mt)
 
 	for (unsigned i = 0;i < len_;i++) {
 		for (unsigned j = 0; j < hei_;j++) {
-			((Free_planet*)grid_[i][j])->set_neighbourhood();
+			grid_[i][j]->set_neighbourhood();
 		}
 	}
+
 
 	//Creation of two initial factions
 
 	factions_.push_back(Faction(*this,"Red"));
 	factions_.back().init();
+	factions_.back().set_motherland_symbol('R');
+	factions_.back().set_colony_symbol('r');
 	Faction& red = factions_.back();
 
 	factions_.push_back(Faction(*this, "Blue"));
 	factions_.back().init();
+	factions_.back().set_motherland_symbol('B');
+	factions_.back().set_colony_symbol('b');
 	Faction& blue = factions_.back();
 
 	if (DEBUG) {
 		cout << "Red on :\t (" << red.get_motherland_()->pos_x() << "," << red.get_motherland_()->pos_y() << ")" << endl;
 		cout << "Blue on :\t (" << blue.get_motherland_()->pos_x() << "," << blue.get_motherland_()->pos_y() << ")" << endl;
 	}
-
+	
+	//factions_.back().get_motherland_()->
 }
 
 World::~World() {
@@ -56,19 +65,26 @@ time_h World::start(){
 void World::scheduler() {
 	
 	vector<Faction> factions_copy(factions_.begin(), factions_.end());
-
+	
+	unsigned size=waiting_agents_.size();
+	
+	//Toujours le meme shuffle, le tirage des factions ne changent pas
 	random_shuffle(factions_copy.begin(), factions_copy.end());
 	random_shuffle(waiting_agents_.begin(), waiting_agents_.end());
-		
-	for (vector<Faction>::iterator it = factions_copy.begin(); it != factions_copy.end(); it++ ) {
-		if (DEBUG) cout << it->get_name() << " played !" << endl;
-		it->run();
-	}
 
-	for (vector<Colonized_planet*>::iterator it = waiting_agents_.begin(); it != waiting_agents_.end(); it++) {
-		if (DEBUG) cout << "(" << (*it)->pos_x() << "," << (*it)->pos_y() << ") played !" << endl;
-		(*it)->run();
+  
+  for (unsigned i =0; i<factions_copy.size();i++){
+	  if (DEBUG) cout << factions_copy[i].get_name() << " played !" << endl;
+		factions_copy[i].run();
   }
+    cout<<"scheduler"<<endl;
+
+  for (unsigned i =0; i<size;i++){
+	  if (DEBUG) cout << "(" << waiting_agents_[i]->pos_x() << "," << waiting_agents_[i]->pos_y() << ") played !" << endl;
+		waiting_agents_[i]->run();
+  }
+  
+  cout<<"scheduler"<<endl;
 }
 
 void World::display() {
@@ -82,10 +98,11 @@ void World::display() {
 		for (unsigned j = 0;j < len();j++) {
 			/*cout << "|";*/
 
-			Faction faction = get_grid(j, i)->get_faction();
-			if (faction.get_name() == "Red") cout << "R";
+			//Faction faction = get_grid(j, i)->get_faction();
+      cout << get_grid(j,i)->display();
+			/*if (faction.get_name() == "Red") cout << "R";
 			else if (faction.get_name() == "Blue") cout << "B";
-			else cout << "N";
+			else cout << "N";*/
 
 			cout << "|";
 		}
@@ -95,7 +112,7 @@ void World::display() {
 	cout << endl <<endl;
 
 	cout << "Stats faction :" << endl;
-	for each(Faction faction in factions_) {
+	for(Faction faction : factions_) {
 		cout << "Name :" << faction.get_name() << endl;
 		cout << "Money : " << faction.get_money() << endl;
 		cout << "----------------------------" << endl;
