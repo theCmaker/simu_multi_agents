@@ -16,9 +16,11 @@ private:
 	std::string									name_;
 	double											money_;
 	Mother_land								*	motherland_;
-	std::list<Colonized_planet> colonies_;
+	std::list<Colonized_planet*> colonies_;
   char                        colony_symbol_;                      
   char                        motherland_symbol_;
+
+	std::list<std::pair<Colonized_planet*, double> > demands_;
 
 	//private methods
 	void loose();
@@ -49,13 +51,16 @@ public:
   char          get_motherland_symbol() { return motherland_symbol_;}
   char          get_colony_symbol() { return colony_symbol_;}
 	Mother_land*  get_motherland_() {return motherland_;}
-	std::list<Colonized_planet> & get_colonies() {return colonies_;}
+	std::list<Colonized_planet*> & get_colonies() {return colonies_;}
 
-	void add_colony(Colonized_planet& colony) {colonies_.push_back(colony);}
+	void add_colony(Colonized_planet* colony) {colonies_.push_back(colony);}
+	void remove_colony(Colonized_planet* colony);
+	void destroy_motherland() { motherland_ = nullptr; }
   void add_to_banque(double adding_money) {money_ += adding_money;}
 
   void set_colony_symbol(char c) { colony_symbol_ = c;}
   void set_motherland_symbol(char c) { motherland_symbol_ = c;}
+	void add_demand(Colonized_planet*, double);
 };
 
 #endif

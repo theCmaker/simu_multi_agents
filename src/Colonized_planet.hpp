@@ -12,23 +12,32 @@ public:
   Colonized_planet(Virtual_planet *, Faction&);							//Transfome une free en colonise
 	~Colonized_planet() {};
 
-  /*bool attack(Free_planet *); //Bool: success
-  bool attack(Colonized_planet *);*/
-  bool attack(Virtual_planet *);
+	void update_neighbourhood(Virtual_planet *, Virtual_planet *); //update changes to neighbourhood when planet is attacked.
+  bool attack(Virtual_planet *);		//bool : success
+	virtual bool is_attacked(Virtual_planet *);
 
 	//Free_planet* convert_to_free_planet();
 
 	Faction& get_faction();
+	double get_defense();
+	Virtual_planet* get_target() { return target_; }
+
+	void demand_to_faction(double);									//Execute a demande of money
+	double estimate_cost(Virtual_planet*);		//Estimate the cost of a colonization (and attack)
+	void add_to_budget(double);
+	void reinitialisate_target();
 
   char display() { return faction_.get_colony_symbol(); }
 	void run();
-
-  bool is_attacked(Virtual_planet *);
 
 protected:
   double colony_defense_;
   double colony_production_;
 	Faction& faction_;
+
+	Virtual_planet* target_;
+	double budget_;	//current money
+	double demand_;	//Estimate cost
 };
 
 #endif

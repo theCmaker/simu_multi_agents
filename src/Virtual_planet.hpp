@@ -25,7 +25,7 @@ public:
 
 	void set_neighbourhood();	//generate neighbourhood
 	void set_neighbourhood2();
-	void update_neighbourhood(Virtual_planet *,Virtual_planet *); //update changes to neighbourhood when planet is attacked.
+	virtual void update_neighbourhood(Virtual_planet *,Virtual_planet *); //update changes to neighbourhood when planet is attacked.
 
   virtual char display() { return '.'; }
   void run();
@@ -39,6 +39,8 @@ public:
 	/*virtual bool attack(Virtual_planet *) = 0; */
 	
 	std::vector<Virtual_planet* > get_neighbourhood() { return neighbourhood_ ; }
+	virtual double get_defense() { return natural_defense_; }
+	virtual void reinitialisate_target(){}
 
 protected:
 

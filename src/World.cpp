@@ -1,13 +1,12 @@
 #include "World.hpp"
 
-World::World(std::mt19937& gen_mt, unsigned len, unsigned hei):
+World::World(unsigned len, unsigned hei):
 grid_(),
 factions_(),
 waiting_agents_(),
 already_run_agents_(),
 len_(len),
 hei_(hei),
-gen_mt_(gen_mt),
 neutral_faction_(*this,"Neutral")
 {
 	for (unsigned i = 0;i < len_;i++) {
@@ -69,9 +68,9 @@ void World::scheduler() {
 	
 	unsigned size=waiting_agents_.size();
 	
-	//Toujours le meme shuffle, le tirage des factions ne changent pas
-	random_shuffle(factions_copy.begin(), factions_copy.end());
-	random_shuffle(waiting_agents_.begin(), waiting_agents_.end());
+	//TODO bug -> toujours meme ordre de faction
+	random_shuffle(factions_copy.begin(), factions_copy.end(),gen_mt_shuffle);
+	random_shuffle(waiting_agents_.begin(), waiting_agents_.end(), gen_mt_shuffle);
 
   
   for (unsigned i =0; i<factions_copy.size();i++){
@@ -118,7 +117,7 @@ void World::display() {
 	}
 	cout << endl << endl;
 
-	std::this_thread::sleep_for(std::chrono::milliseconds(1000));	//wait a second
+	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));	//wait a second
 }
 
 void World::add_waiting_agent(Colonized_planet* colonized_planet) {
@@ -146,7 +145,7 @@ int World::gen_mt_shuffle(int i) {
 
 
 int World::gen_mt(int a, int b) {
-	return a + (int)(abs((int)gen_mt_()) / (double)gen_mt_.max())*(b-a);
+	return a + (int)(abs((int)gen_mt_())%(b - a + 1));
 }
 
 Virtual_planet* World::get_grid(unsigned x, unsigned y) {
@@ -160,3 +159,5 @@ void World::set_grid(Virtual_planet* planet, unsigned x, unsigned y) {
 Faction& World::get_neutral_faction() {
 	return neutral_faction_;
 }
+
+std::mt19937 World::gen_mt_;

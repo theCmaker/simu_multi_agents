@@ -10,6 +10,7 @@ public:
 	~Mother_land() {};
 
   char display() { return faction_.get_motherland_symbol(); }
+	bool is_attacked(Virtual_planet *);
 };
 
 #endif

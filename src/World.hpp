@@ -21,7 +21,7 @@ typedef unsigned time_h; /* Simulation time */
 class World
 {
 public:
-  World(std::mt19937&, unsigned len=20, unsigned hei=20);
+  World(unsigned len=20, unsigned hei=20);
 	~World();
 
   time_h start();			//return duration of simulation
@@ -29,9 +29,9 @@ public:
 
 	void display();			//Display at a time X
 
-	int gen_mt();
-  int gen_mt(int a, int b);
-	int gen_mt_shuffle(int i);
+	static int gen_mt();
+	static int gen_mt(int a, int b);
+	static int gen_mt_shuffle(int i);
 
 	//Getter/setter 
 	Virtual_planet* get_grid(unsigned x, unsigned y);
@@ -68,7 +68,7 @@ private:
   unsigned hei_;
 
 	//mt
-	std::mt19937& gen_mt_;
+	static std::mt19937 gen_mt_;
 
 	//Faction neutre
 	Faction neutral_faction_;

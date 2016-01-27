@@ -7,8 +7,7 @@
 
 int main(int, char **) 
 {
-	std::mt19937 mt;
-	World w1(mt);
+	World w1;
 	w1.start();
 	return 0;
 }
