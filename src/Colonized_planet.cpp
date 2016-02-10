@@ -3,6 +3,7 @@
 
 Colonized_planet::Colonized_planet(World& world, unsigned pos_x, unsigned pos_y, Faction& fac) :
 	Virtual_planet(world, pos_x, pos_y), faction_(fac), target_(nullptr){
+	std::cout << "Test ----------------------------------" << std::endl;
 	//On ajoute colonized planet au waiting agent et a la liste de colonies de la faction
 	world_.add_waiting_agent(this);
 	faction_.add_colony(this);
@@ -62,7 +63,7 @@ bool Colonized_planet::is_attacked(Virtual_planet *attacker) {
 		res = false;
 	}
 	//On supprime l'agent de la liste d'attente puiqu'il va etre elimine ainsi que de sa faction
-	if (res = true) {
+	if (res == true) {
 		world_.remove_waiting_agent(this);
 		faction_.remove_colony(this);
 	}
@@ -160,7 +161,7 @@ void Colonized_planet::run() {
 			}
 			break;
 		default:
-			throw exception("Bad random number");
+			throw std::exception(/*"Bad random number"*/);
 			break;
   }	
   faction_.add_to_banque(production_rate_ + colony_production_);

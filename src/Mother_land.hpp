@@ -2,6 +2,7 @@
 #define __MOTHER_LAND_H__
 
 #include "Colonized_planet.hpp"
+#include "World.hpp"
 
 class Mother_land : public Colonized_planet
 {

@@ -11,6 +11,7 @@ class Free_planet : public Virtual_planet
 public:
   Free_planet(World &, unsigned, unsigned);
 	~Free_planet() {};
+	Free_planet(Colonized_planet *);
 
 
 	Mother_land* convert_to_mother_land();

@@ -46,6 +46,7 @@ void Virtual_planet::set_neighbourhood2() {
 
 void Virtual_planet::set_neighbourhood() {
 	bool dosmth;
+	neighbourhood_.clear();
 	for (int i = -1;i<=1;i++) {
 		for (int j = -1;j<=1;j++) {
 			dosmth = true;
@@ -75,9 +76,15 @@ void Virtual_planet::update_neighbourhood(Virtual_planet *old_one,Virtual_planet
 }
 
 void Virtual_planet::run() {
-	//Non utilisé
+	//Non utilisÃ©
 }
 
 Faction& Virtual_planet::get_faction() {
 	return world_.get_neutral_faction();
+}
+
+
+std::ostream & operator<< (std::ostream &o, Virtual_planet &vp) {
+	o << "Planet at (" << vp.pos_x() <<  ',' << vp.pos_y() << ") of faction " << vp.get_faction().get_name();
+	return o;
 }

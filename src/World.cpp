@@ -130,9 +130,11 @@ void World::remove_waiting_agent(Colonized_planet* colonized_planet) {
 }
 
 
-void World::kill_faction(Faction& faction) {
+void World::remove_faction(Faction& faction) {
+	std::cout << "suppression definitive de la faction " << faction.get_name() << std::endl;
 	std::list<Faction>::iterator itr = std::find(factions_.begin(), factions_.end(), faction);
 	factions_.erase(itr);
+	this->display();
 }
 
 int World::gen_mt() {

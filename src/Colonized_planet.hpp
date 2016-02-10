@@ -13,7 +13,7 @@ public:
 	~Colonized_planet() {};
 
 	void update_neighbourhood(Virtual_planet *, Virtual_planet *); //update changes to neighbourhood when planet is attacked.
-  bool attack(Virtual_planet *);		//bool : success
+		bool attack(Virtual_planet *);		//bool : success
 	virtual bool is_attacked(Virtual_planet *);
 
 	//Free_planet* convert_to_free_planet();
@@ -29,6 +29,7 @@ public:
 
   char display() { return faction_.get_colony_symbol(); }
 	void run();
+
 
 protected:
   double colony_defense_;

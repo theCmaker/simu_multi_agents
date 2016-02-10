@@ -44,7 +44,7 @@ public:
 
 	Faction& get_neutral_faction();
 
-	void kill_faction(Faction&);
+	void remove_faction(Faction&);
 private:
 	bool DEBUG = true;
 

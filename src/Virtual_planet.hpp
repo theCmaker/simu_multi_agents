@@ -56,4 +56,6 @@ protected:
 private:
 };
 
+std::ostream & operator<< (std::ostream &o, Virtual_planet &vp);
+
 #endif
