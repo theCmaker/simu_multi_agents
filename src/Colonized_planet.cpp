@@ -97,8 +97,8 @@ void Colonized_planet::reinitialisate_target() {
 }
 
 
-void Colonized_planet::run() {
-	bool found_victim;
+bool Colonized_planet::run() {
+	bool found_victim,had_killed=false;
 	unsigned i;
 
 	int random_number = World::gen_mt(0, 1);;
@@ -155,7 +155,7 @@ void Colonized_planet::run() {
 				//attack
 				if (budget_ >= target_->get_defense()) {
 					budget_ -= target_->get_defense();
-					attack(target_);
+					had_killed = attack(target_);
 				}
 				target_ = nullptr;
 			}
@@ -166,6 +166,7 @@ void Colonized_planet::run() {
   }	
   faction_.add_to_banque(production_rate_ + colony_production_);
   
+	return had_killed;
 //	colony_defense_ = (double)((int)(colony_defense_ + 1.0));
 	//World::gen_mt()
 }

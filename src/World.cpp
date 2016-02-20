@@ -66,7 +66,6 @@ void World::scheduler() {
 	
 	vector<Faction> factions_copy(factions_.begin(), factions_.end());
 	
-	unsigned size=waiting_agents_.size();
 	
 	//TODO bug -> toujours meme ordre de faction
 	random_shuffle(factions_copy.begin(), factions_copy.end(),gen_mt_shuffle);
@@ -74,15 +73,14 @@ void World::scheduler() {
 
   
   for (unsigned i =0; i<factions_copy.size();i++){
-	  if (DEBUG) cout << factions_copy[i].get_name() << " played !" << endl;
+	//  if (DEBUG) cout << factions_copy[i].get_name() << " played !" << endl;
 		factions_copy[i].run();
   }
-
-  for (unsigned i =0; i<size;i++){
-	  if (DEBUG) cout << "(" << waiting_agents_[i]->pos_x() << "," << waiting_agents_[i]->pos_y() << ") played !" << endl;
+	
+  for (unsigned i =0; i< waiting_agents_.size();i++){
+//	  if (DEBUG) cout << "(" << waiting_agents_[i]->pos_x() << "," << waiting_agents_[i]->pos_y() << ") played !" << endl;
 		waiting_agents_[i]->run();
   }
-  
 }
 
 void World::display() {

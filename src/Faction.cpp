@@ -18,12 +18,16 @@ Faction::~Faction() {}
 void Faction::kill(Faction & new_owner) {
 	std::cout << "Faction " << name_ << " is about to be deleted." << std::endl;
 	std::vector<Virtual_planet*> new_free_planets = std::vector<Virtual_planet*>();
+
 	new_free_planets.push_back(new Colonized_planet(motherland_,new_owner));
+
 	for (unsigned i = 0; i < new_free_planets.back()->get_neighbourhood().size(); ++i) {
 		std::cout << *(new_free_planets.back()->get_neighbourhood()[i]) << std::endl;
 	}
+
 	world_.set_grid(new_free_planets.back(),motherland_->pos_x(),motherland_->pos_y());
 	std::list<Colonized_planet*>::iterator i = colonies_.begin();
+
 	while(i != colonies_.end()) {
 		//mise à jour des voisins
 		std::cout << "Old planet: " << **i << " going to be replaced." << std::endl;
@@ -33,18 +37,14 @@ void Faction::kill(Faction & new_owner) {
 		world_.set_grid(vp,(*i)->pos_x(),(*i)->pos_y());
 		i++;
 	}
+
 	std::cout << "" << std::endl << std::endl;
 	std::vector<Virtual_planet *>::iterator j = new_free_planets.begin();
 	while (j != new_free_planets.end()) {
-		/*(*j)->set_neighbourhood();*/
 		for (unsigned i = 0; i < (*j)->get_neighbourhood().size(); ++i) {
 			std::cout << "Mise a jour des voisins sur " << *((*j)->get_neighbourhood()[i]) << std::endl;
 			(*j)->get_neighbourhood()[i]->set_neighbourhood();
 		}
-		/*
-		for (std::vector<Virtual_planet* >::iterator neighbour = (*j)->get_neighbourhood().begin(); neighbour != (*j)->get_neighbourhood().end(); ++neighbour) {
-			(*neighbour)->set_neighbourhood();
-		}*/
 		++j;
 	}
 	i = colonies_.begin();
