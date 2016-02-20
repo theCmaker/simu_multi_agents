@@ -15,59 +15,51 @@ Faction::Faction(World& world, std::string name, Mother_land* mother_land) :
 
 Faction::~Faction() {}
 
-void Faction::kill(Faction & new_owner) {
-	std::cout << "Faction " << name_ << " is about to be deleted." << std::endl;
-	std::vector<Virtual_planet*> new_free_planets = std::vector<Virtual_planet*>();
+void Faction::remove_colony(Colonized_planet* colony) {
+	std::list<Colonized_planet*>::iterator itr = std::find(colonies_.begin(), colonies_.end(), colony);
+	if (itr != colonies_.end()) {
+		colonies_.erase(itr);
+	}
+}
 
-	new_free_planets.push_back(new Colonized_planet(motherland_,new_owner));
+void Faction::remove_mother_land(){
+	std::list<Colonized_planet*>::iterator itr = std::find(colonies_.begin(), colonies_.end(), motherland_);
+	if (itr != colonies_.end()) {
+		colonies_.erase(itr);
+	}
+	motherland_ = nullptr;
+}
 
-	for (unsigned i = 0; i < new_free_planets.back()->get_neighbourhood().size(); ++i) {
-		std::cout << *(new_free_planets.back()->get_neighbourhood()[i]) << std::endl;
+void Faction::die() {
+	cout << "Faction " << name_ << " is about to be deleted." << endl;
+	
+	// convertion dans la grille de jeu
+	for (list<Colonized_planet*>::iterator it = colonies_.begin(); it != colonies_.end(); it++){
+		(*it)->convert_to_free_planet();
 	}
 
-	world_.set_grid(new_free_planets.back(),motherland_->pos_x(),motherland_->pos_y());
-	std::list<Colonized_planet*>::iterator i = colonies_.begin();
-
-	while(i != colonies_.end()) {
-		//mise à jour des voisins
-		std::cout << "Old planet: " << **i << " going to be replaced." << std::endl;
-		new_free_planets.push_back(new Free_planet(*i));
-		Virtual_planet * vp = new_free_planets.back();
-		std::cout << "New planet: " << *vp << " has been created." << std::endl;
-		world_.set_grid(vp,(*i)->pos_x(),(*i)->pos_y());
-		i++;
-	}
-
-	std::cout << "" << std::endl << std::endl;
-	std::vector<Virtual_planet *>::iterator j = new_free_planets.begin();
-	while (j != new_free_planets.end()) {
-		for (unsigned i = 0; i < (*j)->get_neighbourhood().size(); ++i) {
-			std::cout << "Mise a jour des voisins sur " << *((*j)->get_neighbourhood()[i]) << std::endl;
-			(*j)->get_neighbourhood()[i]->set_neighbourhood();
+	// mise a jour du voisinage
+	for (list<Colonized_planet*>::iterator it = colonies_.begin(); it != colonies_.end(); it++) {
+		(*it)->set_neighbourhood(); //on va cherche les voisins sur la grille
+		for (unsigned i = 0;i<(*it)->get_neighbourhood().size();i++) {
+			(*it)->get_neighbourhood()[i]->set_neighbourhood();	//on met a jour les dits voisins
 		}
-		++j;
 	}
-	i = colonies_.begin();
-	while(i != colonies_.end()) {
+
+	// suppression des colonies
+	list<Colonized_planet*>::iterator it = colonies_.begin();
+	while (it != colonies_.end())
+	{
 		//suppression dans l'ordonnanceur
-		world_.remove_waiting_agent(*i);
+		world_.remove_waiting_agent(*it);
+		
 		//suppression des colonies
-		remove_colony(*i);
-		i = colonies_.begin();
+		colonies_.erase(it++);
 	}
-	world_.remove_waiting_agent(motherland_);
 	std::cout << name_ << std::endl;
+	world_.remove_faction(this);
 	world_.display();
 }
-/*
-Faction & Faction::operator= (Faction & f) {
-	world_ = f.world_;
-	name_ = f.name_;
-	money_ = f.money_;
-	motherland_ = f.motherland_;
-	return *this;
-}
-*/
 
 void Faction::init() {
 	unsigned x = World::gen_mt() % world_.len();
@@ -80,7 +72,7 @@ void Faction::init() {
 void Faction::run() {
 	if (motherland_ == nullptr) {
 		//Loose
-		throw new std::exception();
+		die();
 	} else {
 		//Give money to colonies
 		for (list<pair<Colonized_planet*,double> >::iterator itr = demands_.begin(); itr != demands_.end();itr++) {
@@ -89,13 +81,6 @@ void Faction::run() {
 				itr->first->add_to_budget(itr->second);
 			}
 		}
-	}
-}
-
-void Faction::remove_colony(Colonized_planet* colony) {
-	std::list<Colonized_planet*>::iterator itr = std::find(colonies_.begin(), colonies_.end(), colony);
-	if (itr != colonies_.end()) {
-		colonies_.erase(itr);
 	}
 }
 

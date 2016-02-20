@@ -34,7 +34,7 @@ public:
 	unsigned pos_x() { return pos_x_; }
 	unsigned pos_y() { return pos_y_; }
 	World& world() { return world_; }
-	virtual bool is_attacked(Virtual_planet *) {return false; };
+	virtual bool is_attacked(Virtual_planet *) {return true; };	//true si planete prise
 	
 	/*virtual bool attack(Virtual_planet *) = 0; */
 	

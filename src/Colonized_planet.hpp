@@ -16,7 +16,7 @@ public:
 	bool attack(Virtual_planet *);		//bool : success
 	virtual bool is_attacked(Virtual_planet *);
 
-	//Free_planet* convert_to_free_planet();
+	void convert_to_free_planet();
 
 	Faction& get_faction();
 	double get_defense();

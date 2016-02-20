@@ -37,25 +37,18 @@ void Colonized_planet::update_neighbourhood(Virtual_planet *old_one, Virtual_pla
 
 bool Colonized_planet::attack(Virtual_planet *victim) {
 	
-	//cout << victim->neighbourhood()[0]->neighbourhood().front()->pos_x() << endl;
 	bool res = victim->is_attacked(this);
 
 	if (res) {
 		Colonized_planet * acquisition = new Colonized_planet(victim,this->get_faction());
-	/*	for (unsigned i=0;i<victim->get_neighbourhood().size();i++){
+		for (unsigned i=0;i<victim->get_neighbourhood().size();i++){
 			victim->get_neighbourhood()[i]->update_neighbourhood(victim,acquisition);
-		}*/
+		}
 		this->world().set_grid(acquisition, victim->pos_x(), victim->pos_y());
 		delete victim;
 	}
 	return true;
 }
-
-/*
-bool Colonized_planet::attack(Colonized_planet *) {
-	return true;
-}
-*/
 
 bool Colonized_planet::is_attacked(Virtual_planet *attacker) {
 	bool res = true;
@@ -68,6 +61,12 @@ bool Colonized_planet::is_attacked(Virtual_planet *attacker) {
 		faction_.remove_colony(this);
 	}
 	return res;
+}
+
+//Transforme la colonie courante en free planete (!! ne supprime pas la colonie et ne met pas a jour le voisinage !!)
+void Colonized_planet::convert_to_free_planet() {
+	Free_planet * new_free_planet = new Free_planet(this);
+	world_.set_grid(new_free_planet, new_free_planet->pos_x(), new_free_planet->pos_y());
 }
 
 void Colonized_planet::demand_to_faction(double cost) {

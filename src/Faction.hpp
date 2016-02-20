@@ -32,7 +32,7 @@ public:
 
 	void run();
 	void init();
-	void kill(Faction &);
+	void die();
 
 
 //	Faction& operator= (Faction&) {return *this;}
@@ -56,6 +56,7 @@ public:
 
 	void add_colony(Colonized_planet* colony) {colonies_.push_back(colony);}
 	void remove_colony(Colonized_planet* colony);
+	void remove_mother_land();
   void add_to_banque(double adding_money) {money_ += adding_money;}
 
   void set_colony_symbol(char c) { colony_symbol_ = c;}
