@@ -2,7 +2,9 @@
 #include "World.hpp"
 
 Colonized_planet::Colonized_planet(World& world, unsigned pos_x, unsigned pos_y, Faction& fac) :
-	Virtual_planet(world, pos_x, pos_y), faction_(fac), target_(nullptr){
+    Virtual_planet(world, pos_x, pos_y), faction_(fac), target_(nullptr),
+    budget_(0),demand_(0)
+{
 	std::cout << "Test ----------------------------------" << std::endl;
 	//On ajoute colonized planet au waiting agent et a la liste de colonies de la faction
 	world_.add_waiting_agent(this);
@@ -14,7 +16,8 @@ Colonized_planet::Colonized_planet(Virtual_planet * fp, Faction& faction) :
 	colony_defense_(0),
 	colony_production_(0),
 	faction_(faction),
-	target_(nullptr)
+    target_(nullptr),
+    budget_(0),demand_(0)
 	//TODO: refaire ce constructeur avec recopie des valeurs de colonized planet
 	{
 		//On initialise le voisinage
@@ -38,9 +41,10 @@ void Colonized_planet::update_neighbourhood(Virtual_planet *old_one, Virtual_pla
 bool Colonized_planet::attack(Virtual_planet *victim) {
 	
 	bool res = victim->is_attacked(this);
+    Colonized_planet * acquisition = nullptr;
 
 	if (res) {
-		Colonized_planet * acquisition = new Colonized_planet(victim,this->get_faction());
+        acquisition = new Colonized_planet(victim,this->get_faction());
 		for (unsigned i=0;i<victim->get_neighbourhood().size();i++){
 			victim->get_neighbourhood()[i]->update_neighbourhood(victim,acquisition);
 		}
@@ -100,7 +104,7 @@ bool Colonized_planet::run() {
 	bool found_victim,had_killed=false;
 	unsigned i;
 
-	int random_number = World::gen_mt(0, 1);;
+    int random_number = World::gen_mt(0, 1);
 
   switch (random_number){
 		case 0:
@@ -154,7 +158,8 @@ bool Colonized_planet::run() {
 				//attack
 				if (budget_ >= target_->get_defense()) {
 					budget_ -= target_->get_defense();
-					had_killed = attack(target_);
+                    //had_killed = attack(target_);
+                    this->attack(target_);
 				}
 				target_ = nullptr;
 			}

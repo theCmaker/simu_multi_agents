@@ -9,7 +9,7 @@ len_(len),
 hei_(hei),
 neutral_faction_(*this,"Neutral")
 {
-	for (unsigned i = 0;i < len_;i++) {
+    for (unsigned i = 0;i < len_;i++) {
 		grid_.push_back(std::vector< Virtual_planet* >());
 		for (unsigned j = 0; j < hei_;j++) {
 			grid_[i].push_back(new Free_planet(*this, i, j));
@@ -108,9 +108,9 @@ void World::display() {
 	cout << endl <<endl;
 
 	cout << "Stats faction :" << endl;
-	for(Faction faction : factions_) {
-		cout << "Name :" << faction.get_name() << endl;
-		cout << "Money : " << faction.get_money() << endl;
+    for(list<Faction>::iterator it = factions_.begin(); it!=factions_.end(); it++ ) {
+        cout << "Name :" << it->get_name() << endl;
+        cout << "Money : " << it->get_money() << endl;
 		cout << "----------------------------" << endl;
 	}
 	cout << endl << endl;

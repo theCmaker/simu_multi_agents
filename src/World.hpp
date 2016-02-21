@@ -7,8 +7,8 @@
 #include <random>
 #include <algorithm>    // std::random_shuffl
 
-#include <chrono>
-#include <thread>
+/*#include <chrono>
+#include <thread>*/
 
 #include "Mother_land.hpp"
 #include "Virtual_planet.hpp"
@@ -21,11 +21,11 @@ typedef unsigned time_h; /* Simulation time */
 class World
 {
 public:
-  World(unsigned len=20, unsigned hei=20);
+    World(unsigned len=20, unsigned hei=20);
 	~World();
 
-  time_h start();			//return duration of simulation
-  void scheduler();		//manage action of agents
+    time_h start();			//return duration of simulation
+    void scheduler();		//manage action of agents
 
 	void display();			//Display at a time X
 
@@ -46,7 +46,7 @@ public:
 
 	void remove_faction(Faction*);
 private:
-	bool DEBUG = true;
+    const static bool DEBUG=true;
 
   //private methods
 	void generate_world();

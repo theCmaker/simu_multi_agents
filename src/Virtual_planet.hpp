@@ -31,8 +31,8 @@ public:
   void run();
 	virtual Faction& get_faction();
 
-	unsigned pos_x() { return pos_x_; }
-	unsigned pos_y() { return pos_y_; }
+    virtual unsigned pos_x() { return pos_x_; }
+    virtual unsigned pos_y() { return pos_y_; }
 	World& world() { return world_; }
 	virtual bool is_attacked(Virtual_planet *) {return true; };	//true si planete prise
 	
