@@ -3,13 +3,14 @@
 #include "World.hpp"
 #include "Faction.hpp"
 
-
-
 Faction::Faction(World& world, std::string name, Mother_land* mother_land) :
 	world_(world),
 	name_(name),
 	money_(500),
-	motherland_(mother_land)
+    motherland_(mother_land),
+    motherland_symbol_('N'),
+    colony_symbol_('n'),
+    color_name_("grey")
 {
 }
 

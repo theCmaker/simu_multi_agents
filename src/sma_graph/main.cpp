@@ -1,15 +1,17 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include "../World.hpp"
+#include "mainwindow.h"
+#include "QGraphicsScene"
+#include "displayer.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    World w1;
+    Displayer fenetre;
+    fenetre.show();
 
-    MainWindow w;
-    w.show();
+    fenetre.display_world();
 
     return a.exec();
 }

@@ -45,8 +45,11 @@ public:
 	Faction& get_neutral_faction();
 
 	void remove_faction(Faction*);
+
+    bool isEnded() {return end_;}
 private:
     const static bool DEBUG=true;
+    bool end_;
 
   //private methods
 	void generate_world();

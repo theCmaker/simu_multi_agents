@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     ../Free_planet.cpp \
     ../Mother_land.cpp \
     ../Virtual_planet.cpp \
-    ../World.cpp
+    ../World.cpp \
+    displayer.cpp
 
 HEADERS  += mainwindow.h \
     ../Colonized_planet.hpp \
@@ -27,7 +28,8 @@ HEADERS  += mainwindow.h \
     ../Free_planet.hpp \
     ../Mother_land.hpp \
     ../Virtual_planet.hpp \
-    ../World.hpp
+    ../World.hpp \
+    displayer.h
 
 FORMS    += mainwindow.ui
 

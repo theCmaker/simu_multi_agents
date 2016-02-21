@@ -1,6 +1,7 @@
 #include "World.hpp"
 
 World::World(unsigned len, unsigned hei):
+end_(false),
 grid_(),
 factions_(),
 waiting_agents_(),
@@ -29,12 +30,14 @@ neutral_faction_(*this,"Neutral")
 	factions_.back().init();
 	factions_.back().set_motherland_symbol('R');
 	factions_.back().set_colony_symbol('r');
+    factions_.back().set_color_name("red");
 	Faction& red = factions_.back();
 
 	factions_.push_back(Faction(*this, "Blue"));
 	factions_.back().init();
 	factions_.back().set_motherland_symbol('B');
 	factions_.back().set_colony_symbol('b');
+    factions_.back().set_color_name("blue");
 	Faction& blue = factions_.back();
 
 	if (DEBUG) {
@@ -54,7 +57,7 @@ World::~World() {
 }
 
 time_h World::start(){
-		while (factions_.size() > 1) { //While there is no peace in the galaxy
+        while (!end_) { //While there is no peace in the galaxy
 			scheduler();
 			++steps_;
 			display();
@@ -81,6 +84,8 @@ void World::scheduler() {
 //	  if (DEBUG) cout << "(" << waiting_agents_[i]->pos_x() << "," << waiting_agents_[i]->pos_y() << ") played !" << endl;
 		waiting_agents_[i]->run();
   }
+
+  if(factions_.size()<=1) end_=true;
 }
 
 void World::display() {
