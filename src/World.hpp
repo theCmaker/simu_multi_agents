@@ -6,6 +6,7 @@
 #include <list>
 #include <random>
 #include <algorithm>    // std::random_shuffl
+#include <sstream>
 
 /*#include <chrono>
 #include <thread>*/

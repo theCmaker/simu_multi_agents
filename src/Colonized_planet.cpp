@@ -48,7 +48,7 @@ bool Colonized_planet::attack(Virtual_planet *victim) {
 		for (unsigned i=0;i<victim->get_neighbourhood().size();i++){
 			victim->get_neighbourhood()[i]->update_neighbourhood(victim,acquisition);
 		}
-		this->world().set_grid(acquisition, victim->pos_x(), victim->pos_y());
+		this->get_world().set_grid(acquisition, victim->pos_x(), victim->pos_y());
 		delete victim;
 	}
 	return true;
@@ -114,13 +114,19 @@ bool Colonized_planet::run() {
 		case 0:
 			//Production, industry specialisation
   		//TODO: croissance logarithmique du taux de prod
+            int inc;
 			if (colony_production_ <= 50) {
-				colony_production_ += World::gen_mt(0, 5);
+                inc=World::gen_mt(0, 5);
+                colony_production_ += inc;
+                if(inc!=0) change();
 			}
 			
 			if (colony_defense_ <= 50) {
+                inc=World::gen_mt(0, 5);
 				colony_defense_ += World::gen_mt(0, 5);
+                if(inc!=0) change();
 			}
+
 			break;
 
 		case 1:
@@ -173,8 +179,7 @@ bool Colonized_planet::run() {
 			break;
   }	
   faction_.add_to_banque(production_rate_ + colony_production_);
-  
-	return had_killed;
+  return had_killed;
 //	colony_defense_ = (double)((int)(colony_defense_ + 1.0));
 	//World::gen_mt()
 }

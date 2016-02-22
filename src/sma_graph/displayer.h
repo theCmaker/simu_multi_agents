@@ -33,6 +33,7 @@ public:
 
 private:
     void end();
+    void display_planet(unsigned posX, unsigned posY);
 
     QGraphicsScene *m_scene;
     QGraphicsView *m_view;

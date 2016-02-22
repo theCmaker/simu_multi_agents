@@ -163,12 +163,14 @@ Faction& World::get_neutral_faction() {
 }
 
 string World::stats(){
-    string res;
+    stringstream ss;
+    ss << "Factions :" << endl;
+    ss << "----------------------------"<< endl;
     for(std::list<Faction>::iterator it = factions_.begin();
         it != factions_.end() ; it++){
-        res += it->toString();
+        ss << it->toString();
     }
-    return res;
+    return ss.str();
 }
 
 string World::get_winner_name(){

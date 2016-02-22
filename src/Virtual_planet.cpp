@@ -4,8 +4,9 @@
 Virtual_planet::Virtual_planet(World& world, unsigned pos_x, unsigned pos_y):
 	world_(world),
 	pos_x_(pos_x),
-	pos_y_(pos_y)
- {
+    pos_y_(pos_y),
+    changed_(true)
+{
 	production_rate_ = (double)(World::gen_mt() % 20);
 	natural_defense_ = (double)(World::gen_mt() % 20);
 }
@@ -81,6 +82,16 @@ void Virtual_planet::run() {
 
 Faction& Virtual_planet::get_faction() {
 	return world_.get_neutral_faction();
+}
+
+bool Virtual_planet::has_changed(){
+    bool res = changed_;
+    if (changed_)   changed_=false;
+    return res;
+}
+
+void Virtual_planet::change(){
+    changed_=true;
 }
 
 
