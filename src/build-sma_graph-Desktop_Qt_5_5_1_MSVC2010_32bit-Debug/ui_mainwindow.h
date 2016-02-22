@@ -17,17 +17,15 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
-#include <QtWidgets/QWidget>
+#include "displayer.h"
 
 QT_BEGIN_NAMESPACE
 
 class Ui_MainWindow
 {
 public:
+    Displayer *displayer;
     QMenuBar *menuBar;
-    QToolBar *mainToolBar;
-    QWidget *centralWidget;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -35,17 +33,17 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(400, 300);
+        displayer = new Displayer(MainWindow);
+        displayer->setObjectName(QStringLiteral("displayer"));
+        MainWindow->setCentralWidget(displayer);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
+        menuBar->setEnabled(false);
+        menuBar->setGeometry(QRect(0, 0, 400, 29));
         MainWindow->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(MainWindow);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        MainWindow->addToolBar(mainToolBar);
-        centralWidget = new QWidget(MainWindow);
-        centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
+        statusBar->setEnabled(false);
         MainWindow->setStatusBar(statusBar);
 
         retranslateUi(MainWindow);

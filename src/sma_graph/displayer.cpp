@@ -1,18 +1,25 @@
 #include "displayer.h"
-#include "QPen"
-#include "QBrush"
 
-Displayer::Displayer(QMainWindow *mw):QWidget(mw),world_()
+Displayer::Displayer(QMainWindow *mw):QWidget(mw),world_(),size_planete_(20),len_text_box_(100),
+    winning_faction_("[Displayer]nofaction")
 {
-    world_.scheduler();
-    size_planete = 20;
+    timer = new QTimer();
+    QObject::connect(timer, SIGNAL(timeout()), this, SLOT(timerEvent()));
+    timer->start(1000);
 
-    setFixedSize(world_.len()*size_planete,world_.hei()*size_planete);
+    world_.scheduler();
+
+    len_canvas_= world_.len()*size_planete_;
+    hei_canvas_= world_.hei()*size_planete_;
+
+    setFixedSize(len_canvas_ + len_text_box_, hei_canvas_);
+
+
     m_scene = new QGraphicsScene(this);
 
 
     m_scene->setBackgroundBrush(QBrush(Qt::white));
-    m_scene->setSceneRect(0,0,world_.len()*20,world_.hei()*20);         //Creer la scene
+    m_scene->setSceneRect(0,0,len_canvas_ + len_text_box_, hei_canvas_);         //Creer la scene
 
   //  thread = new QThread();
 
@@ -20,6 +27,12 @@ Displayer::Displayer(QMainWindow *mw):QWidget(mw),world_()
 
     m_view = new QGraphicsView(m_scene,this);
     m_view->show();
+}
+
+Displayer::~Displayer(){
+    delete timer;
+    delete m_scene;
+    delete m_view;
 }
 
 
@@ -31,13 +44,26 @@ void Displayer::afficherRect()
 void Displayer::display_world(){
     for(unsigned i=0;i<world_.len();i++){
         for(unsigned j=0;j<world_.hei();j++){
-            m_scene->addEllipse(i*size_planete,
-                                j*size_planete,
-                                size_planete-2,
-                                size_planete-2,
-                                QPen(QColor(world_.get_grid(i,j)->get_faction().get_color_name())),
-                                QBrush(QColor(world_.get_grid(i,j)->get_faction().get_color_name())));
+            m_scene->addEllipse(i*size_planete_,
+                                j*size_planete_,
+                                size_planete_-2,
+                                size_planete_-2,
+                                QPen(QColor(world_.get_grid(i,j)->get_color_name())),
+                                QBrush(QColor(world_.get_grid(i,j)->get_color_name())));
         }
+    }
+
+    m_scene->addRect(len_canvas_,0,len_text_box_,hei_canvas_,QPen(Qt::black),QBrush(Qt::white));
+    QGraphicsTextItem *text = m_scene->addText(world_.stats().c_str());
+    text->setPos(len_canvas_+2,2);
+}
+
+void Displayer::timerEvent()
+{
+    if (play()) {
+        refresh();
+    } else {
+        timer->stop();
     }
 }
 
@@ -45,6 +71,9 @@ bool Displayer::play(){
     bool play = !world_.isEnded();
     if (play) {
         world_.scheduler();
+    }else{
+        winning_faction_ = QString(world_.get_winner_name().c_str());
+        end();
     }
     return play;
 }
@@ -53,4 +82,13 @@ void Displayer::refresh()
 {
     display_world();
     m_view->show();
+}
+
+void Displayer::end(){
+    QMessageBox msgBox;
+    QString str("La faction " );
+    str += winning_faction_;
+    str += " a gagne \n";
+    msgBox.setText(str);
+    msgBox.exec();
 }

@@ -29,6 +29,12 @@ public:
 
 	void display();			//Display at a time X
 
+    //Gestion des agents
+    void remove_faction(Faction*);
+    void add_waiting_agent(Colonized_planet*);
+    void remove_waiting_agent(Colonized_planet*);
+
+    //Fonction d'alea
 	static int gen_mt();
 	static int gen_mt(int a, int b);
 	static int gen_mt_shuffle(int i);
@@ -38,15 +44,14 @@ public:
 	void set_grid(Virtual_planet*, unsigned x, unsigned y);
 	unsigned len() const { return len_; }
 	unsigned hei() const { return hei_; }
-
-	void add_waiting_agent(Colonized_planet*);
-	void remove_waiting_agent(Colonized_planet*);
-
 	Faction& get_neutral_faction();
-
-	void remove_faction(Faction*);
-
+    std::list<Faction> get_factions();
     bool isEnded() {return end_;}
+
+    //display
+    string stats();
+    string get_winner_name();
+
 private:
     const static bool DEBUG=true;
     bool end_;

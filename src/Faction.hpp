@@ -3,6 +3,7 @@
 
 #include <string>
 #include <list>
+#include <sstream>
 
 class World;
 class Mother_land;
@@ -19,7 +20,8 @@ private:
     std::list<Colonized_planet*>                colonies_;
     char                                        colony_symbol_;
     char                                        motherland_symbol_;
-    char *                                      color_name_;
+    char *                                      colony_color_name_;
+    char *                                      motherland_color_name_;
 
 	std::list<std::pair<Colonized_planet*, double> > demands_;
 
@@ -52,7 +54,8 @@ public:
 	double        get_money() {return money_;}
     char          get_motherland_symbol() { return motherland_symbol_;}
     char          get_colony_symbol() { return colony_symbol_;}
-    char*         get_color_name() {return color_name_;}
+    char*         get_colony_color_name() {return colony_color_name_;}
+    char*         get_motherland_color_name() {return motherland_color_name_;}
 	Mother_land*  get_motherland_() {return motherland_;}
 	std::list<Colonized_planet*> & get_colonies() {return colonies_;}
 
@@ -63,8 +66,11 @@ public:
 
     void set_colony_symbol(char c) { colony_symbol_ = c;}
     void set_motherland_symbol(char c) { motherland_symbol_ = c;}
-    void set_color_name(char* color_name) { color_name_ = color_name;}
+    void set_colony_color_name(char* colony_color_name) { colony_color_name_ = colony_color_name;}
+    void set_motherland_color_name(char* motherland_color_name) { motherland_color_name_ = motherland_color_name;}
 	void add_demand(Colonized_planet*, double);
+
+    std::string toString();
 };
 
 #endif

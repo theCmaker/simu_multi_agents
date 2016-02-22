@@ -191,6 +191,7 @@ Makefile: ..\sma_graph\sma_graph.pro "C:\Program Files (x86)\QT\5.5\msvc2010\mks
 		"C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\resolve_config.prf" \
 		"C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\exclusive_builds_post.prf" \
 		"C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\default_post.prf" \
+		"C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\c++11.prf" \
 		"C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\qml_debug.prf" \
 		"C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\win32\rtti.prf" \
 		"C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\precompile_header.prf" \
@@ -329,6 +330,7 @@ Makefile: ..\sma_graph\sma_graph.pro "C:\Program Files (x86)\QT\5.5\msvc2010\mks
 "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\resolve_config.prf":
 "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\exclusive_builds_post.prf":
 "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\default_post.prf":
+"C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\c++11.prf":
 "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\qml_debug.prf":
 "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\win32\rtti.prf":
 "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\precompile_header.prf":

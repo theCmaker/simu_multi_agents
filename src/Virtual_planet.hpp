@@ -27,8 +27,9 @@ public:
 	void set_neighbourhood2();
 	virtual void update_neighbourhood(Virtual_planet *,Virtual_planet *); //update changes to neighbourhood when planet is attacked.
 
-  virtual char display() { return '.'; }
-  void run();
+    virtual char display() { return '.'; }
+    virtual char* get_color_name() { return "gray";}
+    void run();
 	virtual Faction& get_faction();
 
     virtual unsigned pos_x() { return pos_x_; }

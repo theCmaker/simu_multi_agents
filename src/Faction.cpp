@@ -10,7 +10,8 @@ Faction::Faction(World& world, std::string name, Mother_land* mother_land) :
     motherland_(mother_land),
     motherland_symbol_('N'),
     colony_symbol_('n'),
-    color_name_("grey")
+    colony_color_name_("gray"),
+    motherland_color_name_("darkGray")
 {
 }
 
@@ -87,4 +88,12 @@ void Faction::run() {
 
 void Faction::add_demand(Colonized_planet* demander, double cost) {
 	demands_.push_back(std::pair< Colonized_planet*, double>(demander, cost));
+}
+
+string Faction::toString(){
+    std::stringstream ss;
+    ss << "Name :" << get_name() <<endl;
+    ss << "Money : " << get_money() <<endl;
+    ss << "----------------------------"<< endl;
+    return ss.str();
 }

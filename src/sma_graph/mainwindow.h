@@ -18,11 +18,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    int timerId;
-    QTimer *timer;
-
-protected slots:
-    void timerEvent();
 };
 
 #endif // MAINWINDOW_H

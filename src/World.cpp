@@ -30,14 +30,16 @@ neutral_faction_(*this,"Neutral")
 	factions_.back().init();
 	factions_.back().set_motherland_symbol('R');
 	factions_.back().set_colony_symbol('r');
-    factions_.back().set_color_name("red");
+    factions_.back().set_colony_color_name("red");
+    factions_.back().set_motherland_color_name("darkRed");
 	Faction& red = factions_.back();
 
 	factions_.push_back(Faction(*this, "Blue"));
 	factions_.back().init();
 	factions_.back().set_motherland_symbol('B');
 	factions_.back().set_colony_symbol('b');
-    factions_.back().set_color_name("blue");
+    factions_.back().set_colony_color_name("blue");
+    factions_.back().set_motherland_color_name("darkBlue");
 	Faction& blue = factions_.back();
 
 	if (DEBUG) {
@@ -97,15 +99,8 @@ void World::display() {
 	for (unsigned i = 0;i < hei(); i++) {
 		cout <</* "|" <<*/ i%10 << "|";
 		for (unsigned j = 0;j < len();j++) {
-			/*cout << "|";*/
-
-			//Faction faction = get_grid(j, i)->get_faction();
-      cout << get_grid(j,i)->display();
-			/*if (faction.get_name() == "Red") cout << "R";
-			else if (faction.get_name() == "Blue") cout << "B";
-			else cout << "N";*/
-
-			cout << "|";
+            cout << get_grid(j,i)->display();
+            cout << "|";
 		}
 		cout << endl;
 	}
@@ -114,9 +109,7 @@ void World::display() {
 
 	cout << "Stats faction :" << endl;
     for(list<Faction>::iterator it = factions_.begin(); it!=factions_.end(); it++ ) {
-        cout << "Name :" << it->get_name() << endl;
-        cout << "Money : " << it->get_money() << endl;
-		cout << "----------------------------" << endl;
+        cout << it->toString();
 	}
 	cout << endl << endl;
 
@@ -161,8 +154,29 @@ void World::set_grid(Virtual_planet* planet, unsigned x, unsigned y) {
 	grid_[x][y] = planet;
 }
 
+std::list<Faction> World::get_factions(){
+    return factions_;
+}
+
 Faction& World::get_neutral_faction() {
 	return neutral_faction_;
+}
+
+string World::stats(){
+    string res;
+    for(std::list<Faction>::iterator it = factions_.begin();
+        it != factions_.end() ; it++){
+        res += it->toString();
+    }
+    return res;
+}
+
+string World::get_winner_name(){
+    string res("[World]nofaction");
+    if (factions_.size()==1){
+        res=factions_.back().get_name();
+    }
+    return res;
 }
 
 std::mt19937 World::gen_mt_=std::mt19937();

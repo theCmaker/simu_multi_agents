@@ -27,7 +27,8 @@ public:
 	void add_to_budget(double);
 	void reinitialisate_target();
 
-  char display() { return faction_.get_colony_symbol(); }
+    char display() { return faction_.get_colony_symbol(); }
+    char* get_color_name() { return faction_.get_colony_color_name();}
 	bool run();
 
 
