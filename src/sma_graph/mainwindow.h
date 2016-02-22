@@ -13,10 +13,16 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    void show();
     ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
+    int timerId;
+    QTimer *timer;
+
+protected slots:
+    void timerEvent();
 };
 
 #endif // MAINWINDOW_H

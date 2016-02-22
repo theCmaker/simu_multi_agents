@@ -2,7 +2,7 @@
 #include "QPen"
 #include "QBrush"
 
-Displayer::Displayer():QWidget(),world_()
+Displayer::Displayer(QMainWindow *mw):QWidget(mw),world_()
 {
     world_.scheduler();
     size_planete = 20;
@@ -22,10 +22,10 @@ Displayer::Displayer():QWidget(),world_()
     m_view->show();
 }
 
+
 void Displayer::afficherRect()
 {
       m_scene->addRect(0,0,100,300,QPen(QColor("red")),QBrush(QColor("blue")));
-
 }
 
 void Displayer::display_world(){
@@ -41,12 +41,16 @@ void Displayer::display_world(){
     }
 }
 
-void Displayer::exec(){
-
-    while(!world_.isEnded()){
-        QThread::sleep(1);
+bool Displayer::play(){
+    bool play = !world_.isEnded();
+    if (play) {
         world_.scheduler();
-        display_world();
-        update();
     }
+    return play;
+}
+
+void Displayer::refresh()
+{
+    display_world();
+    m_view->show();
 }
