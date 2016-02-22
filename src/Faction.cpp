@@ -94,6 +94,8 @@ string Faction::toString(){
     std::stringstream ss;
     ss << "Name :" << get_name() <<endl;
     ss << "Money : " << get_money() <<endl;
+    ss << "Number of colonies : " << endl;
+    ss << "\t " << colonies_.size() << endl;
     ss << "----------------------------"<< endl;
     return ss.str();
 }

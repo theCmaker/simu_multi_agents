@@ -49,6 +49,9 @@ private:
 
     QString winning_faction_;
 
+    QPixmap shield_;
+    QPixmap gold_;
+
 protected slots:
     void timerEvent();
     void refresh();

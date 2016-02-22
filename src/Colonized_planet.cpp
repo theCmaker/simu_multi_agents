@@ -95,6 +95,10 @@ double Colonized_planet::get_defense() {
 	return natural_defense_ + colony_defense_;
 }
 
+double Colonized_planet::get_production(){
+    return production_rate_ + colony_production_;
+}
+
 void Colonized_planet::reinitialisate_target() {
 	target_ = nullptr;
 }

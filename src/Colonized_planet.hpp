@@ -20,6 +20,7 @@ public:
 
 	Faction& get_faction();
 	double get_defense();
+    double get_production();
 	Virtual_planet* get_target() { return target_; }
 
 	void demand_to_faction(double);									//Execute a demande of money

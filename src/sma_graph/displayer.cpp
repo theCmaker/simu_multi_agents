@@ -1,7 +1,10 @@
 #include "displayer.h"
 
-Displayer::Displayer(QMainWindow *mw):QWidget(mw),world_(),size_planete_(20),len_text_box_(100),
-    winning_faction_("[Displayer]nofaction")
+Displayer::Displayer(QMainWindow *mw):QWidget(mw),world_(),size_planete_(25),len_text_box_(150),
+    winning_faction_("[Displayer]nofaction"),
+    shield_("../../res/shield.png"),
+    gold_("../../res/gold.png")
+
 {
     timer = new QTimer();
     QObject::connect(timer, SIGNAL(timeout()), this, SLOT(timerEvent()));
@@ -21,10 +24,6 @@ Displayer::Displayer(QMainWindow *mw):QWidget(mw),world_(),size_planete_(20),len
     m_scene->setBackgroundBrush(QBrush(Qt::white));
     m_scene->setSceneRect(0,0,len_canvas_ + len_text_box_, hei_canvas_);         //Creer la scene
 
-  //  thread = new QThread();
-
-  //  connect(thread, SIGNAL(started()), worker, SLOT(doWork()));
-
     m_view = new QGraphicsView(m_scene,this);
     m_view->show();
 }
@@ -42,19 +41,38 @@ void Displayer::afficherRect()
 }
 
 void Displayer::display_world(){
+    QGraphicsPixmapItem *pm;
+     QGraphicsTextItem *text;
     for(unsigned i=0;i<world_.len();i++){
         for(unsigned j=0;j<world_.hei();j++){
+            //Display planet
             m_scene->addEllipse(i*size_planete_,
                                 j*size_planete_,
                                 size_planete_-2,
                                 size_planete_-2,
                                 QPen(QColor(world_.get_grid(i,j)->get_color_name())),
                                 QBrush(QColor(world_.get_grid(i,j)->get_color_name())));
+
+            //Display eco (bottom left)
+            pm = m_scene->addPixmap(gold_);
+            pm->setPos(i*size_planete_,j*size_planete_+size_planete_-15);
+            text = m_scene->addText(QString(std::to_string((long double)world_.get_grid(i,j)->get_production()).c_str()),
+                                                       QFont("Times", 5, QFont::Bold));
+            text->setPos(i*size_planete_,j*size_planete_+size_planete_-15);
+
+            //Display def (bottom right)
+            pm = m_scene->addPixmap(shield_);
+            pm->setPos(i*size_planete_+size_planete_-12,j*size_planete_+size_planete_-15);
+            text = m_scene->addText(QString(std::to_string((long double)world_.get_grid(i,j)->get_defense()).c_str()),
+                                                       QFont("Times", 5, QFont::Bold));
+            text->setPos(i*size_planete_+size_planete_-12,j*size_planete_+size_planete_-15);
+
+
         }
     }
 
     m_scene->addRect(len_canvas_,0,len_text_box_,hei_canvas_,QPen(Qt::black),QBrush(Qt::white));
-    QGraphicsTextItem *text = m_scene->addText(world_.stats().c_str());
+    text = m_scene->addText(world_.stats().c_str());
     text->setPos(len_canvas_+2,2);
 }
 

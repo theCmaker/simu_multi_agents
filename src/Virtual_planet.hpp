@@ -41,6 +41,7 @@ public:
 	
 	std::vector<Virtual_planet* > get_neighbourhood() { return neighbourhood_ ; }
 	virtual double get_defense() { return natural_defense_; }
+    virtual double get_production() { return production_rate_;}
 	virtual void reinitialisate_target(){}
 
 protected:
