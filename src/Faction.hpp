@@ -39,7 +39,7 @@ public:
 	Faction(World& world, std::string name = "default", Mother_land* = nullptr );	//Create a faction and convert a free planete into a mother land
 	~Faction();
 
-	void run();
+	Faction* run();
 	void init();
 	void die();
 
@@ -61,6 +61,7 @@ public:
 	void add_colony(Colonized_planet* colony) {colonies_.push_back(colony);}
 	void remove_colony(Colonized_planet* colony);
 	void remove_mother_land();
+	void remove_demand(Colonized_planet* colony);
     void add_to_banque(double);
 
     void set_colony_symbol(char c) { colony_symbol_ = c;}

@@ -77,7 +77,7 @@ DIST          = ../Petite \
 		..\Virtual_planet.hpp \
 		..\World.hpp \
 		..\sma_graph\displayer.h \
-		..\Neutral_faction.h ..\sma_graph\main.cpp \
+		..\Neutral_faction.hpp ..\sma_graph\main.cpp \
 		..\sma_graph\mainwindow.cpp \
 		..\Colonized_planet.cpp \
 		..\Faction.cpp \
@@ -460,7 +460,7 @@ release\moc_displayer.cpp: ..\sma_graph\mainwindow.h \
 		..\Free_planet.hpp \
 		..\Virtual_planet.hpp \
 		..\Faction.hpp \
-		..\Neutral_faction.h \
+		..\Neutral_faction.hpp \
 		..\sma_graph\displayer.h
 	"C:\Program Files (x86)\QT\5.5\msvc2010\bin\moc.exe" $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -I"C:/Program Files (x86)/QT/5.5/msvc2010/mkspecs/win32-msvc2010" -IC:/Users/Pierre/Documents/GitHub/simu_multi_agents/src/sma_graph -I"C:/Program Files (x86)/QT/5.5/msvc2010/include" -I"C:/Program Files (x86)/QT/5.5/msvc2010/include/QtWidgets" -I"C:/Program Files (x86)/QT/5.5/msvc2010/include/QtGui" -I"C:/Program Files (x86)/QT/5.5/msvc2010/include/QtANGLE" -I"C:/Program Files (x86)/QT/5.5/msvc2010/include/QtCore" -I. ..\sma_graph\displayer.h -o release\moc_displayer.cpp
 
@@ -606,7 +606,7 @@ ui_mainwindow.h: ..\sma_graph\mainwindow.ui \
 		..\Free_planet.hpp \
 		..\Virtual_planet.hpp \
 		..\Faction.hpp \
-		..\Neutral_faction.h
+		..\Neutral_faction.hpp
 	"C:\Program Files (x86)\QT\5.5\msvc2010\bin\uic.exe" ..\sma_graph\mainwindow.ui -o ui_mainwindow.h
 
 compiler_yacc_decl_make_all:
@@ -764,7 +764,7 @@ release\main.obj: ..\sma_graph\main.cpp ../sma_graph/mainwindow.h \
 		../Free_planet.hpp \
 		../Virtual_planet.hpp \
 		../Faction.hpp \
-		../Neutral_faction.h
+		../Neutral_faction.hpp
 
 release\mainwindow.obj: ..\sma_graph\mainwindow.cpp ../sma_graph/mainwindow.h \
 		"C:\Program Files (x86)\QT\5.5\msvc2010\include\QtWidgets\QMainWindow" \
@@ -936,19 +936,19 @@ release\mainwindow.obj: ..\sma_graph\mainwindow.cpp ../sma_graph/mainwindow.h \
 		../Free_planet.hpp \
 		../Virtual_planet.hpp \
 		../Faction.hpp \
-		../Neutral_faction.h
+		../Neutral_faction.hpp
 
 release\Colonized_planet.obj: ..\Colonized_planet.cpp ../Colonized_planet.hpp \
 		../Free_planet.hpp \
 		../Virtual_planet.hpp \
 		../Faction.hpp \
-		../Neutral_faction.h \
+		../Neutral_faction.hpp \
 		../World.hpp \
 		../Mother_land.hpp
 
 release\Faction.obj: ..\Faction.cpp ../Virtual_planet.hpp \
 		../Faction.hpp \
-		../Neutral_faction.h \
+		../Neutral_faction.hpp \
 		../Mother_land.hpp \
 		../Colonized_planet.hpp \
 		../Free_planet.hpp \
@@ -957,7 +957,7 @@ release\Faction.obj: ..\Faction.cpp ../Virtual_planet.hpp \
 release\Free_planet.obj: ..\Free_planet.cpp ../Free_planet.hpp \
 		../Virtual_planet.hpp \
 		../Faction.hpp \
-		../Neutral_faction.h \
+		../Neutral_faction.hpp \
 		../World.hpp \
 		../Mother_land.hpp \
 		../Colonized_planet.hpp
@@ -967,12 +967,12 @@ release\Mother_land.obj: ..\Mother_land.cpp ../Mother_land.hpp \
 		../Free_planet.hpp \
 		../Virtual_planet.hpp \
 		../Faction.hpp \
-		../Neutral_faction.h \
+		../Neutral_faction.hpp \
 		../World.hpp
 
 release\Virtual_planet.obj: ..\Virtual_planet.cpp ../Virtual_planet.hpp \
 		../Faction.hpp \
-		../Neutral_faction.h \
+		../Neutral_faction.hpp \
 		../World.hpp \
 		../Mother_land.hpp \
 		../Colonized_planet.hpp \
@@ -984,7 +984,7 @@ release\World.obj: ..\World.cpp ../World.hpp \
 		../Free_planet.hpp \
 		../Virtual_planet.hpp \
 		../Faction.hpp \
-		../Neutral_faction.h
+		../Neutral_faction.hpp
 
 release\displayer.obj: ..\sma_graph\displayer.cpp ../sma_graph/displayer.h \
 		../sma_graph/mainwindow.h \
@@ -1122,9 +1122,9 @@ release\displayer.obj: ..\sma_graph\displayer.cpp ../sma_graph/displayer.h \
 		../Free_planet.hpp \
 		../Virtual_planet.hpp \
 		../Faction.hpp \
-		../Neutral_faction.h
+		../Neutral_faction.hpp
 
-release\Neutral_faction.obj: ..\Neutral_faction.cpp ../Neutral_faction.h \
+release\Neutral_faction.obj: ..\Neutral_faction.cpp ../Neutral_faction.hpp \
 		../Faction.hpp
 
 release\moc_mainwindow.obj: release\moc_mainwindow.cpp 

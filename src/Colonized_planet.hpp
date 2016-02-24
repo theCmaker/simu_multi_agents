@@ -41,6 +41,10 @@ protected:
 	Virtual_planet* target_;
 	double budget_;	//current money
 	double demand_;	//Estimate cost
+
+    static const int MAX_COLONY_DEFENSE;
+    static const int MAX_COLONY_PRODUCTION;
+    static const int COLONY_MULTIPLICATOR;
 };
 
 #endif

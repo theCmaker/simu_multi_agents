@@ -1,4 +1,4 @@
-#include "Neutral_faction.h"
+#include "Neutral_faction.hpp"
 
 Neutral_faction::Neutral_faction(World& world):
 Faction(world,"Neutral")

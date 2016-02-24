@@ -1,6 +1,6 @@
 #include "displayer.h"
 
-Displayer::Displayer(QMainWindow *mw):QWidget(mw),world_(),size_planete_(25),len_text_box_(150),
+Displayer::Displayer(QMainWindow *mw):QWidget(mw),world_(),size_planete_(25),len_text_box_(180),
     winning_faction_("[Displayer]nofaction"),
     shield_("../../res/shield.png"),
     gold_("../../res/gold.png")

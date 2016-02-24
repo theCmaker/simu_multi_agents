@@ -9,7 +9,7 @@
 #include <algorithm>
 
 #include "Faction.hpp"
-#include "Neutral_faction.h"
+#include "Neutral_faction.hpp"
 
 class World;
 
@@ -60,8 +60,10 @@ protected:
     double production_rate_;	// 0 to 20
     double natural_defense_;	// 0 to 20
 
-
-
+    static const int MIN_PRODUCTION_RATE;
+    static const int MAX_PRODUCTION_RATE;
+    static const int MIN_NATURAL_DEFENSE;
+    static const int MAX_NATURAL_DEFENSE;
 };
 
 std::ostream & operator<< (std::ostream &o, Virtual_planet &vp);

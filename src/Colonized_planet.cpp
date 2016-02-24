@@ -33,6 +33,10 @@ Colonized_planet::Colonized_planet(Virtual_planet * fp, Faction& faction) :
 		faction_.add_colony(this);
 }
 
+const int Colonized_planet::MAX_COLONY_DEFENSE = 50;
+const int Colonized_planet::MAX_COLONY_PRODUCTION = 50;
+const int Colonized_planet::COLONY_MULTIPLICATOR = 10;
+
 void Colonized_planet::update_neighbourhood(Virtual_planet *old_one, Virtual_planet *new_one) {
 	Virtual_planet::update_neighbourhood(old_one, new_one);
 	// if the target is compromised
@@ -73,6 +77,7 @@ bool Colonized_planet::is_attacked(Virtual_planet *attacker) {
 	if (res == true) {
 		world_.remove_waiting_agent(this);
 		faction_.remove_colony(this);
+		faction_.remove_demand(this);
 	}
 	return res;
 }
@@ -88,7 +93,7 @@ void Colonized_planet::demand_to_faction(double cost) {
 }
 
 double Colonized_planet::estimate_cost() {
-    return get_defense() * 10;
+    return natural_defense_ + colony_defense_ * COLONY_MULTIPLICATOR;
 }
 
 void Colonized_planet::add_to_budget(double given_money) {
@@ -125,13 +130,13 @@ bool Colonized_planet::run() {
 			//Production, industry specialisation
             faction_.add_to_banque(production_rate_ + colony_production_);
             int inc;
-            if (colony_production_ <= 20) {
+            if (colony_production_ <= MAX_COLONY_PRODUCTION) {
                 inc=World::gen_mt(0, 5);
                 colony_production_ += inc;
                 if(inc!=0) change();
 			}
 			
-			if (colony_defense_ <= 50) {
+            if (colony_defense_ <= MAX_COLONY_DEFENSE) {
                 inc=World::gen_mt(0, 5);
 				colony_defense_ += World::gen_mt(0, 5);
                 if(inc!=0) change();

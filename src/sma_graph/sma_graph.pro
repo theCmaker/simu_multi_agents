@@ -33,7 +33,7 @@ HEADERS  += mainwindow.h \
     ../Virtual_planet.hpp \
     ../World.hpp \
     displayer.h \
-    ../Neutral_faction.h
+    ../Neutral_faction.hpp
 
 FORMS    += mainwindow.ui
 

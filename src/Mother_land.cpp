@@ -11,6 +11,7 @@ bool Mother_land::is_attacked(Virtual_planet *attacker) {
 	if (res == true) {
 		world_.remove_waiting_agent(this);
 		faction_.remove_mother_land();
+		faction_.remove_demand(this);
 	}
 	return res;
 }

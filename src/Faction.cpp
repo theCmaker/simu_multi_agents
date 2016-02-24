@@ -38,6 +38,27 @@ void Faction::remove_mother_land(){
 	motherland_ = nullptr;
 }
 
+class Comparator {
+private:
+	Colonized_planet* colonized_planet_;
+public:
+	Comparator(Colonized_planet* colonized_planet) {
+		colonized_planet_ = colonized_planet;
+	}
+
+	bool operator()(pair<Colonized_planet*,double> pair_colony) {
+		return pair_colony.first == colonized_planet_;
+	}
+};
+
+void Faction::remove_demand(Colonized_planet* colony) {
+	Comparator comp(colony);
+	std::list<pair<Colonized_planet*, double> >::iterator itr = std::find_if(demands_.begin(), demands_.end(), comp);
+	if (itr != demands_.end()) {
+		demands_.erase(itr);
+	}
+}
+
 void Faction::add_to_banque(double adding_money) {
     money_ += adding_money;
     money_produce_ += adding_money;
@@ -69,9 +90,6 @@ void Faction::die() {
 		//suppression des colonies
 		colonies_.erase(it++);
 	}
-	std::cout << name_ << std::endl;
-	world_.remove_faction(this);
-	world_.display();
 }
 
 void Faction::init() {
@@ -82,21 +100,23 @@ void Faction::init() {
 	world_.set_grid(motherland_, x, y);
 }
 
-void Faction::run() {
+Faction* Faction::run() {
+	Faction* res = nullptr;
 	if (motherland_ == nullptr) {
 		//Loose
 		die();
+		res = this;
 	} else {
 		//Give money to colonies
 		for (list<pair<Colonized_planet*,double> >::iterator itr = demands_.begin(); itr != demands_.end();itr++) {
-            if (money_ - itr->second >= 0) {
-                money_ -= itr->second;
-                money_spent_ += itr->second;
-				itr->first->add_to_budget(itr->second);
-                cout << toString() << endl;
+      if (money_ - itr->second >= 0) {
+          money_ -= itr->second;
+          money_spent_ += itr->second;
+					itr->first->add_to_budget(itr->second);
 			}
 		}
 	}
+	return res;
 }
 
 void Faction::add_demand(Colonized_planet* demander, double cost) {

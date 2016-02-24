@@ -7,8 +7,8 @@ Virtual_planet::Virtual_planet(World& world, unsigned pos_x, unsigned pos_y):
     pos_y_(pos_y),
     changed_(true)
 {
-    production_rate_ = (double)(World::gen_mt(0,10));
-    natural_defense_ = (double)(World::gen_mt(25,50));
+    production_rate_ = (double)(World::gen_mt(MIN_PRODUCTION_RATE,MAX_PRODUCTION_RATE));
+    natural_defense_ = (double)(World::gen_mt(MIN_NATURAL_DEFENSE,MIN_NATURAL_DEFENSE));
 }
 
 Virtual_planet::Virtual_planet(Virtual_planet *other) :
@@ -23,6 +23,11 @@ Virtual_planet::Virtual_planet(Virtual_planet *other) :
 			neighbourhood_.push_back(other->neighbourhood_[i]);
 		}
 }
+
+const int Virtual_planet::MIN_PRODUCTION_RATE = 25;
+const int Virtual_planet::MAX_PRODUCTION_RATE = 50;
+const int Virtual_planet::MIN_NATURAL_DEFENSE = 25;
+const int Virtual_planet::MAX_NATURAL_DEFENSE = 50;
 
 void Virtual_planet::set_neighbourhood2() {
 	/*if (((int)pos_x_ - 1) >= 0 && ((int) pos_y_ - 1) >= 0)		neighbourhood_.push_back(world_.get_grid(pos_x_ - 1, pos_y_ - 1));
