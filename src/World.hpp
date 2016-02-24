@@ -27,6 +27,9 @@ public:
 
     time_h start();			//return duration of simulation
     void scheduler();		//manage action of agents
+    void test2factions();
+    void test3factions();
+    void test4factions();
 
 	void display();			//Display at a time X
 
@@ -45,7 +48,7 @@ public:
 	void set_grid(Virtual_planet*, unsigned x, unsigned y);
 	unsigned len() const { return len_; }
 	unsigned hei() const { return hei_; }
-	Faction& get_neutral_faction();
+//	Faction& get_neutral_faction();
     std::list<Faction> get_factions();
     bool isEnded() {return end_;}
 
@@ -57,30 +60,30 @@ private:
     const static bool DEBUG=true;
     bool end_;
 
-  //private methods
-	void generate_world();
+    //private methods
+    void generate_world();
 
-  //Containers
-  std::vector< std::vector <Virtual_planet* > > grid_;
-  std::list< Faction > factions_;
-  
-  //Access
-  std::vector<Colonized_planet * > waiting_agents_;     /* Swapped with already_run_agents_ for each step */
-  std::vector<Colonized_planet * > already_run_agents_;
-  
-  //Stats
-  unsigned steps_;
-  unsigned nb_simulated_agents_;
+    //Containers
+    std::vector< std::vector <Virtual_planet* > > grid_;
+    std::list< Faction > factions_;
 
-  //Dimension of the world
-  unsigned len_;
-  unsigned hei_;
+    //Access
+    std::vector<Colonized_planet * > waiting_agents_;     /* Swapped with already_run_agents_ for each step */
+    std::vector<Colonized_planet * > already_run_agents_;
+
+    //Stats
+    unsigned steps_;
+    unsigned nb_simulated_agents_;
+
+    //Dimension of the world
+    unsigned len_;
+    unsigned hei_;
 
 	//mt
 	static std::mt19937 gen_mt_;
 
-	//Faction neutre
-	Faction neutral_faction_;
+    //Faction neutre
+ //   Neutral_faction neutral_faction_;
 };
 
 #endif

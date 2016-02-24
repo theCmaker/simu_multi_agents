@@ -2,10 +2,13 @@
 #include "World.hpp"
 
 Colonized_planet::Colonized_planet(World& world, unsigned pos_x, unsigned pos_y, Faction& fac) :
-    Virtual_planet(world, pos_x, pos_y), faction_(fac), target_(nullptr),
+    Virtual_planet(world, pos_x, pos_y),
+    colony_defense_(0),
+    colony_production_(0),
+    faction_(fac),
+    target_(nullptr),
     budget_(0),demand_(0)
 {
-	std::cout << "Test ----------------------------------" << std::endl;
 	//On ajoute colonized planet au waiting agent et a la liste de colonies de la faction
 	world_.add_waiting_agent(this);
 	faction_.add_colony(this);
@@ -51,7 +54,7 @@ bool Colonized_planet::attack(Virtual_planet *victim) {
 		this->get_world().set_grid(acquisition, victim->pos_x(), victim->pos_y());
 		delete victim;
 	}
-	return true;
+    return res;
 }
 
 bool Colonized_planet::is_attacked(Virtual_planet *attacker) {
@@ -59,6 +62,13 @@ bool Colonized_planet::is_attacked(Virtual_planet *attacker) {
 	if (attacker->get_faction() == this->get_faction()) {
 		res = false;
 	}
+
+    if (colony_defense_ > world_.gen_mt(0,99)){ //plus la defense est grande, plus les chances de conquete sont reduite (defense <=50)
+        res = false;
+        colony_defense_ -= world_.gen_mt(1,25); //la defense et l'eco baisse a cause de l'assaut
+        colony_production_ -= world_.gen_mt(1,25);
+        change();
+    }
 	//On supprime l'agent de la liste d'attente puiqu'il va etre elimine ainsi que de sa faction
 	if (res == true) {
 		world_.remove_waiting_agent(this);
@@ -77,8 +87,8 @@ void Colonized_planet::demand_to_faction(double cost) {
 	faction_.add_demand(this, cost);
 }
 
-double Colonized_planet::estimate_cost(Virtual_planet* target) {
-	return target->get_defense();
+double Colonized_planet::estimate_cost() {
+    return get_defense() * 10;
 }
 
 void Colonized_planet::add_to_budget(double given_money) {
@@ -113,9 +123,9 @@ bool Colonized_planet::run() {
   switch (random_number){
 		case 0:
 			//Production, industry specialisation
-  		//TODO: croissance logarithmique du taux de prod
+            faction_.add_to_banque(production_rate_ + colony_production_);
             int inc;
-			if (colony_production_ <= 50) {
+            if (colony_production_ <= 20) {
                 inc=World::gen_mt(0, 5);
                 colony_production_ += inc;
                 if(inc!=0) change();
@@ -138,7 +148,6 @@ bool Colonized_planet::run() {
 				i = 0;
 				found_victim = false;
 				while (i < neighbourhood_.size() && !found_victim) {
-					Faction fac = this->neighbourhood_[i]->get_faction();
 					if (!(neighbourhood_[i]->get_faction() == this->get_faction())) {
 						found_victim = true;
 					}
@@ -150,7 +159,7 @@ bool Colonized_planet::run() {
 				if (found_victim) {
 					// demand of subvention
 					target_ = neighbourhood_[i];
-					demand_ = estimate_cost(target_) - budget_;
+                    demand_ = target_->estimate_cost() - budget_;
 
 					if (demand_ > 0) {
 						faction_.add_demand(this, demand_);
@@ -162,14 +171,19 @@ bool Colonized_planet::run() {
 				else {
 					//aborted
 					target_ = nullptr;
-				}				
+                }
+                //Cas ou il n'y a pas d'attaque, la colonie produit alors
+                faction_.add_to_banque(production_rate_ + colony_production_);
 			}
 			else {
 				//attack
 				if (budget_ >= target_->get_defense()) {
 					budget_ -= target_->get_defense();
-                    //had_killed = attack(target_);
-                    this->attack(target_);
+                    if(this->attack(target_)){
+                        faction_.inc_nb_successful_attack_();
+                    }else{
+                        faction_.inc_nb_failed_attack_();
+                    }
 				}
 				target_ = nullptr;
 			}
@@ -178,7 +192,7 @@ bool Colonized_planet::run() {
 			throw std::exception(/*"Bad random number"*/);
 			break;
   }	
-  faction_.add_to_banque(production_rate_ + colony_production_);
+ // faction_.add_to_banque(production_rate_ + colony_production_);
   return had_killed;
 //	colony_defense_ = (double)((int)(colony_defense_ + 1.0));
 	//World::gen_mt()

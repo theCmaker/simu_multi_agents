@@ -24,7 +24,7 @@ public:
 	Virtual_planet* get_target() { return target_; }
 
 	void demand_to_faction(double);									//Execute a demande of money
-	double estimate_cost(Virtual_planet*);		//Estimate the cost of a colonization (and attack)
+    double estimate_cost();                                         //Estimate the cost of the colonization (and attack)
 	void add_to_budget(double);
 	void reinitialisate_target();
 

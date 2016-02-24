@@ -10,6 +10,9 @@ Displayer::Displayer(QMainWindow *mw):QWidget(mw),world_(),size_planete_(25),len
     QObject::connect(timer, SIGNAL(timeout()), this, SLOT(timerEvent()));
     timer->start(1000);
 
+    world_.test2factions();
+   // world_.test3factions();
+   // world_.test4factions();
     world_.scheduler();
 
     len_canvas_= world_.len()*size_planete_;

@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     ../Mother_land.cpp \
     ../Virtual_planet.cpp \
     ../World.cpp \
-    displayer.cpp
+    displayer.cpp \
+    ../Neutral_faction.cpp
 
 HEADERS  += mainwindow.h \
     ../Colonized_planet.hpp \
@@ -31,7 +32,8 @@ HEADERS  += mainwindow.h \
     ../Mother_land.hpp \
     ../Virtual_planet.hpp \
     ../World.hpp \
-    displayer.h
+    displayer.h \
+    ../Neutral_faction.h
 
 FORMS    += mainwindow.ui
 

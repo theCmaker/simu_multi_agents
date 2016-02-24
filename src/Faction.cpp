@@ -6,12 +6,18 @@
 Faction::Faction(World& world, std::string name, Mother_land* mother_land) :
 	world_(world),
 	name_(name),
-	money_(500),
+    money_(0),
     motherland_(mother_land),
     motherland_symbol_('N'),
     colony_symbol_('n'),
     colony_color_name_("gray"),
-    motherland_color_name_("darkGray")
+    motherland_color_name_("darkGray"),
+
+    //stats
+    money_spent_(0),
+    money_produce_(0),
+    nb_successful_attack_(0),
+    nb_failed_attack_(0)
 {
 }
 
@@ -30,6 +36,11 @@ void Faction::remove_mother_land(){
 		colonies_.erase(itr);
 	}
 	motherland_ = nullptr;
+}
+
+void Faction::add_to_banque(double adding_money) {
+    money_ += adding_money;
+    money_produce_ += adding_money;
 }
 
 void Faction::die() {
@@ -78,9 +89,11 @@ void Faction::run() {
 	} else {
 		//Give money to colonies
 		for (list<pair<Colonized_planet*,double> >::iterator itr = demands_.begin(); itr != demands_.end();itr++) {
-			if (money_ - itr->second >= 0) {
-				money_ -= itr->second;
+            if (money_ - itr->second >= 0) {
+                money_ -= itr->second;
+                money_spent_ += itr->second;
 				itr->first->add_to_budget(itr->second);
+                cout << toString() << endl;
 			}
 		}
 	}
@@ -90,12 +103,24 @@ void Faction::add_demand(Colonized_planet* demander, double cost) {
 	demands_.push_back(std::pair< Colonized_planet*, double>(demander, cost));
 }
 
+void Faction::inc_nb_successful_attack_(){
+    nb_successful_attack_++;
+}
+
+void Faction::inc_nb_failed_attack_(){
+    nb_failed_attack_++;
+}
+
 string Faction::toString(){
     std::stringstream ss;
     ss << "Name :" << get_name() <<endl;
     ss << "Money : " << get_money() <<endl;
-    ss << "Number of colonies : " << endl;
-    ss << "\t " << colonies_.size() << endl;
+    ss << "Money produced : " << get_money_produce_() <<endl;
+    ss << "Money spent : " << get_money_spent() <<endl;
+    ss << "Number of colonies : " << colonies_.size() << endl;
+    ss << "Number of attack : " << get_nb_failed_attack_() + get_nb_successful_attack_() << endl;
+    ss << "Number of successful attack : " << get_nb_successful_attack_() << endl;
+    ss << "Number of failed attack : " << get_nb_failed_attack_() << endl;
     ss << "----------------------------"<< endl;
     return ss.str();
 }

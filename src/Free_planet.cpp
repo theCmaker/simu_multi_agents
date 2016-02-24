@@ -9,7 +9,6 @@ Free_planet::Free_planet(Colonized_planet *other) :
 	for (unsigned i = 0 ; i < other->get_neighbourhood().size() ; i++) {
 		other->get_neighbourhood()[i]->update_neighbourhood(other, this);
 	}
-	std::cout << "Creation d'une nouvelle planete libre" << std::endl;
 }
 
 void Free_planet::run() {
@@ -17,5 +16,9 @@ void Free_planet::run() {
 }
 
 bool Free_planet::is_attacked(Virtual_planet *) {
-	return true;
+    bool res = true;
+    if(world_.gen_mt(0,4)==0){ //Une chance sur 5 de ne pas réussir
+        res=false;
+    }
+    return res;
 }

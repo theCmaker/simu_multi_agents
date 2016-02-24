@@ -7,8 +7,8 @@ Virtual_planet::Virtual_planet(World& world, unsigned pos_x, unsigned pos_y):
     pos_y_(pos_y),
     changed_(true)
 {
-	production_rate_ = (double)(World::gen_mt() % 20);
-	natural_defense_ = (double)(World::gen_mt() % 20);
+    production_rate_ = (double)(World::gen_mt(0,10));
+    natural_defense_ = (double)(World::gen_mt(25,50));
 }
 
 Virtual_planet::Virtual_planet(Virtual_planet *other) :
@@ -81,7 +81,8 @@ void Virtual_planet::run() {
 }
 
 Faction& Virtual_planet::get_faction() {
-	return world_.get_neutral_faction();
+    Faction* test =Neutral_faction::get_instance(world_);
+    return *test;
 }
 
 bool Virtual_planet::has_changed(){

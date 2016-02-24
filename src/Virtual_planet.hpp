@@ -9,7 +9,7 @@
 #include <algorithm>
 
 #include "Faction.hpp"
-
+#include "Neutral_faction.h"
 
 class World;
 
@@ -34,6 +34,8 @@ public:
 
     //Getter setter
     virtual char display() { return '.'; }
+    virtual double estimate_cost() {return get_defense();}
+
     virtual char* get_color_name() { return "gray";}
 	virtual Faction& get_faction();
     virtual unsigned pos_x() { return pos_x_; }

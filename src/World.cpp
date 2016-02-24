@@ -7,8 +7,8 @@ factions_(),
 waiting_agents_(),
 already_run_agents_(),
 len_(len),
-hei_(hei),
-neutral_faction_(*this,"Neutral")
+hei_(hei)
+//neutral_faction_(*this,"Neutral")
 {
     for (unsigned i = 0;i < len_;i++) {
 		grid_.push_back(std::vector< Virtual_planet* >());
@@ -22,33 +22,9 @@ neutral_faction_(*this,"Neutral")
 			grid_[i][j]->set_neighbourhood();
 		}
 	}
-
-
-	//Creation of two initial factions
-
-	factions_.push_back(Faction(*this,"Red"));
-	factions_.back().init();
-	factions_.back().set_motherland_symbol('R');
-	factions_.back().set_colony_symbol('r');
-    factions_.back().set_colony_color_name("red");
-    factions_.back().set_motherland_color_name("darkRed");
-	Faction& red = factions_.back();
-
-	factions_.push_back(Faction(*this, "Blue"));
-	factions_.back().init();
-	factions_.back().set_motherland_symbol('B');
-	factions_.back().set_colony_symbol('b');
-    factions_.back().set_colony_color_name("blue");
-    factions_.back().set_motherland_color_name("darkBlue");
-	Faction& blue = factions_.back();
-
-	if (DEBUG) {
-		cout << "Red on :\t (" << red.get_motherland_()->pos_x() << "," << red.get_motherland_()->pos_y() << ")" << endl;
-		cout << "Blue on :\t (" << blue.get_motherland_()->pos_x() << "," << blue.get_motherland_()->pos_y() << ")" << endl;
-	}
-	
-	//factions_.back().get_motherland_()->
 }
+
+
 
 World::~World() {
 	for (unsigned i = 0;i < len_;i++) {
@@ -59,6 +35,10 @@ World::~World() {
 }
 
 time_h World::start(){
+        if(factions_.size() == 0){
+            throw new exception("No faction created !!");
+        }
+        steps_=0;
         while (!end_) { //While there is no peace in the galaxy
 			scheduler();
 			++steps_;
@@ -68,18 +48,18 @@ time_h World::start(){
 }
 
 void World::scheduler() {
-	
-	vector<Faction> factions_copy(factions_.begin(), factions_.end());
-	
-	
+
+    vector<Faction> factions_copy(factions_.begin(), factions_.end());
+
+
 	//TODO bug -> toujours meme ordre de faction
-	random_shuffle(factions_copy.begin(), factions_copy.end(),gen_mt_shuffle);
+    random_shuffle(factions_copy.begin(), factions_copy.end(),gen_mt_shuffle);
 	random_shuffle(waiting_agents_.begin(), waiting_agents_.end(), gen_mt_shuffle);
 
   
   for (unsigned i =0; i<factions_copy.size();i++){
 	//  if (DEBUG) cout << factions_copy[i].get_name() << " played !" << endl;
-		factions_copy[i].run();
+        factions_copy[i].run();
   }
 	
   for (unsigned i =0; i< waiting_agents_.size();i++){
@@ -88,6 +68,65 @@ void World::scheduler() {
   }
 
   if(factions_.size()<=1) end_=true;
+}
+
+void World::test2factions(){
+    //Creation of two initial factions
+
+    factions_.push_back(Faction(*this,"Red"));
+    factions_.back().init();
+    factions_.back().set_motherland_symbol('R');
+    factions_.back().set_colony_symbol('r');
+    factions_.back().set_colony_color_name("red");
+    factions_.back().set_motherland_color_name("darkRed");
+    Faction& red = factions_.back();
+
+    factions_.push_back(Faction(*this, "Blue"));
+    factions_.back().init();
+    factions_.back().set_motherland_symbol('B');
+    factions_.back().set_colony_symbol('b');
+    factions_.back().set_colony_color_name("blue");
+    factions_.back().set_motherland_color_name("darkBlue");
+    Faction& blue = factions_.back();
+
+    if (DEBUG) {
+        cout << "Red on :\t (" << red.get_motherland_()->pos_x() << "," << red.get_motherland_()->pos_y() << ")" << endl;
+        cout << "Blue on :\t (" << blue.get_motherland_()->pos_x() << "," << blue.get_motherland_()->pos_y() << ")" << endl;
+    }
+}
+
+void World::test3factions(){
+    //Creation of two initial factions
+    test2factions();
+
+    factions_.push_back(Faction(*this, "Green"));
+    factions_.back().init();
+    factions_.back().set_motherland_symbol('G');
+    factions_.back().set_colony_symbol('g');
+    factions_.back().set_colony_color_name("green");
+    factions_.back().set_motherland_color_name("darkGreen");
+    Faction& green = factions_.back();
+
+    if (DEBUG) {
+        cout << green.get_name() << " on :\t (" << green.get_motherland_()->pos_x() << "," << green.get_motherland_()->pos_y() << ")" << endl;
+    }
+}
+
+void World::test4factions(){
+    //Creation of two initial factions
+    test3factions();
+
+    factions_.push_back(Faction(*this, "Yellow"));
+    factions_.back().init();
+    factions_.back().set_motherland_symbol('Y');
+    factions_.back().set_colony_symbol('y');
+    factions_.back().set_colony_color_name("yellow");
+    factions_.back().set_motherland_color_name("darkYellow");
+    Faction& yellow = factions_.back();
+
+    if (DEBUG) {
+        cout << yellow.get_name() << " on :\t (" << yellow.get_motherland_()->pos_x() << "," << yellow.get_motherland_()->pos_y() << ")" << endl;
+    }
 }
 
 void World::display() {
@@ -129,7 +168,7 @@ void World::remove_waiting_agent(Colonized_planet* colonized_planet) {
 void World::remove_faction(Faction* faction) {
 	std::cout << "suppression definitive de la faction " << faction->get_name() << std::endl;
 	Faction& faction_to_remove = *faction;
-	std::list<Faction>::iterator itr = std::find( factions_.begin(), factions_.end(), faction_to_remove);
+    std::list<Faction>::iterator itr = std::find( factions_.begin(), factions_.end(), faction_to_remove);
 	factions_.erase(itr);
 }
 
@@ -158,9 +197,9 @@ std::list<Faction> World::get_factions(){
     return factions_;
 }
 
-Faction& World::get_neutral_faction() {
-	return neutral_faction_;
-}
+/*Faction& World::get_neutral_faction() {
+    return neutral_faction_;
+}*/
 
 string World::stats(){
     stringstream ss;

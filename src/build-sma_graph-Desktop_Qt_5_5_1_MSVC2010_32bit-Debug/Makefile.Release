@@ -51,7 +51,8 @@ SOURCES       = ..\sma_graph\main.cpp \
 		..\Mother_land.cpp \
 		..\Virtual_planet.cpp \
 		..\World.cpp \
-		..\sma_graph\displayer.cpp release\moc_mainwindow.cpp \
+		..\sma_graph\displayer.cpp \
+		..\Neutral_faction.cpp release\moc_mainwindow.cpp \
 		release\moc_displayer.cpp
 OBJECTS       = release\main.obj \
 		release\mainwindow.obj \
@@ -62,6 +63,7 @@ OBJECTS       = release\main.obj \
 		release\Virtual_planet.obj \
 		release\World.obj \
 		release\displayer.obj \
+		release\Neutral_faction.obj \
 		release\moc_mainwindow.obj \
 		release\moc_displayer.obj
 
@@ -74,7 +76,8 @@ DIST          = ../Petite \
 		..\Mother_land.hpp \
 		..\Virtual_planet.hpp \
 		..\World.hpp \
-		..\sma_graph\displayer.h ..\sma_graph\main.cpp \
+		..\sma_graph\displayer.h \
+		..\Neutral_faction.h ..\sma_graph\main.cpp \
 		..\sma_graph\mainwindow.cpp \
 		..\Colonized_planet.cpp \
 		..\Faction.cpp \
@@ -82,7 +85,8 @@ DIST          = ../Petite \
 		..\Mother_land.cpp \
 		..\Virtual_planet.cpp \
 		..\World.cpp \
-		..\sma_graph\displayer.cpp
+		..\sma_graph\displayer.cpp \
+		..\Neutral_faction.cpp
 QMAKE_TARGET  = sma_graph
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = sma_graph.exe
@@ -192,7 +196,7 @@ dist:
 	$(ZIP) sma_graph.zip $(SOURCES) $(DIST) ..\sma_graph\sma_graph.pro "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\spec_pre.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\common\msvc-desktop.conf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\qconfig.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3dcollision.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3dcollision_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3dcore.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3dcore_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3dinput.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3dinput_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3dlogic.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3dlogic_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3dquick.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3dquick_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3dquickrenderer.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3dquickrenderer_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3drenderer.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_3drenderer_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_axbase.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_axbase_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_axcontainer.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_axcontainer_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_axserver.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_axserver_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_bluetooth.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_bluetooth_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_bootstrap_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_clucene_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_concurrent.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_concurrent_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_core.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_core_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_dbus.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_dbus_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_declarative.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_declarative_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_designer.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_designer_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_designercomponents_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_enginio.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_enginio_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_gui.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_gui_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_help.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_help_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_location.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_location_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_multimedia.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_multimedia_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_multimediawidgets.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_multimediawidgets_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_network.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_network_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_nfc.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_nfc_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_opengl.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_opengl_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_openglextensions.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_openglextensions_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_platformsupport_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_positioning.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_positioning_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_printsupport.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_printsupport_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_qml.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_qml_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_qmldevtools_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_qmltest.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_qmltest_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_quick.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_quick_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_quickparticles_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_quickwidgets.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_quickwidgets_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_script.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_script_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_scripttools.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_scripttools_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_sensors.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_sensors_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_serialport.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_serialport_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_sql.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_sql_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_svg.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_svg_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_testlib.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_testlib_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_uiplugin.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_uitools.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_uitools_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_webchannel.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_webchannel_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_webkit.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_webkit_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_webkitwidgets.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_webkitwidgets_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_websockets.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_websockets_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_widgets.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_widgets_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_winextras.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_winextras_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_xml.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_xml_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_xmlpatterns.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\modules\qt_lib_xmlpatterns_private.pri" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\qt_functions.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\qt_config.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\win32\qt_config.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\win32-msvc2010\qmake.conf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\spec_post.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\exclusive_builds.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\default_pre.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\win32\default_pre.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\resolve_config.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\exclusive_builds_post.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\default_post.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\build_pass.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\c++11.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\qml_debug.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\win32\rtti.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\precompile_header.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\warn_on.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\qt.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\resources.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\moc.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\win32\opengl.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\uic.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\win32\windows.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\testcase_targets.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\exceptions.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\yacc.prf" "C:\Program Files (x86)\QT\5.5\msvc2010\mkspecs\features\lex.prf" ..\sma_graph\sma_graph.pro "C:/Program Files (x86)/QT/5.5/msvc2010/lib/qtmain.prl" "C:/Program Files (x86)/QT/5.5/msvc2010/lib/Qt5Widgets.prl" "C:/Program Files (x86)/QT/5.5/msvc2010/lib/Qt5Gui.prl" "C:/Program Files (x86)/QT/5.5/msvc2010/lib/Qt5Core.prl"  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.obj release\mainwindow.obj release\Colonized_planet.obj release\Faction.obj release\Free_planet.obj release\Mother_land.obj release\Virtual_planet.obj release\World.obj release\displayer.obj release\moc_mainwindow.obj release\moc_displayer.obj
+	-$(DEL_FILE) release\main.obj release\mainwindow.obj release\Colonized_planet.obj release\Faction.obj release\Free_planet.obj release\Mother_land.obj release\Virtual_planet.obj release\World.obj release\displayer.obj release\Neutral_faction.obj release\moc_mainwindow.obj release\moc_displayer.obj
 	-$(DEL_FILE) release\sma_graph.exp release\sma_graph.exe.embed.manifest
 
 distclean: clean 
@@ -456,6 +460,7 @@ release\moc_displayer.cpp: ..\sma_graph\mainwindow.h \
 		..\Free_planet.hpp \
 		..\Virtual_planet.hpp \
 		..\Faction.hpp \
+		..\Neutral_faction.h \
 		..\sma_graph\displayer.h
 	"C:\Program Files (x86)\QT\5.5\msvc2010\bin\moc.exe" $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -I"C:/Program Files (x86)/QT/5.5/msvc2010/mkspecs/win32-msvc2010" -IC:/Users/Pierre/Documents/GitHub/simu_multi_agents/src/sma_graph -I"C:/Program Files (x86)/QT/5.5/msvc2010/include" -I"C:/Program Files (x86)/QT/5.5/msvc2010/include/QtWidgets" -I"C:/Program Files (x86)/QT/5.5/msvc2010/include/QtGui" -I"C:/Program Files (x86)/QT/5.5/msvc2010/include/QtANGLE" -I"C:/Program Files (x86)/QT/5.5/msvc2010/include/QtCore" -I. ..\sma_graph\displayer.h -o release\moc_displayer.cpp
 
@@ -600,7 +605,8 @@ ui_mainwindow.h: ..\sma_graph\mainwindow.ui \
 		..\Colonized_planet.hpp \
 		..\Free_planet.hpp \
 		..\Virtual_planet.hpp \
-		..\Faction.hpp
+		..\Faction.hpp \
+		..\Neutral_faction.h
 	"C:\Program Files (x86)\QT\5.5\msvc2010\bin\uic.exe" ..\sma_graph\mainwindow.ui -o ui_mainwindow.h
 
 compiler_yacc_decl_make_all:
@@ -757,7 +763,8 @@ release\main.obj: ..\sma_graph\main.cpp ../sma_graph/mainwindow.h \
 		../Colonized_planet.hpp \
 		../Free_planet.hpp \
 		../Virtual_planet.hpp \
-		../Faction.hpp
+		../Faction.hpp \
+		../Neutral_faction.h
 
 release\mainwindow.obj: ..\sma_graph\mainwindow.cpp ../sma_graph/mainwindow.h \
 		"C:\Program Files (x86)\QT\5.5\msvc2010\include\QtWidgets\QMainWindow" \
@@ -928,17 +935,20 @@ release\mainwindow.obj: ..\sma_graph\mainwindow.cpp ../sma_graph/mainwindow.h \
 		../Colonized_planet.hpp \
 		../Free_planet.hpp \
 		../Virtual_planet.hpp \
-		../Faction.hpp
+		../Faction.hpp \
+		../Neutral_faction.h
 
 release\Colonized_planet.obj: ..\Colonized_planet.cpp ../Colonized_planet.hpp \
 		../Free_planet.hpp \
 		../Virtual_planet.hpp \
 		../Faction.hpp \
+		../Neutral_faction.h \
 		../World.hpp \
 		../Mother_land.hpp
 
 release\Faction.obj: ..\Faction.cpp ../Virtual_planet.hpp \
 		../Faction.hpp \
+		../Neutral_faction.h \
 		../Mother_land.hpp \
 		../Colonized_planet.hpp \
 		../Free_planet.hpp \
@@ -947,6 +957,7 @@ release\Faction.obj: ..\Faction.cpp ../Virtual_planet.hpp \
 release\Free_planet.obj: ..\Free_planet.cpp ../Free_planet.hpp \
 		../Virtual_planet.hpp \
 		../Faction.hpp \
+		../Neutral_faction.h \
 		../World.hpp \
 		../Mother_land.hpp \
 		../Colonized_planet.hpp
@@ -956,10 +967,12 @@ release\Mother_land.obj: ..\Mother_land.cpp ../Mother_land.hpp \
 		../Free_planet.hpp \
 		../Virtual_planet.hpp \
 		../Faction.hpp \
+		../Neutral_faction.h \
 		../World.hpp
 
 release\Virtual_planet.obj: ..\Virtual_planet.cpp ../Virtual_planet.hpp \
 		../Faction.hpp \
+		../Neutral_faction.h \
 		../World.hpp \
 		../Mother_land.hpp \
 		../Colonized_planet.hpp \
@@ -970,7 +983,8 @@ release\World.obj: ..\World.cpp ../World.hpp \
 		../Colonized_planet.hpp \
 		../Free_planet.hpp \
 		../Virtual_planet.hpp \
-		../Faction.hpp
+		../Faction.hpp \
+		../Neutral_faction.h
 
 release\displayer.obj: ..\sma_graph\displayer.cpp ../sma_graph/displayer.h \
 		../sma_graph/mainwindow.h \
@@ -1107,6 +1121,10 @@ release\displayer.obj: ..\sma_graph\displayer.cpp ../sma_graph/displayer.h \
 		../Colonized_planet.hpp \
 		../Free_planet.hpp \
 		../Virtual_planet.hpp \
+		../Faction.hpp \
+		../Neutral_faction.h
+
+release\Neutral_faction.obj: ..\Neutral_faction.cpp ../Neutral_faction.h \
 		../Faction.hpp
 
 release\moc_mainwindow.obj: release\moc_mainwindow.cpp 
