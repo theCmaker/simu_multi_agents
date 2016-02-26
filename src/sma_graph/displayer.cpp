@@ -90,7 +90,7 @@ void Displayer::display_planet(unsigned posX, unsigned posY){
     //Display eco (bottom left)
     pm = m_scene->addPixmap(gold_);
     pm->setPos(posX*size_planete_ + pos_to_set_icon,posY*size_planete_);
-    text = m_scene->addText(QString(std::to_string(int(world_.get_grid(posX,posY)->get_production())).c_str()),
+    text = m_scene->addText(QString(std::to_string((long long)(world_.get_grid(posX,posY)->get_production())).c_str()),
                                                QFont("Arial", 7, QFont::Bold));
     text->setPos(posX*size_planete_ + pos_to_set_icon-5,posY*size_planete_);
     text->setDefaultTextColor(Qt::white);
@@ -98,7 +98,7 @@ void Displayer::display_planet(unsigned posX, unsigned posY){
     //Display def (bottom right)
     pm = m_scene->addPixmap(shield_);
     pm->setPos(posX*size_planete_ + pos_to_set_icon,posY*size_planete_+size_planete_-10);
-    text = m_scene->addText(QString(std::to_string(int(world_.get_grid(posX,posY)->get_defense())).c_str()),
+    text = m_scene->addText(QString(std::to_string((long long)(world_.get_grid(posX,posY)->get_defense())).c_str()),
                                                QFont("Arial", 7, QFont::Bold));
     text->setPos(posX*size_planete_ + pos_to_set_icon-5,posY*size_planete_+size_planete_-15);
     text->setDefaultTextColor(Qt::white);

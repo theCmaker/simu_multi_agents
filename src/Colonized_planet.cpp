@@ -36,7 +36,7 @@ demand_(0.)
 }
 
 const int Colonized_planet::MAX_COLONY_DEFENSE = 50;
-const int Colonized_planet::MAX_COLONY_PRODUCTION = 50;
+const int Colonized_planet::MAX_COLONY_PRODUCTION = 15;
 const int Colonized_planet::COLONY_MULTIPLICATOR = 10;
 
 void Colonized_planet::update_neighbourhood(Virtual_planet *old_one, Virtual_planet *new_one) {
@@ -96,7 +96,7 @@ void Colonized_planet::demand_to_faction(double cost) {
 }
 
 double Colonized_planet::estimate_cost() {
-  return natural_defense_ + colony_defense_ * COLONY_MULTIPLICATOR;
+  return get_defense() * COLONY_MULTIPLICATOR;
 }
 
 void Colonized_planet::add_to_budget(double given_money) {

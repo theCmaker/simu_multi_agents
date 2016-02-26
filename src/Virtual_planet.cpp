@@ -8,7 +8,7 @@ Virtual_planet::Virtual_planet(World& world, unsigned pos_x, unsigned pos_y):
     changed_(true)
 {
     production_rate_ = (double)(World::gen_mt(MIN_PRODUCTION_RATE,MAX_PRODUCTION_RATE));
-    natural_defense_ = (double)(World::gen_mt(MIN_NATURAL_DEFENSE,MIN_NATURAL_DEFENSE));
+    natural_defense_ = (double)(World::gen_mt(MIN_NATURAL_DEFENSE,MAX_NATURAL_DEFENSE));
 }
 
 Virtual_planet::Virtual_planet(Virtual_planet *other) :
@@ -23,8 +23,8 @@ Virtual_planet::Virtual_planet(Virtual_planet *other) :
 		}
 }
 
-const int Virtual_planet::MIN_PRODUCTION_RATE = 25;
-const int Virtual_planet::MAX_PRODUCTION_RATE = 50;
+const int Virtual_planet::MIN_PRODUCTION_RATE = 0;
+const int Virtual_planet::MAX_PRODUCTION_RATE = 15;
 const int Virtual_planet::MIN_NATURAL_DEFENSE = 25;
 const int Virtual_planet::MAX_NATURAL_DEFENSE = 50;
 
