@@ -1,4 +1,6 @@
 #include "World.hpp"
+#include <iostream>
+#include <exception>
 
 World::World(unsigned len, unsigned hei):
 end_(false),
@@ -8,71 +10,69 @@ waiting_agents_(),
 already_run_agents_(),
 len_(len),
 hei_(hei)
-//neutral_faction_(*this,"Neutral")
 {
-    for (unsigned i = 0;i < len_;i++) {
+  for (unsigned i = 0 ; i < len_ ; i++) {
 		grid_.push_back(std::vector< Virtual_planet* >());
-		for (unsigned j = 0; j < hei_;j++) {
+		for (unsigned j = 0 ; j < hei_ ; j++) {
 			grid_[i].push_back(new Free_planet(*this, i, j));
 		}
 	}
 
-	for (unsigned i = 0;i < len_;i++) {
-		for (unsigned j = 0; j < hei_;j++) {
+	for (unsigned i = 0 ; i < len_ ; i++) {
+		for (unsigned j = 0 ; j < hei_ ; j++) {
 			grid_[i][j]->set_neighbourhood();
 		}
 	}
 }
 
-
-
 World::~World() {
-	for (unsigned i = 0;i < len_;i++) {
-		for (unsigned j = 0; j < hei_;j++) {
+	for (unsigned i = 0 ; i < len_ ; i++) {
+		for (unsigned j = 0 ; j < hei_ ; j++) {
 			delete grid_[i][j];
 		}
 	}
 }
 
 time_h World::start(){
-        if(factions_.size() == 0){
-            throw new exception("No faction created !!");
-        }
-        steps_=0;
-        while (!end_) { //While there is no peace in the galaxy
-			scheduler();
-			++steps_;
-			display();
-		}
-		return steps_;
+  if(factions_.size() == 0){
+    //std::string str;
+    //str = "No faction created";
+    throw new std::exception();
+  }
+  steps_ = 0;
+  while (!end_) { //While there is no peace in the galaxy
+		scheduler();
+		++steps_;
+		display();
+	}
+	return steps_;
 }
 
 void World::scheduler() {
 	vector<Faction*> factions_to_delete;
 	Faction* faction_to_delete;
 	
-	//TODO bug -> toujours meme ordre de faction
 	random_shuffle(waiting_agents_.begin(), waiting_agents_.end(), gen_mt_shuffle);
   
-  for (list<Faction>::iterator it = factions_.begin(); it != factions_.end(); it++){
+  for (list<Faction>::iterator it = factions_.begin() ; it != factions_.end() ; it++) {
 	//  if (DEBUG) cout << factions_copy[i].get_name() << " played !" << endl;
-        faction_to_delete = it->run();
-				if (faction_to_delete != nullptr) {
-					factions_to_delete.push_back(faction_to_delete);
-				}
+    faction_to_delete = it->run();
+  	if (faction_to_delete != nullptr) {
+  		factions_to_delete.push_back(faction_to_delete);
+  	}
   }
 
 	//Suppression des faction a supprimer
-    for (unsigned i = 0; i < factions_to_delete.size(); i++) {
+  for (unsigned i = 0 ; i < factions_to_delete.size() ; i++) {
 		remove_faction(factions_to_delete[i]);
 	}
 	
-  for (unsigned i =0; i< waiting_agents_.size();i++){
+  for (unsigned i = 0 ; i < waiting_agents_.size() ; i++) {
 //	  if (DEBUG) cout << "(" << waiting_agents_[i]->pos_x() << "," << waiting_agents_[i]->pos_y() << ") played !" << endl;
 		waiting_agents_[i]->run();
   }
 
-  if(factions_.size()<=1) end_=true;
+  if (factions_.size() <= 1) end_ = true;
 }
 
 void World::test2factions(){
@@ -135,24 +135,24 @@ void World::test4factions(){
 }
 
 void World::display() {
-	for (unsigned i = 0; i < len() +2; i++) cout << "-";cout << endl;
+	for (unsigned i = 0 ; i < len() +2 ; i++) cout << "-";cout << endl;
 	cout << "x|";
-	for (unsigned i = 0; i < len(); i++) cout << /*"|"<<*/ i%10 <<"|";cout << endl;
+	for (unsigned i = 0 ; i < len() ; i++) cout << /*"|"<<*/ i%10 <<"|";cout << endl;
 
 
-	for (unsigned i = 0;i < hei(); i++) {
+	for (unsigned i = 0 ; i < hei() ; i++) {
 		cout <</* "|" <<*/ i%10 << "|";
-		for (unsigned j = 0;j < len();j++) {
+		for (unsigned j = 0 ; j < len() ; j++) {
             cout << get_grid(j,i)->display();
             cout << "|";
 		}
 		cout << endl;
 	}
-	for (unsigned i = 0; i < len() +2; i++) cout << "-";
-	cout << endl <<endl;
+	for (unsigned i = 0 ; i < len() + 2 ; i++) cout << "-";
+	cout << endl << endl;
 
 	cout << "Stats faction :" << endl;
-    for(list<Faction>::iterator it = factions_.begin(); it!=factions_.end(); it++ ) {
+    for (list<Faction>::iterator it = factions_.begin() ; it!=factions_.end() ; it++) {
         cout << it->toString();
 	}
 	cout << endl << endl;
@@ -166,14 +166,14 @@ void World::add_waiting_agent(Colonized_planet* colonized_planet) {
 
 void World::remove_waiting_agent(Colonized_planet* colonized_planet) {
 	waiting_agents_.erase(std::remove(waiting_agents_.begin(), waiting_agents_.end(), colonized_planet),
-		waiting_agents_.end());	//search and remove
+	  waiting_agents_.end());	//search and remove
 }
 
 
 void World::remove_faction(Faction* faction) {
 	std::cout << "suppression definitive de la faction " << faction->get_name() << std::endl;
-	Faction& faction_to_remove = *faction;
-    std::list<Faction>::iterator itr = std::find( factions_.begin(), factions_.end(), faction_to_remove);
+	Faction & faction_to_remove = *faction;
+  std::list<Faction>::iterator itr = std::find( factions_.begin(), factions_.end(), faction_to_remove);
 	factions_.erase(itr);
 }
 
@@ -190,6 +190,10 @@ int World::gen_mt(int a, int b) {
 	return a + (int)(abs((int)gen_mt_())%(b - a + 1));
 }
 
+void World::dispose() {
+  Neutral_faction::dispose();
+}
+
 Virtual_planet* World::get_grid(unsigned x, unsigned y) {
 	return grid_[x][y];
 }
@@ -199,7 +203,7 @@ void World::set_grid(Virtual_planet* planet, unsigned x, unsigned y) {
 }
 
 std::list<Faction> World::get_factions(){
-    return factions_;
+  return factions_;
 }
 
 /*Faction& World::get_neutral_faction() {
@@ -207,22 +211,21 @@ std::list<Faction> World::get_factions(){
 }*/
 
 string World::stats(){
-    stringstream ss;
-    ss << "Factions :" << endl;
-    ss << "----------------------------"<< endl;
-    for(std::list<Faction>::iterator it = factions_.begin();
-        it != factions_.end() ; it++){
-        ss << it->toString();
-    }
-    return ss.str();
+  stringstream ss;
+  ss << "Factions :" << endl;
+  ss << "----------------------------" << endl;
+  for(std::list<Faction>::iterator it = factions_.begin(); it != factions_.end() ; it++) {
+    ss << it->toString();
+  }
+  return ss.str();
 }
 
 string World::get_winner_name(){
-    string res("[World]nofaction");
-    if (factions_.size()==1){
-        res=factions_.back().get_name();
-    }
-    return res;
+  string res("[World]nofaction");
+  if (factions_.size()==1){
+    res = factions_.back().get_name();
+  }
+  return res;
 }
 
 std::mt19937 World::gen_mt_=std::mt19937();

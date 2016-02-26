@@ -2,12 +2,13 @@
 #include "World.hpp"
 
 Colonized_planet::Colonized_planet(World& world, unsigned pos_x, unsigned pos_y, Faction& fac) :
-    Virtual_planet(world, pos_x, pos_y),
-    colony_defense_(0),
-    colony_production_(0),
-    faction_(fac),
-    target_(nullptr),
-    budget_(0),demand_(0)
+  Virtual_planet(world, pos_x, pos_y),
+  colony_defense_(0.),
+  colony_production_(0.),
+  faction_(fac),
+  target_(nullptr),
+  budget_(0.),
+  demand_(0.)
 {
 	//On ajoute colonized planet au waiting agent et a la liste de colonies de la faction
 	world_.add_waiting_agent(this);
@@ -15,22 +16,23 @@ Colonized_planet::Colonized_planet(World& world, unsigned pos_x, unsigned pos_y,
 }
 
 Colonized_planet::Colonized_planet(Virtual_planet * fp, Faction& faction) :
-	Virtual_planet(fp),
-	colony_defense_(0),
-	colony_production_(0),
-	faction_(faction),
-    target_(nullptr),
-    budget_(0),demand_(0)
-	//TODO: refaire ce constructeur avec recopie des valeurs de colonized planet
-	{
-		//On initialise le voisinage
-		for (unsigned i = 0;i<fp->get_neighbourhood().size();i++) {
-			fp->get_neighbourhood()[i]->update_neighbourhood(fp, this);
-		}
+Virtual_planet(fp),
+colony_defense_(0.),
+colony_production_(0.),
+faction_(faction),
+target_(nullptr),
+budget_(0.),
+demand_(0.)
+//TODO: refaire ce constructeur avec recopie des valeurs de colonized planet
+{
+	//On initialise le voisinage
+	for (unsigned i = 0;i<fp->get_neighbourhood().size();i++) {
+		fp->get_neighbourhood()[i]->update_neighbourhood(fp, this);
+	}
 
-		//On ajoute colonized planet au waiting agent et a la liste de colonies de la faction
-		world_.add_waiting_agent(this);
-		faction_.add_colony(this);
+	//On ajoute colonized planet au waiting agent et a la liste de colonies de la faction
+	world_.add_waiting_agent(this);
+	faction_.add_colony(this);
 }
 
 const int Colonized_planet::MAX_COLONY_DEFENSE = 50;
@@ -48,15 +50,16 @@ void Colonized_planet::update_neighbourhood(Virtual_planet *old_one, Virtual_pla
 bool Colonized_planet::attack(Virtual_planet *victim) {
 	
 	bool res = victim->is_attacked(this);
-    Colonized_planet * acquisition = nullptr;
+  Colonized_planet * acquisition = nullptr;
 
 	if (res) {
-        acquisition = new Colonized_planet(victim,this->get_faction());
+    acquisition = new Colonized_planet(victim,this->get_faction());
 		for (unsigned i=0;i<victim->get_neighbourhood().size();i++){
 			victim->get_neighbourhood()[i]->update_neighbourhood(victim,acquisition);
 		}
 		this->get_world().set_grid(acquisition, victim->pos_x(), victim->pos_y());
 		delete victim;
+		victim = nullptr;
 	}
     return res;
 }
@@ -67,12 +70,12 @@ bool Colonized_planet::is_attacked(Virtual_planet *attacker) {
 		res = false;
 	}
 
-    if (colony_defense_ > world_.gen_mt(0,99)){ //plus la defense est grande, plus les chances de conquete sont reduite (defense <=50)
-        res = false;
-        colony_defense_ -= world_.gen_mt(1,25); //la defense et l'eco baisse a cause de l'assaut
-        colony_production_ -= world_.gen_mt(1,25);
-        change();
-    }
+  if (colony_defense_ > world_.gen_mt(0,99)){ //plus la defense est grande, plus les chances de conquete sont reduite (defense <=50)
+    res = false;
+    colony_defense_ -= world_.gen_mt(1,25); //la defense et l'eco baisse a cause de l'assaut
+    colony_production_ -= world_.gen_mt(1,25);
+    change();
+  }
 	//On supprime l'agent de la liste d'attente puiqu'il va etre elimine ainsi que de sa faction
 	if (res == true) {
 		world_.remove_waiting_agent(this);
@@ -93,7 +96,7 @@ void Colonized_planet::demand_to_faction(double cost) {
 }
 
 double Colonized_planet::estimate_cost() {
-    return natural_defense_ + colony_defense_ * COLONY_MULTIPLICATOR;
+  return natural_defense_ + colony_defense_ * COLONY_MULTIPLICATOR;
 }
 
 void Colonized_planet::add_to_budget(double given_money) {
@@ -111,7 +114,7 @@ double Colonized_planet::get_defense() {
 }
 
 double Colonized_planet::get_production(){
-    return production_rate_ + colony_production_;
+  return production_rate_ + colony_production_;
 }
 
 void Colonized_planet::reinitialisate_target() {
@@ -123,25 +126,24 @@ bool Colonized_planet::run() {
 	bool found_victim,had_killed=false;
 	unsigned i;
 
-    int random_number = World::gen_mt(0, 1);
+  int random_number = World::gen_mt(0, 1);
 
   switch (random_number){
 		case 0:
 			//Production, industry specialisation
-            faction_.add_to_banque(production_rate_ + colony_production_);
-            int inc;
-            if (colony_production_ <= MAX_COLONY_PRODUCTION) {
-                inc=World::gen_mt(0, 5);
-                colony_production_ += inc;
-                if(inc!=0) change();
-			}
-			
-            if (colony_defense_ <= MAX_COLONY_DEFENSE) {
-                inc=World::gen_mt(0, 5);
-				colony_defense_ += World::gen_mt(0, 5);
-                if(inc!=0) change();
+      faction_.add_to_banque(production_rate_ + colony_production_);
+      int inc;
+      if (colony_production_ <= MAX_COLONY_PRODUCTION) {
+        inc = World::gen_mt(0, 5);
+        colony_production_ += inc;
+        if (inc != 0) change();
 			}
 
+      if (colony_defense_ <= MAX_COLONY_DEFENSE) {
+        inc = World::gen_mt(0, 5);
+				colony_defense_ += World::gen_mt(0, 5);
+        if (inc != 0) change();
+			}
 			break;
 
 		case 1:
@@ -164,7 +166,7 @@ bool Colonized_planet::run() {
 				if (found_victim) {
 					// demand of subvention
 					target_ = neighbourhood_[i];
-                    demand_ = target_->estimate_cost() - budget_;
+          demand_ = target_->estimate_cost() - budget_;
 
 					if (demand_ > 0) {
 						faction_.add_demand(this, demand_);
@@ -176,19 +178,18 @@ bool Colonized_planet::run() {
 				else {
 					//aborted
 					target_ = nullptr;
-                }
-                //Cas ou il n'y a pas d'attaque, la colonie produit alors
-                faction_.add_to_banque(production_rate_ + colony_production_);
-			}
-			else {
+          }
+        //Cas ou il n'y a pas d'attaque, la colonie produit alors
+        faction_.add_to_banque(production_rate_ + colony_production_);
+			} else {
 				//attack
 				if (budget_ >= target_->get_defense()) {
 					budget_ -= target_->get_defense();
-                    if(this->attack(target_)){
-                        faction_.inc_nb_successful_attack_();
-                    }else{
-                        faction_.inc_nb_failed_attack_();
-                    }
+          if(this->attack(target_)){
+            faction_.inc_nb_successful_attack_();
+          } else {
+            faction_.inc_nb_failed_attack_();
+          }
 				}
 				target_ = nullptr;
 			}

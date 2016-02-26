@@ -6,7 +6,7 @@
 Faction::Faction(World& world, std::string name, Mother_land* mother_land) :
 	world_(world),
 	name_(name),
-    money_(0),
+    money_(0.),
     motherland_(mother_land),
     motherland_symbol_('N'),
     colony_symbol_('n'),
@@ -14,14 +14,12 @@ Faction::Faction(World& world, std::string name, Mother_land* mother_land) :
     motherland_color_name_("darkGray"),
 
     //stats
-    money_spent_(0),
-    money_produce_(0),
+    money_spent_(0.),
+    money_produce_(0.),
     nb_successful_attack_(0),
     nb_failed_attack_(0)
 {
 }
-
-Faction::~Faction() {}
 
 void Faction::remove_colony(Colonized_planet* colony) {
 	std::list<Colonized_planet*>::iterator itr = std::find(colonies_.begin(), colonies_.end(), colony);
@@ -38,24 +36,12 @@ void Faction::remove_mother_land(){
 	motherland_ = nullptr;
 }
 
-class Comparator {
-private:
-	Colonized_planet* colonized_planet_;
-public:
-	Comparator(Colonized_planet* colonized_planet) {
-		colonized_planet_ = colonized_planet;
-	}
-
-	bool operator()(pair<Colonized_planet*,double> pair_colony) {
-		return pair_colony.first == colonized_planet_;
-	}
-};
-
 void Faction::remove_demand(Colonized_planet* colony) {
 	Comparator comp(colony);
 	std::list<pair<Colonized_planet*, double> >::iterator itr = std::find_if(demands_.begin(), demands_.end(), comp);
-	if (itr != demands_.end()) {
+	while (itr != demands_.end()) {
 		demands_.erase(itr);
+		itr = std::find_if(demands_.begin(), demands_.end(), comp);
 	}
 }
 
@@ -67,15 +53,15 @@ void Faction::add_to_banque(double adding_money) {
 void Faction::die() {
 	cout << "Faction " << name_ << " is about to be deleted." << endl;
 	
-	// convertion dans la grille de jeu
-	for (list<Colonized_planet*>::iterator it = colonies_.begin(); it != colonies_.end(); it++){
+	// conversion dans la grille de jeu
+	for (list<Colonized_planet*>::iterator it = colonies_.begin() ; it != colonies_.end() ; it++) {
 		(*it)->convert_to_free_planet();
 	}
 
 	// mise a jour du voisinage
-	for (list<Colonized_planet*>::iterator it = colonies_.begin(); it != colonies_.end(); it++) {
+	for (list<Colonized_planet*>::iterator it = colonies_.begin() ; it != colonies_.end() ; it++) {
 		(*it)->set_neighbourhood(); //on va cherche les voisins sur la grille
-		for (unsigned i = 0;i<(*it)->get_neighbourhood().size();i++) {
+		for (unsigned i = 0 ; i<(*it)->get_neighbourhood().size() ; i++) {
 			(*it)->get_neighbourhood()[i]->set_neighbourhood();	//on met a jour les dits voisins
 		}
 	}
@@ -88,6 +74,7 @@ void Faction::die() {
 		world_.remove_waiting_agent(*it);
 		
 		//suppression des colonies
+		delete *it;
 		colonies_.erase(it++);
 	}
 }
@@ -96,23 +83,27 @@ void Faction::init() {
 	unsigned x = World::gen_mt() % world_.len();
 	unsigned y = World::gen_mt() % world_.hei();
 	motherland_ = new Mother_land(world_.get_grid(x, y), *this);
-
+	delete world_.get_grid(x,y);
 	world_.set_grid(motherland_, x, y);
 }
 
 Faction* Faction::run() {
-	Faction* res = nullptr;
+	Faction * res = nullptr;
 	if (motherland_ == nullptr) {
 		//Loose
 		die();
 		res = this;
 	} else {
 		//Give money to colonies
-		for (list<pair<Colonized_planet*,double> >::iterator itr = demands_.begin(); itr != demands_.end();itr++) {
+		list<pair<Colonized_planet*,double> >::iterator itr = demands_.begin();
+		while (itr != demands_.end()) {
       if (money_ - itr->second >= 0) {
-          money_ -= itr->second;
-          money_spent_ += itr->second;
-					itr->first->add_to_budget(itr->second);
+        money_ -= itr->second;
+        money_spent_ += itr->second;
+				itr->first->add_to_budget(itr->second);
+				itr = demands_.erase(itr);
+			} else {
+				itr++;
 			}
 		}
 	}
@@ -133,14 +124,14 @@ void Faction::inc_nb_failed_attack_(){
 
 string Faction::toString(){
     std::stringstream ss;
-    ss << "Name :" << get_name() <<endl;
+    ss << "Name : " << get_name() <<endl;
     ss << "Money : " << get_money() <<endl;
     ss << "Money produced : " << get_money_produce_() <<endl;
     ss << "Money spent : " << get_money_spent() <<endl;
     ss << "Number of colonies : " << colonies_.size() << endl;
-    ss << "Number of attack : " << get_nb_failed_attack_() + get_nb_successful_attack_() << endl;
-    ss << "Number of successful attack : " << get_nb_successful_attack_() << endl;
-    ss << "Number of failed attack : " << get_nb_failed_attack_() << endl;
+    ss << "Number of attacks : " << get_nb_failed_attack_() + get_nb_successful_attack_() << endl;
+    ss << "Number of successful attacks : " << get_nb_successful_attack_() << endl;
+    ss << "Number of failed attacks : " << get_nb_failed_attack_() << endl;
     ss << "----------------------------"<< endl;
     return ss.str();
 }

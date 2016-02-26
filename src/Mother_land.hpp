@@ -11,7 +11,7 @@ public:
 	~Mother_land() {};
 
   char display() { return faction_.get_motherland_symbol(); }
-  char* get_color_name() { return faction_.get_motherland_color_name();}
+  std::string get_color_name() { return faction_.get_motherland_color_name();}
 	bool is_attacked(Virtual_planet *);
 };
 

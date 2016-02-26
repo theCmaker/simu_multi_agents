@@ -42,13 +42,13 @@ public:
 	static int gen_mt();
 	static int gen_mt(int a, int b);
 	static int gen_mt_shuffle(int i);
+    static void dispose();
 
 	//Getter/setter 
 	Virtual_planet* get_grid(unsigned x, unsigned y);
 	void set_grid(Virtual_planet*, unsigned x, unsigned y);
 	unsigned len() const { return len_; }
 	unsigned hei() const { return hei_; }
-//	Faction& get_neutral_faction();
     std::list<Faction> get_factions();
     bool isEnded() {return end_;}
 

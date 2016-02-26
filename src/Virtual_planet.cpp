@@ -15,7 +15,6 @@ Virtual_planet::Virtual_planet(Virtual_planet *other) :
 	world_(other->world_),
 	pos_x_(other->pos_x_),
 	pos_y_(other->pos_y_),
-	neighbourhood_(),
 	production_rate_(other->production_rate_),
 	natural_defense_(other->natural_defense_)
 	{
@@ -53,10 +52,10 @@ void Virtual_planet::set_neighbourhood2() {
 void Virtual_planet::set_neighbourhood() {
 	bool dosmth;
 	neighbourhood_.clear();
-	for (int i = -1;i<=1;i++) {
-		for (int j = -1;j<=1;j++) {
+	for (int i = -1 ; i<=1 ; i++) {
+		for (int j = -1 ; j<=1 ; j++) {
 			dosmth = true;
-			if (((int)pos_x_) + i<0 || ((int)pos_y_) + j<0) {
+			if (((int)pos_x_) + i < 0 || ((int)pos_y_) + j < 0) {
 				dosmth = false;
 			}
 
@@ -86,13 +85,13 @@ void Virtual_planet::run() {
 }
 
 Faction& Virtual_planet::get_faction() {
-    Faction* test =Neutral_faction::get_instance(world_);
+    Faction* test = Neutral_faction::get_instance(world_);
     return *test;
 }
 
 bool Virtual_planet::has_changed(){
     bool res = changed_;
-    if (changed_)   changed_=false;
+    if (changed_)   changed_ = false;
     return res;
 }
 

@@ -17,7 +17,7 @@ EXEC = sma_exe
 # compiler and related options
 CC     = g++
 #CPPFLAGS = -Wall -ansi -Wextra -std=c++11
-CPPFLAGS = -Wall -ansi -pedantic -Wextra -std=c++11
+CPPFLAGS = -g -Wall -ansi -pedantic -Wextra -std=c++11
 LFLAGS =
 VFLAGS = -v --tool=memcheck --leak-check=yes --show-reachable=yes
 

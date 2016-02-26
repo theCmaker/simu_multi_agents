@@ -10,6 +10,7 @@ private:
     Neutral_faction(World& world);
 public:
     static Neutral_faction* get_instance(World& world);
+    static void dispose();
 };
 
 #endif // NEUTRAL_FACTION_H
