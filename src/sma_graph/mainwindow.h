@@ -7,6 +7,9 @@ namespace Ui {
 class MainWindow;
 }
 
+/*!
+ * \brief Fenêtre principale
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -17,7 +20,7 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui; //!< Interface utilisateur, contient les différents objets et la structure.
 };
 
 #endif // MAINWINDOW_H

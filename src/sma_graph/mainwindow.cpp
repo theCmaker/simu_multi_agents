@@ -14,6 +14,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/*!
+ * \brief Affichage des objets contenus dans la fenêtre
+ */
 void MainWindow::show()
 {
     QMainWindow::show();

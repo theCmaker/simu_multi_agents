@@ -20,38 +20,52 @@
 
 
 
+/**
+ * @brief Zone d'affichage de l'application
+ *
+ * Cette classe gère l'affichage de l'application ainsi que le lancement du jeu.
+ */
 class Displayer: public QWidget
 {
     Q_OBJECT
 public:
+    /**
+     * @brief Constructeur par défaut
+     *
+     * @param parent Objet parent (conteneur par exemple)
+     */
     explicit Displayer(QWidget *parent = 0);
     Displayer(QMainWindow *);
+
     void afficherRect();
     void display_world();
     bool play();
+
     ~Displayer();
 
 private:
     void end();
     void display_planet(unsigned posX, unsigned posY);
 
-    QGraphicsScene *m_scene;
-    QGraphicsView *m_view;
+    //Vue
+    QGraphicsScene *m_scene;    //!< Scène de l'affichage
+    QGraphicsView *m_view;      //!< Vue
 
-    World world_;
-    unsigned size_planete_;
-    unsigned len_text_box_;
+    World world_;               //!< Plateau de jeu
 
-    unsigned len_canvas_;
-    unsigned hei_canvas_;
+    //Dimensions
+    unsigned size_planete_;     //!< Taille d'une planète à l'affichage (px)
+    unsigned len_text_box_;     //!< Largeur du panneau latéral (px)
+    unsigned len_canvas_;       //!< Largeur du panneau graphique (px)
+    unsigned hei_canvas_;       //!< Hauteur du panneau graphique (px)
 
-    int timerId;
-    QTimer *timer;
+    //Paramètres de jeu
+    QTimer *timer;              //!< Chronomètre pour gérer la fréquence d'affichage
+    QString winning_faction_;   //!< Nom de la faction gagnante
 
-    QString winning_faction_;
-
-    QPixmap shield_;
-    QPixmap gold_;
+    //Visuels
+    QPixmap shield_;            //!< Symbole bouclier
+    QPixmap gold_;              //!< Symbole lingot
 
 protected slots:
     void timerEvent();
