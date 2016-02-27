@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['winning_5ffaction_5f',['winning_faction_',['../classDisplayer.html#a77b8f1b3b40fd64c89e54f12e7b5a0df',1,'Displayer']]],
-  ['world',['World',['../classWorld.html',1,'']]],
-  ['world_5f',['world_',['../classDisplayer.html#acf5e0801f0353ad1300ea901f8038fb5',1,'Displayer']]]
+  ['virtual_5fplanet',['Virtual_planet',['../classVirtual__planet.html',1,'Virtual_planet'],['../classVirtual__planet.html#a16cc8781ce4c81e6365d87b659e5108c',1,'Virtual_planet::Virtual_planet(World &amp;, unsigned, unsigned)'],['../classVirtual__planet.html#a4a2c71c2400d55bf861bc5d433123ac6',1,'Virtual_planet::Virtual_planet(Virtual_planet *)']]]
 ];

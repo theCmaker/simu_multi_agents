@@ -93,34 +93,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="classMother__land.html">Mother_land</a>;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span><a class="code" href="classColonized__planet.html">Colonized_planet</a>;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classFree__planet.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFree__planet.html">Free_planet</a> : <span class="keyword">public</span> <a class="code" href="classVirtual__planet.html">Virtual_planet</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="classFree__planet.html">Free_planet</a>(<a class="code" href="classWorld.html">World</a> &amp;, <span class="keywordtype">unsigned</span>, <span class="keywordtype">unsigned</span>);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    ~<a class="code" href="classFree__planet.html">Free_planet</a>() {};</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classFree__planet.html">Free_planet</a>(<a class="code" href="classColonized__planet.html">Colonized_planet</a> *);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classMother__land.html">Mother_land</a>* convert_to_mother_land();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classColonized__planet.html">Colonized_planet</a>* convert_to_colony();</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classFree__planet.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFree__planet.html">Free_planet</a> : <span class="keyword">public</span> <a class="code" href="classVirtual__planet.html">Virtual_planet</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classFree__planet.html#a7dfd0b5e9f41d84aba7ff721ec7a148e">Free_planet</a>(<a class="code" href="classWorld.html">World</a> &amp;, <span class="keywordtype">unsigned</span>, <span class="keywordtype">unsigned</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classFree__planet.html#a7dfd0b5e9f41d84aba7ff721ec7a148e">Free_planet</a>(<a class="code" href="classColonized__planet.html">Colonized_planet</a> *);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> run();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">bool</span> is_attacked(<a class="code" href="classVirtual__planet.html">Virtual_planet</a> *);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classFree__planet_html"><div class="ttname"><a href="classFree__planet.html">Free_planet</a></div><div class="ttdef"><b>Definition:</b> Free_planet.hpp:9</div></div>
-<div class="ttc" id="classWorld_html"><div class="ttname"><a href="classWorld.html">World</a></div><div class="ttdef"><b>Definition:</b> World.hpp:22</div></div>
-<div class="ttc" id="classVirtual__planet_html"><div class="ttname"><a href="classVirtual__planet.html">Virtual_planet</a></div><div class="ttdef"><b>Definition:</b> Virtual_planet.hpp:16</div></div>
-<div class="ttc" id="classMother__land_html"><div class="ttname"><a href="classMother__land.html">Mother_land</a></div><div class="ttdef"><b>Definition:</b> Mother_land.hpp:7</div></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">//Conversion</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">    Mother_land* convert_to_mother_land();</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">    Colonized_planet* convert_to_colony();</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classFree__planet.html#a5ca63c483955025b2955eb35fea0f4e8">run</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classFree__planet.html#a205f5d75e430e9884b950b7bc1a3fe9d">is_attacked</a>(<a class="code" href="classVirtual__planet.html">Virtual_planet</a> *);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classFree__planet_html"><div class="ttname"><a href="classFree__planet.html">Free_planet</a></div><div class="ttdoc">Planète libre. </div><div class="ttdef"><b>Definition:</b> Free_planet.hpp:14</div></div>
+<div class="ttc" id="classFree__planet_html_a7dfd0b5e9f41d84aba7ff721ec7a148e"><div class="ttname"><a href="classFree__planet.html#a7dfd0b5e9f41d84aba7ff721ec7a148e">Free_planet::Free_planet</a></div><div class="ttdeci">Free_planet(World &amp;, unsigned, unsigned)</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> Free_planet.cpp:10</div></div>
+<div class="ttc" id="classFree__planet_html_a5ca63c483955025b2955eb35fea0f4e8"><div class="ttname"><a href="classFree__planet.html#a5ca63c483955025b2955eb35fea0f4e8">Free_planet::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Joue le tour. </div><div class="ttdef"><b>Definition:</b> Free_planet.cpp:31</div></div>
+<div class="ttc" id="classWorld_html"><div class="ttname"><a href="classWorld.html">World</a></div><div class="ttdoc">Monde du jeu, possédant la grille. </div><div class="ttdef"><b>Definition:</b> World.hpp:25</div></div>
+<div class="ttc" id="classVirtual__planet_html"><div class="ttname"><a href="classVirtual__planet.html">Virtual_planet</a></div><div class="ttdoc">Planète virtuelle. </div><div class="ttdef"><b>Definition:</b> Virtual_planet.hpp:22</div></div>
+<div class="ttc" id="classFree__planet_html_a205f5d75e430e9884b950b7bc1a3fe9d"><div class="ttname"><a href="classFree__planet.html#a205f5d75e430e9884b950b7bc1a3fe9d">Free_planet::is_attacked</a></div><div class="ttdeci">bool is_attacked(Virtual_planet *)</div><div class="ttdoc">Répond à une attaque. </div><div class="ttdef"><b>Definition:</b> Free_planet.cpp:38</div></div>
+<div class="ttc" id="classMother__land_html"><div class="ttname"><a href="classMother__land.html">Mother_land</a></div><div class="ttdoc">Planète mère. </div><div class="ttdef"><b>Definition:</b> Mother_land.hpp:14</div></div>
 <div class="ttc" id="classColonized__planet_html"><div class="ttname"><a href="classColonized__planet.html">Colonized_planet</a></div><div class="ttdoc">Planète colonisée. </div><div class="ttdef"><b>Definition:</b> Colonized_planet.hpp:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Samedi 27 Février 2016 02:51:57 pour Simulation Multi-Agents par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Samedi 27 Février 2016 16:01:46 pour Simulation Multi-Agents par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

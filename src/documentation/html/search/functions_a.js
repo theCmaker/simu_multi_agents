@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['update_5fneighbourhood',['update_neighbourhood',['../classColonized__planet.html#ac4f99490dc15c7715c1b476a490228a4',1,'Colonized_planet']]]
+  ['neutral_5ffaction',['Neutral_faction',['../classNeutral__faction.html#aacd2a58a4ba2b640bac83a730bfaeeec',1,'Neutral_faction']]]
 ];

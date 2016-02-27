@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gold_5f',['gold_',['../classDisplayer.html#a90406aeaba7f4c87910305f2592743fb',1,'Displayer']]]
+  ['end_5f',['end_',['../classWorld.html#a5773dad1dda0f5380a5f65c94f57de9c',1,'World']]]
 ];

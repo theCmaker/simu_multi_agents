@@ -1,21 +1,72 @@
 \hypertarget{classComparator}{\section{Référence de la classe Comparator}
 \label{classComparator}\index{Comparator@{Comparator}}
 }
+
+
+Comparateur de planètes colonisées.  
+
+
+
+
+{\ttfamily \#include $<$Faction.\-hpp$>$}
+
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classComparator_aff716639b83e77e710f3c3175c4b43d0}{{\bfseries Comparator} (\hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$colonized\-\_\-planet)}\label{classComparator_aff716639b83e77e710f3c3175c4b43d0}
-
-\item 
-\hypertarget{classComparator_aa063882ba2357118b02cd4e01d807480}{bool {\bfseries operator()} (std\-::pair$<$ \hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$, double $>$ pair\-\_\-colony)}\label{classComparator_aa063882ba2357118b02cd4e01d807480}
-
-\end{DoxyCompactItemize}
+\hyperlink{classComparator_aff716639b83e77e710f3c3175c4b43d0}{Comparator} (\hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$colonized\-\_\-planet)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+bool \hyperlink{classComparator_aa063882ba2357118b02cd4e01d807480}{operator()} (std\-::pair$<$ \hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$, double $>$ pair\-\_\-colony)
+\begin{DoxyCompactList}\small\item\em Comparaison avec la planète de base. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classComparator_a5b42c2a1661147200983835ac36802cf}{\hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$ {\bfseries colonized\-\_\-planet\-\_\-}}\label{classComparator_a5b42c2a1661147200983835ac36802cf}
+\hypertarget{classComparator_a5b42c2a1661147200983835ac36802cf}{\hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$ \hyperlink{classComparator_a5b42c2a1661147200983835ac36802cf}{colonized\-\_\-planet\-\_\-}}\label{classComparator_a5b42c2a1661147200983835ac36802cf}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Planète qui doit servir de base pour la comparaison. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Comparateur de planètes colonisées. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classComparator_aff716639b83e77e710f3c3175c4b43d0}{\index{Comparator@{Comparator}!Comparator@{Comparator}}
+\index{Comparator@{Comparator}!Comparator@{Comparator}}
+\subsubsection[{Comparator}]{\setlength{\rightskip}{0pt plus 5cm}Comparator\-::\-Comparator (
+\begin{DoxyParamCaption}
+\item[{{\bf Colonized\-\_\-planet} $\ast$}]{colonized\-\_\-planet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classComparator_aff716639b83e77e710f3c3175c4b43d0}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em colonized\-\_\-planet} & planète servant d'élément de comparaison \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classComparator_aa063882ba2357118b02cd4e01d807480}{\index{Comparator@{Comparator}!operator()@{operator()}}
+\index{operator()@{operator()}!Comparator@{Comparator}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool Comparator\-::operator() (
+\begin{DoxyParamCaption}
+\item[{std\-::pair$<$ {\bf Colonized\-\_\-planet} $\ast$, double $>$}]{pair\-\_\-colony}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classComparator_aa063882ba2357118b02cd4e01d807480}
+
+
+Comparaison avec la planète de base. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em pair\-\_\-colony} & une paire dont le premier membre est comparé avec la planète de base \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Booléen à vrai si la comparaison est valide 
+\end{DoxyReturn}
 
 
 La documentation de cette classe a été générée à partir du fichier suivant \-:\begin{DoxyCompactItemize}

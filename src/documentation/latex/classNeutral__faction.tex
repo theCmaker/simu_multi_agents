@@ -1,6 +1,15 @@
 \hypertarget{classNeutral__faction}{\section{Référence de la classe Neutral\-\_\-faction}
 \label{classNeutral__faction}\index{Neutral\-\_\-faction@{Neutral\-\_\-faction}}
 }
+
+
+\hyperlink{classFaction}{Faction} neutre.  
+
+
+
+
+{\ttfamily \#include $<$Neutral\-\_\-faction.\-hpp$>$}
+
 Graphe d'héritage de Neutral\-\_\-faction\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,25 +19,76 @@ Graphe d'héritage de Neutral\-\_\-faction\-:\begin{figure}[H]
 \subsection*{Fonctions membres publiques statiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classNeutral__faction_ae8e449bd58cfac78bc8cac249c7d1352}{static \hyperlink{classNeutral__faction}{Neutral\-\_\-faction} $\ast$ {\bfseries get\-\_\-instance} (\hyperlink{classWorld}{World} \&world)}\label{classNeutral__faction_ae8e449bd58cfac78bc8cac249c7d1352}
+static \hyperlink{classNeutral__faction}{Neutral\-\_\-faction} $\ast$ \hyperlink{classNeutral__faction_ae8e449bd58cfac78bc8cac249c7d1352}{get\-\_\-instance} (\hyperlink{classWorld}{World} \&world)
+\begin{DoxyCompactList}\small\item\em Demande de la planète neutre. \end{DoxyCompactList}\item 
+\hypertarget{classNeutral__faction_a1b42cda1fbc38de7408963f63e494d97}{static void \hyperlink{classNeutral__faction_a1b42cda1fbc38de7408963f63e494d97}{dispose} ()}\label{classNeutral__faction_a1b42cda1fbc38de7408963f63e494d97}
 
-\item 
-\hypertarget{classNeutral__faction_a1b42cda1fbc38de7408963f63e494d97}{static void {\bfseries dispose} ()}\label{classNeutral__faction_a1b42cda1fbc38de7408963f63e494d97}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Libère l'instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classNeutral__faction_aacd2a58a4ba2b640bac83a730bfaeeec}{{\bfseries Neutral\-\_\-faction} (\hyperlink{classWorld}{World} \&world)}\label{classNeutral__faction_aacd2a58a4ba2b640bac83a730bfaeeec}
-
-\end{DoxyCompactItemize}
+\hyperlink{classNeutral__faction_aacd2a58a4ba2b640bac83a730bfaeeec}{Neutral\-\_\-faction} (\hyperlink{classWorld}{World} \&world)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Attributs privés statiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classNeutral__faction_acf5e8d031f701352fb71a65568e9eb77}{static \hyperlink{classNeutral__faction}{Neutral\-\_\-faction} $\ast$ {\bfseries instance\-\_\-} = nullptr}\label{classNeutral__faction_acf5e8d031f701352fb71a65568e9eb77}
+\hypertarget{classNeutral__faction_acf5e8d031f701352fb71a65568e9eb77}{static \hyperlink{classNeutral__faction}{Neutral\-\_\-faction} $\ast$ \hyperlink{classNeutral__faction_acf5e8d031f701352fb71a65568e9eb77}{instance\-\_\-} = nullptr}\label{classNeutral__faction_acf5e8d031f701352fb71a65568e9eb77}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Instance (unique) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+\hyperlink{classFaction}{Faction} neutre. 
+
+C'est la faction à laquelle appartiennent les planètes libres
+
+\begin{DoxyNote}{Note}
+Modèle singleton 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{A faire}
+\item[\hyperlink{todo__todo000005}{A faire}]à vérifier \end{DoxyRefDesc}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classNeutral__faction_aacd2a58a4ba2b640bac83a730bfaeeec}{\index{Neutral\-\_\-faction@{Neutral\-\_\-faction}!Neutral\-\_\-faction@{Neutral\-\_\-faction}}
+\index{Neutral\-\_\-faction@{Neutral\-\_\-faction}!Neutral_faction@{Neutral\-\_\-faction}}
+\subsubsection[{Neutral\-\_\-faction}]{\setlength{\rightskip}{0pt plus 5cm}Neutral\-\_\-faction\-::\-Neutral\-\_\-faction (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeutral__faction_aacd2a58a4ba2b640bac83a730bfaeeec}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & Monde auquel appartient la faction neutre \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classNeutral__faction_ae8e449bd58cfac78bc8cac249c7d1352}{\index{Neutral\-\_\-faction@{Neutral\-\_\-faction}!get\-\_\-instance@{get\-\_\-instance}}
+\index{get\-\_\-instance@{get\-\_\-instance}!Neutral_faction@{Neutral\-\_\-faction}}
+\subsubsection[{get\-\_\-instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Neutral\-\_\-faction} $\ast$ Neutral\-\_\-faction\-::get\-\_\-instance (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classNeutral__faction_ae8e449bd58cfac78bc8cac249c7d1352}
+
+
+Demande de la planète neutre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & Monde auquel la faction neutre appartient \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pointeur sur l'instance unique de la faction neutre 
+\end{DoxyReturn}
 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}

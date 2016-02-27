@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['hei_5fcanvas_5f',['hei_canvas_',['../classDisplayer.html#ae7d9e96ca745d502672369fc4d1cde5c',1,'Displayer']]]
+  ['faction_5f',['faction_',['../classColonized__planet.html#a0f362a09eaf2da16c442decbdaf57d21',1,'Colonized_planet']]],
+  ['factions_5f',['factions_',['../classWorld.html#a9e4a76505c85cae1329f6083011e9be5',1,'World']]]
 ];

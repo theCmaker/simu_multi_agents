@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['get_5fdefense',['get_defense',['../classColonized__planet.html#a587ca19477274169b045a94c1dd186a3',1,'Colonized_planet']]],
-  ['get_5ffaction',['get_faction',['../classColonized__planet.html#a78748eadea1186e104ccc247a1d1f546',1,'Colonized_planet']]],
-  ['get_5fproduction',['get_production',['../classColonized__planet.html#a167b41cbb51c1d19d40cb3707af2ea59',1,'Colonized_planet']]]
+  ['faction',['Faction',['../classFaction.html#a470f14f0b1d94261d427a4673fe92421',1,'Faction']]],
+  ['free_5fplanet',['Free_planet',['../classFree__planet.html#a7dfd0b5e9f41d84aba7ff721ec7a148e',1,'Free_planet::Free_planet(World &amp;, unsigned, unsigned)'],['../classFree__planet.html#a40c231f6f967b35b0c13cb9f883bafe2',1,'Free_planet::Free_planet(Colonized_planet *)']]]
 ];

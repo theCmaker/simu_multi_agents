@@ -1,6 +1,15 @@
 \hypertarget{classVirtual__planet}{\section{Référence de la classe Virtual\-\_\-planet}
 \label{classVirtual__planet}\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}}
 }
+
+
+Planète virtuelle.  
+
+
+
+
+{\ttfamily \#include $<$Virtual\-\_\-planet.\-hpp$>$}
+
 Graphe d'héritage de Virtual\-\_\-planet\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,108 +19,272 @@ Graphe d'héritage de Virtual\-\_\-planet\-:\begin{figure}[H]
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classVirtual__planet_a16cc8781ce4c81e6365d87b659e5108c}{{\bfseries Virtual\-\_\-planet} (\hyperlink{classWorld}{World} \&, unsigned, unsigned)}\label{classVirtual__planet_a16cc8781ce4c81e6365d87b659e5108c}
+\hyperlink{classVirtual__planet_a16cc8781ce4c81e6365d87b659e5108c}{Virtual\-\_\-planet} (\hyperlink{classWorld}{World} \&, unsigned, unsigned)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{classVirtual__planet_a4a2c71c2400d55bf861bc5d433123ac6}{Virtual\-\_\-planet} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$)
+\begin{DoxyCompactList}\small\item\em Constructeur par copie. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_a029ab1668b417b73c57fae8dae82cc1c}{virtual \hyperlink{classVirtual__planet_a029ab1668b417b73c57fae8dae82cc1c}{$\sim$\-Virtual\-\_\-planet} ()}\label{classVirtual__planet_a029ab1668b417b73c57fae8dae82cc1c}
 
-\item 
-\hypertarget{classVirtual__planet_a4a2c71c2400d55bf861bc5d433123ac6}{{\bfseries Virtual\-\_\-planet} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$)}\label{classVirtual__planet_a4a2c71c2400d55bf861bc5d433123ac6}
+\begin{DoxyCompactList}\small\item\em Destructeur à redéfinir. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_aa17b2d88853c46485a3907f08148ef1e}{void \hyperlink{classVirtual__planet_aa17b2d88853c46485a3907f08148ef1e}{set\-\_\-neighbourhood} ()}\label{classVirtual__planet_aa17b2d88853c46485a3907f08148ef1e}
 
-\item 
-\hypertarget{classVirtual__planet_aa17b2d88853c46485a3907f08148ef1e}{void {\bfseries set\-\_\-neighbourhood} ()}\label{classVirtual__planet_aa17b2d88853c46485a3907f08148ef1e}
+\begin{DoxyCompactList}\small\item\em Calcule le voisinage de la planète. \end{DoxyCompactList}\item 
+void \hyperlink{classVirtual__planet_ae32d3dd758346701d6f8c6f6f8a46925}{set\-\_\-neighbourhood2} ()
+\begin{DoxyCompactList}\small\item\em Calcule le voisinage de la planète. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classVirtual__planet_ac67c164e630df471819336d2404a99af}{update\-\_\-neighbourhood} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$, \hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$)
+\begin{DoxyCompactList}\small\item\em Met à jour le voisinage. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_aa0712e85ae6ae7e9f05bd6d943a1a7b4}{virtual bool \hyperlink{classVirtual__planet_aa0712e85ae6ae7e9f05bd6d943a1a7b4}{is\-\_\-attacked} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$)}\label{classVirtual__planet_aa0712e85ae6ae7e9f05bd6d943a1a7b4}
 
-\item 
-\hypertarget{classVirtual__planet_ae32d3dd758346701d6f8c6f6f8a46925}{void {\bfseries set\-\_\-neighbourhood2} ()}\label{classVirtual__planet_ae32d3dd758346701d6f8c6f6f8a46925}
+\begin{DoxyCompactList}\small\item\em Réponse lorsqu'une attaque est subie (vrai par défaut) \end{DoxyCompactList}\item 
+void \hyperlink{classVirtual__planet_aa063b164739842ba1c95018e24b122d5}{run} ()
+\begin{DoxyCompactList}\small\item\em Joue sur le plateau. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_a3294db05abde3781e5ed0625d5e094a6}{virtual void \hyperlink{classVirtual__planet_a3294db05abde3781e5ed0625d5e094a6}{reinitialisate\-\_\-target} ()}\label{classVirtual__planet_a3294db05abde3781e5ed0625d5e094a6}
 
-\item 
-\hypertarget{classVirtual__planet_ac67c164e630df471819336d2404a99af}{virtual void {\bfseries update\-\_\-neighbourhood} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$, \hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$)}\label{classVirtual__planet_ac67c164e630df471819336d2404a99af}
+\begin{DoxyCompactList}\small\item\em Réinitialisation de la cible, à redéfinir. \end{DoxyCompactList}\item 
+bool \hyperlink{classVirtual__planet_ab47d3e56b68242189b6df870d45c5157}{has\-\_\-changed} ()
+\begin{DoxyCompactList}\small\item\em Récupère un changement. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_affaf5157ca3fb7e3d5c9fac1736578a3}{virtual char \hyperlink{classVirtual__planet_affaf5157ca3fb7e3d5c9fac1736578a3}{display} ()}\label{classVirtual__planet_affaf5157ca3fb7e3d5c9fac1736578a3}
 
-\item 
-\hypertarget{classVirtual__planet_aa0712e85ae6ae7e9f05bd6d943a1a7b4}{virtual bool {\bfseries is\-\_\-attacked} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$)}\label{classVirtual__planet_aa0712e85ae6ae7e9f05bd6d943a1a7b4}
+\begin{DoxyCompactList}\small\item\em Caractère par défaut (point) \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_a7f442fee301927b27217877abb765833}{virtual double \hyperlink{classVirtual__planet_a7f442fee301927b27217877abb765833}{estimate\-\_\-cost} ()}\label{classVirtual__planet_a7f442fee301927b27217877abb765833}
 
-\item 
-\hypertarget{classVirtual__planet_aa063b164739842ba1c95018e24b122d5}{void {\bfseries run} ()}\label{classVirtual__planet_aa063b164739842ba1c95018e24b122d5}
+\begin{DoxyCompactList}\small\item\em Estime le cout d'une attaque. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_a84cba41f0fa06d0512ea462a26b972e3}{virtual std\-::string \hyperlink{classVirtual__planet_a84cba41f0fa06d0512ea462a26b972e3}{get\-\_\-color\-\_\-name} ()}\label{classVirtual__planet_a84cba41f0fa06d0512ea462a26b972e3}
 
-\item 
-\hypertarget{classVirtual__planet_a3294db05abde3781e5ed0625d5e094a6}{virtual void {\bfseries reinitialisate\-\_\-target} ()}\label{classVirtual__planet_a3294db05abde3781e5ed0625d5e094a6}
+\begin{DoxyCompactList}\small\item\em Couleur par défaut (gris) \end{DoxyCompactList}\item 
+virtual \hyperlink{classFaction}{Faction} \& \hyperlink{classVirtual__planet_ac0d0e30029566b9113652c04ec2e6599}{get\-\_\-faction} ()
+\begin{DoxyCompactList}\small\item\em Obtenir la faction à laquelle appartient la planète. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_acccedbd81a89f4ad75a6a5c1c09b044c}{virtual unsigned \hyperlink{classVirtual__planet_acccedbd81a89f4ad75a6a5c1c09b044c}{pos\-\_\-x} ()}\label{classVirtual__planet_acccedbd81a89f4ad75a6a5c1c09b044c}
 
-\item 
-\hypertarget{classVirtual__planet_ab47d3e56b68242189b6df870d45c5157}{bool {\bfseries has\-\_\-changed} ()}\label{classVirtual__planet_ab47d3e56b68242189b6df870d45c5157}
+\begin{DoxyCompactList}\small\item\em Ligne dans la grille. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_a3453bf12cb4d348aee6594c127ba6a56}{virtual unsigned \hyperlink{classVirtual__planet_a3453bf12cb4d348aee6594c127ba6a56}{pos\-\_\-y} ()}\label{classVirtual__planet_a3453bf12cb4d348aee6594c127ba6a56}
 
-\item 
-\hypertarget{classVirtual__planet_affaf5157ca3fb7e3d5c9fac1736578a3}{virtual char {\bfseries display} ()}\label{classVirtual__planet_affaf5157ca3fb7e3d5c9fac1736578a3}
+\begin{DoxyCompactList}\small\item\em Colonne dans la grille. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_a1d3474a2ca3833a770c3763884a84323}{\hyperlink{classWorld}{World} \& \hyperlink{classVirtual__planet_a1d3474a2ca3833a770c3763884a84323}{get\-\_\-world} ()}\label{classVirtual__planet_a1d3474a2ca3833a770c3763884a84323}
 
-\item 
-\hypertarget{classVirtual__planet_a7f442fee301927b27217877abb765833}{virtual double {\bfseries estimate\-\_\-cost} ()}\label{classVirtual__planet_a7f442fee301927b27217877abb765833}
+\begin{DoxyCompactList}\small\item\em Monde auquel appartient la planète. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_a25045d61c5ee29b94de56db88fa96f98}{virtual double \hyperlink{classVirtual__planet_a25045d61c5ee29b94de56db88fa96f98}{get\-\_\-defense} ()}\label{classVirtual__planet_a25045d61c5ee29b94de56db88fa96f98}
 
-\item 
-\hypertarget{classVirtual__planet_a84cba41f0fa06d0512ea462a26b972e3}{virtual std\-::string {\bfseries get\-\_\-color\-\_\-name} ()}\label{classVirtual__planet_a84cba41f0fa06d0512ea462a26b972e3}
+\begin{DoxyCompactList}\small\item\em Défense de base. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_a4294d3312671d720dca0b72a1648e6a4}{virtual double \hyperlink{classVirtual__planet_a4294d3312671d720dca0b72a1648e6a4}{get\-\_\-production} ()}\label{classVirtual__planet_a4294d3312671d720dca0b72a1648e6a4}
 
-\item 
-\hypertarget{classVirtual__planet_ac0d0e30029566b9113652c04ec2e6599}{virtual \hyperlink{classFaction}{Faction} \& {\bfseries get\-\_\-faction} ()}\label{classVirtual__planet_ac0d0e30029566b9113652c04ec2e6599}
+\begin{DoxyCompactList}\small\item\em Productivité de base. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_a996699dcad7e99262842e06079896ed1}{std\-::vector$<$ \hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$ $>$ \hyperlink{classVirtual__planet_a996699dcad7e99262842e06079896ed1}{get\-\_\-neighbourhood} ()}\label{classVirtual__planet_a996699dcad7e99262842e06079896ed1}
 
-\item 
-\hypertarget{classVirtual__planet_acccedbd81a89f4ad75a6a5c1c09b044c}{virtual unsigned {\bfseries pos\-\_\-x} ()}\label{classVirtual__planet_acccedbd81a89f4ad75a6a5c1c09b044c}
-
-\item 
-\hypertarget{classVirtual__planet_a3453bf12cb4d348aee6594c127ba6a56}{virtual unsigned {\bfseries pos\-\_\-y} ()}\label{classVirtual__planet_a3453bf12cb4d348aee6594c127ba6a56}
-
-\item 
-\hypertarget{classVirtual__planet_a1d3474a2ca3833a770c3763884a84323}{\hyperlink{classWorld}{World} \& {\bfseries get\-\_\-world} ()}\label{classVirtual__planet_a1d3474a2ca3833a770c3763884a84323}
-
-\item 
-\hypertarget{classVirtual__planet_a996699dcad7e99262842e06079896ed1}{std\-::vector$<$ \hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$ $>$ {\bfseries get\-\_\-neighbourhood} ()}\label{classVirtual__planet_a996699dcad7e99262842e06079896ed1}
-
-\item 
-\hypertarget{classVirtual__planet_a25045d61c5ee29b94de56db88fa96f98}{virtual double {\bfseries get\-\_\-defense} ()}\label{classVirtual__planet_a25045d61c5ee29b94de56db88fa96f98}
-
-\item 
-\hypertarget{classVirtual__planet_a4294d3312671d720dca0b72a1648e6a4}{virtual double {\bfseries get\-\_\-production} ()}\label{classVirtual__planet_a4294d3312671d720dca0b72a1648e6a4}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Liste des voisins. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions membres protégées}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classVirtual__planet_a9c79d42a13bb25243354faf9895aca14}{void {\bfseries change} ()}\label{classVirtual__planet_a9c79d42a13bb25243354faf9895aca14}
+\hypertarget{classVirtual__planet_a9c79d42a13bb25243354faf9895aca14}{void \hyperlink{classVirtual__planet_a9c79d42a13bb25243354faf9895aca14}{change} ()}\label{classVirtual__planet_a9c79d42a13bb25243354faf9895aca14}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Signale un changement d'état. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Attributs protégés}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classVirtual__planet_a16ff82fac346eec9d2229fb8c09e3807}{\hyperlink{classWorld}{World} \& {\bfseries world\-\_\-}}\label{classVirtual__planet_a16ff82fac346eec9d2229fb8c09e3807}
+\hypertarget{classVirtual__planet_a16ff82fac346eec9d2229fb8c09e3807}{\hyperlink{classWorld}{World} \& \hyperlink{classVirtual__planet_a16ff82fac346eec9d2229fb8c09e3807}{world\-\_\-}}\label{classVirtual__planet_a16ff82fac346eec9d2229fb8c09e3807}
 
-\item 
-\hypertarget{classVirtual__planet_ad03593bd1a1236933b638f6079f639b1}{unsigned {\bfseries pos\-\_\-x\-\_\-}}\label{classVirtual__planet_ad03593bd1a1236933b638f6079f639b1}
+\begin{DoxyCompactList}\small\item\em Monde auquel appartient la planète. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_ad03593bd1a1236933b638f6079f639b1}{unsigned \hyperlink{classVirtual__planet_ad03593bd1a1236933b638f6079f639b1}{pos\-\_\-x\-\_\-}}\label{classVirtual__planet_ad03593bd1a1236933b638f6079f639b1}
 
-\item 
-\hypertarget{classVirtual__planet_aa7e03c8010b64d2528d5edb5651962a9}{unsigned {\bfseries pos\-\_\-y\-\_\-}}\label{classVirtual__planet_aa7e03c8010b64d2528d5edb5651962a9}
+\begin{DoxyCompactList}\small\item\em Ligne dans la grille. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_aa7e03c8010b64d2528d5edb5651962a9}{unsigned \hyperlink{classVirtual__planet_aa7e03c8010b64d2528d5edb5651962a9}{pos\-\_\-y\-\_\-}}\label{classVirtual__planet_aa7e03c8010b64d2528d5edb5651962a9}
 
-\item 
-\hypertarget{classVirtual__planet_a353b64093f5c146de64a2f694738b65b}{std\-::vector$<$ \hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$ $>$ {\bfseries neighbourhood\-\_\-}}\label{classVirtual__planet_a353b64093f5c146de64a2f694738b65b}
+\begin{DoxyCompactList}\small\item\em Colonne dans la grille. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_a353b64093f5c146de64a2f694738b65b}{std\-::vector$<$ \hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$ $>$ \hyperlink{classVirtual__planet_a353b64093f5c146de64a2f694738b65b}{neighbourhood\-\_\-}}\label{classVirtual__planet_a353b64093f5c146de64a2f694738b65b}
 
-\item 
-\hypertarget{classVirtual__planet_aa5ebb40e5a4ed0a631b120749f938f35}{bool {\bfseries changed\-\_\-}}\label{classVirtual__planet_aa5ebb40e5a4ed0a631b120749f938f35}
-
-\item 
-\hypertarget{classVirtual__planet_a6f8de6a5104185b9c36c64a45260fab6}{double {\bfseries production\-\_\-rate\-\_\-}}\label{classVirtual__planet_a6f8de6a5104185b9c36c64a45260fab6}
-
-\item 
-\hypertarget{classVirtual__planet_af62ede97e609fd17818af229799dbe3b}{double {\bfseries natural\-\_\-defense\-\_\-}}\label{classVirtual__planet_af62ede97e609fd17818af229799dbe3b}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Liste des voisins. \end{DoxyCompactList}\item 
+bool \hyperlink{classVirtual__planet_aa5ebb40e5a4ed0a631b120749f938f35}{changed\-\_\-}
+\begin{DoxyCompactList}\small\item\em Etat changé \end{DoxyCompactList}\item 
+double \hyperlink{classVirtual__planet_a6f8de6a5104185b9c36c64a45260fab6}{production\-\_\-rate\-\_\-}
+\begin{DoxyCompactList}\small\item\em Taux de production entre M\-I\-N\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N\-\_\-\-R\-A\-T\-E et M\-A\-X\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N\-\_\-\-R\-A\-T\-E. \end{DoxyCompactList}\item 
+double \hyperlink{classVirtual__planet_af62ede97e609fd17818af229799dbe3b}{natural\-\_\-defense\-\_\-}
+\begin{DoxyCompactList}\small\item\em Taux de défense naturelle entre M\-I\-N\-\_\-\-N\-A\-T\-U\-R\-A\-L\-\_\-\-D\-E\-F\-E\-N\-S\-E et M\-A\-X\-\_\-\-N\-A\-T\-U\-R\-A\-L\-\_\-\-D\-E\-F\-E\-N\-S\-E. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Attributs protégés statiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classVirtual__planet_a5c08ee009e9d9d0b284b133e18c2b7f9}{static const int {\bfseries M\-I\-N\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N\-\_\-\-R\-A\-T\-E} = 0}\label{classVirtual__planet_a5c08ee009e9d9d0b284b133e18c2b7f9}
+\hypertarget{classVirtual__planet_a5c08ee009e9d9d0b284b133e18c2b7f9}{static const int \hyperlink{classVirtual__planet_a5c08ee009e9d9d0b284b133e18c2b7f9}{M\-I\-N\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N\-\_\-\-R\-A\-T\-E} = 0}\label{classVirtual__planet_a5c08ee009e9d9d0b284b133e18c2b7f9}
 
-\item 
-\hypertarget{classVirtual__planet_a0899115c7ae16c4e07e6319209b678cc}{static const int {\bfseries M\-A\-X\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N\-\_\-\-R\-A\-T\-E} = 15}\label{classVirtual__planet_a0899115c7ae16c4e07e6319209b678cc}
+\begin{DoxyCompactList}\small\item\em Taux de production minimal. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_a0899115c7ae16c4e07e6319209b678cc}{static const int \hyperlink{classVirtual__planet_a0899115c7ae16c4e07e6319209b678cc}{M\-A\-X\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N\-\_\-\-R\-A\-T\-E} = 15}\label{classVirtual__planet_a0899115c7ae16c4e07e6319209b678cc}
 
-\item 
-\hypertarget{classVirtual__planet_ae0e71188803de0af557c7a1db8bd2d95}{static const int {\bfseries M\-I\-N\-\_\-\-N\-A\-T\-U\-R\-A\-L\-\_\-\-D\-E\-F\-E\-N\-S\-E} = 25}\label{classVirtual__planet_ae0e71188803de0af557c7a1db8bd2d95}
+\begin{DoxyCompactList}\small\item\em Taux de production maximal. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_ae0e71188803de0af557c7a1db8bd2d95}{static const int \hyperlink{classVirtual__planet_ae0e71188803de0af557c7a1db8bd2d95}{M\-I\-N\-\_\-\-N\-A\-T\-U\-R\-A\-L\-\_\-\-D\-E\-F\-E\-N\-S\-E} = 25}\label{classVirtual__planet_ae0e71188803de0af557c7a1db8bd2d95}
 
-\item 
-\hypertarget{classVirtual__planet_ad5b8a23606fded6c444a93136fceab0a}{static const int {\bfseries M\-A\-X\-\_\-\-N\-A\-T\-U\-R\-A\-L\-\_\-\-D\-E\-F\-E\-N\-S\-E} = 50}\label{classVirtual__planet_ad5b8a23606fded6c444a93136fceab0a}
+\begin{DoxyCompactList}\small\item\em Taux de défense naturelle minimal. \end{DoxyCompactList}\item 
+\hypertarget{classVirtual__planet_ad5b8a23606fded6c444a93136fceab0a}{static const int \hyperlink{classVirtual__planet_ad5b8a23606fded6c444a93136fceab0a}{M\-A\-X\-\_\-\-N\-A\-T\-U\-R\-A\-L\-\_\-\-D\-E\-F\-E\-N\-S\-E} = 50}\label{classVirtual__planet_ad5b8a23606fded6c444a93136fceab0a}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Taux de défense naturelle maximal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Planète virtuelle. 
+
+Planète servant de base à toutes les autres. Contient tous les paramètres communs 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classVirtual__planet_a16cc8781ce4c81e6365d87b659e5108c}{\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}!Virtual\-\_\-planet@{Virtual\-\_\-planet}}
+\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}!Virtual_planet@{Virtual\-\_\-planet}}
+\subsubsection[{Virtual\-\_\-planet}]{\setlength{\rightskip}{0pt plus 5cm}Virtual\-\_\-planet\-::\-Virtual\-\_\-planet (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{unsigned}]{pos\-\_\-x, }
+\item[{unsigned}]{pos\-\_\-y}
+\end{DoxyParamCaption}
+)}}\label{classVirtual__planet_a16cc8781ce4c81e6365d87b659e5108c}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & Monde auquel la planète appartient \\
+\hline
+{\em pos\-\_\-x} & Ligne dans la grille \\
+\hline
+{\em pos\-\_\-y} & Colonne dans la grille \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVirtual__planet_a4a2c71c2400d55bf861bc5d433123ac6}{\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}!Virtual\-\_\-planet@{Virtual\-\_\-planet}}
+\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}!Virtual_planet@{Virtual\-\_\-planet}}
+\subsubsection[{Virtual\-\_\-planet}]{\setlength{\rightskip}{0pt plus 5cm}Virtual\-\_\-planet\-::\-Virtual\-\_\-planet (
+\begin{DoxyParamCaption}
+\item[{{\bf Virtual\-\_\-planet} $\ast$}]{other}
+\end{DoxyParamCaption}
+)}}\label{classVirtual__planet_a4a2c71c2400d55bf861bc5d433123ac6}
+
+
+Constructeur par copie. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em other} & Planète d'origine \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classVirtual__planet_ac0d0e30029566b9113652c04ec2e6599}{\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}!get\-\_\-faction@{get\-\_\-faction}}
+\index{get\-\_\-faction@{get\-\_\-faction}!Virtual_planet@{Virtual\-\_\-planet}}
+\subsubsection[{get\-\_\-faction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Faction} \& Virtual\-\_\-planet\-::get\-\_\-faction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classVirtual__planet_ac0d0e30029566b9113652c04ec2e6599}
+
+
+Obtenir la faction à laquelle appartient la planète. 
+
+\begin{DoxyReturn}{Renvoie}
+\hyperlink{classFaction}{Faction} neutre par défaut 
+\end{DoxyReturn}
+
+
+Réimplémentée dans \hyperlink{classColonized__planet_a78748eadea1186e104ccc247a1d1f546}{Colonized\-\_\-planet}.
+
+\hypertarget{classVirtual__planet_ab47d3e56b68242189b6df870d45c5157}{\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}!has\-\_\-changed@{has\-\_\-changed}}
+\index{has\-\_\-changed@{has\-\_\-changed}!Virtual_planet@{Virtual\-\_\-planet}}
+\subsubsection[{has\-\_\-changed}]{\setlength{\rightskip}{0pt plus 5cm}bool Virtual\-\_\-planet\-::has\-\_\-changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVirtual__planet_ab47d3e56b68242189b6df870d45c5157}
+
+
+Récupère un changement. 
+
+\begin{DoxyReturn}{Renvoie}
+l'état de changement
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+réinitialise l'état de changement s'il était actif 
+\end{DoxyNote}
+\hypertarget{classVirtual__planet_aa063b164739842ba1c95018e24b122d5}{\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}!run@{run}}
+\index{run@{run}!Virtual_planet@{Virtual\-\_\-planet}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Virtual\-\_\-planet\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVirtual__planet_aa063b164739842ba1c95018e24b122d5}
+
+
+Joue sur le plateau. 
+
+\begin{DoxyNote}{Note}
+Non utilisée 
+\end{DoxyNote}
+\hypertarget{classVirtual__planet_ae32d3dd758346701d6f8c6f6f8a46925}{\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}!set\-\_\-neighbourhood2@{set\-\_\-neighbourhood2}}
+\index{set\-\_\-neighbourhood2@{set\-\_\-neighbourhood2}!Virtual_planet@{Virtual\-\_\-planet}}
+\subsubsection[{set\-\_\-neighbourhood2}]{\setlength{\rightskip}{0pt plus 5cm}void Virtual\-\_\-planet\-::set\-\_\-neighbourhood2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVirtual__planet_ae32d3dd758346701d6f8c6f6f8a46925}
+
+
+Calcule le voisinage de la planète. 
+
+\begin{DoxyNote}{Note}
+Grille torique 
+\end{DoxyNote}
+\hypertarget{classVirtual__planet_ac67c164e630df471819336d2404a99af}{\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}!update\-\_\-neighbourhood@{update\-\_\-neighbourhood}}
+\index{update\-\_\-neighbourhood@{update\-\_\-neighbourhood}!Virtual_planet@{Virtual\-\_\-planet}}
+\subsubsection[{update\-\_\-neighbourhood}]{\setlength{\rightskip}{0pt plus 5cm}void Virtual\-\_\-planet\-::update\-\_\-neighbourhood (
+\begin{DoxyParamCaption}
+\item[{{\bf Virtual\-\_\-planet} $\ast$}]{old\-\_\-one, }
+\item[{{\bf Virtual\-\_\-planet} $\ast$}]{new\-\_\-one}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classVirtual__planet_ac67c164e630df471819336d2404a99af}
+
+
+Met à jour le voisinage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em old\-\_\-one} & planète à remplacer \\
+\hline
+{\em new\-\_\-one} & planète remplaçante \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée dans \hyperlink{classColonized__planet_ac4f99490dc15c7715c1b476a490228a4}{Colonized\-\_\-planet}.
+
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classVirtual__planet_aa5ebb40e5a4ed0a631b120749f938f35}{\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}!changed\-\_\-@{changed\-\_\-}}
+\index{changed\-\_\-@{changed\-\_\-}!Virtual_planet@{Virtual\-\_\-planet}}
+\subsubsection[{changed\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Virtual\-\_\-planet\-::changed\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVirtual__planet_aa5ebb40e5a4ed0a631b120749f938f35}
+
+
+Etat changé 
+
+\begin{DoxyRefDesc}{A faire}
+\item[\hyperlink{todo__todo000006}{A faire}]vérifier \end{DoxyRefDesc}
+\hypertarget{classVirtual__planet_af62ede97e609fd17818af229799dbe3b}{\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}!natural\-\_\-defense\-\_\-@{natural\-\_\-defense\-\_\-}}
+\index{natural\-\_\-defense\-\_\-@{natural\-\_\-defense\-\_\-}!Virtual_planet@{Virtual\-\_\-planet}}
+\subsubsection[{natural\-\_\-defense\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Virtual\-\_\-planet\-::natural\-\_\-defense\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVirtual__planet_af62ede97e609fd17818af229799dbe3b}
+
+
+Taux de défense naturelle entre M\-I\-N\-\_\-\-N\-A\-T\-U\-R\-A\-L\-\_\-\-D\-E\-F\-E\-N\-S\-E et M\-A\-X\-\_\-\-N\-A\-T\-U\-R\-A\-L\-\_\-\-D\-E\-F\-E\-N\-S\-E. 
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{classVirtual__planet_ae0e71188803de0af557c7a1db8bd2d95}{M\-I\-N\-\_\-\-N\-A\-T\-U\-R\-A\-L\-\_\-\-D\-E\-F\-E\-N\-S\-E} 
+
+\hyperlink{classVirtual__planet_ad5b8a23606fded6c444a93136fceab0a}{M\-A\-X\-\_\-\-N\-A\-T\-U\-R\-A\-L\-\_\-\-D\-E\-F\-E\-N\-S\-E} 
+\end{DoxySeeAlso}
+\hypertarget{classVirtual__planet_a6f8de6a5104185b9c36c64a45260fab6}{\index{Virtual\-\_\-planet@{Virtual\-\_\-planet}!production\-\_\-rate\-\_\-@{production\-\_\-rate\-\_\-}}
+\index{production\-\_\-rate\-\_\-@{production\-\_\-rate\-\_\-}!Virtual_planet@{Virtual\-\_\-planet}}
+\subsubsection[{production\-\_\-rate\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Virtual\-\_\-planet\-::production\-\_\-rate\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVirtual__planet_a6f8de6a5104185b9c36c64a45260fab6}
+
+
+Taux de production entre M\-I\-N\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N\-\_\-\-R\-A\-T\-E et M\-A\-X\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N\-\_\-\-R\-A\-T\-E. 
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{classVirtual__planet_a5c08ee009e9d9d0b284b133e18c2b7f9}{M\-I\-N\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N\-\_\-\-R\-A\-T\-E} 
+
+\hyperlink{classVirtual__planet_a0899115c7ae16c4e07e6319209b678cc}{M\-A\-X\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N\-\_\-\-R\-A\-T\-E} 
+\end{DoxySeeAlso}
 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['target_5f',['target_',['../classColonized__planet.html#af24d15905b14b8a1af9c202791dffe5f',1,'Colonized_planet']]],
-  ['timer',['timer',['../classDisplayer.html#a9edd62c6f4cf550385c1dc9933e49d0e',1,'Displayer']]]
+  ['len_5f',['len_',['../classWorld.html#a37b008437fd73a5d4d6851a88ba61167',1,'World']]],
+  ['len_5fcanvas_5f',['len_canvas_',['../classDisplayer.html#aff59f7de619d0d84e91aaf6087b55ebc',1,'Displayer']]],
+  ['len_5ftext_5fbox_5f',['len_text_box_',['../classDisplayer.html#aedcdc7b40771c068fb70f9f74b2d6689',1,'Displayer']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['len_5fcanvas_5f',['len_canvas_',['../classDisplayer.html#aff59f7de619d0d84e91aaf6087b55ebc',1,'Displayer']]],
-  ['len_5ftext_5fbox_5f',['len_text_box_',['../classDisplayer.html#aedcdc7b40771c068fb70f9f74b2d6689',1,'Displayer']]]
+  ['gen_5fmt_5f',['gen_mt_',['../classWorld.html#ac4f18672fbf891451b559d6c4eb59310',1,'World']]],
+  ['gold_5f',['gold_',['../classDisplayer.html#a90406aeaba7f4c87910305f2592743fb',1,'Displayer']]],
+  ['grid_5f',['grid_',['../classWorld.html#a46afecbf41a86494f6e48dad3d4a3247',1,'World']]]
 ];

@@ -86,174 +86,458 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
-<a href="#pri-methods">Fonctions membres privées</a> &#124;
 <a href="#pri-attribs">Attributs privés</a> &#124;
 <a href="classFaction-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
 <div class="title">Référence de la classe Faction</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Entité de jeu, ensemble de planètes.  
+ <a href="classFaction.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Faction_8hpp_source.html">Faction.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de Faction:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classFaction.png" usemap="#Faction_map" alt=""/>
   <map id="Faction_map" name="Faction_map">
-<area href="classNeutral__faction.html" alt="Neutral_faction" shape="rect" coords="0,56,98,80"/>
+<area href="classNeutral__faction.html" title="Faction neutre. " alt="Neutral_faction" shape="rect" coords="0,56,98,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a470f14f0b1d94261d427a4673fe92421"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a470f14f0b1d94261d427a4673fe92421"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Faction</b> (<a class="el" href="classWorld.html">World</a> &amp;world, std::string name=&quot;default&quot;, Mother_land *=nullptr)</td></tr>
+<tr class="memitem:a470f14f0b1d94261d427a4673fe92421"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a470f14f0b1d94261d427a4673fe92421">Faction</a> (<a class="el" href="classWorld.html">World</a> &amp;world, std::string name=&quot;default&quot;, Mother_land *=nullptr)</td></tr>
+<tr class="memdesc:a470f14f0b1d94261d427a4673fe92421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a470f14f0b1d94261d427a4673fe92421">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a470f14f0b1d94261d427a4673fe92421"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add5275f09ab0dd9a43dc7aa6e04e6e8a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add5275f09ab0dd9a43dc7aa6e04e6e8a"></a>
-<a class="el" href="classFaction.html">Faction</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classFaction.html">Faction</a>)</td></tr>
+<a class="el" href="classFaction.html">Faction</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#add5275f09ab0dd9a43dc7aa6e04e6e8a">operator=</a> (<a class="el" href="classFaction.html">Faction</a>)</td></tr>
+<tr class="memdesc:add5275f09ab0dd9a43dc7aa6e04e6e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opérateur d'affectation, sans effet. <br/></td></tr>
 <tr class="separator:add5275f09ab0dd9a43dc7aa6e04e6e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92285ba431e78a6fccb7ef1a9283dd65"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a92285ba431e78a6fccb7ef1a9283dd65"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classFaction.html">Faction</a> &amp;other) const </td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a92285ba431e78a6fccb7ef1a9283dd65">operator==</a> (const <a class="el" href="classFaction.html">Faction</a> &amp;other) const </td></tr>
+<tr class="memdesc:a92285ba431e78a6fccb7ef1a9283dd65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparateur avec une autre faction. <br/></td></tr>
 <tr class="separator:a92285ba431e78a6fccb7ef1a9283dd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adce9c9ccf9fe8a20a2680dd918a59a28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adce9c9ccf9fe8a20a2680dd918a59a28"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (<a class="el" href="classFaction.html">Faction</a> &amp;other)</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#adce9c9ccf9fe8a20a2680dd918a59a28">operator==</a> (<a class="el" href="classFaction.html">Faction</a> &amp;other)</td></tr>
+<tr class="memdesc:adce9c9ccf9fe8a20a2680dd918a59a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparateur avec une autre faction. <br/></td></tr>
 <tr class="separator:adce9c9ccf9fe8a20a2680dd918a59a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa398dcd8f3ca6cf694f69c2de152c538"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa398dcd8f3ca6cf694f69c2de152c538"></a>
-<a class="el" href="classFaction.html">Faction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
+<tr class="memitem:aa398dcd8f3ca6cf694f69c2de152c538"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFaction.html">Faction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#aa398dcd8f3ca6cf694f69c2de152c538">run</a> ()</td></tr>
+<tr class="memdesc:aa398dcd8f3ca6cf694f69c2de152c538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lance le jeu.  <a href="#aa398dcd8f3ca6cf694f69c2de152c538">Plus de détails...</a><br/></td></tr>
 <tr class="separator:aa398dcd8f3ca6cf694f69c2de152c538"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f7c37fe385ee3a41e875aa23b6a8319"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f7c37fe385ee3a41e875aa23b6a8319"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()</td></tr>
+<tr class="memitem:a4f7c37fe385ee3a41e875aa23b6a8319"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a4f7c37fe385ee3a41e875aa23b6a8319">init</a> ()</td></tr>
+<tr class="memdesc:a4f7c37fe385ee3a41e875aa23b6a8319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la faction.  <a href="#a4f7c37fe385ee3a41e875aa23b6a8319">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a4f7c37fe385ee3a41e875aa23b6a8319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a144860993dcfd384b23da00219ed0b88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a144860993dcfd384b23da00219ed0b88"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>die</b> ()</td></tr>
+<tr class="memitem:a144860993dcfd384b23da00219ed0b88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a144860993dcfd384b23da00219ed0b88">die</a> ()</td></tr>
+<tr class="memdesc:a144860993dcfd384b23da00219ed0b88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tue la faction.  <a href="#a144860993dcfd384b23da00219ed0b88">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a144860993dcfd384b23da00219ed0b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8ff16ef1f7fa6ba418ae7cf37406170"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8ff16ef1f7fa6ba418ae7cf37406170"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_name</b> ()</td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#ac8ff16ef1f7fa6ba418ae7cf37406170">get_name</a> ()</td></tr>
+<tr class="memdesc:ac8ff16ef1f7fa6ba418ae7cf37406170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nom de la colonie. <br/></td></tr>
 <tr class="separator:ac8ff16ef1f7fa6ba418ae7cf37406170"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0630bba70db7fc1881a5d0a2c7cac1c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0630bba70db7fc1881a5d0a2c7cac1c6"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>get_money</b> ()</td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a0630bba70db7fc1881a5d0a2c7cac1c6">get_money</a> ()</td></tr>
+<tr class="memdesc:a0630bba70db7fc1881a5d0a2c7cac1c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argent disponible. <br/></td></tr>
 <tr class="separator:a0630bba70db7fc1881a5d0a2c7cac1c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad533ba9bbe8db562be988889553daf14"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad533ba9bbe8db562be988889553daf14"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>get_motherland_symbol</b> ()</td></tr>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#ad533ba9bbe8db562be988889553daf14">get_motherland_symbol</a> ()</td></tr>
+<tr class="memdesc:ad533ba9bbe8db562be988889553daf14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caractère représentant la planète mère. <br/></td></tr>
 <tr class="separator:ad533ba9bbe8db562be988889553daf14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72aec7ed1856741ef6ec6cec3049c057"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a72aec7ed1856741ef6ec6cec3049c057"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>get_colony_symbol</b> ()</td></tr>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a72aec7ed1856741ef6ec6cec3049c057">get_colony_symbol</a> ()</td></tr>
+<tr class="memdesc:a72aec7ed1856741ef6ec6cec3049c057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caractère représentant une colonie. <br/></td></tr>
 <tr class="separator:a72aec7ed1856741ef6ec6cec3049c057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e31e6fb93e25c7bac4a7e3d28ac4169"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e31e6fb93e25c7bac4a7e3d28ac4169"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_colony_color_name</b> ()</td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a2e31e6fb93e25c7bac4a7e3d28ac4169">get_colony_color_name</a> ()</td></tr>
+<tr class="memdesc:a2e31e6fb93e25c7bac4a7e3d28ac4169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Couleur x11 des colonies. <br/></td></tr>
 <tr class="separator:a2e31e6fb93e25c7bac4a7e3d28ac4169"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4258c106abb09cb851a21980b8fc4996"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4258c106abb09cb851a21980b8fc4996"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_motherland_color_name</b> ()</td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a4258c106abb09cb851a21980b8fc4996">get_motherland_color_name</a> ()</td></tr>
+<tr class="memdesc:a4258c106abb09cb851a21980b8fc4996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Couleur x11 de la planète mère. <br/></td></tr>
 <tr class="separator:a4258c106abb09cb851a21980b8fc4996"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e27a1269e4e34e6abfed1302a9cf7e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e27a1269e4e34e6abfed1302a9cf7e3"></a>
-<a class="el" href="classMother__land.html">Mother_land</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_motherland_</b> ()</td></tr>
+<a class="el" href="classMother__land.html">Mother_land</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a4e27a1269e4e34e6abfed1302a9cf7e3">get_motherland_</a> ()</td></tr>
+<tr class="memdesc:a4e27a1269e4e34e6abfed1302a9cf7e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Planète mère. <br/></td></tr>
 <tr class="separator:a4e27a1269e4e34e6abfed1302a9cf7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54e816116f2274310608bd6dfcf65dad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54e816116f2274310608bd6dfcf65dad"></a>
-std::list&lt; <a class="el" href="classColonized__planet.html">Colonized_planet</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_colonies</b> ()</td></tr>
+std::list&lt; <a class="el" href="classColonized__planet.html">Colonized_planet</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a54e816116f2274310608bd6dfcf65dad">get_colonies</a> ()</td></tr>
+<tr class="memdesc:a54e816116f2274310608bd6dfcf65dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des colonies. <br/></td></tr>
 <tr class="separator:a54e816116f2274310608bd6dfcf65dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5d7a35b69eab9770069c27f2b61d527"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5d7a35b69eab9770069c27f2b61d527"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_colony</b> (<a class="el" href="classColonized__planet.html">Colonized_planet</a> *colony)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#ab5d7a35b69eab9770069c27f2b61d527">add_colony</a> (<a class="el" href="classColonized__planet.html">Colonized_planet</a> *colony)</td></tr>
+<tr class="memdesc:ab5d7a35b69eab9770069c27f2b61d527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une colonie à la faction. <br/></td></tr>
 <tr class="separator:ab5d7a35b69eab9770069c27f2b61d527"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0806d816ec82da48403a87a515e9ad0a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0806d816ec82da48403a87a515e9ad0a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>remove_colony</b> (<a class="el" href="classColonized__planet.html">Colonized_planet</a> *colony)</td></tr>
+<tr class="memitem:a0806d816ec82da48403a87a515e9ad0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a0806d816ec82da48403a87a515e9ad0a">remove_colony</a> (<a class="el" href="classColonized__planet.html">Colonized_planet</a> *colony)</td></tr>
+<tr class="memdesc:a0806d816ec82da48403a87a515e9ad0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime une colonie.  <a href="#a0806d816ec82da48403a87a515e9ad0a">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a0806d816ec82da48403a87a515e9ad0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c704bccee1f3c845b3b521429bc4e60"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c704bccee1f3c845b3b521429bc4e60"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>remove_mother_land</b> ()</td></tr>
+<tr class="memitem:a5c704bccee1f3c845b3b521429bc4e60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a5c704bccee1f3c845b3b521429bc4e60">remove_mother_land</a> ()</td></tr>
+<tr class="memdesc:a5c704bccee1f3c845b3b521429bc4e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime la planète mère.  <a href="#a5c704bccee1f3c845b3b521429bc4e60">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a5c704bccee1f3c845b3b521429bc4e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae90c4eab208071323dbc6c0991a22051"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae90c4eab208071323dbc6c0991a22051"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>remove_demand</b> (<a class="el" href="classColonized__planet.html">Colonized_planet</a> *colony)</td></tr>
+<tr class="memitem:ae90c4eab208071323dbc6c0991a22051"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#ae90c4eab208071323dbc6c0991a22051">remove_demand</a> (<a class="el" href="classColonized__planet.html">Colonized_planet</a> *colony)</td></tr>
+<tr class="memdesc:ae90c4eab208071323dbc6c0991a22051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime une demande de fonds.  <a href="#ae90c4eab208071323dbc6c0991a22051">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ae90c4eab208071323dbc6c0991a22051"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab550ddb4adcb6d480e4004915e7f20ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab550ddb4adcb6d480e4004915e7f20ce"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_to_banque</b> (double)</td></tr>
+<tr class="memitem:ab550ddb4adcb6d480e4004915e7f20ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#ab550ddb4adcb6d480e4004915e7f20ce">add_to_banque</a> (double)</td></tr>
+<tr class="memdesc:ab550ddb4adcb6d480e4004915e7f20ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute de l'argent généré à la banque.  <a href="#ab550ddb4adcb6d480e4004915e7f20ce">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ab550ddb4adcb6d480e4004915e7f20ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07b25ba27c0c8d158cb2310d064cc8a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07b25ba27c0c8d158cb2310d064cc8a4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_colony_symbol</b> (char c)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a07b25ba27c0c8d158cb2310d064cc8a4">set_colony_symbol</a> (char c)</td></tr>
+<tr class="memdesc:a07b25ba27c0c8d158cb2310d064cc8a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit le caractère représentant une colonie. <br/></td></tr>
 <tr class="separator:a07b25ba27c0c8d158cb2310d064cc8a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c1d1b8ab782174bf113ad7183cfe0c3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c1d1b8ab782174bf113ad7183cfe0c3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_motherland_symbol</b> (char c)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a9c1d1b8ab782174bf113ad7183cfe0c3">set_motherland_symbol</a> (char c)</td></tr>
+<tr class="memdesc:a9c1d1b8ab782174bf113ad7183cfe0c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit le caractère représentant la planète mère. <br/></td></tr>
 <tr class="separator:a9c1d1b8ab782174bf113ad7183cfe0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51eadaa457179270f1950ed84e44df56"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51eadaa457179270f1950ed84e44df56"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_colony_color_name</b> (std::string colony_color_name)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a51eadaa457179270f1950ed84e44df56">set_colony_color_name</a> (std::string colony_color_name)</td></tr>
+<tr class="memdesc:a51eadaa457179270f1950ed84e44df56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la couleur des colonies. <br/></td></tr>
 <tr class="separator:a51eadaa457179270f1950ed84e44df56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab17a2eabec14355868177554502972c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab17a2eabec14355868177554502972c7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_motherland_color_name</b> (std::string motherland_color_name)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#ab17a2eabec14355868177554502972c7">set_motherland_color_name</a> (std::string motherland_color_name)</td></tr>
+<tr class="memdesc:ab17a2eabec14355868177554502972c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la couleur de la planète mère. <br/></td></tr>
 <tr class="separator:ab17a2eabec14355868177554502972c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a61c34f87a1d1f1284aba39c4887595"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a61c34f87a1d1f1284aba39c4887595"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_demand</b> (<a class="el" href="classColonized__planet.html">Colonized_planet</a> *, double)</td></tr>
+<tr class="memitem:a8a61c34f87a1d1f1284aba39c4887595"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a8a61c34f87a1d1f1284aba39c4887595">add_demand</a> (<a class="el" href="classColonized__planet.html">Colonized_planet</a> *, double)</td></tr>
+<tr class="memdesc:a8a61c34f87a1d1f1284aba39c4887595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une demande de fonds à la liste des demandes.  <a href="#a8a61c34f87a1d1f1284aba39c4887595">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a8a61c34f87a1d1f1284aba39c4887595"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9c04d847c334eb3b5dc8a8dbe61586d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9c04d847c334eb3b5dc8a8dbe61586d"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>get_money_spent</b> ()</td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#ac9c04d847c334eb3b5dc8a8dbe61586d">get_money_spent</a> ()</td></tr>
+<tr class="memdesc:ac9c04d847c334eb3b5dc8a8dbe61586d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argent dépensé <br/></td></tr>
 <tr class="separator:ac9c04d847c334eb3b5dc8a8dbe61586d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada676ea8a06f80c2710adf1243d48db2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada676ea8a06f80c2710adf1243d48db2"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>get_money_produce_</b> ()</td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#ada676ea8a06f80c2710adf1243d48db2">get_money_produce_</a> ()</td></tr>
+<tr class="memdesc:ada676ea8a06f80c2710adf1243d48db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argent généré <br/></td></tr>
 <tr class="separator:ada676ea8a06f80c2710adf1243d48db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b174edbce20f49b7331665cb589e2f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b174edbce20f49b7331665cb589e2f3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_nb_successful_attack_</b> ()</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a7b174edbce20f49b7331665cb589e2f3">get_nb_successful_attack_</a> ()</td></tr>
+<tr class="memdesc:a7b174edbce20f49b7331665cb589e2f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaques réussies. <br/></td></tr>
 <tr class="separator:a7b174edbce20f49b7331665cb589e2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70bbfa3dc7d4bf441d98984814f9abd1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70bbfa3dc7d4bf441d98984814f9abd1"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_nb_failed_attack_</b> ()</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a70bbfa3dc7d4bf441d98984814f9abd1">get_nb_failed_attack_</a> ()</td></tr>
+<tr class="memdesc:a70bbfa3dc7d4bf441d98984814f9abd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaques échouées. <br/></td></tr>
 <tr class="separator:a70bbfa3dc7d4bf441d98984814f9abd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d92bdbf463e4bd24824d058d58966f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d92bdbf463e4bd24824d058d58966f4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>inc_nb_successful_attack_</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a3d92bdbf463e4bd24824d058d58966f4">inc_nb_successful_attack_</a> ()</td></tr>
+<tr class="memdesc:a3d92bdbf463e4bd24824d058d58966f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Augmente le compteur d'attaques réussies. <br/></td></tr>
 <tr class="separator:a3d92bdbf463e4bd24824d058d58966f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29fcb8a676a70b4d0981546bf928bf73"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29fcb8a676a70b4d0981546bf928bf73"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>inc_nb_failed_attack_</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a29fcb8a676a70b4d0981546bf928bf73">inc_nb_failed_attack_</a> ()</td></tr>
+<tr class="memdesc:a29fcb8a676a70b4d0981546bf928bf73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Augmente le compteur d'attaques échouées. <br/></td></tr>
 <tr class="separator:a29fcb8a676a70b4d0981546bf928bf73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75e7b414c89b8a4d75bf4a778e844b74"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75e7b414c89b8a4d75bf4a778e844b74"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> ()</td></tr>
+<tr class="memitem:a75e7b414c89b8a4d75bf4a778e844b74"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a75e7b414c89b8a4d75bf4a778e844b74">toString</a> ()</td></tr>
+<tr class="memdesc:a75e7b414c89b8a4d75bf4a778e844b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texte représentant une faction.  <a href="#a75e7b414c89b8a4d75bf4a778e844b74">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a75e7b414c89b8a4d75bf4a778e844b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Fonctions membres privées</h2></td></tr>
-<tr class="memitem:a42126a50ecffb27e1fcb4c6f2bb03e4b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42126a50ecffb27e1fcb4c6f2bb03e4b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loose</b> ()</td></tr>
-<tr class="separator:a42126a50ecffb27e1fcb4c6f2bb03e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr class="memitem:a6d79b916267324627cddbfc04a4c9a64"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d79b916267324627cddbfc04a4c9a64"></a>
-<a class="el" href="classWorld.html">World</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>world_</b></td></tr>
+<a class="el" href="classWorld.html">World</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a6d79b916267324627cddbfc04a4c9a64">world_</a></td></tr>
+<tr class="memdesc:a6d79b916267324627cddbfc04a4c9a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Monde auquel est rattachée la faction. <br/></td></tr>
 <tr class="separator:a6d79b916267324627cddbfc04a4c9a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a632028ec500010c59419327a4cce3532"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a632028ec500010c59419327a4cce3532"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name_</b></td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a632028ec500010c59419327a4cce3532">name_</a></td></tr>
+<tr class="memdesc:a632028ec500010c59419327a4cce3532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nom de la faction. <br/></td></tr>
 <tr class="separator:a632028ec500010c59419327a4cce3532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7414f60b810c31e115e8f6995d47aa6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7414f60b810c31e115e8f6995d47aa6e"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>money_</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a7414f60b810c31e115e8f6995d47aa6e">money_</a></td></tr>
+<tr class="memdesc:a7414f60b810c31e115e8f6995d47aa6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argent possédé par la faction. <br/></td></tr>
 <tr class="separator:a7414f60b810c31e115e8f6995d47aa6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9ece6405c2dc01b16a18be59ff2893e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9ece6405c2dc01b16a18be59ff2893e"></a>
-<a class="el" href="classMother__land.html">Mother_land</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>motherland_</b></td></tr>
+<a class="el" href="classMother__land.html">Mother_land</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#af9ece6405c2dc01b16a18be59ff2893e">motherland_</a></td></tr>
+<tr class="memdesc:af9ece6405c2dc01b16a18be59ff2893e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Planète qui gère la faction. <br/></td></tr>
 <tr class="separator:af9ece6405c2dc01b16a18be59ff2893e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee4de39f54f688641def6c0af48dfb29"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee4de39f54f688641def6c0af48dfb29"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>motherland_symbol_</b></td></tr>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#aee4de39f54f688641def6c0af48dfb29">motherland_symbol_</a></td></tr>
+<tr class="memdesc:aee4de39f54f688641def6c0af48dfb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caractère représentant la planète mère. <br/></td></tr>
 <tr class="separator:aee4de39f54f688641def6c0af48dfb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af79e92739f25528585a539cefd719169"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af79e92739f25528585a539cefd719169"></a>
-std::list&lt; <a class="el" href="classColonized__planet.html">Colonized_planet</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>colonies_</b></td></tr>
+std::list&lt; <a class="el" href="classColonized__planet.html">Colonized_planet</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#af79e92739f25528585a539cefd719169">colonies_</a></td></tr>
+<tr class="memdesc:af79e92739f25528585a539cefd719169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des colonies de la faction. <br/></td></tr>
 <tr class="separator:af79e92739f25528585a539cefd719169"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c87e113f23c7638ec3ae447076f9f4a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3c87e113f23c7638ec3ae447076f9f4a"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>colony_symbol_</b></td></tr>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a3c87e113f23c7638ec3ae447076f9f4a">colony_symbol_</a></td></tr>
+<tr class="memdesc:a3c87e113f23c7638ec3ae447076f9f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caractère représentant les colonies. <br/></td></tr>
 <tr class="separator:a3c87e113f23c7638ec3ae447076f9f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff4c256d6a30079ab09d5a9507003440"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff4c256d6a30079ab09d5a9507003440"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>colony_color_name_</b></td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#aff4c256d6a30079ab09d5a9507003440">colony_color_name_</a></td></tr>
+<tr class="memdesc:aff4c256d6a30079ab09d5a9507003440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nom de la couleur représentant la colonie (x11names) <br/></td></tr>
 <tr class="separator:aff4c256d6a30079ab09d5a9507003440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac67cd3b073d08e8dc3ac91a52a9daac0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac67cd3b073d08e8dc3ac91a52a9daac0"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>motherland_color_name_</b></td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#ac67cd3b073d08e8dc3ac91a52a9daac0">motherland_color_name_</a></td></tr>
+<tr class="memdesc:ac67cd3b073d08e8dc3ac91a52a9daac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nom de la couleur représentant la planète mère (x11names) <br/></td></tr>
 <tr class="separator:ac67cd3b073d08e8dc3ac91a52a9daac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b7e2884e11b6c194e3399a318fda710"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b7e2884e11b6c194e3399a318fda710"></a>
 std::list&lt; std::pair<br class="typebreak"/>
-&lt; <a class="el" href="classColonized__planet.html">Colonized_planet</a> *, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>demands_</b></td></tr>
+&lt; <a class="el" href="classColonized__planet.html">Colonized_planet</a> *, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a6b7e2884e11b6c194e3399a318fda710">demands_</a></td></tr>
+<tr class="memdesc:a6b7e2884e11b6c194e3399a318fda710"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des demandes de fonds associées à la planète demandeuse. <br/></td></tr>
 <tr class="separator:a6b7e2884e11b6c194e3399a318fda710"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2bf963b863c933fc8ed642fb40e5a2d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2bf963b863c933fc8ed642fb40e5a2d"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>money_spent_</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#ab2bf963b863c933fc8ed642fb40e5a2d">money_spent_</a></td></tr>
+<tr class="memdesc:ab2bf963b863c933fc8ed642fb40e5a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argent dépensé <br/></td></tr>
 <tr class="separator:ab2bf963b863c933fc8ed642fb40e5a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36bb2676770658222036e8a946d12970"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36bb2676770658222036e8a946d12970"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>money_produce_</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a36bb2676770658222036e8a946d12970">money_produce_</a></td></tr>
+<tr class="memdesc:a36bb2676770658222036e8a946d12970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argent généré <br/></td></tr>
 <tr class="separator:a36bb2676770658222036e8a946d12970"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8638c6f131570f20510d6430df54500e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8638c6f131570f20510d6430df54500e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>nb_successful_attack_</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a8638c6f131570f20510d6430df54500e">nb_successful_attack_</a></td></tr>
+<tr class="memdesc:a8638c6f131570f20510d6430df54500e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaques réussies. <br/></td></tr>
 <tr class="separator:a8638c6f131570f20510d6430df54500e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95acbb795c24778afabd22df2a6fb12e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95acbb795c24778afabd22df2a6fb12e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>nb_failed_attack_</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFaction.html#a95acbb795c24778afabd22df2a6fb12e">nb_failed_attack_</a></td></tr>
+<tr class="memdesc:a95acbb795c24778afabd22df2a6fb12e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaques échouées. <br/></td></tr>
 <tr class="separator:a95acbb795c24778afabd22df2a6fb12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Entité de jeu, ensemble de planètes. </p>
+<p>Une faction est un groupement de colonies. Une faction est dirigée par une planète mère.</p>
+<dl class="section note"><dt>Note</dt><dd>La mort de la planète mère induit la mort de la faction. </dd></dl>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a470f14f0b1d94261d427a4673fe92421"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Faction::Faction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classWorld.html">World</a> &amp;&#160;</td>
+          <td class="paramname"><em>world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;default&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMother__land.html">Mother_land</a> *&#160;</td>
+          <td class="paramname"><em>mother_land</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">world</td><td>Monde auquel appartient la faction </td></tr>
+    <tr><td class="paramname">name</td><td>Nom de la faction </td></tr>
+    <tr><td class="paramname">mother_land</td><td>Planète mère de la faction </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a8a61c34f87a1d1f1284aba39c4887595"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Faction::add_demand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classColonized__planet.html">Colonized_planet</a> *&#160;</td>
+          <td class="paramname"><em>demander</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>cost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute une demande de fonds à la liste des demandes. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">demander</td><td>La planète effectuant la demande </td></tr>
+    <tr><td class="paramname">cost</td><td>Le montant demandé </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab550ddb4adcb6d480e4004915e7f20ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Faction::add_to_banque </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>adding_money</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute de l'argent généré à la banque. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">adding_money</td><td>quantité d'argent à ajouter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a144860993dcfd384b23da00219ed0b88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Faction::die </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tue la faction. </p>
+<dl class="section warning"><dt>Avertissement</dt><dd>Provoque la suppression définitive des colonies </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Le voisinage et l'ordonnanceur sont mis à jour </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4f7c37fe385ee3a41e875aa23b6a8319"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Faction::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise la faction. </p>
+<dl class="section note"><dt>Note</dt><dd>Crée la planète mère n'importe où sur la grille</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">A faire:</a></b></dt><dd>Vérifier si la place n'est pas déja occupée par une autre planète mère </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0806d816ec82da48403a87a515e9ad0a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Faction::remove_colony </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classColonized__planet.html">Colonized_planet</a> *&#160;</td>
+          <td class="paramname"><em>colony</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime une colonie. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">colony</td><td>colonie à supprimer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae90c4eab208071323dbc6c0991a22051"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Faction::remove_demand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classColonized__planet.html">Colonized_planet</a> *&#160;</td>
+          <td class="paramname"><em>colony</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime une demande de fonds. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">colony</td><td>colonie qui a initié la demande </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5c704bccee1f3c845b3b521429bc4e60"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Faction::remove_mother_land </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime la planète mère. </p>
+<dl class="section note"><dt>Note</dt><dd>Cette méthode ne détruit pas la faction. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa398dcd8f3ca6cf694f69c2de152c538"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFaction.html">Faction</a> * Faction::run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lance le jeu. </p>
+<p>Si la planète mère a été détruite, la faction est supprimée.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="classFaction.html#a144860993dcfd384b23da00219ed0b88" title="Tue la faction. ">die()</a> </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>pointeur sur la faction qui a été détruite. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>En cas de non-destruction de la faction, le pointeur est nul. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a75e7b414c89b8a4d75bf4a778e844b74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Faction::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Texte représentant une faction. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>bloc de texte reprenant les paramètres principaux et de statistiques </dd></dl>
+
+</div>
+</div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>/home/pipissavy/Dropbox/Cours/ISIMA/ZZ2/simulation/simu_multi_agents/src/<a class="el" href="Faction_8hpp_source.html">Faction.hpp</a></li>
 <li>/home/pipissavy/Dropbox/Cours/ISIMA/ZZ2/simulation/simu_multi_agents/src/Faction.cpp</li>
@@ -261,7 +545,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nb_failed_attack_</b><
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Samedi 27 Février 2016 02:51:59 pour Simulation Multi-Agents par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Samedi 27 Février 2016 16:01:48 pour Simulation Multi-Agents par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

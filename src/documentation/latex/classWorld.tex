@@ -1,78 +1,75 @@
 \hypertarget{classWorld}{\section{Référence de la classe World}
 \label{classWorld}\index{World@{World}}
 }
+
+
+Monde du jeu, possédant la grille.  
+
+
+
+
+{\ttfamily \#include $<$World.\-hpp$>$}
+
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classWorld_ac6dabb39d0af2594d84dde35ec79c585}{{\bfseries World} (unsigned len=20, unsigned hei=20)}\label{classWorld_ac6dabb39d0af2594d84dde35ec79c585}
+\hyperlink{classWorld_ac6dabb39d0af2594d84dde35ec79c585}{World} (unsigned \hyperlink{classWorld_a9263bc299d1446cc7435c58fc70dbc12}{len}=20, unsigned \hyperlink{classWorld_abb70914eb0c8c9a083372c679b512a84}{hei}=20)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_a8c73fba541a5817fff65147ba47cd827}{\hyperlink{classWorld_a8c73fba541a5817fff65147ba47cd827}{$\sim$\-World} ()}\label{classWorld_a8c73fba541a5817fff65147ba47cd827}
 
-\item 
-\hypertarget{classWorld_a6d23268873d3e6dc117d6c76fc87626b}{time\-\_\-h {\bfseries start} ()}\label{classWorld_a6d23268873d3e6dc117d6c76fc87626b}
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+time\-\_\-h \hyperlink{classWorld_a6d23268873d3e6dc117d6c76fc87626b}{start} ()
+\begin{DoxyCompactList}\small\item\em Lance la simulation. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_a26aa2658c22414b5f572df8cb5efbeae}{scheduler} ()
+\begin{DoxyCompactList}\small\item\em Ordonnanceur. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_af50a03db2f7a2fea3a013557251d5a7c}{void \hyperlink{classWorld_af50a03db2f7a2fea3a013557251d5a7c}{test2factions} ()}\label{classWorld_af50a03db2f7a2fea3a013557251d5a7c}
 
-\item 
-\hypertarget{classWorld_a26aa2658c22414b5f572df8cb5efbeae}{void {\bfseries scheduler} ()}\label{classWorld_a26aa2658c22414b5f572df8cb5efbeae}
+\begin{DoxyCompactList}\small\item\em Exemple de simulation avec 2 factions. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_aeff7e2c21e886b7a7d5793354644858f}{void \hyperlink{classWorld_aeff7e2c21e886b7a7d5793354644858f}{test3factions} ()}\label{classWorld_aeff7e2c21e886b7a7d5793354644858f}
 
-\item 
-\hypertarget{classWorld_af50a03db2f7a2fea3a013557251d5a7c}{void {\bfseries test2factions} ()}\label{classWorld_af50a03db2f7a2fea3a013557251d5a7c}
+\begin{DoxyCompactList}\small\item\em Exemple de simulation avec 3 factions. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_ae093b6af05143a8faa53db9774eb77ff}{void \hyperlink{classWorld_ae093b6af05143a8faa53db9774eb77ff}{test4factions} ()}\label{classWorld_ae093b6af05143a8faa53db9774eb77ff}
 
-\item 
-\hypertarget{classWorld_aeff7e2c21e886b7a7d5793354644858f}{void {\bfseries test3factions} ()}\label{classWorld_aeff7e2c21e886b7a7d5793354644858f}
+\begin{DoxyCompactList}\small\item\em Exemple de simulation avec 4 factions. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_a007f9908bb224a8fb4b6b58820971eed}{display} ()
+\begin{DoxyCompactList}\small\item\em Affichage de la grille. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_ab01f5891ce4a1532563b4674de788daf}{remove\-\_\-faction} (\hyperlink{classFaction}{Faction} $\ast$)
+\begin{DoxyCompactList}\small\item\em Suppression définitive d'une faction. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_adfedeb704ce247d881bd9565d9d867d4}{add\-\_\-waiting\-\_\-agent} (\hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$)
+\begin{DoxyCompactList}\small\item\em Ajout d'un agent à la liste d'attente. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_a5abd90500d2a6e70ef6d21dbc02cb440}{remove\-\_\-waiting\-\_\-agent} (\hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$)
+\begin{DoxyCompactList}\small\item\em Suppression d'un agent de la liste d'attente. \end{DoxyCompactList}\item 
+\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$ \hyperlink{classWorld_a6c5e27cae9fd6a526da0f4c58b320733}{get\-\_\-grid} (unsigned x, unsigned y)
+\begin{DoxyCompactList}\small\item\em Planète dans la grille. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_a593960e61c13083719721b0c289dad94}{set\-\_\-grid} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$, unsigned x, unsigned y)
+\begin{DoxyCompactList}\small\item\em Installe une planète dans la grille. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_a9263bc299d1446cc7435c58fc70dbc12}{unsigned \hyperlink{classWorld_a9263bc299d1446cc7435c58fc70dbc12}{len} () const }\label{classWorld_a9263bc299d1446cc7435c58fc70dbc12}
 
-\item 
-\hypertarget{classWorld_ae093b6af05143a8faa53db9774eb77ff}{void {\bfseries test4factions} ()}\label{classWorld_ae093b6af05143a8faa53db9774eb77ff}
+\begin{DoxyCompactList}\small\item\em Nombre de places sur une ligne. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_abb70914eb0c8c9a083372c679b512a84}{unsigned \hyperlink{classWorld_abb70914eb0c8c9a083372c679b512a84}{hei} () const }\label{classWorld_abb70914eb0c8c9a083372c679b512a84}
 
-\item 
-\hypertarget{classWorld_a007f9908bb224a8fb4b6b58820971eed}{void {\bfseries display} ()}\label{classWorld_a007f9908bb224a8fb4b6b58820971eed}
+\begin{DoxyCompactList}\small\item\em Nombre de places sur une colonne. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_ae8473fc069907cd6cc96d32c49b62d7e}{bool \hyperlink{classWorld_ae8473fc069907cd6cc96d32c49b62d7e}{is\-Ended} ()}\label{classWorld_ae8473fc069907cd6cc96d32c49b62d7e}
 
-\item 
-\hypertarget{classWorld_ab01f5891ce4a1532563b4674de788daf}{void {\bfseries remove\-\_\-faction} (\hyperlink{classFaction}{Faction} $\ast$)}\label{classWorld_ab01f5891ce4a1532563b4674de788daf}
-
-\item 
-\hypertarget{classWorld_adfedeb704ce247d881bd9565d9d867d4}{void {\bfseries add\-\_\-waiting\-\_\-agent} (\hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$)}\label{classWorld_adfedeb704ce247d881bd9565d9d867d4}
-
-\item 
-\hypertarget{classWorld_a5abd90500d2a6e70ef6d21dbc02cb440}{void {\bfseries remove\-\_\-waiting\-\_\-agent} (\hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$)}\label{classWorld_a5abd90500d2a6e70ef6d21dbc02cb440}
-
-\item 
-\hypertarget{classWorld_a6c5e27cae9fd6a526da0f4c58b320733}{\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$ {\bfseries get\-\_\-grid} (unsigned x, unsigned y)}\label{classWorld_a6c5e27cae9fd6a526da0f4c58b320733}
-
-\item 
-\hypertarget{classWorld_a593960e61c13083719721b0c289dad94}{void {\bfseries set\-\_\-grid} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$, unsigned x, unsigned y)}\label{classWorld_a593960e61c13083719721b0c289dad94}
-
-\item 
-\hypertarget{classWorld_a9263bc299d1446cc7435c58fc70dbc12}{unsigned {\bfseries len} () const }\label{classWorld_a9263bc299d1446cc7435c58fc70dbc12}
-
-\item 
-\hypertarget{classWorld_abb70914eb0c8c9a083372c679b512a84}{unsigned {\bfseries hei} () const }\label{classWorld_abb70914eb0c8c9a083372c679b512a84}
-
-\item 
-\hypertarget{classWorld_afcbc72644f2fc56f223c9bb80b50474a}{std\-::list$<$ \hyperlink{classFaction}{Faction} $>$ {\bfseries get\-\_\-factions} ()}\label{classWorld_afcbc72644f2fc56f223c9bb80b50474a}
-
-\item 
-\hypertarget{classWorld_ae8473fc069907cd6cc96d32c49b62d7e}{bool {\bfseries is\-Ended} ()}\label{classWorld_ae8473fc069907cd6cc96d32c49b62d7e}
-
-\item 
-\hypertarget{classWorld_a2ae945389cb96c6a10dcc07a45a2cefd}{string {\bfseries stats} ()}\label{classWorld_a2ae945389cb96c6a10dcc07a45a2cefd}
-
-\item 
-\hypertarget{classWorld_aaa59a538a6b688f164707743faf63072}{string {\bfseries get\-\_\-winner\-\_\-name} ()}\label{classWorld_aaa59a538a6b688f164707743faf63072}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Vrai si la partie est terminée. \end{DoxyCompactList}\item 
+std\-::list$<$ \hyperlink{classFaction}{Faction} $>$ \hyperlink{classWorld_afcbc72644f2fc56f223c9bb80b50474a}{get\-\_\-factions} ()
+\begin{DoxyCompactList}\small\item\em Liste des factions. \end{DoxyCompactList}\item 
+string \hyperlink{classWorld_a2ae945389cb96c6a10dcc07a45a2cefd}{stats} ()
+\begin{DoxyCompactList}\small\item\em Statistiques. \end{DoxyCompactList}\item 
+string \hyperlink{classWorld_aaa59a538a6b688f164707743faf63072}{get\-\_\-winner\-\_\-name} ()
+\begin{DoxyCompactList}\small\item\em Nom de la faction gagnante. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions membres publiques statiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classWorld_ae1a517e48a53300f77b9715f2d05da9f}{static int {\bfseries gen\-\_\-mt} ()}\label{classWorld_ae1a517e48a53300f77b9715f2d05da9f}
+static int \hyperlink{classWorld_ae1a517e48a53300f77b9715f2d05da9f}{gen\-\_\-mt} ()
+\begin{DoxyCompactList}\small\item\em Générateur aléatoire (Mersenne Twister) \end{DoxyCompactList}\item 
+static int \hyperlink{classWorld_a5e407254abb3e35217524fe37f8a6a82}{gen\-\_\-mt} (int a, int b)
+\begin{DoxyCompactList}\small\item\em Générateur aléatoire borné par un intervalle. \end{DoxyCompactList}\item 
+static int \hyperlink{classWorld_aeeb9732117c1ed11efd98d17b1177e54}{gen\-\_\-mt\-\_\-shuffle} (int i)
+\begin{DoxyCompactList}\small\item\em Générateur aléatoire borné supérieurement. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_abf19b18c7eb174377bf99b41aa84e769}{static void \hyperlink{classWorld_abf19b18c7eb174377bf99b41aa84e769}{dispose} ()}\label{classWorld_abf19b18c7eb174377bf99b41aa84e769}
 
-\item 
-\hypertarget{classWorld_a5e407254abb3e35217524fe37f8a6a82}{static int {\bfseries gen\-\_\-mt} (int a, int b)}\label{classWorld_a5e407254abb3e35217524fe37f8a6a82}
-
-\item 
-\hypertarget{classWorld_aeeb9732117c1ed11efd98d17b1177e54}{static int {\bfseries gen\-\_\-mt\-\_\-shuffle} (int i)}\label{classWorld_aeeb9732117c1ed11efd98d17b1177e54}
-
-\item 
-\hypertarget{classWorld_abf19b18c7eb174377bf99b41aa84e769}{static void {\bfseries dispose} ()}\label{classWorld_abf19b18c7eb174377bf99b41aa84e769}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Nettoie la faction neutre. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
@@ -82,43 +79,322 @@
 \subsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classWorld_a5773dad1dda0f5380a5f65c94f57de9c}{bool {\bfseries end\-\_\-}}\label{classWorld_a5773dad1dda0f5380a5f65c94f57de9c}
+\hypertarget{classWorld_a5773dad1dda0f5380a5f65c94f57de9c}{bool \hyperlink{classWorld_a5773dad1dda0f5380a5f65c94f57de9c}{end\-\_\-}}\label{classWorld_a5773dad1dda0f5380a5f65c94f57de9c}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Fin de la partie. \end{DoxyCompactList}\item 
 \hypertarget{classWorld_a46afecbf41a86494f6e48dad3d4a3247}{std\-::vector$<$ std\-::vector\\*
-$<$ \hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$ $>$ $>$ {\bfseries grid\-\_\-}}\label{classWorld_a46afecbf41a86494f6e48dad3d4a3247}
+$<$ \hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$ $>$ $>$ \hyperlink{classWorld_a46afecbf41a86494f6e48dad3d4a3247}{grid\-\_\-}}\label{classWorld_a46afecbf41a86494f6e48dad3d4a3247}
 
-\item 
-\hypertarget{classWorld_a9e4a76505c85cae1329f6083011e9be5}{std\-::list$<$ \hyperlink{classFaction}{Faction} $>$ {\bfseries factions\-\_\-}}\label{classWorld_a9e4a76505c85cae1329f6083011e9be5}
+\begin{DoxyCompactList}\small\item\em Grille de jeu. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_a9e4a76505c85cae1329f6083011e9be5}{std\-::list$<$ \hyperlink{classFaction}{Faction} $>$ \hyperlink{classWorld_a9e4a76505c85cae1329f6083011e9be5}{factions\-\_\-}}\label{classWorld_a9e4a76505c85cae1329f6083011e9be5}
 
-\item 
-\hypertarget{classWorld_a732ce05c7e0012b98e2a8715b41d89fd}{std\-::vector$<$ \hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$ $>$ {\bfseries waiting\-\_\-agents\-\_\-}}\label{classWorld_a732ce05c7e0012b98e2a8715b41d89fd}
+\begin{DoxyCompactList}\small\item\em Liste des factions en jeu. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$ $>$ \hyperlink{classWorld_a732ce05c7e0012b98e2a8715b41d89fd}{waiting\-\_\-agents\-\_\-}
+\begin{DoxyCompactList}\small\item\em Liste des agents n'ayant pas encore joué \end{DoxyCompactList}\item 
+\hypertarget{classWorld_aafbe82365fac0f0d0e98c95d33a258f9}{std\-::vector$<$ \hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$ $>$ \hyperlink{classWorld_aafbe82365fac0f0d0e98c95d33a258f9}{already\-\_\-run\-\_\-agents\-\_\-}}\label{classWorld_aafbe82365fac0f0d0e98c95d33a258f9}
 
-\item 
-\hypertarget{classWorld_aafbe82365fac0f0d0e98c95d33a258f9}{std\-::vector$<$ \hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$ $>$ {\bfseries already\-\_\-run\-\_\-agents\-\_\-}}\label{classWorld_aafbe82365fac0f0d0e98c95d33a258f9}
+\begin{DoxyCompactList}\small\item\em Liste des agents ayant déjà joué \end{DoxyCompactList}\item 
+\hypertarget{classWorld_a747132820aba737926418d482571d7d3}{unsigned \hyperlink{classWorld_a747132820aba737926418d482571d7d3}{steps\-\_\-}}\label{classWorld_a747132820aba737926418d482571d7d3}
 
-\item 
-\hypertarget{classWorld_a747132820aba737926418d482571d7d3}{unsigned {\bfseries steps\-\_\-}}\label{classWorld_a747132820aba737926418d482571d7d3}
+\begin{DoxyCompactList}\small\item\em Nombre de tours. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_a171ee3cda37e3f0d643407d7f5e22a4e}{unsigned \hyperlink{classWorld_a171ee3cda37e3f0d643407d7f5e22a4e}{nb\-\_\-simulated\-\_\-agents\-\_\-}}\label{classWorld_a171ee3cda37e3f0d643407d7f5e22a4e}
 
-\item 
-\hypertarget{classWorld_a171ee3cda37e3f0d643407d7f5e22a4e}{unsigned {\bfseries nb\-\_\-simulated\-\_\-agents\-\_\-}}\label{classWorld_a171ee3cda37e3f0d643407d7f5e22a4e}
+\begin{DoxyCompactList}\small\item\em Nombre d'agents. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_a37b008437fd73a5d4d6851a88ba61167}{unsigned \hyperlink{classWorld_a37b008437fd73a5d4d6851a88ba61167}{len\-\_\-}}\label{classWorld_a37b008437fd73a5d4d6851a88ba61167}
 
-\item 
-\hypertarget{classWorld_a37b008437fd73a5d4d6851a88ba61167}{unsigned {\bfseries len\-\_\-}}\label{classWorld_a37b008437fd73a5d4d6851a88ba61167}
+\begin{DoxyCompactList}\small\item\em Nombre de places par ligne. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_a988746f4879237d7740e52fa36b16555}{unsigned \hyperlink{classWorld_a988746f4879237d7740e52fa36b16555}{hei\-\_\-}}\label{classWorld_a988746f4879237d7740e52fa36b16555}
 
-\item 
-\hypertarget{classWorld_a988746f4879237d7740e52fa36b16555}{unsigned {\bfseries hei\-\_\-}}\label{classWorld_a988746f4879237d7740e52fa36b16555}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Nombre de places par colonne. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Attributs privés statiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classWorld_a18060cbfd04ea4f7b9d099bd52152e93}{static const bool {\bfseries D\-E\-B\-U\-G} =true}\label{classWorld_a18060cbfd04ea4f7b9d099bd52152e93}
+\hypertarget{classWorld_a18060cbfd04ea4f7b9d099bd52152e93}{static const bool \hyperlink{classWorld_a18060cbfd04ea4f7b9d099bd52152e93}{D\-E\-B\-U\-G} = true}\label{classWorld_a18060cbfd04ea4f7b9d099bd52152e93}
 
-\item 
-\hypertarget{classWorld_ac4f18672fbf891451b559d6c4eb59310}{static std\-::mt19937 {\bfseries gen\-\_\-mt\-\_\-} =std\-::mt19937()}\label{classWorld_ac4f18672fbf891451b559d6c4eb59310}
+\begin{DoxyCompactList}\small\item\em Constante de débogage. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_ac4f18672fbf891451b559d6c4eb59310}{static std\-::mt19937 \hyperlink{classWorld_ac4f18672fbf891451b559d6c4eb59310}{gen\-\_\-mt\-\_\-} = std\-::mt19937()}\label{classWorld_ac4f18672fbf891451b559d6c4eb59310}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Générateur aléatoire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Monde du jeu, possédant la grille. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classWorld_ac6dabb39d0af2594d84dde35ec79c585}{\index{World@{World}!World@{World}}
+\index{World@{World}!World@{World}}
+\subsubsection[{World}]{\setlength{\rightskip}{0pt plus 5cm}World\-::\-World (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{len = {\ttfamily 20}, }
+\item[{unsigned}]{hei = {\ttfamily 20}}
+\end{DoxyParamCaption}
+)}}\label{classWorld_ac6dabb39d0af2594d84dde35ec79c585}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em len} & Nombre de planètes par ligne \\
+\hline
+{\em hei} & Nombre de planètes par colonne \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classWorld_adfedeb704ce247d881bd9565d9d867d4}{\index{World@{World}!add\-\_\-waiting\-\_\-agent@{add\-\_\-waiting\-\_\-agent}}
+\index{add\-\_\-waiting\-\_\-agent@{add\-\_\-waiting\-\_\-agent}!World@{World}}
+\subsubsection[{add\-\_\-waiting\-\_\-agent}]{\setlength{\rightskip}{0pt plus 5cm}void World\-::add\-\_\-waiting\-\_\-agent (
+\begin{DoxyParamCaption}
+\item[{{\bf Colonized\-\_\-planet} $\ast$}]{colonized\-\_\-planet}
+\end{DoxyParamCaption}
+)}}\label{classWorld_adfedeb704ce247d881bd9565d9d867d4}
+
+
+Ajout d'un agent à la liste d'attente. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em colonized\-\_\-planet} & planète à ajouter \\
+\hline
+\end{DoxyParams}
+\hypertarget{classWorld_a007f9908bb224a8fb4b6b58820971eed}{\index{World@{World}!display@{display}}
+\index{display@{display}!World@{World}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}void World\-::display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a007f9908bb224a8fb4b6b58820971eed}
+
+
+Affichage de la grille. 
+
+\begin{DoxyNote}{Note}
+Pour le mode console 
+\end{DoxyNote}
+\hypertarget{classWorld_ae1a517e48a53300f77b9715f2d05da9f}{\index{World@{World}!gen\-\_\-mt@{gen\-\_\-mt}}
+\index{gen\-\_\-mt@{gen\-\_\-mt}!World@{World}}
+\subsubsection[{gen\-\_\-mt}]{\setlength{\rightskip}{0pt plus 5cm}int World\-::gen\-\_\-mt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classWorld_ae1a517e48a53300f77b9715f2d05da9f}
+
+
+Générateur aléatoire (Mersenne Twister) 
+
+\begin{DoxyReturn}{Renvoie}
+entier aléatoire 
+\end{DoxyReturn}
+\hypertarget{classWorld_a5e407254abb3e35217524fe37f8a6a82}{\index{World@{World}!gen\-\_\-mt@{gen\-\_\-mt}}
+\index{gen\-\_\-mt@{gen\-\_\-mt}!World@{World}}
+\subsubsection[{gen\-\_\-mt}]{\setlength{\rightskip}{0pt plus 5cm}int World\-::gen\-\_\-mt (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classWorld_a5e407254abb3e35217524fe37f8a6a82}
+
+
+Générateur aléatoire borné par un intervalle. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & borne inférieure \\
+\hline
+{\em b} & borne supérieure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+entier aléatoire entre a et b 
+\end{DoxyReturn}
+\hypertarget{classWorld_aeeb9732117c1ed11efd98d17b1177e54}{\index{World@{World}!gen\-\_\-mt\-\_\-shuffle@{gen\-\_\-mt\-\_\-shuffle}}
+\index{gen\-\_\-mt\-\_\-shuffle@{gen\-\_\-mt\-\_\-shuffle}!World@{World}}
+\subsubsection[{gen\-\_\-mt\-\_\-shuffle}]{\setlength{\rightskip}{0pt plus 5cm}int World\-::gen\-\_\-mt\-\_\-shuffle (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classWorld_aeeb9732117c1ed11efd98d17b1177e54}
+
+
+Générateur aléatoire borné supérieurement. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & borne supérieure (intervalle ouvert) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+entier aléatoire entre 0 et i 
+\end{DoxyReturn}
+\hypertarget{classWorld_afcbc72644f2fc56f223c9bb80b50474a}{\index{World@{World}!get\-\_\-factions@{get\-\_\-factions}}
+\index{get\-\_\-factions@{get\-\_\-factions}!World@{World}}
+\subsubsection[{get\-\_\-factions}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ {\bf Faction} $>$ World\-::get\-\_\-factions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWorld_afcbc72644f2fc56f223c9bb80b50474a}
+
+
+Liste des factions. 
+
+\begin{DoxyReturn}{Renvoie}
+liste 
+\end{DoxyReturn}
+\hypertarget{classWorld_a6c5e27cae9fd6a526da0f4c58b320733}{\index{World@{World}!get\-\_\-grid@{get\-\_\-grid}}
+\index{get\-\_\-grid@{get\-\_\-grid}!World@{World}}
+\subsubsection[{get\-\_\-grid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Virtual\-\_\-planet} $\ast$ World\-::get\-\_\-grid (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{x, }
+\item[{unsigned}]{y}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a6c5e27cae9fd6a526da0f4c58b320733}
+
+
+Planète dans la grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & ligne où se trouve la planète \\
+\hline
+{\em y} & colonne où se trouve la planète \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+planète à la position (x,y) 
+\end{DoxyReturn}
+\hypertarget{classWorld_aaa59a538a6b688f164707743faf63072}{\index{World@{World}!get\-\_\-winner\-\_\-name@{get\-\_\-winner\-\_\-name}}
+\index{get\-\_\-winner\-\_\-name@{get\-\_\-winner\-\_\-name}!World@{World}}
+\subsubsection[{get\-\_\-winner\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string World\-::get\-\_\-winner\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWorld_aaa59a538a6b688f164707743faf63072}
+
+
+Nom de la faction gagnante. 
+
+\begin{DoxyReturn}{Renvoie}
+nom de la faction gagnante 
+\end{DoxyReturn}
+\hypertarget{classWorld_ab01f5891ce4a1532563b4674de788daf}{\index{World@{World}!remove\-\_\-faction@{remove\-\_\-faction}}
+\index{remove\-\_\-faction@{remove\-\_\-faction}!World@{World}}
+\subsubsection[{remove\-\_\-faction}]{\setlength{\rightskip}{0pt plus 5cm}void World\-::remove\-\_\-faction (
+\begin{DoxyParamCaption}
+\item[{{\bf Faction} $\ast$}]{faction}
+\end{DoxyParamCaption}
+)}}\label{classWorld_ab01f5891ce4a1532563b4674de788daf}
+
+
+Suppression définitive d'une faction. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em faction} & faction à supprimer \\
+\hline
+\end{DoxyParams}
+\hypertarget{classWorld_a5abd90500d2a6e70ef6d21dbc02cb440}{\index{World@{World}!remove\-\_\-waiting\-\_\-agent@{remove\-\_\-waiting\-\_\-agent}}
+\index{remove\-\_\-waiting\-\_\-agent@{remove\-\_\-waiting\-\_\-agent}!World@{World}}
+\subsubsection[{remove\-\_\-waiting\-\_\-agent}]{\setlength{\rightskip}{0pt plus 5cm}void World\-::remove\-\_\-waiting\-\_\-agent (
+\begin{DoxyParamCaption}
+\item[{{\bf Colonized\-\_\-planet} $\ast$}]{colonized\-\_\-planet}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a5abd90500d2a6e70ef6d21dbc02cb440}
+
+
+Suppression d'un agent de la liste d'attente. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em colonized\-\_\-planet} & planète à supprimer \\
+\hline
+\end{DoxyParams}
+\hypertarget{classWorld_a26aa2658c22414b5f572df8cb5efbeae}{\index{World@{World}!scheduler@{scheduler}}
+\index{scheduler@{scheduler}!World@{World}}
+\subsubsection[{scheduler}]{\setlength{\rightskip}{0pt plus 5cm}void World\-::scheduler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a26aa2658c22414b5f572df8cb5efbeae}
+
+
+Ordonnanceur. 
+
+Réalise un tirage aléatoire de l'ordre de passage des agents.
+
+Lance l'exécution de chaque faction en réponse aux attaques du tour précédent.
+
+Supprime les factions qui n'ont pas survécu aux attaques.
+
+Lance l'exécution de chaque planète, agent par agent selon l'ordre défini.
+
+Détermine si le jeu est terminé (i.\-e. s'il ne reste plus qu'une faction en jeu) \hypertarget{classWorld_a593960e61c13083719721b0c289dad94}{\index{World@{World}!set\-\_\-grid@{set\-\_\-grid}}
+\index{set\-\_\-grid@{set\-\_\-grid}!World@{World}}
+\subsubsection[{set\-\_\-grid}]{\setlength{\rightskip}{0pt plus 5cm}void World\-::set\-\_\-grid (
+\begin{DoxyParamCaption}
+\item[{{\bf Virtual\-\_\-planet} $\ast$}]{planet, }
+\item[{unsigned}]{x, }
+\item[{unsigned}]{y}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a593960e61c13083719721b0c289dad94}
+
+
+Installe une planète dans la grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em planet} & planète à insérer \\
+\hline
+{\em x} & ligne de destination \\
+\hline
+{\em y} & colonne de destination \\
+\hline
+\end{DoxyParams}
+\hypertarget{classWorld_a6d23268873d3e6dc117d6c76fc87626b}{\index{World@{World}!start@{start}}
+\index{start@{start}!World@{World}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}time\-\_\-h World\-::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a6d23268873d3e6dc117d6c76fc87626b}
+
+
+Lance la simulation. 
+
+\begin{DoxyReturn}{Renvoie}
+Nombre de tours joués jusqu'à la fin du jeu 
+\end{DoxyReturn}
+\hypertarget{classWorld_a2ae945389cb96c6a10dcc07a45a2cefd}{\index{World@{World}!stats@{stats}}
+\index{stats@{stats}!World@{World}}
+\subsubsection[{stats}]{\setlength{\rightskip}{0pt plus 5cm}string World\-::stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a2ae945389cb96c6a10dcc07a45a2cefd}
+
+
+Statistiques. 
+
+\begin{DoxyReturn}{Renvoie}
+texte représentant les statistiques de jeu 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classWorld_a732ce05c7e0012b98e2a8715b41d89fd}{\index{World@{World}!waiting\-\_\-agents\-\_\-@{waiting\-\_\-agents\-\_\-}}
+\index{waiting\-\_\-agents\-\_\-@{waiting\-\_\-agents\-\_\-}!World@{World}}
+\subsubsection[{waiting\-\_\-agents\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Colonized\-\_\-planet} $\ast$ $>$ World\-::waiting\-\_\-agents\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classWorld_a732ce05c7e0012b98e2a8715b41d89fd}
+
+
+Liste des agents n'ayant pas encore joué 
+
+\begin{DoxyNote}{Note}
+Echangé avec already\-\_\-run\-\_\-agents\-\_\- à chaque tour 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{classWorld_aafbe82365fac0f0d0e98c95d33a258f9}{already\-\_\-run\-\_\-agents\-\_\-} 
+\end{DoxySeeAlso}
 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}

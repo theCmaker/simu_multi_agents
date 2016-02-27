@@ -1,6 +1,15 @@
 \hypertarget{classFree__planet}{\section{Référence de la classe Free\-\_\-planet}
 \label{classFree__planet}\index{Free\-\_\-planet@{Free\-\_\-planet}}
 }
+
+
+Planète libre.  
+
+
+
+
+{\ttfamily \#include $<$Free\-\_\-planet.\-hpp$>$}
+
 Graphe d'héritage de Free\-\_\-planet\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,25 +19,102 @@ Graphe d'héritage de Free\-\_\-planet\-:\begin{figure}[H]
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classFree__planet_a7dfd0b5e9f41d84aba7ff721ec7a148e}{{\bfseries Free\-\_\-planet} (\hyperlink{classWorld}{World} \&, unsigned, unsigned)}\label{classFree__planet_a7dfd0b5e9f41d84aba7ff721ec7a148e}
-
-\item 
-\hypertarget{classFree__planet_a40c231f6f967b35b0c13cb9f883bafe2}{{\bfseries Free\-\_\-planet} (\hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$)}\label{classFree__planet_a40c231f6f967b35b0c13cb9f883bafe2}
-
-\item 
-\hypertarget{classFree__planet_a9c4b4b2c39c8c2646b6caad23cbaf5f1}{\hyperlink{classMother__land}{Mother\-\_\-land} $\ast$ {\bfseries convert\-\_\-to\-\_\-mother\-\_\-land} ()}\label{classFree__planet_a9c4b4b2c39c8c2646b6caad23cbaf5f1}
-
-\item 
-\hypertarget{classFree__planet_ae7bf8b964c3ac1be2390df0d5cc0c961}{\hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$ {\bfseries convert\-\_\-to\-\_\-colony} ()}\label{classFree__planet_ae7bf8b964c3ac1be2390df0d5cc0c961}
-
-\item 
-\hypertarget{classFree__planet_a5ca63c483955025b2955eb35fea0f4e8}{void {\bfseries run} ()}\label{classFree__planet_a5ca63c483955025b2955eb35fea0f4e8}
-
-\item 
-\hypertarget{classFree__planet_a205f5d75e430e9884b950b7bc1a3fe9d}{bool {\bfseries is\-\_\-attacked} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$)}\label{classFree__planet_a205f5d75e430e9884b950b7bc1a3fe9d}
-
-\end{DoxyCompactItemize}
+\hyperlink{classFree__planet_a7dfd0b5e9f41d84aba7ff721ec7a148e}{Free\-\_\-planet} (\hyperlink{classWorld}{World} \&, unsigned, unsigned)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{classFree__planet_a40c231f6f967b35b0c13cb9f883bafe2}{Free\-\_\-planet} (\hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast$)
+\begin{DoxyCompactList}\small\item\em Crée une planète libre à partir d'une colonie. \end{DoxyCompactList}\item 
+void \hyperlink{classFree__planet_a5ca63c483955025b2955eb35fea0f4e8}{run} ()
+\begin{DoxyCompactList}\small\item\em Joue le tour. \end{DoxyCompactList}\item 
+bool \hyperlink{classFree__planet_a205f5d75e430e9884b950b7bc1a3fe9d}{is\-\_\-attacked} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$)
+\begin{DoxyCompactList}\small\item\em Répond à une attaque. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Planète libre. 
+
+Planète non encore colonisée. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classFree__planet_a7dfd0b5e9f41d84aba7ff721ec7a148e}{\index{Free\-\_\-planet@{Free\-\_\-planet}!Free\-\_\-planet@{Free\-\_\-planet}}
+\index{Free\-\_\-planet@{Free\-\_\-planet}!Free_planet@{Free\-\_\-planet}}
+\subsubsection[{Free\-\_\-planet}]{\setlength{\rightskip}{0pt plus 5cm}Free\-\_\-planet\-::\-Free\-\_\-planet (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{unsigned}]{pos\-\_\-x, }
+\item[{unsigned}]{pos\-\_\-y}
+\end{DoxyParamCaption}
+)}}\label{classFree__planet_a7dfd0b5e9f41d84aba7ff721ec7a148e}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & Monde auquel est rattachée la planète \\
+\hline
+{\em pos\-\_\-x} & Ligne sur la grille \\
+\hline
+{\em pos\-\_\-y} & Colonne sur la grille \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFree__planet_a40c231f6f967b35b0c13cb9f883bafe2}{\index{Free\-\_\-planet@{Free\-\_\-planet}!Free\-\_\-planet@{Free\-\_\-planet}}
+\index{Free\-\_\-planet@{Free\-\_\-planet}!Free_planet@{Free\-\_\-planet}}
+\subsubsection[{Free\-\_\-planet}]{\setlength{\rightskip}{0pt plus 5cm}Free\-\_\-planet\-::\-Free\-\_\-planet (
+\begin{DoxyParamCaption}
+\item[{{\bf Colonized\-\_\-planet} $\ast$}]{other}
+\end{DoxyParamCaption}
+)}}\label{classFree__planet_a40c231f6f967b35b0c13cb9f883bafe2}
+
+
+Crée une planète libre à partir d'une colonie. 
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{classColonized__planet}{Colonized\-\_\-planet} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Paramètres}
+{\em other} & planète servant de base\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Met à jour le voisinage en remplaçant l'ancienne par la nouvelle planète. 
+\end{DoxyNote}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classFree__planet_a205f5d75e430e9884b950b7bc1a3fe9d}{\index{Free\-\_\-planet@{Free\-\_\-planet}!is\-\_\-attacked@{is\-\_\-attacked}}
+\index{is\-\_\-attacked@{is\-\_\-attacked}!Free_planet@{Free\-\_\-planet}}
+\subsubsection[{is\-\_\-attacked}]{\setlength{\rightskip}{0pt plus 5cm}bool Free\-\_\-planet\-::is\-\_\-attacked (
+\begin{DoxyParamCaption}
+\item[{{\bf Virtual\-\_\-planet} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFree__planet_a205f5d75e430e9884b950b7bc1a3fe9d}
+
+
+Répond à une attaque. 
+
+\begin{DoxyReturn}{Renvoie}
+Booléen à vrai 4 fois sur 5 en moyenne 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{classVirtual__planet_aa0712e85ae6ae7e9f05bd6d943a1a7b4}{Virtual\-\_\-planet}.
+
+\hypertarget{classFree__planet_a5ca63c483955025b2955eb35fea0f4e8}{\index{Free\-\_\-planet@{Free\-\_\-planet}!run@{run}}
+\index{run@{run}!Free_planet@{Free\-\_\-planet}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Free\-\_\-planet\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFree__planet_a5ca63c483955025b2955eb35fea0f4e8}
+
+
+Joue le tour. 
+
+\begin{DoxyWarning}{Avertissement}
+Ne doit jamais être appelée car une planète libre n'est pas sensée jouer. 
+\end{DoxyWarning}
 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}

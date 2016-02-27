@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['shield_5f',['shield_',['../classDisplayer.html#a79d7176c3335586cca68709aedcf064b',1,'Displayer']]],
-  ['size_5fplanete_5f',['size_planete_',['../classDisplayer.html#abf6048109c2f782b47932babc1c72b79',1,'Displayer']]]
+  ['instance_5f',['instance_',['../classNeutral__faction.html#acf5e8d031f701352fb71a65568e9eb77',1,'Neutral_faction']]]
 ];

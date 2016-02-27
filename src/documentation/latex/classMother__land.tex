@@ -1,6 +1,15 @@
 \hypertarget{classMother__land}{\section{Référence de la classe Mother\-\_\-land}
 \label{classMother__land}\index{Mother\-\_\-land@{Mother\-\_\-land}}
 }
+
+
+Planète mère.  
+
+
+
+
+{\ttfamily \#include $<$Mother\-\_\-land.\-hpp$>$}
+
 Graphe d'héritage de Mother\-\_\-land\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,18 +19,54 @@ Graphe d'héritage de Mother\-\_\-land\-:\begin{figure}[H]
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classMother__land_a8fd578b591a99a926bebd55959492997}{{\bfseries Mother\-\_\-land} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$, \hyperlink{classFaction}{Faction} \&)}\label{classMother__land_a8fd578b591a99a926bebd55959492997}
+\hyperlink{classMother__land_a8fd578b591a99a926bebd55959492997}{Mother\-\_\-land} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$, \hyperlink{classFaction}{Faction} \&)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hypertarget{classMother__land_ae50ab9634b50efcb8a9f0fe275342923}{char \hyperlink{classMother__land_ae50ab9634b50efcb8a9f0fe275342923}{display} ()}\label{classMother__land_ae50ab9634b50efcb8a9f0fe275342923}
 
-\item 
-\hypertarget{classMother__land_ae50ab9634b50efcb8a9f0fe275342923}{char {\bfseries display} ()}\label{classMother__land_ae50ab9634b50efcb8a9f0fe275342923}
+\begin{DoxyCompactList}\small\item\em Caractère représentant la planète mère. \end{DoxyCompactList}\item 
+\hypertarget{classMother__land_a2a862d8ca3bf717ef885edc50ea92a8d}{std\-::string \hyperlink{classMother__land_a2a862d8ca3bf717ef885edc50ea92a8d}{get\-\_\-color\-\_\-name} ()}\label{classMother__land_a2a862d8ca3bf717ef885edc50ea92a8d}
 
-\item 
-\hypertarget{classMother__land_a2a862d8ca3bf717ef885edc50ea92a8d}{std\-::string {\bfseries get\-\_\-color\-\_\-name} ()}\label{classMother__land_a2a862d8ca3bf717ef885edc50ea92a8d}
-
-\item 
+\begin{DoxyCompactList}\small\item\em Couleur représentant la planète mère. \end{DoxyCompactList}\item 
 bool \hyperlink{classMother__land_a295325cdedbfcfb17c200a4a7438761c}{is\-\_\-attacked} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$)
-\begin{DoxyCompactList}\small\item\em La planète est attaquée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Répond à une attaque. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Planète mère. 
+
+Dirige une faction
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{classFaction}{Faction} 
+\end{DoxySeeAlso}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classMother__land_a8fd578b591a99a926bebd55959492997}{\index{Mother\-\_\-land@{Mother\-\_\-land}!Mother\-\_\-land@{Mother\-\_\-land}}
+\index{Mother\-\_\-land@{Mother\-\_\-land}!Mother_land@{Mother\-\_\-land}}
+\subsubsection[{Mother\-\_\-land}]{\setlength{\rightskip}{0pt plus 5cm}Mother\-\_\-land\-::\-Mother\-\_\-land (
+\begin{DoxyParamCaption}
+\item[{{\bf Virtual\-\_\-planet} $\ast$}]{fp, }
+\item[{{\bf Faction} \&}]{fac}
+\end{DoxyParamCaption}
+)}}\label{classMother__land_a8fd578b591a99a926bebd55959492997}
+
+
+Constructeur. 
+
+Appelle le constructeur de \hyperlink{classColonized__planet}{Colonized\-\_\-planet}
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{classColonized__planet}{Colonized\-\_\-planet}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Paramètres}
+{\em fp} & Planète présente précédemment \\
+\hline
+{\em fac} & \hyperlink{classFaction}{Faction} à laquelle est rattachée la planète mère \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Documentation des fonctions membres}
@@ -34,26 +79,19 @@ bool \hyperlink{classMother__land_a295325cdedbfcfb17c200a4a7438761c}{is\-\_\-att
 )\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMother__land_a295325cdedbfcfb17c200a4a7438761c}
 
 
-La planète est attaquée. 
-
-Lorsque la planète est attaquée, elle tente de parer l'attaque. Son score de défense est utilisé et peut être inpacté ainsi que la valeur de production.
+Répond à une attaque. 
 
 
 \begin{DoxyParams}{Paramètres}
-{\em attacker} & planète offensive \\
+{\em attacker} & Planète attaquante \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-victoire de l'attaque
+vrai si l'attaquant n'appartient pas à la même faction
 \end{DoxyReturn}
 \begin{DoxyNote}{Note}
-Si la planète ne parvient pas à parer l'attaque alors elle est éliminée de la liste d'attente de jeu car elle sera supprimée par la suite.
+Tir ami interdit 
 \end{DoxyNote}
-\begin{DoxySeeAlso}{Voir également}
-\hyperlink{classColonized__planet_affcfbff793cae417ce77ab90b4868ef8}{colony\-\_\-production\-\_\-} 
-
-\hyperlink{classColonized__planet_ac645c006479bc9722dc3df7de53613bb}{colony\-\_\-defense\-\_\-} 
-\end{DoxySeeAlso}
 
 
 Réimplémentée à partir de \hyperlink{classColonized__planet_af637772fb84e45bb47447c88aa8d3f4a}{Colonized\-\_\-planet}.
