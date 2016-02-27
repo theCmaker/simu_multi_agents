@@ -1,0 +1,185 @@
+\hypertarget{classDisplayer}{\section{Référence de la classe Displayer}
+\label{classDisplayer}\index{Displayer@{Displayer}}
+}
+
+
+Zone d'affichage de l'application.  
+
+
+
+
+{\ttfamily \#include $<$displayer.\-h$>$}
+
+Graphe d'héritage de Displayer\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDisplayer}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDisplayer_a04104e09562ed9f64a96174ab5409dc2}{Displayer} (Q\-Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\hyperlink{classDisplayer_a099a08baae9c7985acf6cca4fa2d0509}{Displayer} (Q\-Main\-Window $\ast$)
+\begin{DoxyCompactList}\small\item\em Crée l'interface visuelle de présentation de la grille de simulation. \end{DoxyCompactList}\item 
+void \hyperlink{classDisplayer_a06d6e9b18c26c121d21d95bb5a352ee0}{afficher\-Rect} ()
+\item 
+\hypertarget{classDisplayer_a43b024cbfed7610ee3b91a7ba52a1a5b}{void \hyperlink{classDisplayer_a43b024cbfed7610ee3b91a7ba52a1a5b}{display\-\_\-world} ()}\label{classDisplayer_a43b024cbfed7610ee3b91a7ba52a1a5b}
+
+\begin{DoxyCompactList}\small\item\em Affiche la grille. \end{DoxyCompactList}\item 
+bool \hyperlink{classDisplayer_a60656ce57ab16d1265fea3dfa5bf22cf}{play} ()
+\begin{DoxyCompactList}\small\item\em Teste si la partie n'est pas finie. \end{DoxyCompactList}\item 
+\hypertarget{classDisplayer_a9f5cdcdfae1594e835973926df0da537}{\hyperlink{classDisplayer_a9f5cdcdfae1594e835973926df0da537}{$\sim$\-Displayer} ()}\label{classDisplayer_a9f5cdcdfae1594e835973926df0da537}
+
+\begin{DoxyCompactList}\small\item\em Supprime et nettoie l'interface visuelle de présentation de la grille de simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Connecteurs protégés}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classDisplayer_a560b41e509deb82d5ae56b5ff60e093c}{void \hyperlink{classDisplayer_a560b41e509deb82d5ae56b5ff60e093c}{timer\-Event} ()}\label{classDisplayer_a560b41e509deb82d5ae56b5ff60e093c}
+
+\begin{DoxyCompactList}\small\item\em Evènement de mise à jour de l'affichage. \end{DoxyCompactList}\item 
+\hypertarget{classDisplayer_a557745fd320fb608f4067ea3fcbf3a56}{void \hyperlink{classDisplayer_a557745fd320fb608f4067ea3fcbf3a56}{refresh} ()}\label{classDisplayer_a557745fd320fb608f4067ea3fcbf3a56}
+
+\begin{DoxyCompactList}\small\item\em Commande de rafraichissement de l'affichage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classDisplayer_a64736a6c3bf40f87fb54562dcdb51b21}{void \hyperlink{classDisplayer_a64736a6c3bf40f87fb54562dcdb51b21}{end} ()}\label{classDisplayer_a64736a6c3bf40f87fb54562dcdb51b21}
+
+\begin{DoxyCompactList}\small\item\em Affiche la faction gagnante dans une boîte à message. \end{DoxyCompactList}\item 
+void \hyperlink{classDisplayer_a4b66ff00950bc1d57bffa61a767c0303}{display\-\_\-planet} (unsigned pos\-X, unsigned pos\-Y)
+\begin{DoxyCompactList}\small\item\em Affiche une planète. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classDisplayer_a2b3b84d51d4bb077d52ede2a2abc6191}{Q\-Graphics\-Scene $\ast$ \hyperlink{classDisplayer_a2b3b84d51d4bb077d52ede2a2abc6191}{m\-\_\-scene}}\label{classDisplayer_a2b3b84d51d4bb077d52ede2a2abc6191}
+
+\begin{DoxyCompactList}\small\item\em Scène de l'affichage. \end{DoxyCompactList}\item 
+\hypertarget{classDisplayer_a793b9f323b4d24428f1376528b537515}{Q\-Graphics\-View $\ast$ \hyperlink{classDisplayer_a793b9f323b4d24428f1376528b537515}{m\-\_\-view}}\label{classDisplayer_a793b9f323b4d24428f1376528b537515}
+
+\begin{DoxyCompactList}\small\item\em Vue. \end{DoxyCompactList}\item 
+\hypertarget{classDisplayer_acf5e0801f0353ad1300ea901f8038fb5}{\hyperlink{classWorld}{World} \hyperlink{classDisplayer_acf5e0801f0353ad1300ea901f8038fb5}{world\-\_\-}}\label{classDisplayer_acf5e0801f0353ad1300ea901f8038fb5}
+
+\begin{DoxyCompactList}\small\item\em Plateau de jeu. \end{DoxyCompactList}\item 
+\hypertarget{classDisplayer_abf6048109c2f782b47932babc1c72b79}{unsigned \hyperlink{classDisplayer_abf6048109c2f782b47932babc1c72b79}{size\-\_\-planete\-\_\-}}\label{classDisplayer_abf6048109c2f782b47932babc1c72b79}
+
+\begin{DoxyCompactList}\small\item\em Taille d'une planète à l'affichage (px) \end{DoxyCompactList}\item 
+\hypertarget{classDisplayer_aedcdc7b40771c068fb70f9f74b2d6689}{unsigned \hyperlink{classDisplayer_aedcdc7b40771c068fb70f9f74b2d6689}{len\-\_\-text\-\_\-box\-\_\-}}\label{classDisplayer_aedcdc7b40771c068fb70f9f74b2d6689}
+
+\begin{DoxyCompactList}\small\item\em Largeur du panneau latéral (px) \end{DoxyCompactList}\item 
+\hypertarget{classDisplayer_aff59f7de619d0d84e91aaf6087b55ebc}{unsigned \hyperlink{classDisplayer_aff59f7de619d0d84e91aaf6087b55ebc}{len\-\_\-canvas\-\_\-}}\label{classDisplayer_aff59f7de619d0d84e91aaf6087b55ebc}
+
+\begin{DoxyCompactList}\small\item\em Largeur du panneau graphique (px) \end{DoxyCompactList}\item 
+\hypertarget{classDisplayer_ae7d9e96ca745d502672369fc4d1cde5c}{unsigned \hyperlink{classDisplayer_ae7d9e96ca745d502672369fc4d1cde5c}{hei\-\_\-canvas\-\_\-}}\label{classDisplayer_ae7d9e96ca745d502672369fc4d1cde5c}
+
+\begin{DoxyCompactList}\small\item\em Hauteur du panneau graphique (px) \end{DoxyCompactList}\item 
+\hypertarget{classDisplayer_a9edd62c6f4cf550385c1dc9933e49d0e}{Q\-Timer $\ast$ \hyperlink{classDisplayer_a9edd62c6f4cf550385c1dc9933e49d0e}{timer}}\label{classDisplayer_a9edd62c6f4cf550385c1dc9933e49d0e}
+
+\begin{DoxyCompactList}\small\item\em Chronomètre pour gérer la fréquence d'affichage. \end{DoxyCompactList}\item 
+\hypertarget{classDisplayer_a77b8f1b3b40fd64c89e54f12e7b5a0df}{Q\-String \hyperlink{classDisplayer_a77b8f1b3b40fd64c89e54f12e7b5a0df}{winning\-\_\-faction\-\_\-}}\label{classDisplayer_a77b8f1b3b40fd64c89e54f12e7b5a0df}
+
+\begin{DoxyCompactList}\small\item\em Nom de la faction gagnante. \end{DoxyCompactList}\item 
+\hypertarget{classDisplayer_a79d7176c3335586cca68709aedcf064b}{Q\-Pixmap \hyperlink{classDisplayer_a79d7176c3335586cca68709aedcf064b}{shield\-\_\-}}\label{classDisplayer_a79d7176c3335586cca68709aedcf064b}
+
+\begin{DoxyCompactList}\small\item\em Symbole bouclier. \end{DoxyCompactList}\item 
+\hypertarget{classDisplayer_a90406aeaba7f4c87910305f2592743fb}{Q\-Pixmap \hyperlink{classDisplayer_a90406aeaba7f4c87910305f2592743fb}{gold\-\_\-}}\label{classDisplayer_a90406aeaba7f4c87910305f2592743fb}
+
+\begin{DoxyCompactList}\small\item\em Symbole lingot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Zone d'affichage de l'application. 
+
+Cette classe gère l'affichage de l'application ainsi que le lancement du jeu. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classDisplayer_a04104e09562ed9f64a96174ab5409dc2}{\index{Displayer@{Displayer}!Displayer@{Displayer}}
+\index{Displayer@{Displayer}!Displayer@{Displayer}}
+\subsubsection[{Displayer}]{\setlength{\rightskip}{0pt plus 5cm}Displayer\-::\-Displayer (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classDisplayer_a04104e09562ed9f64a96174ab5409dc2}
+
+
+Constructeur par défaut. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & Objet parent (conteneur par exemple) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDisplayer_a099a08baae9c7985acf6cca4fa2d0509}{\index{Displayer@{Displayer}!Displayer@{Displayer}}
+\index{Displayer@{Displayer}!Displayer@{Displayer}}
+\subsubsection[{Displayer}]{\setlength{\rightskip}{0pt plus 5cm}Displayer\-::\-Displayer (
+\begin{DoxyParamCaption}
+\item[{Q\-Main\-Window $\ast$}]{mw}
+\end{DoxyParamCaption}
+)}}\label{classDisplayer_a099a08baae9c7985acf6cca4fa2d0509}
+
+
+Crée l'interface visuelle de présentation de la grille de simulation. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mw} & Objet graphique Qt parent \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classDisplayer_a06d6e9b18c26c121d21d95bb5a352ee0}{\index{Displayer@{Displayer}!afficher\-Rect@{afficher\-Rect}}
+\index{afficher\-Rect@{afficher\-Rect}!Displayer@{Displayer}}
+\subsubsection[{afficher\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}void Displayer\-::afficher\-Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDisplayer_a06d6e9b18c26c121d21d95bb5a352ee0}
+\begin{DoxyNote}{Note}
+Non utilisé 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{A faire}
+\item[\hyperlink{todo__todo000001}{A faire}]A supprimer \end{DoxyRefDesc}
+\hypertarget{classDisplayer_a4b66ff00950bc1d57bffa61a767c0303}{\index{Displayer@{Displayer}!display\-\_\-planet@{display\-\_\-planet}}
+\index{display\-\_\-planet@{display\-\_\-planet}!Displayer@{Displayer}}
+\subsubsection[{display\-\_\-planet}]{\setlength{\rightskip}{0pt plus 5cm}void Displayer\-::display\-\_\-planet (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{pos\-X, }
+\item[{unsigned}]{pos\-Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classDisplayer_a4b66ff00950bc1d57bffa61a767c0303}
+
+
+Affiche une planète. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em pos\-X} & Position X de la planète \\
+\hline
+{\em pos\-Y} & Position Y de la planète \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Position X = 0, Y = 0 en haut à gauche 
+\end{DoxyNote}
+\hypertarget{classDisplayer_a60656ce57ab16d1265fea3dfa5bf22cf}{\index{Displayer@{Displayer}!play@{play}}
+\index{play@{play}!Displayer@{Displayer}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}bool Displayer\-::play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDisplayer_a60656ce57ab16d1265fea3dfa5bf22cf}
+
+
+Teste si la partie n'est pas finie. 
+
+\begin{DoxyReturn}{Renvoie}
+Etat du jeu (true -\/$>$ en cours, false -\/$>$ fini) 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+displayer.\-h\item 
+displayer.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,383 @@
+\hypertarget{classColonized__planet}{\section{Référence de la classe Colonized\-\_\-planet}
+\label{classColonized__planet}\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}}
+}
+
+
+Planète colonisée.  
+
+
+
+
+{\ttfamily \#include $<$Colonized\-\_\-planet.\-hpp$>$}
+
+Graphe d'héritage de Colonized\-\_\-planet\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classColonized__planet}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classColonized__planet_a06b9d86c2d48d101688ec202c8d37dd8}{Colonized\-\_\-planet} (\hyperlink{classWorld}{World} \&, unsigned, unsigned, \hyperlink{classFaction}{Faction} \&)
+\begin{DoxyCompactList}\small\item\em Constructeur, prépare la planète. \end{DoxyCompactList}\item 
+\hyperlink{classColonized__planet_a39273e5d94de78e93438e5007ddbecc1}{Colonized\-\_\-planet} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$, \hyperlink{classFaction}{Faction} \&)
+\begin{DoxyCompactList}\small\item\em Création d'une planète colonisée à partir d'une autre planète. \end{DoxyCompactList}\item 
+void \hyperlink{classColonized__planet_ac4f99490dc15c7715c1b476a490228a4}{update\-\_\-neighbourhood} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$, \hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$)
+\begin{DoxyCompactList}\small\item\em Mise à jour du voisinage. \end{DoxyCompactList}\item 
+bool \hyperlink{classColonized__planet_a7a0ca9e84837a2f03900f01b1e1a3fa6}{attack} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$)
+\begin{DoxyCompactList}\small\item\em Attaque une planète. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classColonized__planet_af637772fb84e45bb47447c88aa8d3f4a}{is\-\_\-attacked} (\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$)
+\begin{DoxyCompactList}\small\item\em La planète est attaquée. \end{DoxyCompactList}\item 
+void \hyperlink{classColonized__planet_ae05d410995da1c4846bee779a3f6c831}{convert\-\_\-to\-\_\-free\-\_\-planet} ()
+\begin{DoxyCompactList}\small\item\em Transforme la colonie courante en free planete. \end{DoxyCompactList}\item 
+\hyperlink{classFaction}{Faction} \& \hyperlink{classColonized__planet_a78748eadea1186e104ccc247a1d1f546}{get\-\_\-faction} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFaction}{Faction} à laquelle appartient la planète. \end{DoxyCompactList}\item 
+double \hyperlink{classColonized__planet_a587ca19477274169b045a94c1dd186a3}{get\-\_\-defense} ()
+\begin{DoxyCompactList}\small\item\em Défense totale de la planète. \end{DoxyCompactList}\item 
+double \hyperlink{classColonized__planet_a167b41cbb51c1d19d40cb3707af2ea59}{get\-\_\-production} ()
+\begin{DoxyCompactList}\small\item\em Production de la planète. \end{DoxyCompactList}\item 
+\hypertarget{classColonized__planet_a6739ad553640a6b5a02dfd9d97e7ba2d}{\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$ {\bfseries get\-\_\-target} ()}\label{classColonized__planet_a6739ad553640a6b5a02dfd9d97e7ba2d}
+
+\item 
+void \hyperlink{classColonized__planet_a0b5f60dc9483575db786313282e29886}{demand\-\_\-to\-\_\-faction} (double)
+\begin{DoxyCompactList}\small\item\em Réalise une demande de fonds auprès de la faction. \end{DoxyCompactList}\item 
+double \hyperlink{classColonized__planet_aa6f348f353079fb347dc8ac09d8b1067}{estimate\-\_\-cost} ()
+\begin{DoxyCompactList}\small\item\em Estime le coût d'une attaque. \end{DoxyCompactList}\item 
+void \hyperlink{classColonized__planet_a35968145bd39bba554c026e499976e44}{add\-\_\-to\-\_\-budget} (double)
+\begin{DoxyCompactList}\small\item\em Ajoute les fonds obtenus auprès de la faction. \end{DoxyCompactList}\item 
+\hypertarget{classColonized__planet_a61098b25c33cbf5bf36e3629a42f7ee7}{void \hyperlink{classColonized__planet_a61098b25c33cbf5bf36e3629a42f7ee7}{reinitialisate\-\_\-target} ()}\label{classColonized__planet_a61098b25c33cbf5bf36e3629a42f7ee7}
+
+\begin{DoxyCompactList}\small\item\em Réinitialise la cible, annule la tentative d'attaque. \end{DoxyCompactList}\item 
+\hypertarget{classColonized__planet_a1d3897c8ef1772fa9908fee7c5830f77}{char {\bfseries display} ()}\label{classColonized__planet_a1d3897c8ef1772fa9908fee7c5830f77}
+
+\item 
+\hypertarget{classColonized__planet_af8e3c6d3e72bf80b2e44013ceba2087f}{std\-::string {\bfseries get\-\_\-color\-\_\-name} ()}\label{classColonized__planet_af8e3c6d3e72bf80b2e44013ceba2087f}
+
+\item 
+bool \hyperlink{classColonized__planet_a00293269f8b2ce00b45a23d89cb48015}{run} ()
+\begin{DoxyCompactList}\small\item\em Joue le tour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classColonized__planet_ac645c006479bc9722dc3df7de53613bb}{double \hyperlink{classColonized__planet_ac645c006479bc9722dc3df7de53613bb}{colony\-\_\-defense\-\_\-}}\label{classColonized__planet_ac645c006479bc9722dc3df7de53613bb}
+
+\begin{DoxyCompactList}\small\item\em Valeur de défense. \end{DoxyCompactList}\item 
+\hypertarget{classColonized__planet_affcfbff793cae417ce77ab90b4868ef8}{double \hyperlink{classColonized__planet_affcfbff793cae417ce77ab90b4868ef8}{colony\-\_\-production\-\_\-}}\label{classColonized__planet_affcfbff793cae417ce77ab90b4868ef8}
+
+\begin{DoxyCompactList}\small\item\em Valeur de production de monnaie. \end{DoxyCompactList}\item 
+\hypertarget{classColonized__planet_a0f362a09eaf2da16c442decbdaf57d21}{\hyperlink{classFaction}{Faction} \& \hyperlink{classColonized__planet_a0f362a09eaf2da16c442decbdaf57d21}{faction\-\_\-}}\label{classColonized__planet_a0f362a09eaf2da16c442decbdaf57d21}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFaction}{Faction} à laquelle appartient la colonie. \end{DoxyCompactList}\item 
+\hypertarget{classColonized__planet_af24d15905b14b8a1af9c202791dffe5f}{\hyperlink{classVirtual__planet}{Virtual\-\_\-planet} $\ast$ \hyperlink{classColonized__planet_af24d15905b14b8a1af9c202791dffe5f}{target\-\_\-}}\label{classColonized__planet_af24d15905b14b8a1af9c202791dffe5f}
+
+\begin{DoxyCompactList}\small\item\em Planète ciblée par une éventuelle attaque. \end{DoxyCompactList}\item 
+\hypertarget{classColonized__planet_a9ba08dc04733fcef48b1107ec8b6af84}{double \hyperlink{classColonized__planet_a9ba08dc04733fcef48b1107ec8b6af84}{budget\-\_\-}}\label{classColonized__planet_a9ba08dc04733fcef48b1107ec8b6af84}
+
+\begin{DoxyCompactList}\small\item\em Argent disponible. \end{DoxyCompactList}\item 
+\hypertarget{classColonized__planet_af5c7aba0db9f3a8c28d25a309c79ca23}{double \hyperlink{classColonized__planet_af5c7aba0db9f3a8c28d25a309c79ca23}{demand\-\_\-}}\label{classColonized__planet_af5c7aba0db9f3a8c28d25a309c79ca23}
+
+\begin{DoxyCompactList}\small\item\em Coût estimé d'une opération. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés statiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classColonized__planet_acb5d3542a5441019bcba92197119617c}{static const int \hyperlink{classColonized__planet_acb5d3542a5441019bcba92197119617c}{M\-A\-X\-\_\-\-C\-O\-L\-O\-N\-Y\-\_\-\-D\-E\-F\-E\-N\-S\-E} = 50}\label{classColonized__planet_acb5d3542a5441019bcba92197119617c}
+
+\begin{DoxyCompactList}\small\item\em Valeur de défense maximum. \end{DoxyCompactList}\item 
+\hypertarget{classColonized__planet_a8521f4f3a3d0431932cdd2e1988b358f}{static const int \hyperlink{classColonized__planet_a8521f4f3a3d0431932cdd2e1988b358f}{M\-A\-X\-\_\-\-C\-O\-L\-O\-N\-Y\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N} = 15}\label{classColonized__planet_a8521f4f3a3d0431932cdd2e1988b358f}
+
+\begin{DoxyCompactList}\small\item\em Valeur de production maximum. \end{DoxyCompactList}\item 
+\hypertarget{classColonized__planet_af44fcc5ced3d38fc514d5daf0abea01d}{static const int \hyperlink{classColonized__planet_af44fcc5ced3d38fc514d5daf0abea01d}{C\-O\-L\-O\-N\-Y\-\_\-\-M\-U\-L\-T\-I\-P\-L\-I\-C\-A\-T\-O\-R} = 10}\label{classColonized__planet_af44fcc5ced3d38fc514d5daf0abea01d}
+
+\begin{DoxyCompactList}\small\item\em Facteur de production. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Planète colonisée. 
+
+Une planète colonisée est une planète possédée par une faction 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classColonized__planet_a06b9d86c2d48d101688ec202c8d37dd8}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!Colonized\-\_\-planet@{Colonized\-\_\-planet}}
+\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{Colonized\-\_\-planet}]{\setlength{\rightskip}{0pt plus 5cm}Colonized\-\_\-planet\-::\-Colonized\-\_\-planet (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{unsigned}]{pos\-\_\-x, }
+\item[{unsigned}]{pos\-\_\-y, }
+\item[{{\bf Faction} \&}]{fac}
+\end{DoxyParamCaption}
+)}}\label{classColonized__planet_a06b9d86c2d48d101688ec202c8d37dd8}
+
+
+Constructeur, prépare la planète. 
+
+Met à jour la liste des agents en attente et ajoute la planète à la liste des colonies de la faction.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & plateau de jeu \\
+\hline
+{\em pos\-\_\-x} & numéro de la ligne sur la grille \\
+\hline
+{\em pos\-\_\-y} & numéro de la colonne sur la grille \\
+\hline
+{\em fac} & faction à laquelle doit appartenir la nouvelle planète \\
+\hline
+\end{DoxyParams}
+\hypertarget{classColonized__planet_a39273e5d94de78e93438e5007ddbecc1}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!Colonized\-\_\-planet@{Colonized\-\_\-planet}}
+\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{Colonized\-\_\-planet}]{\setlength{\rightskip}{0pt plus 5cm}Colonized\-\_\-planet\-::\-Colonized\-\_\-planet (
+\begin{DoxyParamCaption}
+\item[{{\bf Virtual\-\_\-planet} $\ast$}]{fp, }
+\item[{{\bf Faction} \&}]{faction}
+\end{DoxyParamCaption}
+)}}\label{classColonized__planet_a39273e5d94de78e93438e5007ddbecc1}
+
+
+Création d'une planète colonisée à partir d'une autre planète. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em fp} & planète d'origine \\
+\hline
+{\em faction} & faction à laquelle doit appartenir la nouvelle planète\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Tient compte du voisinage de l'ancienne planète et le met à jour 
+\end{DoxyNote}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classColonized__planet_a35968145bd39bba554c026e499976e44}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!add\-\_\-to\-\_\-budget@{add\-\_\-to\-\_\-budget}}
+\index{add\-\_\-to\-\_\-budget@{add\-\_\-to\-\_\-budget}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{add\-\_\-to\-\_\-budget}]{\setlength{\rightskip}{0pt plus 5cm}void Colonized\-\_\-planet\-::add\-\_\-to\-\_\-budget (
+\begin{DoxyParamCaption}
+\item[{double}]{given\-\_\-money}
+\end{DoxyParamCaption}
+)}}\label{classColonized__planet_a35968145bd39bba554c026e499976e44}
+
+
+Ajoute les fonds obtenus auprès de la faction. 
+
+Augmente le budget du montant obtenu, et diminue d'autant la demande précédemment effectuée.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em given\-\_\-money} & Montant obtenu \\
+\hline
+\end{DoxyParams}
+\hypertarget{classColonized__planet_a7a0ca9e84837a2f03900f01b1e1a3fa6}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!attack@{attack}}
+\index{attack@{attack}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{attack}]{\setlength{\rightskip}{0pt plus 5cm}bool Colonized\-\_\-planet\-::attack (
+\begin{DoxyParamCaption}
+\item[{{\bf Virtual\-\_\-planet} $\ast$}]{victim}
+\end{DoxyParamCaption}
+)}}\label{classColonized__planet_a7a0ca9e84837a2f03900f01b1e1a3fa6}
+
+
+Attaque une planète. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em victim} & planète qui est attaquée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+victoire de l'attaque 
+\end{DoxyReturn}
+\hypertarget{classColonized__planet_ae05d410995da1c4846bee779a3f6c831}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!convert\-\_\-to\-\_\-free\-\_\-planet@{convert\-\_\-to\-\_\-free\-\_\-planet}}
+\index{convert\-\_\-to\-\_\-free\-\_\-planet@{convert\-\_\-to\-\_\-free\-\_\-planet}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{convert\-\_\-to\-\_\-free\-\_\-planet}]{\setlength{\rightskip}{0pt plus 5cm}void Colonized\-\_\-planet\-::convert\-\_\-to\-\_\-free\-\_\-planet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classColonized__planet_ae05d410995da1c4846bee779a3f6c831}
+
+
+Transforme la colonie courante en free planete. 
+
+\begin{DoxyWarning}{Avertissement}
+Ne supprime pas la colonie et ne met pas a jour le voisinage !! 
+\end{DoxyWarning}
+\hypertarget{classColonized__planet_a0b5f60dc9483575db786313282e29886}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!demand\-\_\-to\-\_\-faction@{demand\-\_\-to\-\_\-faction}}
+\index{demand\-\_\-to\-\_\-faction@{demand\-\_\-to\-\_\-faction}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{demand\-\_\-to\-\_\-faction}]{\setlength{\rightskip}{0pt plus 5cm}void Colonized\-\_\-planet\-::demand\-\_\-to\-\_\-faction (
+\begin{DoxyParamCaption}
+\item[{double}]{cost}
+\end{DoxyParamCaption}
+)}}\label{classColonized__planet_a0b5f60dc9483575db786313282e29886}
+
+
+Réalise une demande de fonds auprès de la faction. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cost} & Montant demandé \\
+\hline
+\end{DoxyParams}
+\hypertarget{classColonized__planet_aa6f348f353079fb347dc8ac09d8b1067}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!estimate\-\_\-cost@{estimate\-\_\-cost}}
+\index{estimate\-\_\-cost@{estimate\-\_\-cost}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{estimate\-\_\-cost}]{\setlength{\rightskip}{0pt plus 5cm}double Colonized\-\_\-planet\-::estimate\-\_\-cost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classColonized__planet_aa6f348f353079fb347dc8ac09d8b1067}
+
+
+Estime le coût d'une attaque. 
+
+\begin{DoxyReturn}{Renvoie}
+coût estimé 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{classVirtual__planet}{Virtual\-\_\-planet}.
+
+\hypertarget{classColonized__planet_a587ca19477274169b045a94c1dd186a3}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!get\-\_\-defense@{get\-\_\-defense}}
+\index{get\-\_\-defense@{get\-\_\-defense}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{get\-\_\-defense}]{\setlength{\rightskip}{0pt plus 5cm}double Colonized\-\_\-planet\-::get\-\_\-defense (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classColonized__planet_a587ca19477274169b045a94c1dd186a3}
+
+
+Défense totale de la planète. 
+
+\begin{DoxyReturn}{Renvoie}
+somme de la défense naturelle de la planète et de celle de la colonie 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{classVirtual__planet}{Virtual\-\_\-planet}.
+
+\hypertarget{classColonized__planet_a78748eadea1186e104ccc247a1d1f546}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!get\-\_\-faction@{get\-\_\-faction}}
+\index{get\-\_\-faction@{get\-\_\-faction}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{get\-\_\-faction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Faction} \& Colonized\-\_\-planet\-::get\-\_\-faction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classColonized__planet_a78748eadea1186e104ccc247a1d1f546}
+
+
+\hyperlink{classFaction}{Faction} à laquelle appartient la planète. 
+
+\begin{DoxyReturn}{Renvoie}
+faction 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{classVirtual__planet}{Virtual\-\_\-planet}.
+
+\hypertarget{classColonized__planet_a167b41cbb51c1d19d40cb3707af2ea59}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!get\-\_\-production@{get\-\_\-production}}
+\index{get\-\_\-production@{get\-\_\-production}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{get\-\_\-production}]{\setlength{\rightskip}{0pt plus 5cm}double Colonized\-\_\-planet\-::get\-\_\-production (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classColonized__planet_a167b41cbb51c1d19d40cb3707af2ea59}
+
+
+Production de la planète. 
+
+\begin{DoxyReturn}{Renvoie}
+somme de la production naturelle de la planète et de celle de la colonie 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{classVirtual__planet}{Virtual\-\_\-planet}.
+
+\hypertarget{classColonized__planet_af637772fb84e45bb47447c88aa8d3f4a}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!is\-\_\-attacked@{is\-\_\-attacked}}
+\index{is\-\_\-attacked@{is\-\_\-attacked}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{is\-\_\-attacked}]{\setlength{\rightskip}{0pt plus 5cm}bool Colonized\-\_\-planet\-::is\-\_\-attacked (
+\begin{DoxyParamCaption}
+\item[{{\bf Virtual\-\_\-planet} $\ast$}]{attacker}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classColonized__planet_af637772fb84e45bb47447c88aa8d3f4a}
+
+
+La planète est attaquée. 
+
+Lorsque la planète est attaquée, elle tente de parer l'attaque. Son score de défense est utilisé et peut être inpacté ainsi que la valeur de production.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em attacker} & planète offensive \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+victoire de l'attaque
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Si la planète ne parvient pas à parer l'attaque alors elle est éliminée de la liste d'attente de jeu car elle sera supprimée par la suite.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{classColonized__planet_affcfbff793cae417ce77ab90b4868ef8}{colony\-\_\-production\-\_\-} 
+
+\hyperlink{classColonized__planet_ac645c006479bc9722dc3df7de53613bb}{colony\-\_\-defense\-\_\-} 
+\end{DoxySeeAlso}
+
+
+Réimplémentée à partir de \hyperlink{classVirtual__planet}{Virtual\-\_\-planet}.
+
+
+
+Réimplémentée dans \hyperlink{classMother__land_a295325cdedbfcfb17c200a4a7438761c}{Mother\-\_\-land}.
+
+\hypertarget{classColonized__planet_a00293269f8b2ce00b45a23d89cb48015}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!run@{run}}
+\index{run@{run}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}bool Colonized\-\_\-planet\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classColonized__planet_a00293269f8b2ce00b45a23d89cb48015}
+
+
+Joue le tour. 
+
+La planète peut choisir d'attaquer ou bien de produire des richesses.
+
+\begin{DoxyReturn}{Renvoie}
+Booléen indiquant si la planète a réalisé une attaque 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{A faire}
+\item[\hyperlink{todo__todo000002}{A faire}]à quoi sert had\-\_\-killed? \end{DoxyRefDesc}
+\begin{DoxyRefDesc}{A faire}
+\item[\hyperlink{todo__todo000003}{A faire}]pourquoi pas += inc ici ? \end{DoxyRefDesc}
+\hypertarget{classColonized__planet_ac4f99490dc15c7715c1b476a490228a4}{\index{Colonized\-\_\-planet@{Colonized\-\_\-planet}!update\-\_\-neighbourhood@{update\-\_\-neighbourhood}}
+\index{update\-\_\-neighbourhood@{update\-\_\-neighbourhood}!Colonized_planet@{Colonized\-\_\-planet}}
+\subsubsection[{update\-\_\-neighbourhood}]{\setlength{\rightskip}{0pt plus 5cm}void Colonized\-\_\-planet\-::update\-\_\-neighbourhood (
+\begin{DoxyParamCaption}
+\item[{{\bf Virtual\-\_\-planet} $\ast$}]{old\-\_\-one, }
+\item[{{\bf Virtual\-\_\-planet} $\ast$}]{new\-\_\-one}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classColonized__planet_ac4f99490dc15c7715c1b476a490228a4}
+
+
+Mise à jour du voisinage. 
+
+Parcourt le voisinage de la planète courante et remplace old\-\_\-one par new\-\_\-one dans la liste.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em old\-\_\-one} & ancienne planète \\
+\hline
+{\em new\-\_\-one} & nouvelle planète\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Si l'ancienne planète était la cible de l'un des voisins, alors cette cible est effacée. 
+\end{DoxyNote}
+
+
+Réimplémentée à partir de \hyperlink{classVirtual__planet}{Virtual\-\_\-planet}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+/home/pipissavy/\-Dropbox/\-Cours/\-I\-S\-I\-M\-A/\-Z\-Z2/simulation/simu\-\_\-multi\-\_\-agents/src/Colonized\-\_\-planet.\-hpp\item 
+/home/pipissavy/\-Dropbox/\-Cours/\-I\-S\-I\-M\-A/\-Z\-Z2/simulation/simu\-\_\-multi\-\_\-agents/src/Colonized\-\_\-planet.\-cpp\end{DoxyCompactItemize}

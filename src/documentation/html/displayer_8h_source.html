@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Simulation Multi-Agents:  Fichier source de displayer.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="isima_logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulation Multi-Agents
+   </div>
+   <div id="projectbrief">Projet réalisé par Pierre CHEVALIER et Pierre-Loup PISSAVY</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">displayer.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FENETRE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FENETRE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;mainwindow.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;sstream&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QGraphicsScene&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QGraphicsRectItem&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QGraphicsView&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QPen&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QBrush&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QThread&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QGraphicsTextItem&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;QMessageBox&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;../World.hpp&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;../Faction.hpp&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classDisplayer.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDisplayer.html">Displayer</a>: <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classDisplayer.html#a04104e09562ed9f64a96174ab5409dc2">Displayer</a>(QWidget *parent = 0);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classDisplayer.html#a04104e09562ed9f64a96174ab5409dc2">Displayer</a>(QMainWindow *);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDisplayer.html#a06d6e9b18c26c121d21d95bb5a352ee0">afficherRect</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDisplayer.html#a43b024cbfed7610ee3b91a7ba52a1a5b">display_world</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classDisplayer.html#a60656ce57ab16d1265fea3dfa5bf22cf">play</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classDisplayer.html#a9f5cdcdfae1594e835973926df0da537">~Displayer</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDisplayer.html#a64736a6c3bf40f87fb54562dcdb51b21">end</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDisplayer.html#a4b66ff00950bc1d57bffa61a767c0303">display_planet</a>(<span class="keywordtype">unsigned</span> posX, <span class="keywordtype">unsigned</span> posY);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//Vue</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classDisplayer.html#a2b3b84d51d4bb077d52ede2a2abc6191">   51</a></span>&#160;    QGraphicsScene *<a class="code" href="classDisplayer.html#a2b3b84d51d4bb077d52ede2a2abc6191">m_scene</a>;    </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classDisplayer.html#a793b9f323b4d24428f1376528b537515">   52</a></span>&#160;    QGraphicsView *<a class="code" href="classDisplayer.html#a793b9f323b4d24428f1376528b537515">m_view</a>;      </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classDisplayer.html#acf5e0801f0353ad1300ea901f8038fb5">   54</a></span>&#160;    <a class="code" href="classWorld.html">World</a> <a class="code" href="classDisplayer.html#acf5e0801f0353ad1300ea901f8038fb5">world_</a>;               </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//Dimensions</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classDisplayer.html#abf6048109c2f782b47932babc1c72b79">   57</a></span>&#160;    <span class="keywordtype">unsigned</span> <a class="code" href="classDisplayer.html#abf6048109c2f782b47932babc1c72b79">size_planete_</a>;     </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classDisplayer.html#aedcdc7b40771c068fb70f9f74b2d6689">   58</a></span>&#160;    <span class="keywordtype">unsigned</span> <a class="code" href="classDisplayer.html#aedcdc7b40771c068fb70f9f74b2d6689">len_text_box_</a>;     </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classDisplayer.html#aff59f7de619d0d84e91aaf6087b55ebc">   59</a></span>&#160;    <span class="keywordtype">unsigned</span> <a class="code" href="classDisplayer.html#aff59f7de619d0d84e91aaf6087b55ebc">len_canvas_</a>;       </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classDisplayer.html#ae7d9e96ca745d502672369fc4d1cde5c">   60</a></span>&#160;    <span class="keywordtype">unsigned</span> <a class="code" href="classDisplayer.html#ae7d9e96ca745d502672369fc4d1cde5c">hei_canvas_</a>;       </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">//Paramètres de jeu</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classDisplayer.html#a9edd62c6f4cf550385c1dc9933e49d0e">   63</a></span>&#160;    QTimer *<a class="code" href="classDisplayer.html#a9edd62c6f4cf550385c1dc9933e49d0e">timer</a>;              </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classDisplayer.html#a77b8f1b3b40fd64c89e54f12e7b5a0df">   64</a></span>&#160;    QString <a class="code" href="classDisplayer.html#a77b8f1b3b40fd64c89e54f12e7b5a0df">winning_faction_</a>;   </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">//Visuels</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classDisplayer.html#a79d7176c3335586cca68709aedcf064b">   67</a></span>&#160;    QPixmap <a class="code" href="classDisplayer.html#a79d7176c3335586cca68709aedcf064b">shield_</a>;            </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classDisplayer.html#a90406aeaba7f4c87910305f2592743fb">   68</a></span>&#160;    QPixmap <a class="code" href="classDisplayer.html#a90406aeaba7f4c87910305f2592743fb">gold_</a>;              </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">protected</span> slots:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDisplayer.html#a560b41e509deb82d5ae56b5ff60e093c">timerEvent</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDisplayer.html#a557745fd320fb608f4067ea3fcbf3a56">refresh</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif // FENETRE_H</span></div>
+<div class="ttc" id="classDisplayer_html_a60656ce57ab16d1265fea3dfa5bf22cf"><div class="ttname"><a href="classDisplayer.html#a60656ce57ab16d1265fea3dfa5bf22cf">Displayer::play</a></div><div class="ttdeci">bool play()</div><div class="ttdoc">Teste si la partie n&#39;est pas finie. </div><div class="ttdef"><b>Definition:</b> displayer.cpp:123</div></div>
+<div class="ttc" id="classDisplayer_html_a77b8f1b3b40fd64c89e54f12e7b5a0df"><div class="ttname"><a href="classDisplayer.html#a77b8f1b3b40fd64c89e54f12e7b5a0df">Displayer::winning_faction_</a></div><div class="ttdeci">QString winning_faction_</div><div class="ttdoc">Nom de la faction gagnante. </div><div class="ttdef"><b>Definition:</b> displayer.h:64</div></div>
+<div class="ttc" id="classWorld_html"><div class="ttname"><a href="classWorld.html">World</a></div><div class="ttdef"><b>Definition:</b> World.hpp:22</div></div>
+<div class="ttc" id="classDisplayer_html_a9f5cdcdfae1594e835973926df0da537"><div class="ttname"><a href="classDisplayer.html#a9f5cdcdfae1594e835973926df0da537">Displayer::~Displayer</a></div><div class="ttdeci">~Displayer()</div><div class="ttdoc">Supprime et nettoie l&#39;interface visuelle de présentation de la grille de simulation. </div><div class="ttdef"><b>Definition:</b> displayer.cpp:39</div></div>
+<div class="ttc" id="classDisplayer_html_a64736a6c3bf40f87fb54562dcdb51b21"><div class="ttname"><a href="classDisplayer.html#a64736a6c3bf40f87fb54562dcdb51b21">Displayer::end</a></div><div class="ttdeci">void end()</div><div class="ttdoc">Affiche la faction gagnante dans une boîte à message. </div><div class="ttdef"><b>Definition:</b> displayer.cpp:146</div></div>
+<div class="ttc" id="classDisplayer_html_a06d6e9b18c26c121d21d95bb5a352ee0"><div class="ttname"><a href="classDisplayer.html#a06d6e9b18c26c121d21d95bb5a352ee0">Displayer::afficherRect</a></div><div class="ttdeci">void afficherRect()</div><div class="ttdef"><b>Definition:</b> displayer.cpp:49</div></div>
+<div class="ttc" id="classDisplayer_html_a04104e09562ed9f64a96174ab5409dc2"><div class="ttname"><a href="classDisplayer.html#a04104e09562ed9f64a96174ab5409dc2">Displayer::Displayer</a></div><div class="ttdeci">Displayer(QWidget *parent=0)</div><div class="ttdoc">Constructeur par défaut. </div></div>
+<div class="ttc" id="classDisplayer_html"><div class="ttname"><a href="classDisplayer.html">Displayer</a></div><div class="ttdoc">Zone d&#39;affichage de l&#39;application. </div><div class="ttdef"><b>Definition:</b> displayer.h:28</div></div>
+<div class="ttc" id="classDisplayer_html_a90406aeaba7f4c87910305f2592743fb"><div class="ttname"><a href="classDisplayer.html#a90406aeaba7f4c87910305f2592743fb">Displayer::gold_</a></div><div class="ttdeci">QPixmap gold_</div><div class="ttdoc">Symbole lingot. </div><div class="ttdef"><b>Definition:</b> displayer.h:68</div></div>
+<div class="ttc" id="classDisplayer_html_ae7d9e96ca745d502672369fc4d1cde5c"><div class="ttname"><a href="classDisplayer.html#ae7d9e96ca745d502672369fc4d1cde5c">Displayer::hei_canvas_</a></div><div class="ttdeci">unsigned hei_canvas_</div><div class="ttdoc">Hauteur du panneau graphique (px) </div><div class="ttdef"><b>Definition:</b> displayer.h:60</div></div>
+<div class="ttc" id="classDisplayer_html_a79d7176c3335586cca68709aedcf064b"><div class="ttname"><a href="classDisplayer.html#a79d7176c3335586cca68709aedcf064b">Displayer::shield_</a></div><div class="ttdeci">QPixmap shield_</div><div class="ttdoc">Symbole bouclier. </div><div class="ttdef"><b>Definition:</b> displayer.h:67</div></div>
+<div class="ttc" id="classDisplayer_html_a560b41e509deb82d5ae56b5ff60e093c"><div class="ttname"><a href="classDisplayer.html#a560b41e509deb82d5ae56b5ff60e093c">Displayer::timerEvent</a></div><div class="ttdeci">void timerEvent()</div><div class="ttdoc">Evènement de mise à jour de l&#39;affichage. </div><div class="ttdef"><b>Definition:</b> displayer.cpp:110</div></div>
+<div class="ttc" id="classDisplayer_html_a2b3b84d51d4bb077d52ede2a2abc6191"><div class="ttname"><a href="classDisplayer.html#a2b3b84d51d4bb077d52ede2a2abc6191">Displayer::m_scene</a></div><div class="ttdeci">QGraphicsScene * m_scene</div><div class="ttdoc">Scène de l&#39;affichage. </div><div class="ttdef"><b>Definition:</b> displayer.h:51</div></div>
+<div class="ttc" id="classDisplayer_html_a557745fd320fb608f4067ea3fcbf3a56"><div class="ttname"><a href="classDisplayer.html#a557745fd320fb608f4067ea3fcbf3a56">Displayer::refresh</a></div><div class="ttdeci">void refresh()</div><div class="ttdoc">Commande de rafraichissement de l&#39;affichage. </div><div class="ttdef"><b>Definition:</b> displayer.cpp:137</div></div>
+<div class="ttc" id="classDisplayer_html_abf6048109c2f782b47932babc1c72b79"><div class="ttname"><a href="classDisplayer.html#abf6048109c2f782b47932babc1c72b79">Displayer::size_planete_</a></div><div class="ttdeci">unsigned size_planete_</div><div class="ttdoc">Taille d&#39;une planète à l&#39;affichage (px) </div><div class="ttdef"><b>Definition:</b> displayer.h:57</div></div>
+<div class="ttc" id="classDisplayer_html_aedcdc7b40771c068fb70f9f74b2d6689"><div class="ttname"><a href="classDisplayer.html#aedcdc7b40771c068fb70f9f74b2d6689">Displayer::len_text_box_</a></div><div class="ttdeci">unsigned len_text_box_</div><div class="ttdoc">Largeur du panneau latéral (px) </div><div class="ttdef"><b>Definition:</b> displayer.h:58</div></div>
+<div class="ttc" id="classDisplayer_html_a793b9f323b4d24428f1376528b537515"><div class="ttname"><a href="classDisplayer.html#a793b9f323b4d24428f1376528b537515">Displayer::m_view</a></div><div class="ttdeci">QGraphicsView * m_view</div><div class="ttdoc">Vue. </div><div class="ttdef"><b>Definition:</b> displayer.h:52</div></div>
+<div class="ttc" id="classDisplayer_html_a9edd62c6f4cf550385c1dc9933e49d0e"><div class="ttname"><a href="classDisplayer.html#a9edd62c6f4cf550385c1dc9933e49d0e">Displayer::timer</a></div><div class="ttdeci">QTimer * timer</div><div class="ttdoc">Chronomètre pour gérer la fréquence d&#39;affichage. </div><div class="ttdef"><b>Definition:</b> displayer.h:63</div></div>
+<div class="ttc" id="classDisplayer_html_aff59f7de619d0d84e91aaf6087b55ebc"><div class="ttname"><a href="classDisplayer.html#aff59f7de619d0d84e91aaf6087b55ebc">Displayer::len_canvas_</a></div><div class="ttdeci">unsigned len_canvas_</div><div class="ttdoc">Largeur du panneau graphique (px) </div><div class="ttdef"><b>Definition:</b> displayer.h:59</div></div>
+<div class="ttc" id="classDisplayer_html_a43b024cbfed7610ee3b91a7ba52a1a5b"><div class="ttname"><a href="classDisplayer.html#a43b024cbfed7610ee3b91a7ba52a1a5b">Displayer::display_world</a></div><div class="ttdeci">void display_world()</div><div class="ttdoc">Affiche la grille. </div><div class="ttdef"><b>Definition:</b> displayer.cpp:57</div></div>
+<div class="ttc" id="classDisplayer_html_a4b66ff00950bc1d57bffa61a767c0303"><div class="ttname"><a href="classDisplayer.html#a4b66ff00950bc1d57bffa61a767c0303">Displayer::display_planet</a></div><div class="ttdeci">void display_planet(unsigned posX, unsigned posY)</div><div class="ttdoc">Affiche une planète. </div><div class="ttdef"><b>Definition:</b> displayer.cpp:78</div></div>
+<div class="ttc" id="classDisplayer_html_acf5e0801f0353ad1300ea901f8038fb5"><div class="ttname"><a href="classDisplayer.html#acf5e0801f0353ad1300ea901f8038fb5">Displayer::world_</a></div><div class="ttdeci">World world_</div><div class="ttdoc">Plateau de jeu. </div><div class="ttdef"><b>Definition:</b> displayer.h:54</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Samedi 27 Février 2016 02:51:57 pour Simulation Multi-Agents par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>
