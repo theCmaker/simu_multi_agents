@@ -116,8 +116,6 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a099a08baae9c7985acf6cca4fa2d0509"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayer.html#a099a08baae9c7985acf6cca4fa2d0509">Displayer</a> (QMainWindow *)</td></tr>
 <tr class="memdesc:a099a08baae9c7985acf6cca4fa2d0509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée l'interface visuelle de présentation de la grille de simulation.  <a href="#a099a08baae9c7985acf6cca4fa2d0509">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a099a08baae9c7985acf6cca4fa2d0509"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06d6e9b18c26c121d21d95bb5a352ee0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayer.html#a06d6e9b18c26c121d21d95bb5a352ee0">afficherRect</a> ()</td></tr>
-<tr class="separator:a06d6e9b18c26c121d21d95bb5a352ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43b024cbfed7610ee3b91a7ba52a1a5b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43b024cbfed7610ee3b91a7ba52a1a5b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayer.html#a43b024cbfed7610ee3b91a7ba52a1a5b">display_world</a> ()</td></tr>
 <tr class="memdesc:a43b024cbfed7610ee3b91a7ba52a1a5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la grille. <br/></td></tr>
@@ -161,6 +159,14 @@ QGraphicsScene *&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 QGraphicsView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayer.html#a793b9f323b4d24428f1376528b537515">m_view</a></td></tr>
 <tr class="memdesc:a793b9f323b4d24428f1376528b537515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vue. <br/></td></tr>
 <tr class="separator:a793b9f323b4d24428f1376528b537515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a970d6b412a61cc28987227ed20256d77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a970d6b412a61cc28987227ed20256d77"></a>
+<a class="el" href="classQPlanet.html">QPlanet</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayer.html#a970d6b412a61cc28987227ed20256d77">graph_grid_</a></td></tr>
+<tr class="memdesc:a970d6b412a61cc28987227ed20256d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grille des objets affichés. <br/></td></tr>
+<tr class="separator:a970d6b412a61cc28987227ed20256d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e80d86dcf40825e1f7d71c2947e5cd3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e80d86dcf40825e1f7d71c2947e5cd3"></a>
+QGraphicsTextItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayer.html#a3e80d86dcf40825e1f7d71c2947e5cd3">text_panel_</a></td></tr>
+<tr class="memdesc:a3e80d86dcf40825e1f7d71c2947e5cd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Panneau de texte latéral. <br/></td></tr>
+<tr class="separator:a3e80d86dcf40825e1f7d71c2947e5cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf5e0801f0353ad1300ea901f8038fb5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf5e0801f0353ad1300ea901f8038fb5"></a>
 <a class="el" href="classWorld.html">World</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDisplayer.html#acf5e0801f0353ad1300ea901f8038fb5">world_</a></td></tr>
 <tr class="memdesc:acf5e0801f0353ad1300ea901f8038fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plateau de jeu. <br/></td></tr>
@@ -259,23 +265,6 @@ QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a class="anchor" id="a06d6e9b18c26c121d21d95bb5a352ee0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Displayer::afficherRect </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section note"><dt>Note</dt><dd>Non utilisé </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">A faire:</a></b></dt><dd>A supprimer </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a4b66ff00950bc1d57bffa61a767c0303"></a>
 <div class="memitem">
 <div class="memproto">
@@ -345,7 +334,7 @@ QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Samedi 27 Février 2016 16:01:47 pour Simulation Multi-Agents par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 2 Mars 2016 17:29:49 pour Simulation Multi-Agents par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

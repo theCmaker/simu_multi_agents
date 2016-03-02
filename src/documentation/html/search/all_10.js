@@ -1,10 +1,22 @@
 var searchData=
 [
-  ['target_5f',['target_',['../classColonized__planet.html#af24d15905b14b8a1af9c202791dffe5f',1,'Colonized_planet']]],
-  ['test2factions',['test2factions',['../classWorld.html#af50a03db2f7a2fea3a013557251d5a7c',1,'World']]],
-  ['test3factions',['test3factions',['../classWorld.html#aeff7e2c21e886b7a7d5793354644858f',1,'World']]],
-  ['test4factions',['test4factions',['../classWorld.html#ae093b6af05143a8faa53db9774eb77ff',1,'World']]],
-  ['timer',['timer',['../classDisplayer.html#a9edd62c6f4cf550385c1dc9933e49d0e',1,'Displayer']]],
-  ['timerevent',['timerEvent',['../classDisplayer.html#a560b41e509deb82d5ae56b5ff60e093c',1,'Displayer']]],
-  ['tostring',['toString',['../classFaction.html#a75e7b414c89b8a4d75bf4a778e844b74',1,'Faction']]]
+  ['scheduler',['scheduler',['../classWorld.html#a26aa2658c22414b5f572df8cb5efbeae',1,'World']]],
+  ['set_5fcolony_5fcolor_5fname',['set_colony_color_name',['../classFaction.html#a51eadaa457179270f1950ed84e44df56',1,'Faction']]],
+  ['set_5fcolony_5fsymbol',['set_colony_symbol',['../classFaction.html#a07b25ba27c0c8d158cb2310d064cc8a4',1,'Faction']]],
+  ['set_5fgrid',['set_grid',['../classWorld.html#a593960e61c13083719721b0c289dad94',1,'World']]],
+  ['set_5fmotherland_5fcolor_5fname',['set_motherland_color_name',['../classFaction.html#ab17a2eabec14355868177554502972c7',1,'Faction']]],
+  ['set_5fmotherland_5fsymbol',['set_motherland_symbol',['../classFaction.html#a9c1d1b8ab782174bf113ad7183cfe0c3',1,'Faction']]],
+  ['set_5fneighbourhood',['set_neighbourhood',['../classVirtual__planet.html#aa17b2d88853c46485a3907f08148ef1e',1,'Virtual_planet']]],
+  ['set_5fneighbourhood2',['set_neighbourhood2',['../classVirtual__planet.html#ae32d3dd758346701d6f8c6f6f8a46925',1,'Virtual_planet']]],
+  ['setdefense',['setDefense',['../classQPlanet.html#a964574ef33918465d68827e918e89b94',1,'QPlanet']]],
+  ['seteco',['setEco',['../classQPlanet.html#abc0f1db1b8a8da1c42b930feb85e47d0',1,'QPlanet']]],
+  ['setellipse',['setEllipse',['../classQPlanet.html#aec0bd75b3e991318654da7140e407811',1,'QPlanet']]],
+  ['setgold',['setGold',['../classQPlanet.html#ac8d32fc63e85ddc719d915cd31db3603',1,'QPlanet']]],
+  ['setshield',['setShield',['../classQPlanet.html#acc9badb2a0be0f2daadf5a6ea3fa1878',1,'QPlanet']]],
+  ['shield_5f',['shield_',['../classDisplayer.html#a79d7176c3335586cca68709aedcf064b',1,'Displayer::shield_()'],['../classQPlanet.html#ad433ee49260de6bf067869dd77d5179c',1,'QPlanet::shield_()']]],
+  ['show',['show',['../classMainWindow.html#ae3d7a4598609a86e8bd317c0d85c4495',1,'MainWindow']]],
+  ['size_5fplanete_5f',['size_planete_',['../classDisplayer.html#abf6048109c2f782b47932babc1c72b79',1,'Displayer']]],
+  ['start',['start',['../classWorld.html#a6d23268873d3e6dc117d6c76fc87626b',1,'World']]],
+  ['stats',['stats',['../classWorld.html#a2ae945389cb96c6a10dcc07a45a2cefd',1,'World']]],
+  ['steps_5f',['steps_',['../classWorld.html#a747132820aba737926418d482571d7d3',1,'World']]]
 ];

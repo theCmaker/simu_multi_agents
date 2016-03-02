@@ -13,6 +13,7 @@ grid_(),
 factions_(),
 waiting_agents_(),
 already_run_agents_(),
+steps_(0),
 len_(len),
 hei_(hei)
 {
@@ -53,8 +54,7 @@ time_h World::start(){
   }
   steps_ = 0;
   while (!end_) { //While there is no peace in the galaxy
-		scheduler();
-		++steps_;
+        scheduler();
 		display();
 	}
 	return steps_;
@@ -98,6 +98,7 @@ void World::scheduler() {
     }
 
     if (factions_.size() <= 1) end_ = true;
+    ++steps_;
 }
 
 /*!
@@ -294,6 +295,7 @@ std::list<Faction> World::get_factions() {
  */
 string World::stats(){
     stringstream ss;
+    ss << "Step #" << steps_ << endl;
     ss << "Factions :" << endl;
     ss << "----------------------------" << endl;
     for(std::list<Faction>::iterator it = factions_.begin() ; it != factions_.end() ; it++) {

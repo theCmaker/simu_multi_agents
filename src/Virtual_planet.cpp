@@ -123,7 +123,7 @@ bool Virtual_planet::has_changed(){
  * \brief Signale un changement d'état
  */
 void Virtual_planet::change(){
-    changed_=true;
+    changed_ = true;
 }
 
 /*!

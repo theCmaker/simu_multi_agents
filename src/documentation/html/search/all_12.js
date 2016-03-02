@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['virtual_5fplanet',['Virtual_planet',['../classVirtual__planet.html',1,'Virtual_planet'],['../classVirtual__planet.html#a16cc8781ce4c81e6365d87b659e5108c',1,'Virtual_planet::Virtual_planet(World &amp;, unsigned, unsigned)'],['../classVirtual__planet.html#a4a2c71c2400d55bf861bc5d433123ac6',1,'Virtual_planet::Virtual_planet(Virtual_planet *)']]]
+  ['ui',['ui',['../classMainWindow.html#a35466a70ed47252a0191168126a352a5',1,'MainWindow']]],
+  ['update_5fneighbourhood',['update_neighbourhood',['../classColonized__planet.html#ac4f99490dc15c7715c1b476a490228a4',1,'Colonized_planet::update_neighbourhood()'],['../classVirtual__planet.html#ac67c164e630df471819336d2404a99af',1,'Virtual_planet::update_neighbourhood()']]]
 ];

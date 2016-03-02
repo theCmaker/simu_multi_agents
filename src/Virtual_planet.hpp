@@ -56,7 +56,7 @@ protected:
     unsigned pos_y_;    //!< Colonne dans la grille
 
     std::vector<Virtual_planet* > neighbourhood_;   //!< Liste des voisins
-    bool    changed_;   //!< Etat changé @todo vérifier
+    bool    changed_;   //!< Etat changé
 
     double  production_rate_;	//!< Taux de production entre MIN_PRODUCTION_RATE et MAX_PRODUCTION_RATE \see MIN_PRODUCTION_RATE \see MAX_PRODUCTION_RATE
     double  natural_defense_;	//!< Taux de défense naturelle entre MIN_NATURAL_DEFENSE et MAX_NATURAL_DEFENSE \see MIN_NATURAL_DEFENSE \see MAX_NATURAL_DEFENSE

@@ -17,6 +17,7 @@
 
 #include "../World.hpp"
 #include "../Faction.hpp"
+#include "qplanet.h"
 
 
 
@@ -37,7 +38,6 @@ public:
     explicit Displayer(QWidget *parent = 0);
     Displayer(QMainWindow *);
 
-    void afficherRect();
     void display_world();
     bool play();
 
@@ -50,6 +50,8 @@ private:
     //Vue
     QGraphicsScene *m_scene;    //!< Scène de l'affichage
     QGraphicsView *m_view;      //!< Vue
+    QPlanet ** graph_grid_;     //!< Grille des objets affichés
+    QGraphicsTextItem * text_panel_; //!< Panneau de texte latéral
 
     World world_;               //!< Plateau de jeu
 

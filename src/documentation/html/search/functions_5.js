@@ -23,5 +23,10 @@ var searchData=
   ['get_5fneighbourhood',['get_neighbourhood',['../classVirtual__planet.html#a996699dcad7e99262842e06079896ed1',1,'Virtual_planet']]],
   ['get_5fproduction',['get_production',['../classColonized__planet.html#a167b41cbb51c1d19d40cb3707af2ea59',1,'Colonized_planet::get_production()'],['../classVirtual__planet.html#a4294d3312671d720dca0b72a1648e6a4',1,'Virtual_planet::get_production()']]],
   ['get_5fwinner_5fname',['get_winner_name',['../classWorld.html#aaa59a538a6b688f164707743faf63072',1,'World']]],
-  ['get_5fworld',['get_world',['../classVirtual__planet.html#a1d3474a2ca3833a770c3763884a84323',1,'Virtual_planet']]]
+  ['get_5fworld',['get_world',['../classVirtual__planet.html#a1d3474a2ca3833a770c3763884a84323',1,'Virtual_planet']]],
+  ['getdefense',['getDefense',['../classQPlanet.html#a0de20a9512169695c64116151adb3761',1,'QPlanet']]],
+  ['geteco',['getEco',['../classQPlanet.html#aa9db86548398192009dc3e697c2e353d',1,'QPlanet']]],
+  ['getellipse',['getEllipse',['../classQPlanet.html#ad8e68b6cbcd2d204324091f10354790a',1,'QPlanet']]],
+  ['getgold',['getGold',['../classQPlanet.html#a985889ddccdd807db0406845b99d1bbc',1,'QPlanet']]],
+  ['getshield',['getShield',['../classQPlanet.html#ae42f83965d52ca987d152322354c4509',1,'QPlanet']]]
 ];

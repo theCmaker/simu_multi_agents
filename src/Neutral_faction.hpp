@@ -9,7 +9,6 @@
  * C'est la faction à laquelle appartiennent les planètes libres
  *
  * \note Modèle singleton
- * \todo à vérifier
  */
 class Neutral_faction : public Faction
 {

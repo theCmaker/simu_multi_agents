@@ -204,10 +204,9 @@ void Colonized_planet::reinitialisate_target() {
  * La planète peut choisir d'attaquer ou bien de produire des richesses.
  *
  * \return Booléen indiquant si la planète a réalisé une attaque
- * \todo à quoi sert had_killed?
  */
-bool Colonized_planet::run() {
-	bool found_victim,had_killed=false;
+void Colonized_planet::run() {
+    bool found_victim;
 	unsigned i;
 
     int random_number = World::gen_mt(0, 1);
@@ -225,9 +224,7 @@ bool Colonized_planet::run() {
 
             if (colony_defense_ <= MAX_COLONY_DEFENSE) {
                 inc = World::gen_mt(0, 5);
-				colony_defense_ += World::gen_mt(0, 5);
-                //TODO
-                //!\todo pourquoi pas += inc ici ?
+                colony_defense_ += inc;
                 if (inc != 0) change();
 			}
 			break;
@@ -282,7 +279,6 @@ bool Colonized_planet::run() {
 			break;
   }	
  // faction_.add_to_banque(production_rate_ + colony_production_);
-  return had_killed;
 //	colony_defense_ = (double)((int)(colony_defense_ + 1.0));
 	//World::gen_mt()
 }
