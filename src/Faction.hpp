@@ -84,6 +84,7 @@ public:
 
     //Display
     std::string toString();
+		std::string stats();
 };
 
 /*!

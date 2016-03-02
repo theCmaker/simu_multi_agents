@@ -80,7 +80,7 @@ void Faction::add_to_banque(double adding_money) {
  * \note Le voisinage et l'ordonnanceur sont mis à jour
  */
 void Faction::die() {
-	cout << "Faction " << name_ << " is about to be deleted." << endl;
+	//cout << "Faction " << name_ << " is about to be deleted." << endl;
 	
 	// conversion dans la grille de jeu
 	for (list<Colonized_planet*>::iterator it = colonies_.begin() ; it != colonies_.end() ; it++) {
@@ -116,11 +116,20 @@ void Faction::die() {
  * \todo Vérifier si la place n'est pas déja occupée par une autre planète mère
  */
 void Faction::init() {
-	unsigned x = World::gen_mt() % world_.len();
-	unsigned y = World::gen_mt() % world_.hei();
+	bool stop = false;
+	unsigned x = 0;
+	unsigned y = 0;
+	while (!stop) {	//Choix d'une case possible (qui n'est pas deja une planete mere)
+		 x = World::gen_mt() % world_.len();
+		 y = World::gen_mt() % world_.hei();
+		stop = world_.get_grid(x, y)->can_be_replaced();
+	}
 	motherland_ = new Mother_land(world_.get_grid(x, y), *this);
 	delete world_.get_grid(x,y);
 	world_.set_grid(motherland_, x, y);
+	for (unsigned i = 0;i < motherland_->get_neighbourhood().size();i++) {
+		motherland_->get_neighbourhood()[i]->set_neighbourhood(); //on met a les dits voisins
+	}
 }
 
 /*!
@@ -194,4 +203,20 @@ string Faction::toString(){
     ss << "Number of failed attacks : " << get_nb_failed_attack_() << endl;
     ss << "----------------------------" << endl;
     return ss.str();
+}
+
+
+/*!
+* \brief Valeurs finales de la faction
+* \return bloc de texte reprenant les paramètres principaux et de statistiques finales de manière formatée
+*/
+string Faction::stats() {
+	std::stringstream ss;
+//	ss << "Name ;" << "Mort au tour numero ; " << "Money ;" << "Money produced ;" << "Money spent ;" << "Number of colonies ;"
+//		<< "Number of attacks ;" << "Number of successful attacks ;" << "Number of failed attacks ;" << endl;
+	ss << get_name() << ";" << world_.get_steps() << ";" << get_money() << ";" << get_money_produce_() << ";" << get_money_spent() << ";" << colonies_.size()
+		<< ";" << get_nb_failed_attack_() + get_nb_successful_attack_() << ";" << get_nb_successful_attack_() << ";" << get_nb_failed_attack_() << ";";// << endl;
+//	ss << "Statistique motherland" << endl;
+	ss << motherland_->stats();
+	return ss.str();
 }

@@ -84,11 +84,12 @@ bool Colonized_planet::attack(Virtual_planet *victim) {
     Colonized_planet * acquisition = nullptr;
 
 	if (res) {
-        acquisition = new Colonized_planet(victim,this->get_faction());
-        for (unsigned i = 0 ; i<victim->get_neighbourhood().size() ; i++){
-			victim->get_neighbourhood()[i]->update_neighbourhood(victim,acquisition);
-		}
+    acquisition = new Colonized_planet(victim,this->get_faction());
 		this->get_world().set_grid(acquisition, victim->pos_x(), victim->pos_y());
+    for (unsigned i = 0 ; i<acquisition->get_neighbourhood().size() ; i++){
+		//	acquisition->get_neighbourhood()[i]->update_neighbourhood(victim,acquisition);
+			acquisition->get_neighbourhood()[i]->set_neighbourhood();
+		}
 		delete victim;
 		victim = nullptr;
 	}
@@ -238,17 +239,18 @@ void Colonized_planet::run() {
 				i = 0;
 				found_victim = false;
 				while (i < neighbourhood_.size() && !found_victim) {
-					if (!(neighbourhood_[i]->get_faction() == this->get_faction())) {
-						found_victim = true;
-                    } else {
-						++i;
-					}
+						if (!(neighbourhood_[i]->get_faction() == this->get_faction())) {
+							found_victim = true;
+						}
+						else {
+							++i;
+						}
 				}
 
 				if (found_victim) {
 					// demand of subvention
 					target_ = neighbourhood_[i];
-                    demand_ = target_->estimate_cost() - budget_;
+          demand_ = target_->estimate_cost() - budget_;
 
 					if (demand_ > 0) {
 						faction_.add_demand(this, demand_);

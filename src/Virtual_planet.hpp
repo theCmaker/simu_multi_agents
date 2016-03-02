@@ -33,6 +33,7 @@ public:
             void run                    ();
     virtual void reinitialisate_target  () {}                           //!< Réinitialisation de la cible, à redéfinir
             bool has_changed            ();
+		virtual bool can_be_replaced				() {return true;}								//!< Renvoie true si la planete n'est pas un agent
 
 
   //Getter setter

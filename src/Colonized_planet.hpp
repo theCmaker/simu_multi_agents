@@ -34,6 +34,7 @@ public:
     char 		display                 () {return faction_.get_colony_symbol();}
     std::string get_color_name          () {return faction_.get_colony_color_name();}
     void        run                     ();
+		bool can_be_replaced() { return false; }								//!< Renvoie true si la planete n'est pas un agent
 
 protected:
     double      	colony_defense_;    //!< Valeur de défense

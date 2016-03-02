@@ -47,20 +47,25 @@ public:
     static int  gen_mt_shuffle  (int i);
     static void dispose         ();
 
-	//Getter/setter 
-	Virtual_planet* get_grid(unsigned x, unsigned y);
+		//Getter/setter 
+		Virtual_planet* get_grid(unsigned x, unsigned y);
     void            set_grid(Virtual_planet*, unsigned x, unsigned y);
     unsigned        len     () const {return len_;} //!< Nombre de places sur une ligne
     unsigned        hei     () const {return hei_;} //!< Nombre de places sur une colonne
     bool            isEnded ()       {return end_;} //!< Vrai si la partie est terminée
+		unsigned				get_steps() const {return steps_; } //!< Numéro du tour courant
     std::list<Faction> get_factions();
 
     //display
-    string stats();
+    string toString();
     string get_winner_name();
+		string stats_general();
+		string stats_faction();
+
+		void add_stat_faction(Faction&);
 
 private:
-    const static bool DEBUG = true; //!< Constante de débogage
+    const static bool DEBUG = false; //!< Constante de débogage
                  bool end_;         //!< Fin de la partie
 
     //Containers
@@ -74,12 +79,15 @@ private:
     //Stats
     unsigned steps_;                //!< Nombre de tours
     unsigned nb_simulated_agents_;  //!< Nombre d'agents
+		unsigned nb_attacks_success_;		//!< Nombre d'attaques réussites dans la simulation
+		unsigned nb_attacks_failed_;		//!< Nombre d'attaques echouées dans la simulation
+		list<string> stats_factions_;		//!< Statistiques finales de toutes les factions
 
     //Dimension of the world
     unsigned len_;                  //!< Nombre de places par ligne
     unsigned hei_;                  //!< Nombre de places par colonne
 
-	//mt
+		//mt
     static std::mt19937 gen_mt_;    //!< Générateur aléatoire
 };
 

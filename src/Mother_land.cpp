@@ -26,11 +26,23 @@ bool Mother_land::is_attacked(Virtual_planet *attacker) {
 	}
 	//On supprime l'agent de la liste d'attente puiqu'il va etre elimine ainsi que de sa faction
 	if (res == true) {
+		world_.add_stat_faction(faction_);	//Ajout des stats puisque la faction va etre supprimee
 		world_.remove_waiting_agent(this);
 		faction_.remove_mother_land();
 		faction_.remove_demand(this);
 	}
 	return res;
+}
+
+/*!
+* \brief Statistique liées a la planete mere
+* \return une chaine de caracteres formatée
+*/
+string Mother_land::stats() {
+	stringstream ss;
+	//ss << "Position x;" << "Position y;" << "Natural defense;" << "Natural production;" << "Finale defense;" << "Finale production" << endl;
+	ss << pos_x_ << ";" << pos_y_ << ";" << natural_defense_ << ";" << production_rate_ << ";" << natural_defense_ + colony_defense_ << ";" << production_rate_ + colony_production_;
+	return ss.str();
 }
 
 

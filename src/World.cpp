@@ -14,6 +14,10 @@ factions_(),
 waiting_agents_(),
 already_run_agents_(),
 steps_(0),
+nb_simulated_agents_(0),
+nb_attacks_success_(0),
+nb_attacks_failed_(0),
+stats_factions_(),
 len_(len),
 hei_(hei)
 {
@@ -54,9 +58,10 @@ time_h World::start(){
   }
   steps_ = 0;
   while (!end_) { //While there is no peace in the galaxy
-        scheduler();
-		display();
+		scheduler();
+		if (DEBUG) { display(); }
 	}
+	if(factions_.size()==1) add_stat_faction(factions_.back());
 	return steps_;
 }
 
@@ -81,7 +86,7 @@ void World::scheduler() {
   
     for (list<Faction>::iterator it = factions_.begin() ; it != factions_.end() ; it++) {
         //if (DEBUG) cout << factions_copy[i].get_name() << " played !" << endl;
-        faction_to_delete = it->run();
+				faction_to_delete = it->run();
         if (faction_to_delete != nullptr) {
             factions_to_delete.push_back(faction_to_delete);
         }
@@ -94,7 +99,7 @@ void World::scheduler() {
 
     for (unsigned i = 0 ; i < waiting_agents_.size() ; i++) {
         //if (DEBUG) cout << "(" << waiting_agents_[i]->pos_x() << "," << waiting_agents_[i]->pos_y() << ") played !" << endl;
-        waiting_agents_[i]->run();
+				waiting_agents_[i]->run();
     }
 
     if (factions_.size() <= 1) end_ = true;
@@ -221,7 +226,7 @@ void World::remove_waiting_agent(Colonized_planet* colonized_planet) {
  * \param faction faction à supprimer
  */
 void World::remove_faction(Faction* faction) {
-	std::cout << "suppression definitive de la faction " << faction->get_name() << std::endl;
+	//std::cout << "suppression definitive de la faction " << faction->get_name() << std::endl;
 	Faction & faction_to_remove = *faction;
     std::list<Faction>::iterator itr = std::find( factions_.begin(), factions_.end(), faction_to_remove);
 	factions_.erase(itr);
@@ -290,10 +295,10 @@ std::list<Faction> World::get_factions() {
 }
 
 /*!
- * \brief Statistiques
- * \return texte représentant les statistiques de jeu
+ * \brief to string
+ * \return texte représentant les valeurs courante du jeu
  */
-string World::stats(){
+string World::toString(){
     stringstream ss;
     ss << "Step #" << steps_ << endl;
     ss << "Factions :" << endl;
@@ -302,6 +307,36 @@ string World::stats(){
         ss << it->toString();
     }
     return ss.str();
+}
+
+/*!
+* \brief Statistiques
+* \return texte formaté représentant les statistiques finales de jeu
+*/
+string World::stats_general() {
+	stringstream ss;
+	//ss << "Statistique generale" << endl;
+
+	//ss << "Nombre de tours ;" << "Faction gagnante ;" << "Nombre d'attaques reussites ;" << "Nombre d'attaques echouees ;" << "Nombre d'attaques total" << endl;
+	ss << steps_ << ";" << get_winner_name() << ";" << nb_attacks_success_ << ";" << nb_attacks_failed_ << ";" << nb_attacks_failed_ + nb_attacks_success_ << endl;
+
+	return ss.str();
+}
+
+/*!
+* \brief Statistiques
+* \return texte formaté représentant les statistiques finales des factions
+*/
+string World::stats_faction() {
+	stringstream ss;
+
+//	ss << "Statistique des factions" << endl;
+	for (list<string>::iterator it = stats_factions_.begin(); it != stats_factions_.end(); it++) {
+		ss << *it << ";;";
+	}
+	ss << endl;
+
+	return ss.str();
 }
 
 /*!
@@ -314,6 +349,16 @@ string World::get_winner_name(){
         res = factions_.back().get_name();
     }
     return res;
+}
+
+/*!
+* \brief Ajout dans la liste des statistiques de faction et mise a jour des statistiques generales
+* \param faction Faction a archiver dans les statisiques
+*/
+void World::add_stat_faction(Faction& faction) {
+	stats_factions_.push_back(faction.stats());
+	nb_attacks_failed_ += faction.get_nb_failed_attack_();
+	nb_attacks_success_ += faction.get_nb_successful_attack_();
 }
 
 std::mt19937 World::gen_mt_ = std::mt19937();

@@ -19,6 +19,7 @@ public:
     char        display         () {return faction_.get_motherland_symbol();}       //!< Caractère représentant la planète mère
     std::string get_color_name  () {return faction_.get_motherland_color_name();}   //!< Couleur représentant la planète mère
     bool        is_attacked     (Virtual_planet *);
+		std::string	stats						();
 };
 
 #endif
