@@ -87,8 +87,7 @@ bool Colonized_planet::attack(Virtual_planet *victim) {
     acquisition = new Colonized_planet(victim,this->get_faction());
 		this->get_world().set_grid(acquisition, victim->pos_x(), victim->pos_y());
     for (unsigned i = 0 ; i<acquisition->get_neighbourhood().size() ; i++){
-		//	acquisition->get_neighbourhood()[i]->update_neighbourhood(victim,acquisition);
-			acquisition->get_neighbourhood()[i]->set_neighbourhood();
+			acquisition->get_neighbourhood()[i]->update_neighbourhood(victim,acquisition);
 		}
 		delete victim;
 		victim = nullptr;
