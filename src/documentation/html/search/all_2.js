@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['can_5fbe_5freplaced',['can_be_replaced',['../classColonized__planet.html#ad364c3baffd5ad81d3208b1228cc35e4',1,'Colonized_planet::can_be_replaced()'],['../classVirtual__planet.html#a21eeef694b6dc66b7a394bda53e9c360',1,'Virtual_planet::can_be_replaced()']]],
   ['change',['change',['../classVirtual__planet.html#a9c79d42a13bb25243354faf9895aca14',1,'Virtual_planet']]],
   ['changed_5f',['changed_',['../classVirtual__planet.html#aa5ebb40e5a4ed0a631b120749f938f35',1,'Virtual_planet']]],
   ['colonies_5f',['colonies_',['../classFaction.html#af79e92739f25528585a539cefd719169',1,'Faction']]],

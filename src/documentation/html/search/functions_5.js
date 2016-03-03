@@ -22,6 +22,7 @@ var searchData=
   ['get_5fnb_5fsuccessful_5fattack_5f',['get_nb_successful_attack_',['../classFaction.html#a7b174edbce20f49b7331665cb589e2f3',1,'Faction']]],
   ['get_5fneighbourhood',['get_neighbourhood',['../classVirtual__planet.html#a996699dcad7e99262842e06079896ed1',1,'Virtual_planet']]],
   ['get_5fproduction',['get_production',['../classColonized__planet.html#a167b41cbb51c1d19d40cb3707af2ea59',1,'Colonized_planet::get_production()'],['../classVirtual__planet.html#a4294d3312671d720dca0b72a1648e6a4',1,'Virtual_planet::get_production()']]],
+  ['get_5fsteps',['get_steps',['../classWorld.html#ada56e6662343fbf3481ad9fa7eb21391',1,'World']]],
   ['get_5fwinner_5fname',['get_winner_name',['../classWorld.html#aaa59a538a6b688f164707743faf63072',1,'World']]],
   ['get_5fworld',['get_world',['../classVirtual__planet.html#a1d3474a2ca3833a770c3763884a84323',1,'Virtual_planet']]],
   ['getdefense',['getDefense',['../classQPlanet.html#a0de20a9512169695c64116151adb3761',1,'QPlanet']]],

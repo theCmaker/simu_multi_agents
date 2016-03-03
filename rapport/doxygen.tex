@@ -1,0 +1,161 @@
+\chapter{Doxygen -- Présentation d'un outil de documentation}
+Présentation réalisée par Pierre-Loup PISSAVY.
+\section{Présentation}
+
+  Doxygen est un outil permettant de générer automatiquement de la documentation à partir de code source. Ceci est possible grâce à l'implantation de balises particulières dans les commentaires présents dans le code.
+  C'est un outil qui supporte plusieurs langages, et parmi les plus connus, le C/C++ et Java. La documentation ainsi produite peut alors être publiée, imprimée ou simplement sauvegardée.
+
+  Cela permet à la fois de produire de la documentation et de renseigner le développeur sur le code qu'il consulte. La documentation étant présente dans le code, cela permet de la garder à jour (un seul fichier à modifier pour mettre à jour la documentation), et facile à compléter.
+
+\section{Installation}
+\subsection{Logiciel}
+  Doxygen est d'une grande flexibilité, l'outil est disponible sur toutes les plateformes communes: Windows, Mac OS X, et les systèmes Unix (BSD, GNU/Linux).
+
+  Sur les systèmes Unix, il est présent dans les dépôts officiels de paquets orientés développement, on peut donc utiliser notre gestionnaire de paquets préféré, par exemple:
+  \begin{minted}[gobble=4]{bash}
+    yum install doxygen
+  \end{minted}
+
+  Pour les systèmes Windows et Max OS X, on peut télécharger les installateurs sur le site officiel de Doxygen,
+  \href{http://www.doxygen.org/download.html}{\texttt{http://www.doxygen.org/download.html}},
+  ou bien sur le dépôt GitHub officiel (\href{https://github.com/doxygen/doxygen}{\texttt{https://github.com/doxygen/doxygen}})
+  si l'on souhaite obtenir ou tester les derniers changements.
+
+\subsection{Plug-ins}
+  Doxygen est l'un des outils de documentation les plus connus, aussi l'on trouve de nombreux plugins afin de l'intégrer au sein des IDE les plus utilisés. C'est le notamment le cas d'Eclipse, NetBeans, QtCreator, MS VisualStudio et XCode.
+
+\section{Fonctionnalités proposées}
+  Pour chaque document à produire, Doxygen nécessite un fichier de configuration, usuellement nommé \emph{Doxyfile}\footnote{Par référence au Makefile de l'outil Make}. Ce fichier de configuration contient de très nombreux paramètres, et sa trame peut être générée automatiquement avec la commande 
+  \begin{minted}[gobble=4]{bash}
+    doxygen -g
+  \end{minted}
+
+  Pour construire la documentation, on exécute simplement dans le dossier contenant le Doxyfile la commande suivante:
+  \begin{minted}[gobble=4]{bash}
+    doxygen
+  \end{minted}
+
+  Tous les paramètres de configuration sont comparables à des variables du shell et la syntaxe en est très proche.
+
+  Doxygen fait précéder chaque variable de commentaires expliquant son emploi et parfois les propriétés à respecter.
+  
+  \subsection{Réglage du rendu}
+    \noindent
+    \begin{tabular}{p{.25\linewidth}p{.7\linewidth}}
+      \texttt{PROJECT\_NAME} & Le nom du projet. \\
+      \texttt{PROJECT\_NUMBER} & La version de la documentation ou du projet selon ce que l'on souhaite. \\
+      \texttt{PROJECT\_BRIEF} & Une brève description du projet. \\
+      \texttt{PROJECT\_LOGO} & Le chemin (relatif ou absolu par rapport au Doxyfile) d'une image ou logo représentant le projet (dimensions conseillées 200 $\times$ 50 px). \\
+      \texttt{OUTPUT\_DIRECTORY} & Le dossier dans lequel la documentation doit être produite (celui du Doxyfile par défaut). \\
+      \texttt{OUTPUT\_LANGUAGE} & La langue dans laquelle la documentation est produite (cela permet de faire correspondre le fond et la forme du résultat).
+    \end{tabular}
+
+  \newpage
+  \subsection{Réglage de l'extraction de documentation}
+    A l'exception des deux dernières, toutes les variables qui suivent sont booléennes et peuvent prendre la valeur \texttt{YES} ou \texttt{NO}.\\
+
+    \noindent
+    \begin{tabular}{p{.3\linewidth}p{.65\linewidth}}
+      \texttt{EXTRACT\_ALL} & Impose à Doxygen de vérifier que toutes les classes ont été documentées.\\
+      \texttt{EXTRACT\_PRIVATE} & Extrait la documentation des membres privés dans les classes.\\
+      \texttt{EXTRACT\_STATIC} & Extrait la documentation des membres statiques.\\
+      \texttt{EXTRACT\_LOCAL\_CLASSES} & Extrait la documentation des classes imbriquées ou déclarées localement.\\
+      \texttt{HIDE\_UNDOC\_MEMBERS} & Enlève du document final les membres qui ne sont pas documentés.\\
+      \texttt{RECURSIVE} & Inspecte également la sous-arborescence à la recherche de fichiers comportant de la documentation.\\
+      \texttt{EXCLUDE} & Liste des fichiers et/ou répertoires à exclure de la recherche de documentation.\\
+      \texttt{FILE\_PATTERNS} & Schémas des noms de fichiers qui peuvent être inspectés\footnotemark[2].\\
+    \end{tabular}
+    \footnotetext[2]{Par défaut, Doxygen reconnaît les extensions usuelles, cette variable permet de sélectionner uniquement les extensions que l'on souhaite, et de les personnaliser}
+
+  \subsection{Et dans le code...}
+    En C++, la fragmentation entre déclaration et définition pourrait présenter un frein à la documentation (où documenter, comment éviter les répétitions ?), mais Doxygen reconnaît aussi bien les commentaires dans les headers que dans les fichiers source. Cela permet de documenter les classes, membres et méthodes simples (getters/setters) directement dans le header, et de documenter les méthodes et fonctions détaillées dans les fichiers source.
+
+
+    La documentation se fait donc dans des commentaires dont le formatage est spécial (il reprend les commentaires classiques du C++, en ajoutant simplement un caractère distinctif permettant de signaler le contenu comme de la documentation). Dans le cas du C/C++, cela peut-être un troisième caractère \texttt{'/'} pour les commentaires sur une ligne, ou bien l'ajout d'une étoile (\texttt{*}) sur la balise ouvrante des commentaires multiligne.
+
+    En voici un exemple:
+    \begin{cppcode*}{gobble=6}
+      /**
+       * @class Personne
+       * @brief Classe représentant une personne à l'aide de quelques informations de base
+       * 
+       * Informations plus détaillées
+       */
+      class Person {
+        private:
+          std::string first_name_;  ///< Prénom
+          std::string family_name_; ///< Nom de famille
+          Date        birthdate_;   ///< Date de naissance
+          Gender      gender_;      ///< Sexe
+      };
+    \end{cppcode*}
+
+    Nous pouvons voir à travers cet exemple que les informations sont indiquées de manière sémantique. En effet, Doxygen nécessite l'emploi de balises afin de caractériser le type de l'information apportée.
+
+    \newpage
+    Ces balises sont généralement précédées indifféremment du symbole \texttt{@} ou \texttt{\textbackslash}.
+
+    Voici une liste non exhaustive des plus usitées:
+
+    \noindent
+    \begin{tabular}{p{.2\textwidth}p{.7\textwidth}}
+      \texttt{@file}   & Nom du fichier.\\
+      \texttt{@author} & Auteur(s).\\
+      \texttt{@details} & Détails.\\
+      \texttt{@version} & Version du fichier.\\
+      \texttt{@date}    & Date ou intervalle de dates fixes.\\
+      \texttt{@bug}     & Pour signaler un comportement inattendu (permet de créer une liste de bugs).\\
+      \texttt{@warning} & Pour signaler les conditions d'utilisation à respecter.\\
+      \texttt{@copyright} & Licences.\\ 
+      \texttt{@see} & Référence vers un autre élément en relation avec celui portant la balise.\\
+      \texttt{@deprecated} & Elément obsolète.\\
+      \texttt{@note} & Information sur le comportement ou à destination des autres développeurs.\\
+      \texttt{@param} & Suivi du nom d'un paramètre et de sa description, pour décrire les paramètres d'une méthode/fonction. \\
+      \texttt{@pre} & Préconditions. \\
+      \texttt{@post} & Postconditions. \\
+      \texttt{@remark} & Remarques. \\
+      \texttt{@return} & Valeur retournée. \\
+    \end{tabular}
+
+    \noindent
+    \begin{tabular}{p{.2\textwidth}p{.7\textwidth}}
+      \texttt{@since} & Pour signaler depuis quand ou quelle version l'élément est disponible. \\
+      \texttt{@todo} & Choses restant à faire (une liste peut être constituée à partir de ces balises). \\
+      \texttt{@struct} & Description de structure en C/C++.\\
+      \texttt{@class} & Description de classe en C/C++.\\
+      \texttt{@a} & Suivi du nom d'un paramètre/argument, fait référence à un argument.
+    \end{tabular}
+
+    L'utilisation de Qt permet également de remplacer les symboles additionnels énoncés plus haut par des points d'exclamation (pour correspondre au style Qt). C'est ce que nous avons choisi dans notre projet (QtCreator pré-remplit les commentaires de documentation).
+
+    Dans les commentaires courts comme pour décrire le prénom, le chevron ouvrant remplace la balise \texttt{@brief}.
+
+    Enfin, il est possible de présenter la documentation de manière structurée en employant des listes de la même manière que dans un wiki, ou bien en utilisant directement du code HTML pour les compositions plus complexes.
+
+\section{Utilisation au sein du TP Multi-agents}
+  Doxygen nous a permis d'obtenir une documentation dont la présentation est agréable et peut être rendue accessible à tous. Cela est possible en publiant la version web HTML ou bien en diffusant le PDF qui peut être généré à partir des fichiers source \LaTeX{} produits par Doxygen.
+
+  Nous avons ajouté le logo de l'école et quelques informations sommaires sur le projet.
+
+  Il est bien évidemment possible de produire une documentation encore plus étoffée et consistante, mais cela demande toujours beaucoup de temps, tant du point de vue de la rédaction/mise en forme, que des revirements de situation dans le développement des objectifs à atteindre.
+
+\section{En bref}
+  Pour résumer, Doxygen est un outil très complet permettant une documentation efficace et sémantique du code. Il présente le gros avantage d'être utilisable sur plusieurs plateformes, avec plusieurs langages et d'obtenir plusieurs formats de sortie, de la version Web aux pages de manuel en passant par l'incontournable PDF. 
+
+  Sa renommée lui vaut l'existence de plug-ins pour les plus grands environnements de développement, ce qui n'est pas négligeable (auto-complétion, pré-documentation...) lorsqu'il s'agit de gagner du temps.
+
+  Les possibilités sont très étendues, et encore trop peu exploitées, c'est un outil qui mérite d'être promu auprès des développeurs (jeunes et senior) afin de rendre le développement et la maintenance de projets plus efficaces.
+
+\section*{Sources d'information}
+  \begin{itemize}
+    \item Site officiel de Doxygen: \\
+    \href{http://www.doxygen.org/}{\texttt{http://www.doxygen.org/}}
+    \item Initiation à Doxygen:\\
+     \href{http://franckh.developpez.com/tutoriels/outils/doxygen/}{\texttt{http://franckh.developpez.com/tutoriels/outils/doxygen/}}
+    \item Using Doxygen: \\
+    \href{http://lugatgt.org/2002/05/30/using-doxygen/}{\texttt{http://lugatgt.org/2002/05/30/using-doxygen/}}
+    \item Plug-in pour QtCreator:\\
+    \href{http://dev.kofee.org/projects/qtcreator-doxygen/wiki}{\texttt{http://dev.kofee.org/projects/qtcreator-doxygen/wiki}}
+    \item 10 Minutes to document your code:\\ 
+    \href{http://www.codeproject.com/Articles/3528/Minutes-to-document-your-code}{\texttt{http://www.codeproject.com/Articles/3528/Minutes-to-document-your-code}}
+  \end{itemize}

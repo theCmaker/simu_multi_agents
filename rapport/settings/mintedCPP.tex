@@ -1,0 +1,35 @@
+\input{settings/mintedSettings}
+\usepackage{MnSymbol}
+
+\newminted[cppcode]{c++}{
+  breaklines             = true,
+  frame                  = single,
+  breakautoindent        = true,
+  breaksymbolleft        = $\lhookrightarrow$,
+  breaksymbolindentleft  = 10pt,
+  breaksymbolsepleft     = 2pt,
+  breaksymbolright       = $\rhookleftarrow$,
+  breaksymbolindentright = 10pt,
+  breaksymbolsepright    = 2pt,
+  texcomments            = true
+}
+
+
+\newmintedfile[cppfile]{c++}{
+  linenos                = true,
+  tabsize                = 2,
+  breaklines             = true,
+  frame                  = single,
+  breakautoindent        = true,
+  breaksymbolleft        = $\lhookrightarrow$,
+  breaksymbolindentleft  = 10pt,
+  breaksymbolsepleft     = 2pt,
+  breaksymbolright       = $\rhookleftarrow$,
+  breaksymbolindentright = 10pt,
+  breaksymbolsepright    = 2pt,
+  label                  = Code C++,
+  texcomments            = false
+}
+
+\newmintinline[cppinline]{c++}{
+}

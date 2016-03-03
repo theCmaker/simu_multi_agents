@@ -1,0 +1,59 @@
+\chapter{Résultats}
+Ces résultats, bien que non utilisables puisque notre simulation a été créée avec des valeurs empiriques permettent toutefois de quantifier les valeurs et les probabilités liées aux agents de la simulation.
+
+Les significations des cases sont les suivantes:
+
+\begin{itemize}
+\item Death : Nombre de tours avant la mort de la faction
+\item Money : Argent à la mort de la faction
+\item Prod : Argent produit par la faction
+\item Spent : Argent dépensé par la faction
+\item Nb colonies : Nombre de colonies à la mort de la faction
+\item Nb attacks : Nombre d’attaques exécutées par la faction
+\item Nb success : Nombre d’attaque réussies
+\item Nb fails : Nombre d’attaques échouées\\
+
+\item ML x : Position x de la planète mère de la faction
+\item ML y : Position x de la planète mère de la faction
+\item ML natdef : Défense naturelle de la planète mère (à l’inititialisation)
+\item ML natprod : Production naturelle de la planète mère (à l’inititialisation)
+\item ML findef : Défense finale de la planète mère
+\item ML finprod : Production finale de la planète mère
+\end{itemize}
+
+\section{Résultats de cent simulations avec deux factions}
+\subsection{Moyenne faction gagnante}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+	\hline Death & Money & Prod & Spent & Nb colonies & Nb attacks & Nb success & Nb fails \\ 
+	\hline 1028,34 & 156366,954 & 236889,458 & 180007,563 & 240,73 & 6251,58 & 5596,68 & 654,9 \\
+	\hline
+\end{tabular}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline ML x & ML y & ML natdef & ML natprod & ML findef & ML finprod \\ 
+	\hline 8,96 & 9,47 & 38,16 & 8,27 & 89,56 & 25,39 \\
+	\hline
+\end{tabular}
+
+\subsection{Moyenne autres factions (éliminées)}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+	\hline Death & Money & Prod & Spent & Nb colonies & Nb attacks & Nb success & Nb fails \\ 
+	\hline 1026,34 & 131796,532 & 134702,934 & 156382,954 & 82,48 & 6099,82 & 5487,23 & 612,59 \\
+	\hline
+\end{tabular}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline ML x & ML y & ML natdef & ML natprod & ML findef & ML finprod \\ 
+	\hline 9,29 & 10,01 & 37,98 & 6,54 & 88,55 & 23,79 \\
+	\hline
+\end{tabular}
+
+\section{Interprétation}
+
+En règle générale, il semble que les valeurs finales des factions gagnantes sont supérieures aux valeurs des factions vaincues.
+
+Il est intéressant de noter que les défenses naturelles (défense à l’initialisation) des factions est un facteur qui a moins d’importance que la production naturelle (à l’initialisation) car si la moyenne du premier est environ égale à celle d’une faction gagnante contre une faction perdante, le deuxième lui est légèrement plus élevé pour la faction gagnante.
+
+Un autre point important est qu’en moyenne la faction gagnante possède trois fois plus de colonies à la fin de la simulation que la faction perdante.

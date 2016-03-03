@@ -1,8 +1,8 @@
 CC=pdflatex
 CFLAGS=-shell-escape
 CONFIG=settings/*.tex
-OBJS=titlepage.tex
-JOBNAME=rapport_analyse
+OBJS=titlepage.tex doxygen.tex git.tex presentation.tex developpement.tex conclusion.tex diagramme_gantt_init.tex diagramme_gantt_final.tex resultats.tex
+JOBNAME=compte_rendu
 
 $(JOBNAME).pdf: $(JOBNAME).tex $(CONFIG) $(OBJS)
 	$(CC) $(CFLAGS) $< ;

@@ -1,0 +1,42 @@
+\chapter{Présentation}
+
+Ce TP de Simulation s’inscrit également dans le cadre du cours d’Architectures Logicielles et Qualité. Il s’agit de concevoir un programme de simulation multi-agents. Le sujet étant libre, nous avons choisi d’imaginer un monde composé de planètes. Ces planètes appartiennent à des factions qui s’affrontent mutuellement. 
+
+Le monde est par défaut une grille carrée de 400 cases ($20 \times 20$). On peut travailler avec une grille torique (en employant la méthode d’initialisation des voisins \cppinline{void Virtual_planet::set_neighbourhood2()} en lieu et place de \cppinline{void Virtual_planet::set_neighbourhood()}).
+
+Le monde propose une liste d’agents en attente, et une liste des agents ayant déjà joué. Afin de définir un ordre aléatoire dans les attaques ou actions des agents, la liste des agents en attente est mélangée aléatoirement. Entre deux tours, la liste des agents ayant déjà joué est utilisée pour déterminer la liste des agents en attente du prochain tour.
+
+Chaque planète peut choisir de mener une attaque afin d’étendre l’espace colonisé par la faction à laquelle elle appartient, ou bien de produire des richesses qui permettront une expansion ultérieure (car celle-ci a un coût).\\
+Le coût d’une attaque est estimé selon le taux de défense de l’adversaire.\\
+Lorsqu’une planète subit une attaque, elle peut tenter de parer à celle-ci. Cette parade est fonction des capacités de défense de la faction. Si elle n’a pas les capacités suffisantes, alors elle subit, ce qui a pour effet de réduire ses capacités de défense et le rendement de ses productions (dégâts et pertes).
+
+Lorsque la planète n’adopte pas de comportement offensif, elle choisit de rendre son industrie plus pérenne et améliore ses productions (c’est le cas lorsque l’attaque a échoué). Les productions sont définies en fonction de l’expertise de la colonie et du taux de production de la planète (certaines planètes sont plus propices à l’activité industrielle).
+
+Lorsqu’une planète libre est colonisée, alors elle est remplacée par une planète colonisée appartenant à la faction de l’attaquant. Si toutefois cette planète appartenait à une faction adverse, cette faction la perd et la nouvelle faction peut alors en profiter.
+
+Lorsqu’une planète est attaquée, et qu’elle n’a pas encore joué, son action est annulée, car elle serait alors susceptible de s’en prendre à sa propre faction, ce qui est interdit.
+
+Certaines planètes ont un statut spécial: les planètes mères. Il y a une planète mère par faction, elle agit comme une colonie, mais provoque la perte totale et définitive de la faction si jamais elle ne parvient pas à se défendre lors d’une attaque.
+
+\newpage
+Nous avons finalement retenu le diagramme de classes général suivant:
+\begin{figure*}[h!]
+	\centering
+	\input{diagramme_classes}
+\end{figure*}
+
+Pour réaliser ce projet, nous avons décidé d’avoir recours à plusieurs outils, et parfois d’utiliser différents outils pour parvenir à la même fin, ceci pour nous rendre compte des problèmes que nous pouvons rencontrer en entreprise lorsque plusieurs développeurs travaillent sur un même projet avec des outils différents. C’est pourquoi nous avons utilisé plusieurs IDE: Geany à l’ISIMA, QtCreator sur Windows et sur Linux, et Microsoft Visual Studio (2013 et 2015) sur Windows.
+
+Chaque IDE propose différentes fonctionnalités plus ou moins pointues et faciles d’utilisation. Par exemple, QtCreator intègre de la documentation sur les objets utilisés spécifiques à Qt, ce qui permet d’avoir rapidement accès aux différentes méthodes disponibles, et ainsi se passer d’un basculement fréquent entre navigateur et environnement de développement. Visual Studio propose un outil d’analyse de la mémoire très performant lors du débogage.
+
+Afin de déboguer le programme, nous avons eu recours aux outils intégrés aux IDE, mais aussi à ddd, puisqu’il fonctionne pour des programmes C++. Nous avions fait ce choix quand nous n’avions pas encore développé de solution graphique. Nous utilisions alors à ce moment différents éditeurs de texte dotés de quelques outils facilitant le codage (snippets). Pour vérifier que le programme ne provoquait pas de fuite mémoire, nous avons utilisé le très reconnu valgrind jusqu’à obtenir un résultat satisfaisant (aucune fuite).
+
+Enfin, toute la documentation de notre code a été produite en utilisant les raccourcis que propose l’outil Doxygen, qui est présenté dans les dossiers en annexe. La documentation est proposée en PDF (compilé avec LaTeX) et en version web HTML. Cela permet la production d’un document de qualité, quasi interactif, et très utile pour toute personne qui n’a pas connaissance du travail réalisé dans le cadre de ce TP. Nous y avons ajouté une liste des choses qui peuvent être à faire, cela permet de montrer les possibilités de cet outil, et donc la qualité de l’information (mise en relief des informations critiques…). Par exemple, l’ordre de présentation est bien pensé: les tâches restant à faire apparaissent avant la documentation, ce qui permet de renseigner le lecteur immédiatement, et ainsi lui éviter de mener une recherche, laquelle peut être longue et fastidieuse, au coeur de la documentation.
+
+La gestion des versions de notre projet est réalisée à l’aide de Git, outil pour lequel des plug-ins sont intégrés à l’interface de développement.
+
+\newpage
+Initialement, nous avions proposé le diagramme de Gantt suivant:
+\begin{figure*}[h!]
+	\input{diagramme_gantt_init}
+\end{figure*}

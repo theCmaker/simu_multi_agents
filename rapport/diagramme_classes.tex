@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+  \umlemptyclass[x=0,y=5]{Monde}
+  \umlemptyclass[x=4,y=5]{Planète virtuelle}
+  \umlemptyclass[x=0,y=2.5]{Faction}
+  \umlemptyclass[x=4,y=2.5]{Planète Colonisée}
+  \umlemptyclass[x=8,y=2.5]{Planète libre}
+  \umlemptyclass[x=4,y=0]{Planète mère}
+  \umlemptyclass[x=0,y=0]{Faction neutre}
+
+  \umlunicompo[mult2=1..*,pos2=0.8]{Monde}{Planète virtuelle}
+  \umlunicompo[mult2=*,pos2=0.8]{Monde}{Faction}
+  \umlinherit{Planète libre}{Planète virtuelle}
+  \umlinherit{Planète Colonisée}{Planète virtuelle}
+  \umlinherit{Planète mère}{Planète Colonisée}
+  \umlinherit{Faction neutre}{Faction}
+  \umluniaggreg[mult2=1,pos2=0.8]{Faction}{Planète mère}
+  \umluniaggreg[mult2=1..*,pos2=0.8]{Faction}{Planète Colonisée}
+\end{tikzpicture}

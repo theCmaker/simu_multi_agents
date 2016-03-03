@@ -52,12 +52,21 @@ void \hyperlink{classWorld_a593960e61c13083719721b0c289dad94}{set\-\_\-grid} (\h
 \hypertarget{classWorld_ae8473fc069907cd6cc96d32c49b62d7e}{bool \hyperlink{classWorld_ae8473fc069907cd6cc96d32c49b62d7e}{is\-Ended} ()}\label{classWorld_ae8473fc069907cd6cc96d32c49b62d7e}
 
 \begin{DoxyCompactList}\small\item\em Vrai si la partie est terminée. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_ada56e6662343fbf3481ad9fa7eb21391}{unsigned \hyperlink{classWorld_ada56e6662343fbf3481ad9fa7eb21391}{get\-\_\-steps} () const }\label{classWorld_ada56e6662343fbf3481ad9fa7eb21391}
+
+\begin{DoxyCompactList}\small\item\em Numéro du tour courant. \end{DoxyCompactList}\item 
 std\-::list$<$ \hyperlink{classFaction}{Faction} $>$ \hyperlink{classWorld_afcbc72644f2fc56f223c9bb80b50474a}{get\-\_\-factions} ()
 \begin{DoxyCompactList}\small\item\em Liste des factions. \end{DoxyCompactList}\item 
-string \hyperlink{classWorld_a2ae945389cb96c6a10dcc07a45a2cefd}{stats} ()
-\begin{DoxyCompactList}\small\item\em Statistiques. \end{DoxyCompactList}\item 
+string \hyperlink{classWorld_a8d508e1ca0f3df8c505e298d73b25e7f}{to\-String} ()
+\begin{DoxyCompactList}\small\item\em to string \end{DoxyCompactList}\item 
 string \hyperlink{classWorld_aaa59a538a6b688f164707743faf63072}{get\-\_\-winner\-\_\-name} ()
-\begin{DoxyCompactList}\small\item\em Nom de la faction gagnante. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Nom de la faction gagnante. \end{DoxyCompactList}\item 
+string \hyperlink{classWorld_a7fa25049914905529f05bcf3a6ef3edf}{stats\-\_\-general} ()
+\begin{DoxyCompactList}\small\item\em Statistiques. \end{DoxyCompactList}\item 
+string \hyperlink{classWorld_a0c5b67d67eb8d92607293423cbbe4f2b}{stats\-\_\-faction} ()
+\begin{DoxyCompactList}\small\item\em Statistiques. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_a362764854326909e01a367780e71d7c3}{add\-\_\-stat\-\_\-faction} (\hyperlink{classFaction}{Faction} \&)
+\begin{DoxyCompactList}\small\item\em Ajout dans la liste des statistiques de faction et mise a jour des statistiques generales. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions membres publiques statiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -94,6 +103,15 @@ std\-::vector$<$ \hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast
 \hypertarget{classWorld_a171ee3cda37e3f0d643407d7f5e22a4e}{unsigned \hyperlink{classWorld_a171ee3cda37e3f0d643407d7f5e22a4e}{nb\-\_\-simulated\-\_\-agents\-\_\-}}\label{classWorld_a171ee3cda37e3f0d643407d7f5e22a4e}
 
 \begin{DoxyCompactList}\small\item\em Nombre d'agents. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_a90299b6a9d53675d0f3c7445bfaacc87}{unsigned \hyperlink{classWorld_a90299b6a9d53675d0f3c7445bfaacc87}{nb\-\_\-attacks\-\_\-success\-\_\-}}\label{classWorld_a90299b6a9d53675d0f3c7445bfaacc87}
+
+\begin{DoxyCompactList}\small\item\em Nombre d'attaques réussites dans la simulation. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_a064f979cff4edc559d1a1600446781d6}{unsigned \hyperlink{classWorld_a064f979cff4edc559d1a1600446781d6}{nb\-\_\-attacks\-\_\-failed\-\_\-}}\label{classWorld_a064f979cff4edc559d1a1600446781d6}
+
+\begin{DoxyCompactList}\small\item\em Nombre d'attaques echouées dans la simulation. \end{DoxyCompactList}\item 
+\hypertarget{classWorld_aad5ba69a212d1347fa7b2999b7c5af49}{list$<$ string $>$ \hyperlink{classWorld_aad5ba69a212d1347fa7b2999b7c5af49}{stats\-\_\-factions\-\_\-}}\label{classWorld_aad5ba69a212d1347fa7b2999b7c5af49}
+
+\begin{DoxyCompactList}\small\item\em Statistiques finales de toutes les factions. \end{DoxyCompactList}\item 
 \hypertarget{classWorld_a37b008437fd73a5d4d6851a88ba61167}{unsigned \hyperlink{classWorld_a37b008437fd73a5d4d6851a88ba61167}{len\-\_\-}}\label{classWorld_a37b008437fd73a5d4d6851a88ba61167}
 
 \begin{DoxyCompactList}\small\item\em Nombre de places par ligne. \end{DoxyCompactList}\item 
@@ -103,7 +121,7 @@ std\-::vector$<$ \hyperlink{classColonized__planet}{Colonized\-\_\-planet} $\ast
 \subsection*{Attributs privés statiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classWorld_a18060cbfd04ea4f7b9d099bd52152e93}{static const bool \hyperlink{classWorld_a18060cbfd04ea4f7b9d099bd52152e93}{D\-E\-B\-U\-G} = true}\label{classWorld_a18060cbfd04ea4f7b9d099bd52152e93}
+\hypertarget{classWorld_a18060cbfd04ea4f7b9d099bd52152e93}{static const bool \hyperlink{classWorld_a18060cbfd04ea4f7b9d099bd52152e93}{D\-E\-B\-U\-G} = false}\label{classWorld_a18060cbfd04ea4f7b9d099bd52152e93}
 
 \begin{DoxyCompactList}\small\item\em Constante de débogage. \end{DoxyCompactList}\item 
 \hypertarget{classWorld_ac4f18672fbf891451b559d6c4eb59310}{static std\-::mt19937 \hyperlink{classWorld_ac4f18672fbf891451b559d6c4eb59310}{gen\-\_\-mt\-\_\-} = std\-::mt19937()}\label{classWorld_ac4f18672fbf891451b559d6c4eb59310}
@@ -137,6 +155,22 @@ Constructeur.
 
 
 \subsection{Documentation des fonctions membres}
+\hypertarget{classWorld_a362764854326909e01a367780e71d7c3}{\index{World@{World}!add\-\_\-stat\-\_\-faction@{add\-\_\-stat\-\_\-faction}}
+\index{add\-\_\-stat\-\_\-faction@{add\-\_\-stat\-\_\-faction}!World@{World}}
+\subsubsection[{add\-\_\-stat\-\_\-faction}]{\setlength{\rightskip}{0pt plus 5cm}void World\-::add\-\_\-stat\-\_\-faction (
+\begin{DoxyParamCaption}
+\item[{{\bf Faction} \&}]{faction}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a362764854326909e01a367780e71d7c3}
+
+
+Ajout dans la liste des statistiques de faction et mise a jour des statistiques generales. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em faction} & \hyperlink{classFaction}{Faction} a archiver dans les statisiques \\
+\hline
+\end{DoxyParams}
 \hypertarget{classWorld_adfedeb704ce247d881bd9565d9d867d4}{\index{World@{World}!add\-\_\-waiting\-\_\-agent@{add\-\_\-waiting\-\_\-agent}}
 \index{add\-\_\-waiting\-\_\-agent@{add\-\_\-waiting\-\_\-agent}!World@{World}}
 \subsubsection[{add\-\_\-waiting\-\_\-agent}]{\setlength{\rightskip}{0pt plus 5cm}void World\-::add\-\_\-waiting\-\_\-agent (
@@ -359,19 +393,47 @@ Lance la simulation.
 \begin{DoxyReturn}{Renvoie}
 Nombre de tours joués jusqu'à la fin du jeu 
 \end{DoxyReturn}
-\hypertarget{classWorld_a2ae945389cb96c6a10dcc07a45a2cefd}{\index{World@{World}!stats@{stats}}
-\index{stats@{stats}!World@{World}}
-\subsubsection[{stats}]{\setlength{\rightskip}{0pt plus 5cm}string World\-::stats (
+\hypertarget{classWorld_a0c5b67d67eb8d92607293423cbbe4f2b}{\index{World@{World}!stats\-\_\-faction@{stats\-\_\-faction}}
+\index{stats\-\_\-faction@{stats\-\_\-faction}!World@{World}}
+\subsubsection[{stats\-\_\-faction}]{\setlength{\rightskip}{0pt plus 5cm}string World\-::stats\-\_\-faction (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classWorld_a2ae945389cb96c6a10dcc07a45a2cefd}
+)}}\label{classWorld_a0c5b67d67eb8d92607293423cbbe4f2b}
 
 
 Statistiques. 
 
 \begin{DoxyReturn}{Renvoie}
-texte représentant les statistiques de jeu 
+texte formaté représentant les statistiques finales des factions 
+\end{DoxyReturn}
+\hypertarget{classWorld_a7fa25049914905529f05bcf3a6ef3edf}{\index{World@{World}!stats\-\_\-general@{stats\-\_\-general}}
+\index{stats\-\_\-general@{stats\-\_\-general}!World@{World}}
+\subsubsection[{stats\-\_\-general}]{\setlength{\rightskip}{0pt plus 5cm}string World\-::stats\-\_\-general (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a7fa25049914905529f05bcf3a6ef3edf}
+
+
+Statistiques. 
+
+\begin{DoxyReturn}{Renvoie}
+texte formaté représentant les statistiques finales de jeu 
+\end{DoxyReturn}
+\hypertarget{classWorld_a8d508e1ca0f3df8c505e298d73b25e7f}{\index{World@{World}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!World@{World}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}string World\-::to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a8d508e1ca0f3df8c505e298d73b25e7f}
+
+
+to string 
+
+\begin{DoxyReturn}{Renvoie}
+texte représentant les valeurs courante du jeu 
 \end{DoxyReturn}
 
 

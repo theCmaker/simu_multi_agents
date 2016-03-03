@@ -7,5 +7,5 @@ var searchData=
   ['text_5fpanel_5f',['text_panel_',['../classDisplayer.html#a3e80d86dcf40825e1f7d71c2947e5cd3',1,'Displayer']]],
   ['timer',['timer',['../classDisplayer.html#a9edd62c6f4cf550385c1dc9933e49d0e',1,'Displayer']]],
   ['timerevent',['timerEvent',['../classDisplayer.html#a560b41e509deb82d5ae56b5ff60e093c',1,'Displayer']]],
-  ['tostring',['toString',['../classFaction.html#a75e7b414c89b8a4d75bf4a778e844b74',1,'Faction']]]
+  ['tostring',['toString',['../classFaction.html#a75e7b414c89b8a4d75bf4a778e844b74',1,'Faction::toString()'],['../classWorld.html#a8d508e1ca0f3df8c505e298d73b25e7f',1,'World::toString()']]]
 ];

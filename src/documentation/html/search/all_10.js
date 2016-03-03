@@ -17,6 +17,9 @@ var searchData=
   ['show',['show',['../classMainWindow.html#ae3d7a4598609a86e8bd317c0d85c4495',1,'MainWindow']]],
   ['size_5fplanete_5f',['size_planete_',['../classDisplayer.html#abf6048109c2f782b47932babc1c72b79',1,'Displayer']]],
   ['start',['start',['../classWorld.html#a6d23268873d3e6dc117d6c76fc87626b',1,'World']]],
-  ['stats',['stats',['../classWorld.html#a2ae945389cb96c6a10dcc07a45a2cefd',1,'World']]],
+  ['stats',['stats',['../classFaction.html#abeb8f041bf5e72dca0ce5166528d66ac',1,'Faction::stats()'],['../classMother__land.html#af32a59d0595e545809f3cb00f50cacaf',1,'Mother_land::stats()']]],
+  ['stats_5ffaction',['stats_faction',['../classWorld.html#a0c5b67d67eb8d92607293423cbbe4f2b',1,'World']]],
+  ['stats_5ffactions_5f',['stats_factions_',['../classWorld.html#aad5ba69a212d1347fa7b2999b7c5af49',1,'World']]],
+  ['stats_5fgeneral',['stats_general',['../classWorld.html#a7fa25049914905529f05bcf3a6ef3edf',1,'World']]],
   ['steps_5f',['steps_',['../classWorld.html#a747132820aba737926418d482571d7d3',1,'World']]]
 ];
