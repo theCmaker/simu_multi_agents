@@ -179,13 +179,14 @@ void World::test4factions(){
  * \note Pour le mode console
  */
 void World::display() {
-	for (unsigned i = 0 ; i < len() +2 ; i++) cout << "-";cout << endl;
+    for (unsigned i = 0 ; i < len() +2 ; i++) cout << "-";
+    cout << endl;
 	cout << "x|";
-	for (unsigned i = 0 ; i < len() ; i++) cout << /*"|"<<*/ i%10 <<"|";cout << endl;
-
+    for (unsigned i = 0 ; i < len() ; i++) cout << i%10 << "|";
+    cout << endl;
 
 	for (unsigned i = 0 ; i < hei() ; i++) {
-		cout <</* "|" <<*/ i%10 << "|";
+        cout << i%10 << "|";
 		for (unsigned j = 0 ; j < len() ; j++) {
             cout << get_grid(j,i)->display();
             cout << "|";
@@ -200,8 +201,6 @@ void World::display() {
         cout << it->toString();
 	}
 	cout << endl << endl;
-
-	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));	//wait a second
 }
 
 /*!
